@@ -1,0 +1,215 @@
+---
+layout: landing
+title: Depoimentos
+permalink: /depoimentos/
+lang: pt-BR
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/' | relative_url }}">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}">News/Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}">Plano de Cursos Databiomics</a>
+  <a href="{{ '/depoimentos/' | relative_url }}">Depoimentos</a>
+  <a href="{{ '/#contato' | relative_url }}">Contato</a>
+</nav>
+
+<section class="section testimonials-page-hero" aria-labelledby="depoimentos-title">
+  <div class="interest-top">
+    <div class="section-heading compact">
+      <h1 id="depoimentos-title" data-i18n="title">Depoimentos</h1>
+      <p data-i18n="subtitle">Veja como as soluções da Databiomics apoiam projetos, equipes e decisões estratégicas em bioinformática, IA e ciência de dados.</p>
+    </div>
+    <div class="language-switcher" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn is-active" data-lang="pt">Português</button>
+      <button type="button" class="lang-btn" data-lang="en">English</button>
+      <button type="button" class="lang-btn" data-lang="es">Español</button>
+    </div>
+  </div>
+
+  <div class="depoimentos-highlights">
+    <article class="info-card">
+      <h3 data-i18n="h1">Projetos aplicados</h3>
+      <p data-i18n="h1d">Parcerias com foco em resultados mensuráveis, reprodutibilidade e transferência de conhecimento.</p>
+    </article>
+    <article class="info-card">
+      <h3 data-i18n="h2">Treinamentos personalizados</h3>
+      <p data-i18n="h2d">Capacitação orientada ao contexto da equipe, do básico ao avançado, com aplicações reais.</p>
+    </article>
+    <article class="info-card">
+      <h3 data-i18n="h3">Suporte consultivo</h3>
+      <p data-i18n="h3d">Acompanhamento técnico para acelerar entregas e reduzir gargalos em fluxos analíticos.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="depoimentos-lista-title">
+  <div class="section-heading compact">
+    <h2 id="depoimentos-lista-title" data-i18n="listTitle">O que dizem sobre a Databiomics</h2>
+    <p data-i18n="listSub">Depoimentos publicados somente após aprovação manual.</p>
+  </div>
+  <div class="depoimentos-grid">
+    <article class="depoimento-card">
+      <div class="depoimento-head">
+        <div class="depoimento-avatar" aria-hidden="true">MC</div>
+        <div>
+          <h3>Mariana Costa</h3>
+          <p data-i18n="r1role">Coordenadora de P&amp;D · Biotech SP</p>
+        </div>
+      </div>
+      <p data-i18n="r1">“A consultoria da Databiomics trouxe clareza para nosso pipeline de análise e reduziu retrabalho. O suporte técnico foi excelente em todas as etapas.”</p>
+      <p class="depoimento-rating" aria-label="Avaliação 5 de 5">★★★★★</p>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-head">
+        <div class="depoimento-avatar" aria-hidden="true">JL</div>
+        <div>
+          <h3>João Lima</h3>
+          <p data-i18n="r2role">Professor Pesquisador · Universidade Federal</p>
+        </div>
+      </div>
+      <p data-i18n="r2">“Conteúdo atualizado, didática excelente e aplicação prática imediata no laboratório. Recomendo para equipes que querem evoluir em bioinformática com IA.”</p>
+      <p class="depoimento-rating" aria-label="Avaliação 5 de 5">★★★★★</p>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-head">
+        <div class="depoimento-avatar" aria-hidden="true">AR</div>
+        <div>
+          <h3>Ana Ribeiro</h3>
+          <p data-i18n="r3role">Analista de Dados Ômicos · HealthTech</p>
+        </div>
+      </div>
+      <p data-i18n="r3">“O treinamento foi direto ao ponto e elevou o nível técnico do time. Conseguimos implementar melhorias de forma estruturada e rápida.”</p>
+      <p class="depoimento-rating" aria-label="Avaliação 5 de 5">★★★★★</p>
+    </article>
+  </div>
+</section>
+
+<section class="section interest-section" aria-labelledby="enviar-depoimento-title">
+  <div class="interest-shell">
+    <div class="section-heading compact">
+      <h2 id="enviar-depoimento-title" data-i18n="formTitle">Enviar depoimento</h2>
+      <p data-i18n="formSub">Seu depoimento não é publicado automaticamente: eu recebo por e-mail, reviso e aprovo manualmente antes de qualquer publicação.</p>
+    </div>
+
+    <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="Novo depoimento (pendente de aprovação) - Databiomics">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="status_publicacao" value="Pendente de aprovação manual do responsável Databiomics">
+
+      <fieldset>
+        <legend data-i18n="f1">Seus dados</legend>
+        <label for="dep-nome" data-i18n="name">Nome completo*</label>
+        <input id="dep-nome" type="text" name="nome" required autocomplete="name" data-i18n-placeholder="namePh" placeholder="Seu nome">
+
+        <label for="dep-email" data-i18n="email">E-mail para contato*</label>
+        <input id="dep-email" type="email" name="email" required autocomplete="email" data-i18n-placeholder="emailPh" placeholder="voce@exemplo.com">
+
+        <label for="dep-cargo" data-i18n="role">Cargo (opcional)</label>
+        <input id="dep-cargo" type="text" name="cargo" data-i18n-placeholder="rolePh" placeholder="Ex.: Coordenadora de Pesquisa">
+
+        <label for="dep-empresa" data-i18n="company">Empresa/Instituição (opcional)</label>
+        <input id="dep-empresa" type="text" name="empresa" data-i18n-placeholder="companyPh" placeholder="Ex.: Universidade X">
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="f2">Seu depoimento</legend>
+        <label for="dep-texto" data-i18n="msg">Mensagem*</label>
+        <textarea id="dep-texto" name="depoimento" rows="6" required data-i18n-placeholder="msgPh" placeholder="Conte sua experiência com detalhes."></textarea>
+
+        <label for="dep-foto" data-i18n="photo">Foto (opcional)</label>
+        <input id="dep-foto" type="file" name="foto" accept="image/*">
+
+        <label for="dep-avaliacao" data-i18n="rating">Avaliação geral*</label>
+        <select id="dep-avaliacao" name="avaliacao" required>
+          <option value="" data-i18n="choose">Selecione</option>
+          <option value="5" data-i18n="rate5">5 - Excelente</option>
+          <option value="4" data-i18n="rate4">4 - Muito bom</option>
+          <option value="3" data-i18n="rate3">3 - Bom</option>
+          <option value="2" data-i18n="rate2">2 - Regular</option>
+          <option value="1" data-i18n="rate1">1 - Ruim</option>
+        </select>
+
+        <label>
+          <input type="checkbox" name="consentimento" required>
+          <span data-i18n="consent">Autorizo o uso do meu depoimento e, se enviada, da minha foto para avaliação e possível publicação.</span>
+        </label>
+      </fieldset>
+
+      <button class="button primary" type="submit" data-i18n="submit">Enviar depoimento</button>
+      <p class="interest-note"><strong data-i18n="approvalTitle">Política de aprovação:</strong> <span data-i18n="approvalText">todo depoimento é enviado por e-mail e só é publicado após sua aprovação manual.</span></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const i18n = {
+      pt: {
+        title: "Depoimentos", subtitle: "Veja como as soluções da Databiomics apoiam projetos, equipes e decisões estratégicas em bioinformática, IA e ciência de dados.",
+        h1: "Projetos aplicados", h1d: "Parcerias com foco em resultados mensuráveis, reprodutibilidade e transferência de conhecimento.",
+        h2: "Treinamentos personalizados", h2d: "Capacitação orientada ao contexto da equipe, do básico ao avançado, com aplicações reais.",
+        h3: "Suporte consultivo", h3d: "Acompanhamento técnico para acelerar entregas e reduzir gargalos em fluxos analíticos.",
+        listTitle: "O que dizem sobre a Databiomics", listSub: "Depoimentos publicados somente após aprovação manual.",
+        r1role: "Coordenadora de P&D · Biotech SP", r2role: "Professor Pesquisador · Universidade Federal", r3role: "Analista de Dados Ômicos · HealthTech",
+        r1: "“A consultoria da Databiomics trouxe clareza para nosso pipeline de análise e reduziu retrabalho. O suporte técnico foi excelente em todas as etapas.”",
+        r2: "“Conteúdo atualizado, didática excelente e aplicação prática imediata no laboratório. Recomendo para equipes que querem evoluir em bioinformática com IA.”",
+        r3: "“O treinamento foi direto ao ponto e elevou o nível técnico do time. Conseguimos implementar melhorias de forma estruturada e rápida.”",
+        formTitle: "Enviar depoimento", formSub: "Seu depoimento não é publicado automaticamente: eu recebo por e-mail, reviso e aprovo manualmente antes de qualquer publicação.",
+        f1: "Seus dados", name: "Nome completo*", namePh: "Seu nome", email: "E-mail para contato*", emailPh: "voce@exemplo.com", role: "Cargo (opcional)", rolePh: "Ex.: Coordenadora de Pesquisa", company: "Empresa/Instituição (opcional)", companyPh: "Ex.: Universidade X",
+        f2: "Seu depoimento", msg: "Mensagem*", msgPh: "Conte sua experiência com detalhes.", photo: "Foto (opcional)", rating: "Avaliação geral*", choose: "Selecione", rate5: "5 - Excelente", rate4: "4 - Muito bom", rate3: "3 - Bom", rate2: "2 - Regular", rate1: "1 - Ruim",
+        consent: "Autorizo o uso do meu depoimento e, se enviada, da minha foto para avaliação e possível publicação.", submit: "Enviar depoimento", approvalTitle: "Política de aprovação:", approvalText: "todo depoimento é enviado por e-mail e só é publicado após sua aprovação manual."
+      },
+      en: {
+        title: "Testimonials", subtitle: "See how Databiomics solutions support projects, teams, and strategic decisions in bioinformatics, AI, and data science.",
+        h1: "Applied projects", h1d: "Partnerships focused on measurable outcomes, reproducibility, and knowledge transfer.",
+        h2: "Customized training", h2d: "Training tailored to each team context, from basic to advanced with real-world applications.",
+        h3: "Consulting support", h3d: "Technical guidance to accelerate delivery and reduce bottlenecks in analytical workflows.",
+        listTitle: "What people say about Databiomics", listSub: "Testimonials are published only after manual approval.",
+        r1role: "R&D Coordinator · Biotech SP", r2role: "Research Professor · Federal University", r3role: "Omics Data Analyst · HealthTech",
+        r1: "“Databiomics consulting brought clarity to our analysis pipeline and reduced rework. Technical support was excellent at every stage.”",
+        r2: "“Up-to-date content, excellent teaching, and immediate practical application in the lab. Highly recommended for teams evolving in bioinformatics with AI.”",
+        r3: "“The training was objective and raised the team’s technical level. We implemented improvements in a structured and fast way.”",
+        formTitle: "Submit a testimonial", formSub: "Your testimonial is not automatically published: I receive it by email, review it, and manually approve it before any publication.",
+        f1: "Your details", name: "Full name*", namePh: "Your name", email: "Contact email*", emailPh: "you@example.com", role: "Role (optional)", rolePh: "E.g., Research Coordinator", company: "Company/Institution (optional)", companyPh: "E.g., University X",
+        f2: "Your testimonial", msg: "Message*", msgPh: "Share your experience in detail.", photo: "Photo (optional)", rating: "Overall rating*", choose: "Select", rate5: "5 - Excellent", rate4: "4 - Very good", rate3: "3 - Good", rate2: "2 - Fair", rate1: "1 - Poor",
+        consent: "I authorize the use of my testimonial and, if provided, my photo for review and possible publication.", submit: "Send testimonial", approvalTitle: "Approval policy:", approvalText: "every testimonial is sent by email and is only published after your manual approval."
+      },
+      es: {
+        title: "Testimonios", subtitle: "Vea cómo las soluciones de Databiomics apoyan proyectos, equipos y decisiones estratégicas en bioinformática, IA y ciencia de datos.",
+        h1: "Proyectos aplicados", h1d: "Alianzas enfocadas en resultados medibles, reproducibilidad y transferencia de conocimiento.",
+        h2: "Capacitación personalizada", h2d: "Formación adaptada al contexto de cada equipo, de básico a avanzado con aplicaciones reales.",
+        h3: "Soporte consultivo", h3d: "Acompañamiento técnico para acelerar entregas y reducir cuellos de botella en flujos analíticos.",
+        listTitle: "Lo que dicen sobre Databiomics", listSub: "Los testimonios se publican solo después de aprobación manual.",
+        r1role: "Coordinadora de I+D · Biotech SP", r2role: "Profesor Investigador · Universidad Federal", r3role: "Analista de Datos Ómicos · HealthTech",
+        r1: "“La consultoría de Databiomics aportó claridad a nuestro pipeline de análisis y redujo retrabajo. El soporte técnico fue excelente en todas las etapas.”",
+        r2: "“Contenido actualizado, excelente didáctica y aplicación práctica inmediata en el laboratorio. Lo recomiendo para equipos que quieren evolucionar en bioinformática con IA.”",
+        r3: "“La capacitación fue directa y elevó el nivel técnico del equipo. Implementamos mejoras de forma estructurada y rápida.”",
+        formTitle: "Enviar testimonio", formSub: "Su testimonio no se publica automáticamente: lo recibo por correo, lo reviso y lo apruebo manualmente antes de cualquier publicación.",
+        f1: "Sus datos", name: "Nombre completo*", namePh: "Su nombre", email: "Correo de contacto*", emailPh: "usted@ejemplo.com", role: "Cargo (opcional)", rolePh: "Ej.: Coordinadora de Investigación", company: "Empresa/Institución (opcional)", companyPh: "Ej.: Universidad X",
+        f2: "Su testimonio", msg: "Mensaje*", msgPh: "Cuente su experiencia con detalle.", photo: "Foto (opcional)", rating: "Valoración general*", choose: "Seleccione", rate5: "5 - Excelente", rate4: "4 - Muy bueno", rate3: "3 - Bueno", rate2: "2 - Regular", rate1: "1 - Malo",
+        consent: "Autorizo el uso de mi testimonio y, si se envía, de mi foto para evaluación y posible publicación.", submit: "Enviar testimonio", approvalTitle: "Política de aprobación:", approvalText: "todo testimonio se envía por correo y solo se publica tras su aprobación manual."
+      }
+    };
+
+    const applyLang = (lang) => {
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
+        if (i18n[lang][key]) el.textContent = i18n[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.dataset.i18nPlaceholder;
+        if (i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+      });
+      document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('is-active', b.dataset.lang === lang));
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    };
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+  })();
+</script>
