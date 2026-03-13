@@ -34,24 +34,24 @@ layout: landing
       </ul>
     </div>
     <div class="hero-card">
-      <h2>Unlock Your AI &amp; ML Potential</h2>
-      <p class="card-intro">Solicite orientação personalizada para seus projetos e equipes.</p>
+      <h2 data-i18n-key="lead_title">Desbloqueie seu potencial em IA &amp; ML</h2>
+      <p class="card-intro" data-i18n-key="lead_intro">Solicite orientação personalizada para seus projetos e equipes.</p>
       <form class="lead-form" action="https://formsubmit.co/databiomics@gmail.com" method="post">
         <label>
-          Full Name
-          <input type="text" name="name" placeholder="Seu nome completo" required>
+          <span data-i18n-key="lead_full_name">Nome completo</span>
+          <input type="text" name="name" data-i18n-placeholder-key="lead_name_ph" placeholder="Seu nome completo" required>
         </label>
         <label>
-          Phone Number
-          <input type="tel" name="phone" placeholder="Seu telefone / WhatsApp">
+          <span data-i18n-key="lead_phone">Telefone</span>
+          <input type="tel" name="phone" data-i18n-placeholder-key="lead_phone_ph" placeholder="Seu telefone / WhatsApp">
         </label>
         <label>
-          Email Id
-          <input type="email" name="email" placeholder="seuemail@dominio.com" required>
+          <span data-i18n-key="lead_email">E-mail</span>
+          <input type="email" name="email" data-i18n-placeholder-key="lead_email_ph" placeholder="seuemail@dominio.com" required>
         </label>
         <label class="checkbox">
           <input type="checkbox" name="terms" required>
-          I Agree to the Terms &amp; Conditions
+          <span data-i18n-key="lead_terms">Concordo com os Termos e Condições</span>
         </label>
         <label class="checkbox">
           <input type="checkbox" name="privacy_consent_lead" required>
@@ -59,21 +59,21 @@ layout: landing
         </label>
         <label class="checkbox">
           <input type="checkbox" name="whatsapp">
-          Send WhatsApp Updates
+          <span data-i18n-key="lead_updates">Receber atualizações por WhatsApp</span>
         </label>
         <input type="hidden" name="_subject" value="Novo contato via site - Lead Form">
         <input type="hidden" name="_captcha" value="false">
-        <button class="button primary" type="submit">Get Expert Guidance</button>
+        <button class="button primary" type="submit" data-i18n-key="lead_submit">Quero orientação especializada</button>
       </form>
-      <p class="card-footnote">You'll hear back in 24 hours.</p>
+      <p class="card-footnote" data-i18n-key="lead_footnote">Você receberá retorno em até 24 horas.</p>
     </div>
   </div>
 </section>
 
 <section class="section stats">
   <div class="section-heading">
-    <h2>Impacto e diferenciais</h2>
-    <p>Foco em resultados aplicados, eficiência de análise e capacitação de equipes multidisciplinares.</p>
+    <h2 data-i18n-key="stats_title">Impacto e diferenciais</h2>
+    <p data-i18n-key="stats_subtitle">Foco em resultados aplicados, eficiência de análise e capacitação de equipes multidisciplinares.</p>
   </div>
   <div class="stats-grid">
     <div class="stat-card">
@@ -81,33 +81,33 @@ layout: landing
       <p>de experiência combinada em bioinformática e análise de dados ômicos.</p>
     </div>
     <div class="stat-card">
-      <h3>Projetos internacionais</h3>
-      <p>colaborações com universidades, centros de pesquisa e empresas.</p>
+      <h3 data-i18n-key="stats_card2_title">Projetos internacionais</h3>
+      <p data-i18n-key="stats_card2_text">colaborações com universidades, centros de pesquisa e empresas.</p>
     </div>
     <div class="stat-card">
-      <h3>IA aplicada</h3>
-      <p>modelos preditivos e NLP para acelerar descoberta científica.</p>
+      <h3 data-i18n-key="stats_card3_title">IA aplicada</h3>
+      <p data-i18n-key="stats_card3_text">modelos preditivos e NLP para acelerar descoberta científica.</p>
     </div>
     <div class="stat-card">
-      <h3>Treinamentos customizados</h3>
-      <p>do básico ao avançado, com foco em prática e reprodutibilidade.</p>
+      <h3 data-i18n-key="stats_card4_title">Treinamentos customizados</h3>
+      <p data-i18n-key="stats_card4_text">do básico ao avançado, com foco em prática e reprodutibilidade.</p>
     </div>
   </div>
 </section>
 
 <section id="sobre" class="section">
   <div class="section-heading">
-    <h2>Sobre</h2>
-    <p>Pesquisador e consultor com trajetória em bioinformática, biologia computacional e ciência de dados aplicada à saúde, biodiversidade e biotecnologia.</p>
+    <h2 data-i18n-key="about_title">Sobre</h2>
+    <p data-i18n-key="about_subtitle">Pesquisador e consultor com trajetória em bioinformática, biologia computacional e ciência de dados aplicada à saúde, biodiversidade e biotecnologia.</p>
   </div>
   <div class="two-column">
     <div>
-      <h3>Experiência</h3>
+      <h3 data-i18n-key="about_exp_title">Experiência</h3>
       <p>Atuação em projetos nacionais e internacionais, com foco em genômica comparativa, filogenômica e aplicações de IA para descoberta de enzimas e anotação funcional.</p>
       <ul class="icon-list">
-        <li>Ciência de dados ômicos e pipelines reprodutíveis</li>
-        <li>Modelagem preditiva e aprendizagem supervisionada/não supervisionada</li>
-        <li>Desenvolvimento de aplicações com Python, R, PostgreSQL, Flask e Streamlit</li>
+        <li data-i18n-key="about_li1">Ciência de dados ômicos e pipelines reprodutíveis</li>
+        <li data-i18n-key="about_li2">Modelagem preditiva e aprendizagem supervisionada/não supervisionada</li>
+        <li data-i18n-key="about_li3">Desenvolvimento de aplicações com Python, R, PostgreSQL, Flask e Streamlit</li>
       </ul>
     </div>
     <div class="profile-card">
@@ -155,8 +155,8 @@ layout: landing
 
 <section class="section testimonials">
   <div class="section-heading">
-    <h2>Como posso ajudar sua organização?</h2>
-    <p>Transformo dados complexos em decisões claras, com entregas estruturadas e comunicação objetiva.</p>
+    <h2 data-i18n-key="help_title">Como posso ajudar sua organização?</h2>
+    <p data-i18n-key="help_subtitle">Transformo dados complexos em decisões claras, com entregas estruturadas e comunicação objetiva.</p>
   </div>
   <div class="testimonial-grid">
     <article class="testimonial-card">
@@ -176,8 +176,8 @@ layout: landing
 
 <section id="cursos" class="section">
   <div class="section-heading">
-    <h2>Cursos, Palestras &amp; Treinamentos</h2>
-    <p>Programas modulares para equipes acadêmicas e corporativas com conteúdo prático e aplicado.</p>
+    <h2 data-i18n-key="courses_title">Cursos, Palestras &amp; Treinamentos</h2>
+    <p data-i18n-key="courses_subtitle">Programas modulares para equipes acadêmicas e corporativas com conteúdo prático e aplicado.</p>
   </div>
   <div class="course-grid">
     <div class="course-video">
@@ -219,7 +219,7 @@ layout: landing
 
 <section id="videos" class="section alt">
   <div class="section-heading">
-    <h2>Galeria de vídeos · Databiomics</h2>
+    <h2 data-i18n-key="videos_title">Galeria de vídeos · Databiomics</h2>
     <p>Selecione um vídeo para assistir direto na página. Canal: <a href="https://www.youtube.com/@Databiomics" target="_blank" rel="noreferrer">youtube.com/@Databiomics</a>.</p>
   </div>
   <div class="video-selector">
@@ -255,15 +255,15 @@ layout: landing
 
 <section id="newsletter" class="section">
   <div class="section-heading">
-    <h2>Newsletter Databiomics</h2>
+    <h2 data-i18n-key="newsletter_title">Newsletter Databiomics</h2>
     <p>Seção Newsletter Databiomics: <a href="https://www.linkedin.com/newsletters/mathematics-ai-meets-biology-7211465469294178304/" target="_blank" rel="noreferrer">Mathematics AI Meets Biology</a>.</p>
   </div>
 </section>
 
 <section id="divulgacao-cursos" class="section">
   <div class="section-heading">
-    <h2>Divulgação de cursos (opcional)</h2>
-    <p>Espaço reservado para campanhas, lançamentos e inscrições.</p>
+    <h2 data-i18n-key="promo_title">Divulgação de cursos (opcional)</h2>
+    <p data-i18n-key="promo_subtitle">Espaço reservado para campanhas, lançamentos e inscrições.</p>
   </div>
   <div class="course-promo">
     <div class="promo-card">
@@ -281,8 +281,8 @@ layout: landing
 
 <section id="programas" class="section alt">
   <div class="section-heading">
-    <h2>Programas em Destaque</h2>
-    <p>Projetos estruturados para acelerar resultados e inovação científica.</p>
+    <h2 data-i18n-key="programs_title">Programas em Destaque</h2>
+    <p data-i18n-key="programs_subtitle">Projetos estruturados para acelerar resultados e inovação científica.</p>
   </div>
   <div class="card-grid">
     <article class="info-card">
