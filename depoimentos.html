@@ -6,13 +6,13 @@ lang: pt-BR
 ---
 
 <nav class="landing-nav">
-  <a href="{{ '/' | relative_url }}">Início</a>
-  <a href="{{ '/artigos-projetos/' | relative_url }}">Artigos / Projetos</a>
-  <a href="{{ '/formacao-complementar/' | relative_url }}">Formação Complementar</a>
-  <a href="{{ '/articles' | relative_url }}">News/Articles</a>
-  <a href="{{ '/planocursos/' | relative_url }}">Plano de Cursos Databiomics</a>
-  <a href="{{ '/depoimentos/' | relative_url }}">Depoimentos</a>
-  <a href="{{ '/#contato' | relative_url }}">Contato</a>
+  <a href="{{ '/' | relative_url }}" data-i18n-key="nav_home">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Plano de Cursos Databiomics</a>
+  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
+  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
 </nav>
 
 <section class="section testimonials-page-hero" aria-labelledby="depoimentos-title">
@@ -103,7 +103,7 @@ lang: pt-BR
         <label for="dep-texto" data-i18n="msg">Depoimento*</label>
         <textarea id="dep-texto" name="depoimento" rows="7" required data-i18n-placeholder="msgPh" placeholder="Descreva sua experiência de forma objetiva e profissional."></textarea>
 
-        <label for="dep-foto" data-i18n="photo">Foto (opcional)</label>
+        <label for="dep-foto" data-i18n="photo">Foto da pessoa ou da empresa (opcional)</label>
         <input id="dep-foto" type="file" name="foto" accept="image/*">
 
         <label>
@@ -113,7 +113,7 @@ lang: pt-BR
 
         <label>
           <input type="checkbox" name="consentimento_dados" required>
-          <span data-i18n="dataConsent">Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento.</span>
+          <span data-i18n="dataConsent">Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
         </label>
       </fieldset>
 
@@ -161,9 +161,9 @@ lang: pt-BR
         testimonialLegend: "Conteúdo do depoimento",
         msg: "Depoimento*",
         msgPh: "Descreva sua experiência de forma objetiva e profissional.",
-        photo: "Foto (opcional)",
+        photo: "Foto da pessoa ou da empresa (opcional)",
         publishConsent: "Desejo enviar este depoimento para avaliação de publicação no site.",
-        dataConsent: "Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento.",
+        dataConsent: "Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a",
         submit: "Enviar depoimento para aprovação",
         approvalTitle: "Política de aprovação:",
         approvalText: "nenhum depoimento é publicado automaticamente; toda publicação depende de sua aprovação manual após recebimento por e-mail."
@@ -203,9 +203,9 @@ lang: pt-BR
         testimonialLegend: "Testimonial content",
         msg: "Testimonial*",
         msgPh: "Describe your experience in an objective and professional way.",
-        photo: "Photo (optional)",
+        photo: "Photo of person or company (optional)",
         publishConsent: "I want to submit this testimonial for publication review on the website.",
-        dataConsent: "I authorize the use of my data for contact, validation, and possible publication of the testimonial.",
+        dataConsent: "I authorize the use of my data for contact, validation, and possible publication of the testimonial, according to the",
         submit: "Submit testimonial for approval",
         approvalTitle: "Approval policy:",
         approvalText: "no testimonial is auto-published; every publication depends on your manual approval after email receipt."
@@ -245,9 +245,9 @@ lang: pt-BR
         testimonialLegend: "Contenido del testimonio",
         msg: "Testimonio*",
         msgPh: "Describa su experiencia de forma objetiva y profesional.",
-        photo: "Foto (opcional)",
+        photo: "Foto da pessoa ou da empresa (opcional)",
         publishConsent: "Deseo enviar este testimonio para evaluación de publicación en el sitio.",
-        dataConsent: "Autorizo el uso de mis datos para contacto, validación y posible publicación del testimonio.",
+        dataConsent: "Autorizo el uso de mis datos para contacto, validación y posible publicación del testimonio, de acuerdo con la",
         submit: "Enviar testimonio para aprobación",
         approvalTitle: "Política de aprobación:",
         approvalText: "ningún testimonio se publica automáticamente; toda publicación depende de su aprobación manual tras recibir el correo."

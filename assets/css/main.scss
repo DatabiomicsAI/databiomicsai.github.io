@@ -757,3 +757,37 @@ footer  {
   background: var(--bg);
   color: var(--text);
 }
+
+.global-language-switcher {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 20;
+  margin: 0.75rem auto 0;
+  width: fit-content;
+  display: inline-flex;
+  gap: 0.35rem;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  padding: 0.3rem;
+}
+
+.global-lang-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text);
+}
+
+.global-lang-btn.is-active {
+  background: #60a5fa;
+  color: #0f172a;
+}
+
+.visitor-count {
+  font-weight: 700;
+  margin-top: 0.55rem;
+}
