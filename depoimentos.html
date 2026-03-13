@@ -47,7 +47,7 @@ lang: pt-BR
 <section class="section alt" aria-labelledby="depoimentos-lista-title">
   <div class="section-heading compact">
     <h2 id="depoimentos-lista-title" data-i18n="listTitle">Depoimentos publicados</h2>
-    <p data-i18n="listSub">A publicação acontece somente após revisão e aprovação manual do responsável.</p>
+    <p data-i18n="listSub">Conheça experiências compartilhadas por clientes e parceiros Databiomics.</p>
   </div>
   <div class="depoimentos-grid">
     <article class="depoimento-card">
@@ -60,13 +60,14 @@ lang: pt-BR
   <div class="interest-shell">
     <div class="section-heading compact">
       <h2 id="enviar-depoimento-title" data-i18n="formTitle">Enviar depoimento</h2>
-      <p data-i18n="formSub">Preencha os dados abaixo. O envio é recebido por e-mail e fica pendente até sua aprovação.</p>
+      <p data-i18n="formSub">Preencha os dados abaixo para enviar seu depoimento.</p>
     </div>
 
     <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Novo depoimento (pendente de aprovação) - Databiomics">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="status_publicacao" value="Pendente de aprovação manual do responsável Databiomics">
+      <input type="hidden" name="status_publicacao" value="Recebido por e-mail - revisão interna">
+      <input type="hidden" name="admin_workflow" value="Ações internas: aprovar publicação, recusar publicação ou excluir depoimento">
 
       <fieldset>
         <legend data-i18n="projectLegend">Dados do projeto</legend>
@@ -117,8 +118,7 @@ lang: pt-BR
         </label>
       </fieldset>
 
-      <button class="button primary" type="submit" data-i18n="submit">Enviar depoimento para aprovação</button>
-      <p class="interest-note"><strong data-i18n="approvalTitle">Política de aprovação:</strong> <span data-i18n="approvalText">nenhum depoimento é publicado automaticamente; toda publicação depende de sua aprovação manual após recebimento por e-mail.</span></p>
+      <button class="button primary" type="submit" data-i18n="submit">Enviar depoimento</button>
     </form>
   </div>
 </section>
@@ -136,10 +136,10 @@ lang: pt-BR
         h3: "Qualidade e transparência",
         h3d: "Os dados do projeto e da pessoa autora do depoimento são coletados para garantir contexto e autenticidade.",
         listTitle: "Depoimentos publicados",
-        listSub: "A publicação acontece somente após revisão e aprovação manual do responsável.",
+        listSub: "Conheça experiências compartilhadas por clientes e parceiros Databiomics.",
         emptyState: "Ainda não há depoimentos publicados. Quando houver envios aprovados, eles aparecerão aqui.",
         formTitle: "Enviar depoimento",
-        formSub: "Preencha os dados abaixo. O envio é recebido por e-mail e fica pendente até sua aprovação.",
+        formSub: "Preencha os dados abaixo para enviar seu depoimento.",
         projectLegend: "Dados do projeto",
         projectName: "Nome do projeto*",
         projectNamePh: "Ex.: Pipeline de Metagenômica Clínica",
@@ -164,9 +164,7 @@ lang: pt-BR
         photo: "Foto da pessoa ou da empresa (opcional)",
         publishConsent: "Desejo enviar este depoimento para avaliação de publicação no site.",
         dataConsent: "Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a",
-        submit: "Enviar depoimento para aprovação",
-        approvalTitle: "Política de aprovação:",
-        approvalText: "nenhum depoimento é publicado automaticamente; toda publicação depende de sua aprovação manual após recebimento por e-mail."
+        submit: "Enviar depoimento"
       },
       en: {
         title: "Testimonials",
@@ -178,10 +176,10 @@ lang: pt-BR
         h3: "Quality and transparency",
         h3d: "Project and author details are collected to ensure context and authenticity.",
         listTitle: "Published testimonials",
-        listSub: "Publication happens only after manual review and approval.",
+        listSub: "Read experiences shared by Databiomics clients and partners.",
         emptyState: "There are no published testimonials yet. Approved submissions will appear here.",
         formTitle: "Submit a testimonial",
-        formSub: "Fill in the fields below. The submission is received by email and stays pending until your approval.",
+        formSub: "Fill in the fields below to send your testimonial.",
         projectLegend: "Project details",
         projectName: "Project name*",
         projectNamePh: "E.g., Clinical Metagenomics Pipeline",
@@ -206,9 +204,7 @@ lang: pt-BR
         photo: "Photo of person or company (optional)",
         publishConsent: "I want to submit this testimonial for publication review on the website.",
         dataConsent: "I authorize the use of my data for contact, validation, and possible publication of the testimonial, according to the",
-        submit: "Submit testimonial for approval",
-        approvalTitle: "Approval policy:",
-        approvalText: "no testimonial is auto-published; every publication depends on your manual approval after email receipt."
+        submit: "Submit testimonial"
       },
       es: {
         title: "Testimonios",
@@ -220,10 +216,10 @@ lang: pt-BR
         h3: "Calidad y transparencia",
         h3d: "Se recogen datos del proyecto y de la persona autora para garantizar contexto y autenticidad.",
         listTitle: "Testimonios publicados",
-        listSub: "La publicación ocurre solo después de revisión y aprobación manual.",
+        listSub: "Conozca experiencias compartidas por clientes y socios de Databiomics.",
         emptyState: "Aún no hay testimonios publicados. Los envíos aprobados aparecerán aquí.",
         formTitle: "Enviar testimonio",
-        formSub: "Complete los datos. El envío se recibe por correo y queda pendiente hasta su aprobación.",
+        formSub: "Complete los datos para enviar su testimonio.",
         projectLegend: "Datos del proyecto",
         projectName: "Nombre del proyecto*",
         projectNamePh: "Ej.: Pipeline de Metagenómica Clínica",
@@ -248,9 +244,7 @@ lang: pt-BR
         photo: "Foto da pessoa ou da empresa (opcional)",
         publishConsent: "Deseo enviar este testimonio para evaluación de publicación en el sitio.",
         dataConsent: "Autorizo el uso de mis datos para contacto, validación y posible publicación del testimonio, de acuerdo con la",
-        submit: "Enviar testimonio para aprobación",
-        approvalTitle: "Política de aprobación:",
-        approvalText: "ningún testimonio se publica automáticamente; toda publicación depende de su aprobación manual tras recibir el correo."
+        submit: "Enviar testimonio"
       }
     };
 
