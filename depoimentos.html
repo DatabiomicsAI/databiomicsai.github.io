@@ -1,0 +1,136 @@
+---
+layout: landing
+title: Depoimentos
+permalink: /depoimentos/
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/' | relative_url }}">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}">News/Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}">Plano de Cursos Databiomics</a>
+  <a href="{{ '/depoimentos/' | relative_url }}">Depoimentos</a>
+  <a href="{{ '/#contato' | relative_url }}">Contato</a>
+</nav>
+
+<section class="section testimonials-page-hero" aria-labelledby="depoimentos-title">
+  <div class="section-heading">
+    <h1 id="depoimentos-title">Depoimentos</h1>
+    <p>Veja como as soluções da Databiomics apoiam projetos, equipes e decisões estratégicas em bioinformática, IA e ciência de dados.</p>
+  </div>
+  <div class="depoimentos-highlights">
+    <article class="info-card">
+      <h3>Projetos aplicados</h3>
+      <p>Parcerias com foco em resultados mensuráveis, reprodutibilidade e transferência de conhecimento.</p>
+    </article>
+    <article class="info-card">
+      <h3>Treinamentos personalizados</h3>
+      <p>Capacitação orientada ao contexto da equipe, do básico ao avançado, com aplicações reais.</p>
+    </article>
+    <article class="info-card">
+      <h3>Suporte consultivo</h3>
+      <p>Acompanhamento técnico para acelerar entregas e reduzir gargalos em fluxos analíticos.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="depoimentos-lista-title">
+  <div class="section-heading">
+    <h2 id="depoimentos-lista-title">O que dizem sobre a Databiomics</h2>
+    <p>Exemplos de feedbacks recebidos de clientes, parceiros e participantes de treinamentos.</p>
+  </div>
+  <div class="depoimentos-grid">
+    <article class="depoimento-card">
+      <div class="depoimento-head">
+        <img src="{{ '/leandro.jpeg' | relative_url }}" alt="Foto de cliente" loading="lazy">
+        <div>
+          <h3>Mariana Costa</h3>
+          <p>Coordenadora de P&amp;D · Biotech SP</p>
+        </div>
+      </div>
+      <p>“A consultoria da Databiomics trouxe clareza para nosso pipeline de análise e reduziu retrabalho. O suporte técnico foi excelente em todas as etapas.”</p>
+      <p class="depoimento-rating" aria-label="Avaliação 5 de 5">★★★★★</p>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-head">
+        <div class="depoimento-avatar" aria-hidden="true">JL</div>
+        <div>
+          <h3>João Lima</h3>
+          <p>Professor Pesquisador · Universidade Federal</p>
+        </div>
+      </div>
+      <p>“Conteúdo atualizado, didática excelente e aplicação prática imediata no laboratório. Recomendo para equipes que querem evoluir em bioinformática com IA.”</p>
+      <p class="depoimento-rating" aria-label="Avaliação 5 de 5">★★★★★</p>
+    </article>
+
+    <article class="depoimento-card">
+      <div class="depoimento-head">
+        <div class="depoimento-avatar" aria-hidden="true">AR</div>
+        <div>
+          <h3>Ana Ribeiro</h3>
+          <p>Analista de Dados Ômicos · HealthTech</p>
+        </div>
+      </div>
+      <p>“O treinamento foi direto ao ponto e elevou o nível técnico do time. Conseguimos implementar melhorias de forma estruturada e rápida.”</p>
+      <p class="depoimento-rating" aria-label="Avaliação 5 de 5">★★★★★</p>
+    </article>
+  </div>
+</section>
+
+<section class="section interest-section" aria-labelledby="enviar-depoimento-title">
+  <div class="interest-shell">
+    <div class="section-heading compact">
+      <h2 id="enviar-depoimento-title">Enviar depoimento</h2>
+      <p>Compartilhe sua experiência com a Databiomics. Sua foto é opcional e seu depoimento poderá ser publicado nesta página após revisão.</p>
+    </div>
+
+    <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="Novo depoimento via site - Databiomics">
+      <input type="hidden" name="_captcha" value="false">
+
+      <fieldset>
+        <legend>Seus dados</legend>
+        <label for="dep-nome">Nome completo*</label>
+        <input id="dep-nome" type="text" name="nome" required autocomplete="name" placeholder="Seu nome">
+
+        <label for="dep-email">E-mail para contato*</label>
+        <input id="dep-email" type="email" name="email" required autocomplete="email" placeholder="voce@exemplo.com">
+
+        <label for="dep-cargo">Cargo (opcional)</label>
+        <input id="dep-cargo" type="text" name="cargo" placeholder="Ex.: Coordenadora de Pesquisa">
+
+        <label for="dep-empresa">Empresa/Instituição (opcional)</label>
+        <input id="dep-empresa" type="text" name="empresa" placeholder="Ex.: Universidade X">
+      </fieldset>
+
+      <fieldset>
+        <legend>Seu depoimento</legend>
+        <label for="dep-texto">Mensagem*</label>
+        <textarea id="dep-texto" name="depoimento" rows="6" required placeholder="Conte sua experiência com detalhes."></textarea>
+
+        <label for="dep-foto">Foto (opcional)</label>
+        <input id="dep-foto" type="file" name="foto" accept="image/*">
+
+        <label for="dep-avaliacao">Avaliação geral*</label>
+        <select id="dep-avaliacao" name="avaliacao" required>
+          <option value="">Selecione</option>
+          <option value="5">5 - Excelente</option>
+          <option value="4">4 - Muito bom</option>
+          <option value="3">3 - Bom</option>
+          <option value="2">2 - Regular</option>
+          <option value="1">1 - Ruim</option>
+        </select>
+
+        <label>
+          <input type="checkbox" name="consentimento" required>
+          Autorizo o uso do meu depoimento e, se enviado, da minha foto para publicação pela Databiomics.
+        </label>
+      </fieldset>
+
+      <button class="button primary" type="submit">Enviar depoimento</button>
+      <p class="interest-footnote">Ao enviar, você concorda com a revisão editorial para padronização e publicação.</p>
+    </form>
+  </div>
+</section>
