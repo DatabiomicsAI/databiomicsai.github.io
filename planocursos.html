@@ -7,12 +7,13 @@ lang: pt-BR
 ---
 
 <nav class="landing-nav">
-  <a href="{{ '/' | relative_url }}">Início</a>
-  <a href="{{ '/artigos-projetos/' | relative_url }}">Artigos / Projetos</a>
-  <a href="{{ '/formacao-complementar/' | relative_url }}">Formação Complementar</a>
-  <a href="{{ '/articles' | relative_url }}">News/Articles</a>
-  <a href="{{ '/planocursos/' | relative_url }}">Plano de Cursos Databiomics</a>
-  <a href="{{ '/#contato' | relative_url }}">Contato</a>
+  <a href="{{ '/' | relative_url }}" data-i18n-key="nav_home">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
+  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Plano de Cursos Databiomics</a>
+  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
 </nav>
 
 <section id="planocursos" class="section interest-section" aria-labelledby="interest-title">
@@ -137,6 +138,7 @@ lang: pt-BR
       <input type="hidden" name="_to" value="databiomics@gmail.com">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <label><input type="checkbox" name="privacy_consent_interest" required> <span data-i18n-key="privacy_consent">Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.</label>
       <button type="submit" class="button primary" data-i18n="submit">Enviar interesse</button>
     </form>
 
