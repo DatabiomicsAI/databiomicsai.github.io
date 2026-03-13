@@ -6,7 +6,11 @@
 ## Acknowledgement
 This theme's original base is [no style please!](https://github.com/riggraz/no-style-please) theme created by  [Riccardo Graziosi](https://riggraz.dev/) - many thanks to him for creating a wonderful theme with nearly no css. 
 ## License
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+This repository is licensed under the **Databiomics Proprietary License (DPL) v1.0**.
+
+- Copying, forking, mirroring, or reusing this code/content requires **prior written authorization**.
+- Publishing an identical or substantially similar version of this website is **not permitted** without authorization.
+- See full terms in [`LICENSE.txt`](LICENSE.txt).
 
 ## Acesso atual (estável)
 
