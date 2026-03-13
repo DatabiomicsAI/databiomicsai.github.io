@@ -200,7 +200,7 @@ lang: pt-BR
         }
       };
 
-      let currentLang = "pt";
+      let currentLang = localStorage.getItem("siteLang") || "pt";
       const form = document.getElementById("interest-form");
 
       function applyLanguage(lang) {
@@ -218,10 +218,15 @@ lang: pt-BR
         document.querySelectorAll(".lang-btn").forEach((btn) => {
           btn.classList.toggle("is-active", btn.dataset.lang === lang);
         });
+        localStorage.setItem("siteLang", lang);
       }
 
       document.querySelectorAll(".lang-btn").forEach((btn) => {
         btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+      });
+
+      document.addEventListener("site-language-changed", (event) => {
+        if (event?.detail?.lang) applyLanguage(event.detail.lang);
       });
 
       applyLanguage(currentLang);
