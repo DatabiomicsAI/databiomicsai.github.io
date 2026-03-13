@@ -5,15 +5,16 @@ permalink: /artigos-projetos/
 ---
 
 <nav class="landing-nav">
-  <a href="{{ '/' | relative_url }}">Início</a>
-  <a href="{{ '/artigos-projetos/' | relative_url }}">Artigos / Projetos</a>
-  <a href="{{ '/formacao-complementar/' | relative_url }}">Formação Complementar</a>
-  <a href="{{ '/articles' | relative_url }}">News/Articles</a>
+  <a href="{{ '/' | relative_url }}" data-i18n-key="nav_home">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
+  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
 </nav>
 
 <section class="section">
   <div class="section-heading">
-    <h1>Artigos / Projetos</h1>
+    <h1 data-i18n-key="nav_articles_projects">Artigos / Projetos</h1>
   </div>
   <div class="markdown-panel">
     {% capture publications_content %}{% include_relative Publications.md %}{% endcapture %}

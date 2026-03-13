@@ -3,17 +3,18 @@ layout: landing
 ---
 
 <nav class="landing-nav">
-  <a href="#sobre">Sobre</a>
-  <a href="#servicos">Serviços</a>
-  <a href="{{ '/artigos-projetos/' | relative_url }}">Artigos / Projetos</a>
-  <a href="{{ '/formacao-complementar/' | relative_url }}">Formação Complementar</a>
-  <a href="#cursos">Cursos &amp; Palestras</a>
-  <a href="#videos">Vídeos</a>
-  <a href="#divulgacao-cursos">Divulgação</a>
-  <a href="#programas">Programas</a>
-  <a href="{{ '/articles' | relative_url }}">News/Articles</a>
-  <a href="{{ '/planocursos/' | relative_url }}">PlanoCursos</a>
-  <a href="#contato">Contato</a>
+  <a href="#sobre" data-i18n-key="nav_about">Sobre</a>
+  <a href="#servicos" data-i18n-key="nav_services">Serviços</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="#cursos" data-i18n-key="nav_courses_talks">Cursos &amp; Palestras</a>
+  <a href="#videos" data-i18n-key="nav_videos">Vídeos</a>
+  <a href="#divulgacao-cursos" data-i18n-key="nav_disclosure">Divulgação</a>
+  <a href="#programas" data-i18n-key="nav_programs">Programas</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">PlanoCursos</a>
+  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
+  <a href="#contato" data-i18n-key="nav_contact">Contato</a>
 </nav>
 
 <section class="hero" aria-labelledby="hero-title">
@@ -51,6 +52,10 @@ layout: landing
         <label class="checkbox">
           <input type="checkbox" name="terms" required>
           I Agree to the Terms &amp; Conditions
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="privacy_consent_lead" required>
+          <span data-i18n-key="privacy_consent">Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
         </label>
         <label class="checkbox">
           <input type="checkbox" name="whatsapp">
@@ -535,6 +540,10 @@ layout: landing
           Mensagem
           <textarea name="message" rows="4" placeholder="Como posso ajudar?"></textarea>
         </label>
+        <label class="checkbox">
+          <input type="checkbox" name="privacy_consent_contact" required>
+          <span data-i18n-key="privacy_consent">Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
+        </label>
         <input type="hidden" name="_subject" value="Novo contato via site - Caixa de mensagem">
         <input type="hidden" name="_captcha" value="false">
         <button class="button primary" type="submit">Enviar mensagem por e-mail</button>
@@ -552,6 +561,7 @@ layout: landing
     <div class="footer-block">
       <h2>Visitante</h2>
       <p id="visitor-country">Carregando país do visitante...</p>
+      <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
       <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
     </div>
   </div>

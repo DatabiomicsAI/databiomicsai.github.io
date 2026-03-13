@@ -2,12 +2,14 @@
 <html lang="{{ page.lang | default: 'en' }}" class="html" data-theme="{{ site.theme_config.appearance | default: 'auto' }}">
   {%- include head.html -%}
   <body>
+    <div class="global-language-switcher" role="group" aria-label="Language switcher">
+      <button type="button" class="global-lang-btn" data-global-lang="pt">PT</button>
+      <button type="button" class="global-lang-btn" data-global-lang="en">EN</button>
+      <button type="button" class="global-lang-btn" data-global-lang="es">ES</button>
+    </div>
+
     <main class="page-content" aria-label="Content">
       <div class="w">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ '/leandro.jpeg' | relative_url }}" width="200" style="height:auto;border-radius:50%" alt="Computational Biologist" class="inline" loading="lazy">
-        </a>
-
         {{ content }}
 
         {% if site.theme_config.appearance_toggle %}
@@ -15,11 +17,13 @@
         {% endif %}
 
         <div class="credits">
-          &copy;&nbsp;2026&nbsp;Leandro de Mattos Pereira
+          &copy;&nbsp;2026&nbsp;Databiomics
           <img class="credits-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics">
         </div>
       </div>
     </main>
+
+    <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
 
     {%- if site.soopr -%}
       {%- if site.soopr.publish_token and jekyll.environment == "production" -%}

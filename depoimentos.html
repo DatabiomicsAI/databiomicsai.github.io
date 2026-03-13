@@ -1,0 +1,268 @@
+---
+layout: landing
+title: Depoimentos
+permalink: /depoimentos/
+lang: pt-BR
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/' | relative_url }}" data-i18n-key="nav_home">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Plano de Cursos Databiomics</a>
+  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
+  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
+</nav>
+
+<section class="section testimonials-page-hero" aria-labelledby="depoimentos-title">
+  <div class="interest-top">
+    <div class="section-heading compact">
+      <h1 id="depoimentos-title" data-i18n="title">Depoimentos</h1>
+      <p data-i18n="subtitle">Página oficial para recebimento e publicação de depoimentos reais de clientes e parceiros Databiomics.</p>
+    </div>
+    <div class="language-switcher" role="group" aria-label="Language switcher">
+      <button type="button" class="lang-btn is-active" data-lang="pt">Português</button>
+      <button type="button" class="lang-btn" data-lang="en">English</button>
+      <button type="button" class="lang-btn" data-lang="es">Español</button>
+    </div>
+  </div>
+
+  <div class="depoimentos-highlights">
+    <article class="info-card">
+      <h3 data-i18n="h1">Depoimentos com contexto</h3>
+      <p data-i18n="h1d">Cada publicação inclui informações do projeto para tornar a leitura mais útil e objetiva.</p>
+    </article>
+    <article class="info-card">
+      <h3 data-i18n="h2">Foco em resultados</h3>
+      <p data-i18n="h2d">Os relatos destacam impacto prático, clareza técnica e valor para negócio e pesquisa.</p>
+    </article>
+    <article class="info-card">
+      <h3 data-i18n="h3">Qualidade e transparência</h3>
+      <p data-i18n="h3d">Os dados do projeto e da pessoa autora do depoimento são coletados para garantir contexto e autenticidade.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section alt" aria-labelledby="depoimentos-lista-title">
+  <div class="section-heading compact">
+    <h2 id="depoimentos-lista-title" data-i18n="listTitle">Depoimentos publicados</h2>
+    <p data-i18n="listSub">Conheça experiências compartilhadas por clientes e parceiros Databiomics.</p>
+  </div>
+  <div class="depoimentos-grid">
+    <article class="depoimento-card">
+      <p data-i18n="emptyState">Ainda não há depoimentos publicados. Quando houver envios aprovados, eles aparecerão aqui.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section interest-section" aria-labelledby="enviar-depoimento-title">
+  <div class="interest-shell">
+    <div class="section-heading compact">
+      <h2 id="enviar-depoimento-title" data-i18n="formTitle">Enviar depoimento</h2>
+      <p data-i18n="formSub">Preencha os dados abaixo para enviar seu depoimento.</p>
+    </div>
+
+    <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="Novo depoimento (pendente de aprovação) - Databiomics">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="status_publicacao" value="Recebido por e-mail - revisão interna">
+      <input type="hidden" name="admin_workflow" value="Ações internas: aprovar publicação, recusar publicação ou excluir depoimento">
+
+      <fieldset>
+        <legend data-i18n="projectLegend">Dados do projeto</legend>
+        <label for="dep-projeto" data-i18n="projectName">Nome do projeto*</label>
+        <input id="dep-projeto" type="text" name="nome_projeto" required data-i18n-placeholder="projectNamePh" placeholder="Ex.: Pipeline de Metagenômica Clínica">
+
+        <label for="dep-tipo-projeto" data-i18n="projectType">Tipo de projeto (opcional)</label>
+        <input id="dep-tipo-projeto" type="text" name="tipo_projeto" data-i18n-placeholder="projectTypePh" placeholder="Ex.: Consultoria / Treinamento / Desenvolvimento">
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="personLegend">Dados da pessoa autora</legend>
+        <label for="dep-nome" data-i18n="name">Nome completo*</label>
+        <input id="dep-nome" type="text" name="nome_completo" required autocomplete="name" data-i18n-placeholder="namePh" placeholder="Seu nome completo">
+
+        <label for="dep-cargo" data-i18n="role">Cargo/Função*</label>
+        <input id="dep-cargo" type="text" name="cargo_funcao" required data-i18n-placeholder="rolePh" placeholder="Ex.: Coordenadora de Pesquisa">
+
+        <label for="dep-empresa" data-i18n="company">Empresa/Instituição*</label>
+        <input id="dep-empresa" type="text" name="empresa_instituicao" required data-i18n-placeholder="companyPh" placeholder="Ex.: Universidade X">
+
+        <label for="dep-email" data-i18n="email">E-mail para contato*</label>
+        <input id="dep-email" type="email" name="email" required autocomplete="email" data-i18n-placeholder="emailPh" placeholder="voce@exemplo.com">
+
+        <label for="dep-telefone" data-i18n="phone">Telefone/WhatsApp (opcional)</label>
+        <input id="dep-telefone" type="text" name="telefone" data-i18n-placeholder="phonePh" placeholder="+55 51 99999-9999">
+
+        <label for="dep-linkedin" data-i18n="linkedin">LinkedIn (opcional)</label>
+        <input id="dep-linkedin" type="url" name="linkedin" data-i18n-placeholder="linkedinPh" placeholder="https://www.linkedin.com/in/...">
+      </fieldset>
+
+      <fieldset>
+        <legend data-i18n="testimonialLegend">Conteúdo do depoimento</legend>
+        <label for="dep-texto" data-i18n="msg">Depoimento*</label>
+        <textarea id="dep-texto" name="depoimento" rows="7" required data-i18n-placeholder="msgPh" placeholder="Descreva sua experiência de forma objetiva e profissional."></textarea>
+
+        <label for="dep-foto" data-i18n="photo">Foto da pessoa ou da empresa (opcional)</label>
+        <input id="dep-foto" type="file" name="foto" accept="image/*">
+
+        <label>
+          <input type="checkbox" name="deseja_publicacao" required>
+          <span data-i18n="publishConsent">Desejo enviar este depoimento para avaliação de publicação no site.</span>
+        </label>
+
+        <label>
+          <input type="checkbox" name="consentimento_dados" required>
+          <span data-i18n="dataConsent">Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
+        </label>
+      </fieldset>
+
+      <button class="button primary" type="submit" data-i18n="submit">Enviar depoimento</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const i18n = {
+      pt: {
+        title: "Depoimentos",
+        subtitle: "Página oficial para recebimento e publicação de depoimentos reais de clientes e parceiros Databiomics.",
+        h1: "Depoimentos com contexto",
+        h1d: "Cada publicação inclui informações do projeto para tornar a leitura mais útil e objetiva.",
+        h2: "Foco em resultados",
+        h2d: "Os relatos destacam impacto prático, clareza técnica e valor para negócio e pesquisa.",
+        h3: "Qualidade e transparência",
+        h3d: "Os dados do projeto e da pessoa autora do depoimento são coletados para garantir contexto e autenticidade.",
+        listTitle: "Depoimentos publicados",
+        listSub: "Conheça experiências compartilhadas por clientes e parceiros Databiomics.",
+        emptyState: "Ainda não há depoimentos publicados. Quando houver envios aprovados, eles aparecerão aqui.",
+        formTitle: "Enviar depoimento",
+        formSub: "Preencha os dados abaixo para enviar seu depoimento.",
+        projectLegend: "Dados do projeto",
+        projectName: "Nome do projeto*",
+        projectNamePh: "Ex.: Pipeline de Metagenômica Clínica",
+        projectType: "Tipo de projeto (opcional)",
+        projectTypePh: "Ex.: Consultoria / Treinamento / Desenvolvimento",
+        personLegend: "Dados da pessoa autora",
+        name: "Nome completo*",
+        namePh: "Seu nome completo",
+        role: "Cargo/Função*",
+        rolePh: "Ex.: Coordenadora de Pesquisa",
+        company: "Empresa/Instituição*",
+        companyPh: "Ex.: Universidade X",
+        email: "E-mail para contato*",
+        emailPh: "voce@exemplo.com",
+        phone: "Telefone/WhatsApp (opcional)",
+        phonePh: "+55 51 99999-9999",
+        linkedin: "LinkedIn (opcional)",
+        linkedinPh: "https://www.linkedin.com/in/...",
+        testimonialLegend: "Conteúdo do depoimento",
+        msg: "Depoimento*",
+        msgPh: "Descreva sua experiência de forma objetiva e profissional.",
+        photo: "Foto da pessoa ou da empresa (opcional)",
+        publishConsent: "Desejo enviar este depoimento para avaliação de publicação no site.",
+        dataConsent: "Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a",
+        submit: "Enviar depoimento"
+      },
+      en: {
+        title: "Testimonials",
+        subtitle: "Official page to receive and publish real testimonials from Databiomics clients and partners.",
+        h1: "Context-rich testimonials",
+        h1d: "Each publication includes project details to make the reading more useful and objective.",
+        h2: "Results-focused",
+        h2d: "Testimonials highlight practical impact, technical clarity, and value for business and research.",
+        h3: "Quality and transparency",
+        h3d: "Project and author details are collected to ensure context and authenticity.",
+        listTitle: "Published testimonials",
+        listSub: "Read experiences shared by Databiomics clients and partners.",
+        emptyState: "There are no published testimonials yet. Approved submissions will appear here.",
+        formTitle: "Submit a testimonial",
+        formSub: "Fill in the fields below to send your testimonial.",
+        projectLegend: "Project details",
+        projectName: "Project name*",
+        projectNamePh: "E.g., Clinical Metagenomics Pipeline",
+        projectType: "Project type (optional)",
+        projectTypePh: "E.g., Consulting / Training / Development",
+        personLegend: "Author details",
+        name: "Full name*",
+        namePh: "Your full name",
+        role: "Role/Position*",
+        rolePh: "E.g., Research Coordinator",
+        company: "Company/Institution*",
+        companyPh: "E.g., University X",
+        email: "Contact email*",
+        emailPh: "you@example.com",
+        phone: "Phone/WhatsApp (optional)",
+        phonePh: "+1 000 000 0000",
+        linkedin: "LinkedIn (optional)",
+        linkedinPh: "https://www.linkedin.com/in/...",
+        testimonialLegend: "Testimonial content",
+        msg: "Testimonial*",
+        msgPh: "Describe your experience in an objective and professional way.",
+        photo: "Photo of person or company (optional)",
+        publishConsent: "I want to submit this testimonial for publication review on the website.",
+        dataConsent: "I authorize the use of my data for contact, validation, and possible publication of the testimonial, according to the",
+        submit: "Submit testimonial"
+      },
+      es: {
+        title: "Testimonios",
+        subtitle: "Página oficial para recibir y publicar testimonios reales de clientes y socios de Databiomics.",
+        h1: "Testimonios con contexto",
+        h1d: "Cada publicación incluye información del proyecto para una lectura más útil y objetiva.",
+        h2: "Enfoque en resultados",
+        h2d: "Los testimonios destacan impacto práctico, claridad técnica y valor para negocio e investigación.",
+        h3: "Calidad y transparencia",
+        h3d: "Se recogen datos del proyecto y de la persona autora para garantizar contexto y autenticidad.",
+        listTitle: "Testimonios publicados",
+        listSub: "Conozca experiencias compartidas por clientes y socios de Databiomics.",
+        emptyState: "Aún no hay testimonios publicados. Los envíos aprobados aparecerán aquí.",
+        formTitle: "Enviar testimonio",
+        formSub: "Complete los datos para enviar su testimonio.",
+        projectLegend: "Datos del proyecto",
+        projectName: "Nombre del proyecto*",
+        projectNamePh: "Ej.: Pipeline de Metagenómica Clínica",
+        projectType: "Tipo de proyecto (opcional)",
+        projectTypePh: "Ej.: Consultoría / Capacitación / Desarrollo",
+        personLegend: "Datos de la persona autora",
+        name: "Nombre completo*",
+        namePh: "Su nombre completo",
+        role: "Cargo/Función*",
+        rolePh: "Ej.: Coordinadora de Investigación",
+        company: "Empresa/Institución*",
+        companyPh: "Ej.: Universidad X",
+        email: "Correo de contacto*",
+        emailPh: "usted@ejemplo.com",
+        phone: "Teléfono/WhatsApp (opcional)",
+        phonePh: "+34 600 000 000",
+        linkedin: "LinkedIn (opcional)",
+        linkedinPh: "https://www.linkedin.com/in/...",
+        testimonialLegend: "Contenido del testimonio",
+        msg: "Testimonio*",
+        msgPh: "Describa su experiencia de forma objetiva y profesional.",
+        photo: "Foto da pessoa ou da empresa (opcional)",
+        publishConsent: "Deseo enviar este testimonio para evaluación de publicación en el sitio.",
+        dataConsent: "Autorizo el uso de mis datos para contacto, validación y posible publicación del testimonio, de acuerdo con la",
+        submit: "Enviar testimonio"
+      }
+    };
+
+    const applyLang = (lang) => {
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
+        if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.dataset.i18nPlaceholder;
+        if (i18n[lang] && i18n[lang][key]) el.setAttribute('placeholder', i18n[lang][key]);
+      });
+      document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('is-active', b.dataset.lang === lang));
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    };
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+  })();
+</script>
