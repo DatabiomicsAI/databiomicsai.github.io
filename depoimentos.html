@@ -19,7 +19,7 @@ lang: pt-BR
   <div class="interest-top">
     <div class="section-heading compact">
       <h1 id="depoimentos-title" data-i18n="title">Depoimentos</h1>
-      <p data-i18n="subtitle">Página oficial para recebimento e publicação de depoimentos reais de clientes e parceiros Databiomics.</p>
+      <p data-i18n="subtitle">Página para recebimento e publicação de depoimentos de clientes ou colaboradores da Databiomics.</p>
     </div>
     <div class="language-switcher" role="group" aria-label="Language switcher">
       <button type="button" class="lang-btn is-active" data-lang="pt">Português</button>
@@ -47,7 +47,7 @@ lang: pt-BR
 <section class="section alt" aria-labelledby="depoimentos-lista-title">
   <div class="section-heading compact">
     <h2 id="depoimentos-lista-title" data-i18n="listTitle">Depoimentos publicados</h2>
-    <p data-i18n="listSub">A publicação acontece somente após revisão e aprovação manual do responsável.</p>
+    <p data-i18n="listSub">Os depoimentos publicados aparecem após curadoria da equipe Databiomics.</p>
   </div>
   <div class="depoimentos-grid">
     <article class="depoimento-card">
@@ -60,39 +60,34 @@ lang: pt-BR
   <div class="interest-shell">
     <div class="section-heading compact">
       <h2 id="enviar-depoimento-title" data-i18n="formTitle">Enviar depoimento</h2>
-      <p data-i18n="formSub">Preencha os dados abaixo. O envio é recebido por e-mail e fica pendente até sua aprovação.</p>
+      <p data-i18n="formSub">Preencha os dados abaixo para enviar seu depoimento à equipe Databiomics.</p>
     </div>
 
     <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Novo depoimento (pendente de aprovação) - Databiomics">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="status_publicacao" value="Pendente de aprovação manual do responsável Databiomics">
+      <input type="hidden" name="publicacao" value="Publicar apenas nome da pessoa ou empresa e LinkedIn (se informado)">
 
       <fieldset>
         <legend data-i18n="projectLegend">Dados do projeto</legend>
-        <label for="dep-projeto" data-i18n="projectName">Nome do projeto*</label>
-        <input id="dep-projeto" type="text" name="nome_projeto" required data-i18n-placeholder="projectNamePh" placeholder="Ex.: Pipeline de Metagenômica Clínica">
+        <label for="dep-projeto" data-i18n="projectName">Nome do projeto (opcional)</label>
+        <input id="dep-projeto" type="text" name="nome_projeto" data-i18n-placeholder="projectNamePh" placeholder="Ex.: Pipeline de Metagenômica Clínica">
 
         <label for="dep-tipo-projeto" data-i18n="projectType">Tipo de projeto (opcional)</label>
         <input id="dep-tipo-projeto" type="text" name="tipo_projeto" data-i18n-placeholder="projectTypePh" placeholder="Ex.: Consultoria / Treinamento / Desenvolvimento">
       </fieldset>
 
       <fieldset>
-        <legend data-i18n="personLegend">Dados da pessoa autora</legend>
-        <label for="dep-nome" data-i18n="name">Nome completo*</label>
-        <input id="dep-nome" type="text" name="nome_completo" required autocomplete="name" data-i18n-placeholder="namePh" placeholder="Seu nome completo">
+        <legend data-i18n="personLegend">Dados para identificação (não publicados automaticamente)</legend>
+        <label for="dep-nome" data-i18n="name">Nome da pessoa ou da empresa*</label>
+        <input id="dep-nome" type="text" name="nome_completo" required autocomplete="name" data-i18n-placeholder="namePh" placeholder="Nome da pessoa ou empresa">
 
-        <label for="dep-cargo" data-i18n="role">Cargo/Função*</label>
-        <input id="dep-cargo" type="text" name="cargo_funcao" required data-i18n-placeholder="rolePh" placeholder="Ex.: Coordenadora de Pesquisa">
+        <label for="dep-cargo" data-i18n="role">Cargo/Função (opcional)</label>
+        <input id="dep-cargo" type="text" name="cargo_funcao" data-i18n-placeholder="rolePh" placeholder="Ex.: Coordenadora de Pesquisa">
 
-        <label for="dep-empresa" data-i18n="company">Empresa/Instituição*</label>
-        <input id="dep-empresa" type="text" name="empresa_instituicao" required data-i18n-placeholder="companyPh" placeholder="Ex.: Universidade X">
-
-        <label for="dep-email" data-i18n="email">E-mail para contato*</label>
-        <input id="dep-email" type="email" name="email" required autocomplete="email" data-i18n-placeholder="emailPh" placeholder="voce@exemplo.com">
-
-        <label for="dep-telefone" data-i18n="phone">Telefone/WhatsApp (opcional)</label>
-        <input id="dep-telefone" type="text" name="telefone" data-i18n-placeholder="phonePh" placeholder="+55 51 99999-9999">
+        <label for="dep-empresa" data-i18n="company">Empresa/Instituição (opcional)</label>
+        <input id="dep-empresa" type="text" name="empresa_instituicao" data-i18n-placeholder="companyPh" placeholder="Ex.: Universidade X">
 
         <label for="dep-linkedin" data-i18n="linkedin">LinkedIn (opcional)</label>
         <input id="dep-linkedin" type="url" name="linkedin" data-i18n-placeholder="linkedinPh" placeholder="https://www.linkedin.com/in/...">
@@ -103,7 +98,7 @@ lang: pt-BR
         <label for="dep-texto" data-i18n="msg">Depoimento*</label>
         <textarea id="dep-texto" name="depoimento" rows="7" required data-i18n-placeholder="msgPh" placeholder="Descreva sua experiência de forma objetiva e profissional."></textarea>
 
-        <label for="dep-foto" data-i18n="photo">Foto da pessoa ou da empresa (opcional)</label>
+        <label for="dep-foto" data-i18n="photo">Envie sua foto ou da empresa (opcional)</label>
         <input id="dep-foto" type="file" name="foto" accept="image/*">
 
         <label>
@@ -113,12 +108,11 @@ lang: pt-BR
 
         <label>
           <input type="checkbox" name="consentimento_dados" required>
-          <span data-i18n="dataConsent">Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
+          <span data-i18n="dataConsent">Autorizo o uso dos dados fornecidos para validação e possível publicação do depoimento, conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
         </label>
       </fieldset>
 
-      <button class="button primary" type="submit" data-i18n="submit">Enviar depoimento para aprovação</button>
-      <p class="interest-note"><strong data-i18n="approvalTitle">Política de aprovação:</strong> <span data-i18n="approvalText">nenhum depoimento é publicado automaticamente; toda publicação depende de sua aprovação manual após recebimento por e-mail.</span></p>
+      <button class="button primary" type="submit" data-i18n="submit">Enviar depoimento</button>
     </form>
   </div>
 </section>
@@ -128,7 +122,7 @@ lang: pt-BR
     const i18n = {
       pt: {
         title: "Depoimentos",
-        subtitle: "Página oficial para recebimento e publicação de depoimentos reais de clientes e parceiros Databiomics.",
+        subtitle: "Página para recebimento e publicação de depoimentos de clientes ou colaboradores da Databiomics.",
         h1: "Depoimentos com contexto",
         h1d: "Cada publicação inclui informações do projeto para tornar a leitura mais útil e objetiva.",
         h2: "Foco em resultados",
@@ -136,41 +130,35 @@ lang: pt-BR
         h3: "Qualidade e transparência",
         h3d: "Os dados do projeto e da pessoa autora do depoimento são coletados para garantir contexto e autenticidade.",
         listTitle: "Depoimentos publicados",
-        listSub: "A publicação acontece somente após revisão e aprovação manual do responsável.",
+        listSub: "Os depoimentos publicados aparecem após curadoria da equipe Databiomics.",
         emptyState: "Ainda não há depoimentos publicados. Quando houver envios aprovados, eles aparecerão aqui.",
         formTitle: "Enviar depoimento",
-        formSub: "Preencha os dados abaixo. O envio é recebido por e-mail e fica pendente até sua aprovação.",
+        formSub: "Preencha os dados abaixo para enviar seu depoimento à equipe Databiomics.",
         projectLegend: "Dados do projeto",
-        projectName: "Nome do projeto*",
+        projectName: "Nome do projeto (opcional)",
         projectNamePh: "Ex.: Pipeline de Metagenômica Clínica",
         projectType: "Tipo de projeto (opcional)",
         projectTypePh: "Ex.: Consultoria / Treinamento / Desenvolvimento",
-        personLegend: "Dados da pessoa autora",
-        name: "Nome completo*",
-        namePh: "Seu nome completo",
-        role: "Cargo/Função*",
+        personLegend: "Dados para identificação (não publicados automaticamente)",
+        name: "Nome da pessoa ou da empresa*",
+        namePh: "Nome da pessoa ou empresa",
+        role: "Cargo/Função (opcional)",
         rolePh: "Ex.: Coordenadora de Pesquisa",
-        company: "Empresa/Instituição*",
+        company: "Empresa/Instituição (opcional)",
         companyPh: "Ex.: Universidade X",
-        email: "E-mail para contato*",
-        emailPh: "voce@exemplo.com",
-        phone: "Telefone/WhatsApp (opcional)",
-        phonePh: "+55 51 99999-9999",
         linkedin: "LinkedIn (opcional)",
         linkedinPh: "https://www.linkedin.com/in/...",
         testimonialLegend: "Conteúdo do depoimento",
         msg: "Depoimento*",
         msgPh: "Descreva sua experiência de forma objetiva e profissional.",
-        photo: "Foto da pessoa ou da empresa (opcional)",
+        photo: "Envie sua foto ou da empresa (opcional)",
         publishConsent: "Desejo enviar este depoimento para avaliação de publicação no site.",
-        dataConsent: "Autorizo o uso dos dados fornecidos para contato, validação e possível publicação do depoimento, conforme a",
-        submit: "Enviar depoimento para aprovação",
-        approvalTitle: "Política de aprovação:",
-        approvalText: "nenhum depoimento é publicado automaticamente; toda publicação depende de sua aprovação manual após recebimento por e-mail."
+        dataConsent: "Autorizo o uso dos dados fornecidos para validação e possível publicação do depoimento, conforme a",
+        submit: "Enviar depoimento"
       },
       en: {
         title: "Testimonials",
-        subtitle: "Official page to receive and publish real testimonials from Databiomics clients and partners.",
+        subtitle: "Page to receive and publish testimonials from Databiomics clients or collaborators.",
         h1: "Context-rich testimonials",
         h1d: "Each publication includes project details to make the reading more useful and objective.",
         h2: "Results-focused",
@@ -178,41 +166,35 @@ lang: pt-BR
         h3: "Quality and transparency",
         h3d: "Project and author details are collected to ensure context and authenticity.",
         listTitle: "Published testimonials",
-        listSub: "Publication happens only after manual review and approval.",
+        listSub: "Published testimonials appear after curation by the Databiomics team.",
         emptyState: "There are no published testimonials yet. Approved submissions will appear here.",
         formTitle: "Submit a testimonial",
-        formSub: "Fill in the fields below. The submission is received by email and stays pending until your approval.",
+        formSub: "Fill in the fields below to submit your testimonial to the Databiomics team.",
         projectLegend: "Project details",
-        projectName: "Project name*",
+        projectName: "Project name (optional)",
         projectNamePh: "E.g., Clinical Metagenomics Pipeline",
         projectType: "Project type (optional)",
         projectTypePh: "E.g., Consulting / Training / Development",
-        personLegend: "Author details",
-        name: "Full name*",
-        namePh: "Your full name",
-        role: "Role/Position*",
+        personLegend: "Identification details (not automatically published)",
+        name: "Person or company name*",
+        namePh: "Person or company name",
+        role: "Role/Position (optional)",
         rolePh: "E.g., Research Coordinator",
-        company: "Company/Institution*",
+        company: "Company/Institution (optional)",
         companyPh: "E.g., University X",
-        email: "Contact email*",
-        emailPh: "you@example.com",
-        phone: "Phone/WhatsApp (optional)",
-        phonePh: "+1 000 000 0000",
         linkedin: "LinkedIn (optional)",
         linkedinPh: "https://www.linkedin.com/in/...",
         testimonialLegend: "Testimonial content",
         msg: "Testimonial*",
         msgPh: "Describe your experience in an objective and professional way.",
-        photo: "Photo of person or company (optional)",
+        photo: "Upload your photo or company photo (optional)",
         publishConsent: "I want to submit this testimonial for publication review on the website.",
-        dataConsent: "I authorize the use of my data for contact, validation, and possible publication of the testimonial, according to the",
-        submit: "Submit testimonial for approval",
-        approvalTitle: "Approval policy:",
-        approvalText: "no testimonial is auto-published; every publication depends on your manual approval after email receipt."
+        dataConsent: "I authorize the use of my data for validation and possible publication of the testimonial, according to the",
+        submit: "Submit testimonial"
       },
       es: {
         title: "Testimonios",
-        subtitle: "Página oficial para recibir y publicar testimonios reales de clientes y socios de Databiomics.",
+        subtitle: "Página para recibir y publicar testimonios de clientes o colaboradores de Databiomics.",
         h1: "Testimonios con contexto",
         h1d: "Cada publicación incluye información del proyecto para una lectura más útil y objetiva.",
         h2: "Enfoque en resultados",
@@ -220,37 +202,31 @@ lang: pt-BR
         h3: "Calidad y transparencia",
         h3d: "Se recogen datos del proyecto y de la persona autora para garantizar contexto y autenticidad.",
         listTitle: "Testimonios publicados",
-        listSub: "La publicación ocurre solo después de revisión y aprobación manual.",
+        listSub: "Los testimonios publicados aparecen después de la curaduría del equipo Databiomics.",
         emptyState: "Aún no hay testimonios publicados. Los envíos aprobados aparecerán aquí.",
         formTitle: "Enviar testimonio",
-        formSub: "Complete los datos. El envío se recibe por correo y queda pendiente hasta su aprobación.",
+        formSub: "Complete los datos para enviar su testimonio al equipo Databiomics.",
         projectLegend: "Datos del proyecto",
-        projectName: "Nombre del proyecto*",
+        projectName: "Nombre del proyecto (opcional)",
         projectNamePh: "Ej.: Pipeline de Metagenómica Clínica",
         projectType: "Tipo de proyecto (opcional)",
         projectTypePh: "Ej.: Consultoría / Capacitación / Desarrollo",
-        personLegend: "Datos de la persona autora",
-        name: "Nombre completo*",
-        namePh: "Su nombre completo",
-        role: "Cargo/Función*",
+        personLegend: "Datos de identificación (no se publican automáticamente)",
+        name: "Nombre de la persona o empresa*",
+        namePh: "Nombre de la persona o empresa",
+        role: "Cargo/Función (opcional)",
         rolePh: "Ej.: Coordinadora de Investigación",
-        company: "Empresa/Institución*",
+        company: "Empresa/Institución (opcional)",
         companyPh: "Ej.: Universidad X",
-        email: "Correo de contacto*",
-        emailPh: "usted@ejemplo.com",
-        phone: "Teléfono/WhatsApp (opcional)",
-        phonePh: "+34 600 000 000",
         linkedin: "LinkedIn (opcional)",
         linkedinPh: "https://www.linkedin.com/in/...",
         testimonialLegend: "Contenido del testimonio",
         msg: "Testimonio*",
         msgPh: "Describa su experiencia de forma objetiva y profesional.",
-        photo: "Foto da pessoa ou da empresa (opcional)",
+        photo: "Envíe su foto o la de la empresa (opcional)",
         publishConsent: "Deseo enviar este testimonio para evaluación de publicación en el sitio.",
-        dataConsent: "Autorizo el uso de mis datos para contacto, validación y posible publicación del testimonio, de acuerdo con la",
-        submit: "Enviar testimonio para aprobación",
-        approvalTitle: "Política de aprobación:",
-        approvalText: "ningún testimonio se publica automáticamente; toda publicación depende de su aprobación manual tras recibir el correo."
+        dataConsent: "Autorizo el uso de mis datos para validación y posible publicación del testimonio, de acuerdo con la",
+        submit: "Enviar testimonio"
       }
     };
 
@@ -265,10 +241,17 @@ lang: pt-BR
       });
       document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('is-active', b.dataset.lang === lang));
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+      localStorage.setItem('siteLang', lang);
     };
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.addEventListener('click', () => applyLang(btn.dataset.lang));
     });
+
+    document.addEventListener('site-language-changed', (event) => {
+      if (event?.detail?.lang) applyLang(event.detail.lang);
+    });
+
+    applyLang(localStorage.getItem('siteLang') || 'pt');
   })();
 </script>
