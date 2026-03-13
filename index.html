@@ -20,17 +20,17 @@ layout: landing
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-grid">
     <div class="hero-content">
-      <p class="hero-eyebrow">Take the first step towards a future of innovation &amp; excellence</p>
+      <p class="hero-eyebrow" data-i18n-key="hero_eyebrow">Dê o primeiro passo rumo a um futuro de inovação e excelência</p>
       <h1 id="hero-title">Leandro de Mattos Pereira</h1>
-      <p class="hero-subtitle">Bioinformática, IA aplicada à ciência de dados ômicos e consultoria em análises avançadas.</p>
+      <p class="hero-subtitle" data-i18n-key="hero_subtitle">Bioinformática, IA aplicada à ciência de dados ômicos e consultoria em análises avançadas.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#contato">Agendar conversa</a>
-        <a class="button ghost" href="http://lattes.cnpq.br/0378658543221383" target="_blank" rel="noreferrer">Ver CV Lattes</a>
+        <a class="button primary" href="#contato" data-i18n-key="hero_cta_schedule">Agendar conversa</a>
+        <a class="button ghost" href="http://lattes.cnpq.br/0378658543221383" target="_blank" rel="noreferrer" data-i18n-key="hero_cta_cv">Ver CV Lattes</a>
       </div>
       <ul class="hero-highlights">
-        <li>Genômica, transcriptômica, proteômica e metagenômica</li>
-        <li>Machine learning, NLP, deep learning e pipelines reprodutíveis</li>
-        <li>Treinamentos, consultorias e projetos de P&amp;D</li>
+        <li data-i18n-key="hero_highlight_1">Genômica, transcriptômica, proteômica e metagenômica</li>
+        <li data-i18n-key="hero_highlight_2">Machine learning, NLP, deep learning e pipelines reprodutíveis</li>
+        <li data-i18n-key="hero_highlight_3">Treinamentos, consultorias e projetos de P&amp;D</li>
       </ul>
     </div>
     <div class="hero-card">
@@ -484,7 +484,7 @@ layout: landing
         }
       };
 
-      let currentLang = "pt";
+      let currentLang = localStorage.getItem("siteLang") || "pt";
       const form = document.getElementById("interest-form");
 
       function applyLanguage(lang) {
@@ -497,10 +497,15 @@ layout: landing
         document.querySelectorAll(".lang-btn").forEach((btn) => {
           btn.classList.toggle("is-active", btn.dataset.lang === lang);
         });
+        localStorage.setItem("siteLang", lang);
       }
 
       document.querySelectorAll(".lang-btn").forEach((btn) => {
         btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+      });
+
+      document.addEventListener("site-language-changed", (event) => {
+        if (event?.detail?.lang) applyLanguage(event.detail.lang);
       });
 
       applyLanguage(currentLang);
@@ -510,35 +515,35 @@ layout: landing
 
 <section id="contato" class="section contact">
   <div class="section-heading">
-    <h2>Need Support? We’ve Got Your Back Anytime!</h2>
-    <p>Entre em contato para consultorias, cursos e projetos personalizados.</p>
+    <h2 data-i18n-key="contact_title">Precisa de suporte? Estamos com você a qualquer momento!</h2>
+    <p data-i18n-key="contact_subtitle">Entre em contato para consultorias, cursos e projetos personalizados.</p>
   </div>
   <div class="contact-grid">
     <div class="contact-card">
-      <h3>Fale comigo</h3>
+      <h3 data-i18n-key="contact_talk">Fale comigo</h3>
       <p><strong>Skype:</strong> mattoslmp</p>
-      <p><strong>Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
+      <p><strong data-i18n-key="contact_hours_label">Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
       <p><strong>Email:</strong> <a href="mailto:databiomics@gmail.com">databiomics@gmail.com</a></p>
       <div class="contact-actions">
-        <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer">Enviar mensagem no WhatsApp</a>
-        <a class="button ghost" href="mailto:databiomics@gmail.com?subject=Contato%20via%20site%20Databiomics">Enviar e-mail</a>
+        <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
+        <a class="button ghost" href="mailto:databiomics@gmail.com?subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
       </div>
-      <p class="contact-note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
+      <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
     </div>
     <div class="contact-card">
-      <h3>Caixa de mensagem</h3>
+      <h3 data-i18n-key="message_box">Caixa de mensagem</h3>
       <form class="contact-form" action="https://formsubmit.co/databiomics@gmail.com" method="post">
         <label>
-          Nome completo
+          <span data-i18n-key="full_name">Nome completo</span>
           <input type="text" name="full-name" required>
         </label>
         <label>
-          E-mail
+          <span data-i18n-key="email_label">E-mail</span>
           <input type="email" name="contact-email" required>
         </label>
         <label>
-          Mensagem
-          <textarea name="message" rows="4" placeholder="Como posso ajudar?"></textarea>
+          <span data-i18n-key="message_label">Mensagem</span>
+          <textarea name="message" rows="4" data-i18n-placeholder-key="message_placeholder" placeholder="Como posso ajudar?"></textarea>
         </label>
         <label class="checkbox">
           <input type="checkbox" name="privacy_consent_contact" required>
@@ -546,7 +551,7 @@ layout: landing
         </label>
         <input type="hidden" name="_subject" value="Novo contato via site - Caixa de mensagem">
         <input type="hidden" name="_captcha" value="false">
-        <button class="button primary" type="submit">Enviar mensagem por e-mail</button>
+        <button class="button primary" type="submit" data-i18n-key="send_message_btn">Enviar mensagem por e-mail</button>
       </form>
     </div>
   </div>
@@ -555,12 +560,12 @@ layout: landing
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-block">
-      <h2>Contato para agendamento de serviços</h2>
-      <p>Agende pelo E-mail: <a href="mailto:databiomics@gmail.com">databiomics@gmail.com</a></p>
+      <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
+      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:databiomics@gmail.com">databiomics@gmail.com</a></p>
     </div>
     <div class="footer-block">
-      <h2>Visitante</h2>
-      <p id="visitor-country">Carregando país do visitante...</p>
+      <h2 data-i18n-key="visitor_title">Visitante</h2>
+      <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
       <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
     </div>
@@ -576,17 +581,36 @@ layout: landing
     whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
   }
 
+  const visitorCountryState = { name: null };
+
+  const applyVisitorCountryLabel = () => {
+    const countryLabel = document.getElementById("visitor-country");
+    if (!countryLabel) return;
+    const lang = localStorage.getItem("siteLang") || "pt";
+    const dicts = {
+      pt: { loading: "Carregando país do visitante...", prefix: "País do visitante: ", error: "Não foi possível identificar o país do visitante." },
+      en: { loading: "Loading visitor country...", prefix: "Visitor country: ", error: "Could not identify visitor country." },
+      es: { loading: "Cargando país del visitante...", prefix: "País del visitante: ", error: "No fue posible identificar el país del visitante." }
+    };
+    const d = dicts[lang] || dicts.pt;
+    if (visitorCountryState.name === null) {
+      countryLabel.textContent = d.loading;
+      return;
+    }
+    if (visitorCountryState.name === false) {
+      countryLabel.textContent = d.error;
+      return;
+    }
+    countryLabel.textContent = `${d.prefix}${visitorCountryState.name}`;
+  };
+
   fetch("https://ipapi.co/json/")
     .then((response) => response.json())
     .then((data) => {
-      const countryName = data.country_name || "País não identificado";
       const countryCode = (data.country_code || "").toLowerCase();
-      const countryLabel = document.getElementById("visitor-country");
       const flagImage = document.getElementById("visitor-flag");
-
-      if (countryLabel) {
-        countryLabel.textContent = `País do visitante: ${countryName}`;
-      }
+      visitorCountryState.name = data.country_name || "-";
+      applyVisitorCountryLabel();
 
       if (flagImage && countryCode) {
         flagImage.src = `https://flagcdn.com/${countryCode}.svg`;
@@ -594,9 +618,9 @@ layout: landing
       }
     })
     .catch(() => {
-      const countryLabel = document.getElementById("visitor-country");
-      if (countryLabel) {
-        countryLabel.textContent = "Não foi possível identificar o país do visitante.";
-      }
+      visitorCountryState.name = false;
+      applyVisitorCountryLabel();
     });
+
+  document.addEventListener("site-language-changed", applyVisitorCountryLabel);
 </script>

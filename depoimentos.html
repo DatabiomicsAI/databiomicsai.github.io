@@ -265,10 +265,17 @@ lang: pt-BR
       });
       document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('is-active', b.dataset.lang === lang));
       document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+      localStorage.setItem('siteLang', lang);
     };
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.addEventListener('click', () => applyLang(btn.dataset.lang));
     });
+
+    document.addEventListener('site-language-changed', (event) => {
+      if (event?.detail?.lang) applyLang(event.detail.lang);
+    });
+
+    applyLang(localStorage.getItem('siteLang') || 'pt');
   })();
 </script>
