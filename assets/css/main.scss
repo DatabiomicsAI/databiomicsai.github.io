@@ -941,3 +941,104 @@ footer  {
   margin-top: 0.4rem;
   margin-bottom: 1rem;
 }
+
+.appearance-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1200;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--text) 20%, transparent);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.appearance-btn {
+  border: 1px solid color-mix(in srgb, var(--text) 25%, transparent);
+  background: var(--bg-secondary);
+  color: var(--text);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.appearance-btn:hover {
+  border-color: var(--links);
+}
+
+.appearance-btn.is-active {
+  border-color: var(--links);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--links) 18%, transparent);
+}
+
+.appearance-btn-dot {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.appearance-btn-text {
+  padding: 0.55rem 0.8rem;
+  font-weight: 700;
+}
+
+.dot {
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.dot-light {
+  background: #fff;
+}
+
+.dot-dark {
+  background: #000;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+html.colorblind-mode {
+  --bg: #ffffff;
+  --bg-secondary: #eef3f8;
+  --headings: #0b1f3a;
+  --text: #12233b;
+  --links: #0057b8;
+  --highlight: #ffd200;
+  --code-text: #7a2f00;
+  --share-text: #3f4f66;
+}
+
+html.colorblind-mode a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+html.colorblind-mode .button.primary {
+  background: #0057b8;
+  border-color: #0057b8;
+  color: #fff;
+}
+
+html.colorblind-mode .button.ghost {
+  border-color: #0057b8;
+  color: #0057b8;
+}
+
+@media (max-width: 700px) {
+  .appearance-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
+    transform: scale(0.94);
+    transform-origin: top right;
+  }
+}
