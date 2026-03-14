@@ -15,11 +15,33 @@
   const root = document.documentElement;
   const body = document.body;
 
+  const legacyWords = ['auto', 'light', 'dark', 'colorblind', 'claro', 'escuro', 'oscuro', 'daltônico', 'daltonico'];
 
-  const legacyControls = Array.from(document.querySelectorAll('.theme-toggle, .theme-toggle-container, .theme-switcher, [data-theme-toggle]'));
-  legacyControls.forEach((el) => el.remove());
+  const removeLegacyAppearanceControls = () => {
+    const legacySelectors = '.theme-toggle, .theme-toggle-container, .theme-switcher, [data-theme-toggle]';
+    document.querySelectorAll(legacySelectors).forEach((el) => el.remove());
+
+    const allToggles = Array.from(document.querySelectorAll('.appearance-toggle'));
+    allToggles.slice(1).forEach((toggle) => toggle.remove());
+
+    const candidates = Array.from(document.querySelectorAll('div, nav, section, aside, ul, ol'));
+    candidates.forEach((el) => {
+      if (el.classList.contains('appearance-toggle') || el.closest('.appearance-toggle')) return;
+      if (el.classList.contains('global-language-switcher') || el.closest('.global-language-switcher')) return;
+
+      const controls = Array.from(el.querySelectorAll('button, a, label, span'));
+      if (!controls.length || controls.length > 20) return;
+
+      const textBlob = controls.map((c) => (c.textContent || '').trim().toLowerCase()).join(' | ');
+      const hitCount = legacyWords.reduce((acc, word) => acc + (textBlob.includes(word) ? 1 : 0), 0);
+
+      if (hitCount >= 3) el.remove();
+    });
+  };
+
+  removeLegacyAppearanceControls();
+
   const toggles = Array.from(document.querySelectorAll('.appearance-toggle'));
-  toggles.slice(1).forEach((toggle) => toggle.remove());
   const primaryToggle = toggles[0];
   if (!primaryToggle) return;
 
@@ -49,6 +71,9 @@
   buttons.forEach((btn) => {
     btn.addEventListener('click', () => applyAppearance(btn.dataset.appearance));
   });
+
+  const observer = new MutationObserver(() => removeLegacyAppearanceControls());
+  observer.observe(document.body, { childList: true, subtree: true });
 
   const initial = localStorage.getItem(STORAGE_KEY) || root.getAttribute('data-theme') || 'light';
   applyAppearance(initial);
