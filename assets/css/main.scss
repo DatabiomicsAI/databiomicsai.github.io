@@ -787,6 +787,36 @@ footer  {
   color: #0f172a;
 }
 
+
+.theme-mode-switcher {
+  position: sticky;
+  top: 3.8rem;
+  z-index: 19;
+  margin: 0.35rem auto 0;
+  width: fit-content;
+  display: inline-flex;
+  gap: 0.35rem;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  padding: 0.3rem;
+}
+
+.theme-mode-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text);
+}
+
+.theme-mode-btn.is-active {
+  background: #f59e0b;
+  color: #111827;
+}
+
 .visitor-count {
   font-weight: 700;
   margin-top: 0.55rem;
