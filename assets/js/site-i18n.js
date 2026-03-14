@@ -98,6 +98,7 @@
   ];
 
   const translationCachePrefix = 'site-auto-i18n';
+  const myMemoryBlockedUntilKey = 'site-auto-i18n-mymemory-blocked-until';
   const autoTranslateInFlight = new Map();
 
   const shouldSkipTextNode = (node) => {
@@ -171,18 +172,62 @@
   };
 
 
+  const purgeWarningCacheEntries = () => {
+    try {
+      for (let i = localStorage.length - 1; i >= 0; i -= 1) {
+        const key = localStorage.key(i);
+        if (!key || !key.startsWith(`${translationCachePrefix}:`)) continue;
+        const value = localStorage.getItem(key);
+        if (hasMyMemoryWarning(value)) localStorage.removeItem(key);
+      }
+    } catch (_) {
+      // ignore storage failures
+    }
+  };
+
+  const getMyMemoryBlockedUntil = () => {
+    try {
+      return Number(localStorage.getItem(myMemoryBlockedUntilKey) || 0);
+    } catch (_) {
+      return 0;
+    }
+  };
+
+  const isMyMemoryTemporarilyBlocked = () => Date.now() < getMyMemoryBlockedUntil();
+
+  const blockMyMemoryForHours = (hours = 13) => {
+    try {
+      localStorage.setItem(myMemoryBlockedUntilKey, String(Date.now() + hours * 60 * 60 * 1000));
+    } catch (_) {
+      // ignore storage failures
+    }
+  };
+
+
 
   const sanitizeMyMemoryWarning = (translatedText) => {
     if (typeof translatedText !== 'string') return '';
 
-    const warningPattern = /\s*MYMEMORY WARNING:[\s\S]*$/gi;
+    const warningPattern = /(?:\s*MYMEMORY WARNING:[\s\S]*$)|(?:\s*VISIT\s+HTTPS?:\/\/MYMEMORY\.TRANSLATED\.NET\/DOC\/USAGELIMITS\.PHP[\s\S]*$)/gi;
     const cleaned = translatedText.replace(warningPattern, '').trim();
     if (hasMyMemoryWarning(cleaned)) return '';
     return cleaned;
   };
 
+  const scrubMyMemoryWarningsFromDom = () => {
+    const warningPattern = /(?:\s*MYMEMORY WARNING:[\s\S]*$)|(?:\s*VISIT\s+HTTPS?:\/\/MYMEMORY\.TRANSLATED\.NET\/DOC\/USAGELIMITS\.PHP[\s\S]*$)/gi;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const current = node.textContent || '';
+      if (!hasMyMemoryWarning(current)) continue;
+      node.textContent = current.replace(warningPattern, '').trim();
+    }
+  };
+
   const fetchAutoTranslation = async (text, lang) => {
     if (!text.trim() || lang === translationBaseLang) return text;
+    if (isMyMemoryTemporarilyBlocked()) return text;
     const cached = readCachedTranslation(lang, text);
     if (cached) return cached;
 
@@ -192,10 +237,17 @@
     const promise = fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${lang}`)
       .then((r) => r.json())
       .then((payload) => {
-        if (Number(payload?.responseStatus) >= 400) return text;
+        const status = Number(payload?.responseStatus || 0);
+        if (status >= 400) {
+          if (hasMyMemoryWarning(JSON.stringify(payload || {}))) blockMyMemoryForHours();
+          return text;
+        }
 
         const translated = sanitizeMyMemoryWarning(payload?.responseData?.translatedText);
-        if (hasMyMemoryWarning(translated)) return text;
+        if (hasMyMemoryWarning(translated)) {
+          blockMyMemoryForHours();
+          return text;
+        }
         if (translated) {
           writeCachedTranslation(lang, text, translated);
           return translated;
@@ -289,9 +341,11 @@
     });
     localStorage.setItem('siteLang', lang);
     await applyInternalFullPageTranslation(lang);
+    scrubMyMemoryWarningsFromDom();
     document.dispatchEvent(new CustomEvent('site-language-changed', { detail: { lang, dict } }));
   };
 
+  purgeWarningCacheEntries();
   captureOriginalTranslatableState();
   const current = localStorage.getItem('siteLang') || 'pt';
   initGoogleTranslator();
