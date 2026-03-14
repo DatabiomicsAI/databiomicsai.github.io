@@ -19,7 +19,72 @@
       hero_eyebrow: 'Da el primer paso hacia un futuro de innovación y excelencia', hero_subtitle: 'Bioinformática, IA aplicada a la ciencia de datos ómicos y consultoría en análisis avanzados.', hero_cta_schedule: 'Agendar conversación', hero_cta_cv: 'Ver CV Lattes', hero_highlight_1: 'Genómica, transcriptómica, proteómica y metagenómica', hero_highlight_2: 'Machine learning, NLP, deep learning y pipelines reproducibles', hero_highlight_3: 'Capacitaciones, consultorías y proyectos de I+D', contact_title: '¿Necesitas soporte? ¡Estamos contigo en todo momento!', contact_subtitle: 'Contáctame para consultorías, cursos y proyectos personalizados.', contact_talk: 'Habla conmigo', contact_hours_label: 'Horario:', contact_whatsapp: 'Enviar mensaje por WhatsApp', contact_email_btn: 'Enviar correo', contact_note: 'La atención puede iniciarse por WhatsApp o correo. El número no se muestra en la página.', message_box: 'Buzón de mensajes', full_name: 'Nombre completo', email_label: 'Correo electrónico', message_label: 'Mensaje', message_placeholder: '¿Cómo puedo ayudarte?', send_message_btn: 'Enviar mensaje por correo', footer_booking: 'Contacto para agendar servicios', footer_booking_text: 'Agenda por correo:', visitor_title: 'Visitante', visitor_country_loading: 'Cargando país del visitante...', visitor_country_prefix: 'País del visitante: ', visitor_country_error: 'No fue posible identificar el país del visitante.', lead_title: 'Desbloquea tu potencial en IA y ML', lead_intro: 'Solicita orientación personalizada para tus proyectos y equipos.', lead_full_name: 'Nombre completo', lead_name_ph: 'Su nombre completo', lead_phone: 'Teléfono', lead_phone_ph: 'Su teléfono / WhatsApp', lead_email: 'Correo electrónico', lead_email_ph: 'suemail@dominio.com', lead_terms: 'Acepto los Términos y Condiciones', lead_updates: 'Recibir actualizaciones por WhatsApp', lead_submit: 'Quiero orientación especializada', lead_footnote: 'Recibirás respuesta en hasta 24 horas.', stats_title: 'Impacto y diferenciales', stats_subtitle: 'Enfoque en resultados aplicados, eficiencia analítica y capacitación de equipos multidisciplinarios.', stats_card2_title: 'Proyectos internacionales', stats_card2_text: 'colaboraciones con universidades, centros de investigación y empresas.', stats_card3_title: 'IA aplicada', stats_card3_text: 'modelos predictivos y NLP para acelerar el descubrimiento científico.', stats_card4_title: 'Capacitaciones personalizadas', stats_card4_text: 'de básico a avanzado, con foco en práctica y reproducibilidad.', about_title: 'Sobre', about_subtitle: 'Investigador y consultor con trayectoria en bioinformática, biología computacional y ciencia de datos aplicada a salud, biodiversidad y biotecnología.', about_exp_title: 'Experiencia', about_li1: 'Ciencia de datos ómicos y pipelines reproducibles', about_li2: 'Modelado predictivo y aprendizaje supervisado/no supervisado', about_li3: 'Desarrollo de aplicaciones con Python, R, PostgreSQL, Flask y Streamlit', help_title: '¿Cómo puedo ayudar a tu organización?', help_subtitle: 'Transformo datos complejos en decisiones claras, con entregables estructurados y comunicación objetiva.', courses_title: 'Cursos, Charlas y Entrenamientos', courses_subtitle: 'Programas modulares para equipos académicos y corporativos con contenido práctico y aplicado.', videos_title: 'Galería de videos · Databiomics', newsletter_title: 'Newsletter Databiomics', promo_title: 'Divulgación de cursos (opcional)', promo_subtitle: 'Espacio reservado para campañas, lanzamientos e inscripciones.', programs_title: 'Programas destacados', programs_subtitle: 'Proyectos estructurados para acelerar resultados e innovación científica', visitor_unavailable: 'Total de visitas: no disponible en este momento.', top_countries_title: 'Principales países visitantes'
     }
   };
+  const translationBaseLang = 'pt';
+  let googleTranslateReady = false;
 
+  const setGoogleTranslateCookie = (lang) => {
+    const targetLang = dictionaries[lang] ? lang : translationBaseLang;
+    const value = `/pt/${targetLang}`;
+    document.cookie = `googtrans=${value}; path=/`;
+    document.cookie = `googtrans=${value}; domain=.${window.location.hostname}; path=/`;
+  };
+
+  const triggerGoogleCombo = (lang, attempt = 0) => {
+    const combo = document.querySelector('.goog-te-combo');
+    if (!combo) {
+      if (attempt < 20) {
+        setTimeout(() => triggerGoogleCombo(lang, attempt + 1), 150);
+      }
+      return;
+    }
+
+    combo.value = lang;
+    combo.dispatchEvent(new Event('change'));
+  };
+
+  const applyGoogleTranslate = (lang) => {
+    const targetLang = dictionaries[lang] ? lang : translationBaseLang;
+    setGoogleTranslateCookie(targetLang);
+    if (!googleTranslateReady) {
+      setTimeout(() => applyGoogleTranslate(targetLang), 250);
+      return;
+    }
+    triggerGoogleCombo(targetLang);
+  };
+
+  const initGoogleTranslator = () => {
+    window.googleTranslateElementInit = () => {
+      if (!window.google || !window.google.translate) return;
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: translationBaseLang,
+          includedLanguages: Object.keys(dictionaries).join(','),
+          autoDisplay: false,
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+      );
+      googleTranslateReady = true;
+      const lang = localStorage.getItem('siteLang') || translationBaseLang;
+      applyGoogleTranslate(lang);
+    };
+
+    if (window.google && window.google.translate) {
+      window.googleTranslateElementInit();
+      return;
+    }
+
+    if (document.querySelector('script[data-google-translate-script="true"]')) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.dataset.googleTranslateScript = 'true';
+    document.head.appendChild(script);
+  };
+
+  window.setGoogleTranslateCookie = setGoogleTranslateCookie;
+  window.applyGoogleTranslate = applyGoogleTranslate;
 
   const safeApplyExternalTranslator = (lang) => {
     try {
@@ -54,6 +119,7 @@
   };
 
   const current = localStorage.getItem('siteLang') || 'pt';
+  initGoogleTranslator();
   document.querySelectorAll('.global-lang-btn').forEach((btn) => {
     btn.addEventListener('click', () => applyLanguage(btn.dataset.globalLang));
   });
