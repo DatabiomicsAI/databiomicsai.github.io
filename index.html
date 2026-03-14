@@ -742,11 +742,14 @@ layout: landing
       li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
 
-      const chip = document.createElement("span");
-      chip.className = "country-flag-chip";
-      chip.title = `${code}: ${value}`;
-      chip.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy">`;
-      stripEl.appendChild(chip);
+      const card = document.createElement("span");
+      card.className = "country-flag-chip";
+      card.title = `${code}: ${value}`;
+      card.innerHTML = `
+        <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="${code}" loading="lazy">
+        <strong class="country-flag-count">${value}</strong>
+      `;
+      stripEl.appendChild(card);
     });
   };
 
