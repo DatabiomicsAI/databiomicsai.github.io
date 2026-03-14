@@ -36,6 +36,8 @@
       btn.classList.toggle('is-active', btn.dataset.globalLang === lang);
     });
     localStorage.setItem('siteLang', lang);
+    setGoogleTranslateCookie(lang);
+    setTimeout(() => applyGoogleTranslate(lang), 50);
     document.dispatchEvent(new CustomEvent('site-language-changed', { detail: { lang, dict } }));
   };
 
