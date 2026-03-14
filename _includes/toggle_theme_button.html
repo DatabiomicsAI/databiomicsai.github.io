@@ -1,0 +1,56 @@
+<div class="appearance-toggle" role="group" aria-label="Seletor de aparência">
+  <button type="button" class="appearance-btn appearance-btn-dot" data-appearance="light" aria-label="Modo claro" title="Modo claro">
+    <span class="dot dot-light" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="appearance-btn appearance-btn-dot" data-appearance="dark" aria-label="Modo escuro" title="Modo escuro">
+    <span class="dot dot-dark" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="appearance-btn appearance-btn-text" data-appearance="auto">Auto</button>
+  <button type="button" class="appearance-btn appearance-btn-text" data-appearance="colorblind">Daltônico</button>
+</div>
+
+<script>
+(() => {
+  const STORAGE_KEY = 'siteAppearanceMode';
+  const root = document.documentElement;
+  const body = document.body;
+
+
+  const legacyControls = Array.from(document.querySelectorAll('.theme-toggle, .theme-toggle-container, .theme-switcher, [data-theme-toggle]'));
+  legacyControls.forEach((el) => el.remove());
+  const toggles = Array.from(document.querySelectorAll('.appearance-toggle'));
+  toggles.slice(1).forEach((toggle) => toggle.remove());
+  const primaryToggle = toggles[0];
+  if (!primaryToggle) return;
+
+  const buttons = Array.from(primaryToggle.querySelectorAll('.appearance-btn'));
+
+  const syncButtonState = (mode) => {
+    buttons.forEach((btn) => btn.classList.toggle('is-active', btn.dataset.appearance === mode));
+  };
+
+  const applyAppearance = (mode) => {
+    const selectedMode = ['light', 'dark', 'auto', 'colorblind'].includes(mode) ? mode : 'light';
+    const resolvedTheme = selectedMode === 'colorblind' ? 'light' : selectedMode;
+
+    root.setAttribute('data-theme', resolvedTheme);
+    if (body) body.setAttribute('data-theme', resolvedTheme);
+
+    root.classList.toggle('colorblind-mode', selectedMode === 'colorblind');
+    if (body) body.classList.toggle('colorblind-mode', selectedMode === 'colorblind');
+
+    root.setAttribute('data-appearance-mode', selectedMode);
+    if (body) body.setAttribute('data-appearance-mode', selectedMode);
+
+    localStorage.setItem(STORAGE_KEY, selectedMode);
+    syncButtonState(selectedMode);
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => applyAppearance(btn.dataset.appearance));
+  });
+
+  const initial = localStorage.getItem(STORAGE_KEY) || root.getAttribute('data-theme') || 'light';
+  applyAppearance(initial);
+})();
+</script>
