@@ -15,6 +15,9 @@
   const root = document.documentElement;
   const body = document.body;
 
+
+  const legacyControls = Array.from(document.querySelectorAll('.theme-toggle, .theme-toggle-container, .theme-switcher, [data-theme-toggle]'));
+  legacyControls.forEach((el) => el.remove());
   const toggles = Array.from(document.querySelectorAll('.appearance-toggle'));
   toggles.slice(1).forEach((toggle) => toggle.remove());
   const primaryToggle = toggles[0];

@@ -1073,3 +1073,11 @@ html.colorblind-mode .button.ghost {
     transform-origin: top right;
   }
 }
+
+
+.theme-toggle,
+.theme-toggle-container,
+.theme-switcher,
+[data-theme-toggle] {
+  display: none !important;
+}
