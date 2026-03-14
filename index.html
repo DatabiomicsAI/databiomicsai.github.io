@@ -589,7 +589,10 @@ layout: landing
       <h2 data-i18n-key="visitor_title">Visitante</h2>
       <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
-      <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
+      <div class="visitor-quick-overview">
+        <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
+        <div id="visitor-flags-strip" class="visitor-flags-strip" aria-label="Bandeiras dos países visitantes"></div>
+      </div>
       <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
       <div class="country-list-scroll">
         <ul id="visitor-country-list" class="visitor-country-list"></ul>
@@ -608,80 +611,206 @@ layout: landing
   }
 
   const visitorCountryState = { name: null };
+  const visitorTelemetryState = { total: null, topCountries: [] };
+  const countNamespace = "databiomicsai-github-io";
+
+  const visitorI18n = {
+    pt: {
+      loadingCountry: "Carregando país do visitante...",
+      countryPrefix: "País do visitante: ",
+      countryError: "Não foi possível identificar o país do visitante.",
+      totalPrefix: "Total de visitas: ",
+      totalLoading: "Total de visitas: carregando...",
+      totalUnavailable: "Total de visitas: indisponível no momento.",
+      noCountryData: "Sem dados por país ainda."
+    },
+    en: {
+      loadingCountry: "Loading visitor country...",
+      countryPrefix: "Visitor country: ",
+      countryError: "Could not identify visitor country.",
+      totalPrefix: "Total visits: ",
+      totalLoading: "Total visits: loading...",
+      totalUnavailable: "Total visits: unavailable at the moment.",
+      noCountryData: "No country data yet."
+    },
+    es: {
+      loadingCountry: "Cargando país del visitante...",
+      countryPrefix: "País del visitante: ",
+      countryError: "No fue posible identificar el país del visitante.",
+      totalPrefix: "Total de visitas: ",
+      totalLoading: "Total de visitas: cargando...",
+      totalUnavailable: "Total de visitas: no disponible en este momento.",
+      noCountryData: "Aún no hay datos por país."
+    }
+  };
+
+  const getLangDict = () => {
+    const lang = localStorage.getItem("siteLang") || "pt";
+    return visitorI18n[lang] || visitorI18n.pt;
+  };
+
+  const fetchJsonWithTimeout = async (url, timeoutMs = 7000) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, { signal: controller.signal, cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    } finally {
+      clearTimeout(timer);
+    }
+  };
+
+  const getVisitorCountry = async () => {
+    const providers = [
+      async () => {
+        const data = await fetchJsonWithTimeout("https://ipapi.co/json/");
+        return { code: data.country_code, name: data.country_name };
+      },
+      async () => {
+        const data = await fetchJsonWithTimeout("https://ipwho.is/");
+        if (data && data.success === false) throw new Error("ipwhois failed");
+        return { code: data.country_code, name: data.country };
+      },
+      async () => {
+        const data = await fetchJsonWithTimeout("https://ip-api.com/json/?fields=country,countryCode");
+        return { code: data.countryCode, name: data.country };
+      }
+    ];
+
+    for (const provider of providers) {
+      try {
+        const result = await provider();
+        const code = String(result.code || "").trim().toUpperCase();
+        const name = String(result.name || "").trim();
+        if (code && name) return { code, name };
+      } catch (err) {
+        // try next provider
+      }
+    }
+    throw new Error("Unable to resolve visitor country");
+  };
 
   const applyVisitorCountryLabel = () => {
     const countryLabel = document.getElementById("visitor-country");
     if (!countryLabel) return;
-    const lang = localStorage.getItem("siteLang") || "pt";
-    const dicts = {
-      pt: { loading: "Carregando país do visitante...", prefix: "País do visitante: ", error: "Não foi possível identificar o país do visitante." },
-      en: { loading: "Loading visitor country...", prefix: "Visitor country: ", error: "Could not identify visitor country." },
-      es: { loading: "Cargando país del visitante...", prefix: "País del visitante: ", error: "No fue posible identificar el país del visitante." }
-    };
-    const d = dicts[lang] || dicts.pt;
+    const d = getLangDict();
     if (visitorCountryState.name === null) {
-      countryLabel.textContent = d.loading;
+      countryLabel.textContent = d.loadingCountry;
       return;
     }
     if (visitorCountryState.name === false) {
-      countryLabel.textContent = d.error;
+      countryLabel.textContent = d.countryError;
       return;
     }
-    countryLabel.textContent = `${d.prefix}${visitorCountryState.name}`;
+    countryLabel.textContent = `${d.countryPrefix}${visitorCountryState.name}`;
   };
 
+  const applyVisitorTotalLabel = () => {
+    const countLabel = document.getElementById("visitor-count");
+    if (!countLabel) return;
+    const d = getLangDict();
+    if (visitorTelemetryState.total === null) {
+      countLabel.textContent = d.totalLoading;
+      return;
+    }
+    if (visitorTelemetryState.total === false) {
+      countLabel.textContent = d.totalUnavailable;
+      return;
+    }
+    countLabel.textContent = `${d.totalPrefix}${visitorTelemetryState.total}`;
+  };
 
   const renderTopCountries = () => {
     const listEl = document.getElementById("visitor-country-list");
-    if (!listEl) return;
+    const stripEl = document.getElementById("visitor-flags-strip");
+    if (!listEl || !stripEl) return;
+    const d = getLangDict();
 
-    const countryCodes = ["BR","PT","US","ES","AR","MX","CO","CL","DE","FR","GB","CA","IN","JP","AU"];
-    Promise.all(countryCodes.map((code) =>
-      fetch(`https://api.countapi.xyz/get/databiomicsai-github-io/site-visits-country-${code}`)
-        .then((r) => r.json())
-        .then((d) => ({ code, value: Number(d.value || 0) }))
-        .catch(() => ({ code, value: 0 }))
-    )).then((rows) => {
-      const items = rows.filter((r) => r.value > 0).sort((a, b) => b.value - a.value).slice(0, 10);
-      listEl.innerHTML = "";
-      if (!items.length) {
-        listEl.innerHTML = '<li class="country-row">Sem dados por país ainda.</li>';
-        return;
-      }
-      items.forEach(({ code, value }) => {
-        const li = document.createElement("li");
-        li.className = "country-row";
-        li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
-        listEl.appendChild(li);
-      });
+    listEl.innerHTML = "";
+    stripEl.innerHTML = "";
+
+    if (!visitorTelemetryState.topCountries.length) {
+      listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
+      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
+      return;
+    }
+
+    visitorTelemetryState.topCountries.forEach(({ code, value }) => {
+      const li = document.createElement("li");
+      li.className = "country-row";
+      li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
+      listEl.appendChild(li);
+
+      const chip = document.createElement("span");
+      chip.className = "country-flag-chip";
+      chip.title = `${code}: ${value}`;
+      chip.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy">`;
+      stripEl.appendChild(chip);
     });
   };
-  fetch("https://ipapi.co/json/")
-    .then((response) => response.json())
-    .then((data) => {
-      const countryCode = (data.country_code || "").toLowerCase();
-      const flagImage = document.getElementById("visitor-flag");
-      visitorCountryState.name = data.country_name || "-";
-      applyVisitorCountryLabel();
 
-      if (countryCode) {
-        fetch(`https://api.countapi.xyz/hit/databiomicsai-github-io/site-visits-country-${countryCode.toUpperCase()}`)
-          .finally(() => renderTopCountries());
-      } else {
-        renderTopCountries();
+  const loadTopCountries = async () => {
+    const countryCodes = ["BR","PT","US","ES","AR","MX","CO","CL","DE","FR","GB","CA","IN","JP","AU","IT","NL","BE","SE","CH","NO","DK","IE","PL","AT","FI","RU","CN","KR","ZA"];
+    const rows = await Promise.all(countryCodes.map(async (code) => {
+      try {
+        const d = await fetchJsonWithTimeout(`https://api.countapi.xyz/get/${countNamespace}/site-visits-country-${code}`);
+        return { code, value: Number(d.value || 0) };
+      } catch {
+        return { code, value: 0 };
       }
+    }));
 
-      if (flagImage && countryCode) {
-        flagImage.src = `https://flagcdn.com/${countryCode}.svg`;
+    visitorTelemetryState.topCountries = rows.filter((r) => r.value > 0).sort((a, b) => b.value - a.value);
+    renderTopCountries();
+  };
+
+  const registerVisitor = async () => {
+    applyVisitorCountryLabel();
+    applyVisitorTotalLabel();
+    renderTopCountries();
+
+    try {
+      const totalRes = await fetchJsonWithTimeout(`https://api.countapi.xyz/hit/${countNamespace}/site-visits`);
+      visitorTelemetryState.total = Number(totalRes.value || 0);
+    } catch {
+      visitorTelemetryState.total = false;
+    }
+    applyVisitorTotalLabel();
+
+    try {
+      const { code, name } = await getVisitorCountry();
+      visitorCountryState.name = name;
+      const flagImage = document.getElementById("visitor-flag");
+      if (flagImage) {
+        flagImage.src = `https://flagcdn.com/${code.toLowerCase()}.svg`;
         flagImage.hidden = false;
       }
-    })
-    .catch(() => {
-      visitorCountryState.name = false;
-      applyVisitorCountryLabel();
-      renderTopCountries();
-    });
 
-  document.addEventListener("site-language-changed", applyVisitorCountryLabel);
-  renderTopCountries();
+      try {
+        await fetchJsonWithTimeout(`https://api.countapi.xyz/hit/${countNamespace}/site-visits-country-${code}`);
+      } catch {
+        // still continue to render available rankings
+      }
+    } catch {
+      visitorCountryState.name = false;
+    }
+
+    applyVisitorCountryLabel();
+
+    try {
+      await loadTopCountries();
+    } catch {
+      visitorTelemetryState.topCountries = [];
+      renderTopCountries();
+    }
+  };
+
+  document.addEventListener("site-language-changed", () => {
+    applyVisitorCountryLabel();
+    applyVisitorTotalLabel();
+    renderTopCountries();
+  });
+
+  registerVisitor();
 </script>
