@@ -14,6 +14,7 @@ layout: landing
   <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
   <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">PlanoCursos</a>
   <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
+  <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie Projetos</a>
   <a href="#contato" data-i18n-key="nav_contact">Contato</a>
 </nav>
 
@@ -576,6 +577,10 @@ layout: landing
       <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
       <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
+      <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
+      <div class="country-list-scroll">
+        <ul id="visitor-country-list" class="visitor-country-list"></ul>
+      </div>
     </div>
   </div>
 </footer>
@@ -612,6 +617,32 @@ layout: landing
     countryLabel.textContent = `${d.prefix}${visitorCountryState.name}`;
   };
 
+
+  const renderTopCountries = () => {
+    const listEl = document.getElementById("visitor-country-list");
+    if (!listEl) return;
+
+    const countryCodes = ["BR","PT","US","ES","AR","MX","CO","CL","DE","FR","GB","CA","IN","JP","AU"];
+    Promise.all(countryCodes.map((code) =>
+      fetch(`https://api.countapi.xyz/get/databiomicsai-github-io/site-visits-country-${code}`)
+        .then((r) => r.json())
+        .then((d) => ({ code, value: Number(d.value || 0) }))
+        .catch(() => ({ code, value: 0 }))
+    )).then((rows) => {
+      const items = rows.filter((r) => r.value > 0).sort((a, b) => b.value - a.value).slice(0, 10);
+      listEl.innerHTML = "";
+      if (!items.length) {
+        listEl.innerHTML = '<li class="country-row">Sem dados por país ainda.</li>';
+        return;
+      }
+      items.forEach(({ code, value }) => {
+        const li = document.createElement("li");
+        li.className = "country-row";
+        li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
+        listEl.appendChild(li);
+      });
+    });
+  };
   fetch("https://ipapi.co/json/")
     .then((response) => response.json())
     .then((data) => {
@@ -619,6 +650,13 @@ layout: landing
       const flagImage = document.getElementById("visitor-flag");
       visitorCountryState.name = data.country_name || "-";
       applyVisitorCountryLabel();
+
+      if (countryCode) {
+        fetch(`https://api.countapi.xyz/hit/databiomicsai-github-io/site-visits-country-${countryCode.toUpperCase()}`)
+          .finally(() => renderTopCountries());
+      } else {
+        renderTopCountries();
+      }
 
       if (flagImage && countryCode) {
         flagImage.src = `https://flagcdn.com/${countryCode}.svg`;
@@ -628,7 +666,9 @@ layout: landing
     .catch(() => {
       visitorCountryState.name = false;
       applyVisitorCountryLabel();
+      renderTopCountries();
     });
 
   document.addEventListener("site-language-changed", applyVisitorCountryLabel);
+  renderTopCountries();
 </script>
