@@ -2,6 +2,17 @@
 <html lang="{{ page.lang | default: 'pt-BR' }}" class="html" data-theme="{{ site.theme_config.appearance | default: 'auto' }}">
   {%- include head.html -%}
   <body class="landing">
+    <script>
+      (() => {
+        const mode = localStorage.getItem('siteAppearanceMode');
+        if (!mode) return;
+        const root = document.documentElement;
+        const resolved = mode === 'colorblind' ? 'light' : mode;
+        root.setAttribute('data-theme', resolved);
+        document.body && document.body.setAttribute('data-theme', resolved);
+        root.classList.toggle('colorblind-mode', mode === 'colorblind');
+      })();
+    </script>
     <div class="global-language-switcher" role="group" aria-label="Language switcher">
       <button type="button" class="global-lang-btn" data-global-lang="pt">Português</button>
       <button type="button" class="global-lang-btn" data-global-lang="en">English</button>
