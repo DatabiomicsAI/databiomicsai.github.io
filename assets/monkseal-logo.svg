@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" role="img" aria-labelledby="t d">
+  <title id="t">Logo MonkSeal Databiomics</title>
+  <desc id="d">Arte do MonkSeal com identidade visual Databiomics em fundo azul escuro com conexões luminosas.</desc>
+  <defs>
+    <radialGradient id="bgGlow" cx="70%" cy="55%" r="70%">
+      <stop offset="0" stop-color="#1e3a8a"/>
+      <stop offset="0.55" stop-color="#0b2a6b"/>
+      <stop offset="1" stop-color="#030712"/>
+    </radialGradient>
+    <radialGradient id="floorGlow" cx="40%" cy="100%" r="45%">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cap" x1="0" x2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" x2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bgGlow)"/>
+
+  <g opacity="0.75" stroke="#93c5fd" stroke-width="2">
+    <path d="M900 230L980 270L1050 245L1120 300L1190 280L1260 340L1315 315" fill="none"/>
+    <path d="M920 350L990 390L1075 360L1145 410L1215 390L1290 455L1360 430" fill="none"/>
+    <path d="M865 470L950 520L1040 495L1115 545L1200 520L1280 585L1360 560" fill="none"/>
+    <path d="M940 610L1020 650L1095 625L1175 675L1250 655L1330 710" fill="none"/>
+  </g>
+  <g fill="#e0f2fe" opacity="0.95">
+    <circle cx="900" cy="230" r="6"/><circle cx="980" cy="270" r="6"/><circle cx="1050" cy="245" r="6"/>
+    <circle cx="1120" cy="300" r="6"/><circle cx="1190" cy="280" r="6"/><circle cx="1260" cy="340" r="6"/>
+    <circle cx="1315" cy="315" r="6"/><circle cx="920" cy="350" r="6"/><circle cx="990" cy="390" r="6"/>
+    <circle cx="1075" cy="360" r="6"/><circle cx="1145" cy="410" r="6"/><circle cx="1215" cy="390" r="6"/>
+    <circle cx="1290" cy="455" r="6"/><circle cx="1360" cy="430" r="6"/>
+  </g>
+
+  <ellipse cx="620" cy="980" rx="560" ry="160" fill="url(#floorGlow)"/>
+
+  <g>
+    <ellipse cx="400" cy="700" rx="220" ry="180" fill="#9ca3af"/>
+    <ellipse cx="390" cy="640" rx="200" ry="210" fill="#6b7280"/>
+    <ellipse cx="335" cy="665" rx="45" ry="55" fill="#111827"/>
+    <ellipse cx="470" cy="665" rx="45" ry="55" fill="#111827"/>
+    <circle cx="335" cy="665" r="28" fill="#f8fafc"/>
+    <circle cx="470" cy="665" r="28" fill="#f8fafc"/>
+    <circle cx="335" cy="665" r="12" fill="#0f172a"/>
+    <circle cx="470" cy="665" r="12" fill="#0f172a"/>
+    <ellipse cx="405" cy="735" rx="62" ry="40" fill="#111827"/>
+    <path d="M368 760 Q405 785 442 760" stroke="#fb7185" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M280 746L225 792" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+    <path d="M530 746L585 792" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g transform="rotate(-8 390 510)">
+    <rect x="248" y="485" width="280" height="130" rx="26" fill="url(#cap)" stroke="#60a5fa" stroke-width="5"/>
+    <text x="390" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="88" font-weight="800" fill="#22d3ee">MS</text>
+  </g>
+
+  <g transform="translate(260 760)">
+    <polygon points="160,0 250,0 320,70 320,160 250,230 160,230 90,160 90,70" fill="#0f4c81" stroke="#1d4ed8" stroke-width="6"/>
+    <g stroke="#e2e8f0" stroke-width="5" fill="none" opacity="0.95">
+      <path d="M120 55L200 25L285 65L286 160L205 205L120 175Z"/>
+      <path d="M120 55L205 205"/><path d="M200 25L120 175"/><path d="M285 65L120 175"/><path d="M286 160L120 55"/>
+      <path d="M200 25L286 160"/><path d="M205 205L285 65"/>
+    </g>
+    <g fill="#e2e8f0">
+      <circle cx="120" cy="55" r="8"/><circle cx="200" cy="25" r="8"/><circle cx="285" cy="65" r="8"/>
+      <circle cx="286" cy="160" r="8"/><circle cx="205" cy="205" r="8"/><circle cx="120" cy="175" r="8"/>
+    </g>
+  </g>
+
+  <text x="760" y="780" font-family="Arial, sans-serif" font-size="120" font-weight="500" fill="url(#brand)">Databiomics</text>
+  <path d="M700 840 Q1020 760 1360 820" stroke="#38bdf8" stroke-width="6" fill="none" filter="url(#soft)"/>
+</svg>
