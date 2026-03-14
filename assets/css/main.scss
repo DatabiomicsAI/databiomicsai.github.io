@@ -792,6 +792,45 @@ footer  {
   margin-top: 0.55rem;
 }
 
+
+.visitor-quick-overview {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.45rem 0 0.75rem;
+}
+
+.visitor-flags-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  min-height: 24px;
+}
+
+.country-flag-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 22px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.country-flag-chip img {
+  width: 24px;
+  height: 18px;
+  border-radius: 2px;
+  display: block;
+}
+
+.country-flag-empty {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
 .country-list-scroll {
   max-height: 180px;
   overflow-y: auto;

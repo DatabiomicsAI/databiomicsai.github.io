@@ -51,7 +51,7 @@
   if (countEl) {
     const ns = 'databiomicsai-github-io';
     const key = 'site-visits';
-    fetch(`https://api.countapi.xyz/hit/${ns}/${key}`)
+    fetch(`https://api.countapi.xyz/get/${ns}/${key}`)
       .then((r) => r.json())
       .then((d) => {
         const lang = localStorage.getItem('siteLang') || 'pt';
