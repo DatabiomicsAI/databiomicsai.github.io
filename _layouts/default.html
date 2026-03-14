@@ -2,6 +2,34 @@
 <html lang="{{ page.lang | default: 'pt-BR' }}" class="html" data-theme="{{ site.theme_config.appearance | default: 'auto' }}">
   {%- include head.html -%}
   <body>
+    <script>
+      (() => {
+        const mode = localStorage.getItem('siteAppearanceMode');
+        if (!mode) return;
+        const root = document.documentElement;
+        const resolved = mode === 'colorblind' ? 'light' : mode;
+        root.setAttribute('data-theme', resolved);
+        document.body && document.body.setAttribute('data-theme', resolved);
+        root.classList.toggle('colorblind-mode', mode === 'colorblind');
+      })();
+    </script>
+
+    <script>
+      (() => {
+        const themeWords = ['auto', 'claro', 'escuro', 'oscuro', 'dark', 'light', 'daltônico', 'daltonico', 'colorblind'];
+        const candidates = Array.from(document.querySelectorAll('div, nav, section, aside, ul, ol'));
+        candidates.forEach((el) => {
+          const controls = Array.from(el.querySelectorAll('button, a, label, span'));
+          if (!controls.length || controls.length > 20) return;
+          const textBlob = controls.map((c) => (c.textContent || '').trim().toLowerCase()).join(' | ');
+          const hits = themeWords.reduce((n, w) => n + (textBlob.includes(w) ? 1 : 0), 0);
+          if (hits >= 3 && !el.classList.contains('appearance-toggle') && !el.closest('.appearance-toggle') && !el.classList.contains('global-language-switcher') && !el.closest('.global-language-switcher')) {
+            el.remove();
+          }
+        });
+      })();
+    </script>
+
     <div class="global-language-switcher" role="group" aria-label="Language switcher">
       <button type="button" class="global-lang-btn" data-global-lang="pt">Português</button>
       <button type="button" class="global-lang-btn" data-global-lang="en">English</button>
@@ -23,7 +51,7 @@
       </div>
     </main>
 
-    <div id="google_translate_element" style="display:none"></div>
+    <div id="google_translate_element" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"></div>
     <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
 
     {%- if site.soopr -%}
