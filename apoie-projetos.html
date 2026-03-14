@@ -1,0 +1,84 @@
+---
+layout: landing
+title: Apoie Projetos
+permalink: /apoie-projetos/
+lang: pt-BR
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/' | relative_url }}" data-i18n-key="nav_home">Início</a>
+  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
+  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Plano de Cursos Databiomics</a>
+  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
+  <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie Projetos</a>
+  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
+</nav>
+
+<section class="section" id="apoie-projetos">
+  <div class="section-heading compact">
+    <h1>Apoie Projetos</h1>
+    <p>Página dedicada a colaborações técnicas e científicas, apoio institucional e propostas de financiamento para projetos em andamento e projetos pessoais da Databiomics.</p>
+  </div>
+
+  <div class="card-grid">
+    <article class="info-card">
+      <h2>Projetos em andamento</h2>
+      <h3>1) Projetos em colaboração</h3>
+      <p><strong>TerpenoScanner:</strong> Explorando e Expandindo o Potencial Químico Natural dos Terpenos de Cianobactérias e seu Potencial Biotecnológico em Portugal e Brasil através da IA.</p>
+      <p><strong>TerpeneScanner:</strong> Exploring and Expanding The Natural Chemical of Cyanobacterial Terpenes and their Biotetechological Potential in Portugal and Brazil by AI.</p>
+      <p><strong>Equipe:</strong> Mariane B. Fagundes, Leila Zepka (UFSM), Eduardo Jacob-Lopes, Leandro de Mattos Pereira.</p>
+      <p>Proposta no contexto do edital Conhecimento Brasil para pesquisadores que estavam no exterior, desenvolvida e apresentada ao:</p>
+      <p><strong>CONSELHO NACIONAL DE DESENVOLVIMENTO CIENTÍFICO E TECNOLÓGICO (CNPq)</strong><br>
+      <strong>Chamada CNPq/MCTI/FNDCT No 22/2024</strong></p>
+
+      <p><strong>2) Plataforma de análises de Microbioma para Aquacultura</strong> — colaboração com Gabriela do Valle Pereira.</p>
+    </article>
+
+    <article class="info-card">
+      <h2>Projetos pessoais (Databiomics)</h2>
+      <p>Estes projetos aceitam propostas para financiamento e colaborações. No momento, os projetos estão com recursos financeiros limitados e seguem principalmente com esforço técnico de recursos humanos.</p>
+      <ul class="icon-list">
+        <li><strong>MonkSeal:</strong> agente e chatbot de IA para pesquisa bibliográfica rápida da literatura e monitoramento em mobile, com proposta de acessibilidade e inclusão para diferentes públicos, incluindo pessoas com deficiência.</li>
+        <li><strong>NISEPi:</strong> programa para anotação funcional de enzimas.</li>
+        <li><strong>ProteinDesign - Databiomics:</strong> chatbot em desenvolvimento para desenho de enzimas com atividades catalíticas de interesse industrial.</li>
+        <li><strong>Plataforma de análises de dados para Agro de Precisão.</strong></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section alt" id="contato-apoio">
+  <div class="section-heading compact">
+    <h2>Contato para colaboração, apoio ou financiamento</h2>
+    <p>Se você representa empresa, instituto ou grupo de pesquisa, envie uma proposta para avaliação.</p>
+  </div>
+
+  <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post">
+    <input type="hidden" name="_subject" value="Nova proposta de colaboração/apoio - Apoie Projetos">
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="ap-nome">Nome da pessoa responsável*</label>
+    <input id="ap-nome" type="text" name="nome_responsavel" required>
+
+    <label for="ap-instituto">Instituição / Empresa*</label>
+    <input id="ap-instituto" type="text" name="instituicao" required>
+
+    <label for="ap-pais">País*</label>
+    <input id="ap-pais" type="text" name="pais" required>
+
+    <label for="ap-telefone">Telefone*</label>
+    <input id="ap-telefone" type="text" name="telefone" required>
+
+    <label for="ap-email">E-mail*</label>
+    <input id="ap-email" type="email" name="email" required>
+
+    <label for="ap-proposta">Proposta de colaboração/financiamento*</label>
+    <textarea id="ap-proposta" name="proposta" rows="6" placeholder="Descreva o objetivo, escopo, formato de parceria e potencial apoio financeiro/técnico." required></textarea>
+
+    <label><input type="checkbox" name="privacy_consent_support" required> <span data-i18n-key="privacy_consent">Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.</label>
+
+    <button class="button primary" type="submit">Enviar proposta para avaliação</button>
+  </form>
+</section>
