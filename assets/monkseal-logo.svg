@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">MonkSeal - Databiomics</title>
+  <desc id="desc">Logo ilustrativo do projeto MonkSeal com selo MS e identidade Databiomics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0b2a6b"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" rx="24"/>
+  <circle cx="275" cy="330" r="175" fill="#1e293b" stroke="#60a5fa" stroke-width="6"/>
+  <ellipse cx="275" cy="420" rx="140" ry="75" fill="#475569"/>
+  <circle cx="220" cy="315" r="30" fill="#f8fafc"/>
+  <circle cx="330" cy="315" r="30" fill="#f8fafc"/>
+  <circle cx="220" cy="315" r="14" fill="#0f172a"/>
+  <circle cx="330" cy="315" r="14" fill="#0f172a"/>
+  <ellipse cx="275" cy="365" rx="48" ry="20" fill="#0f172a"/>
+  <rect x="180" y="175" width="190" height="70" rx="16" fill="#1d4ed8"/>
+  <text x="275" y="223" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="700" fill="#facc15">MS</text>
+  <text x="500" y="325" font-family="Arial, sans-serif" font-size="94" font-weight="700" fill="url(#txt)">MonkSeal</text>
+  <text x="500" y="392" font-family="Arial, sans-serif" font-size="38" fill="#93c5fd">Projeto de IA para pesquisa e monitoramento científico</text>
+  <text x="500" y="452" font-family="Arial, sans-serif" font-size="52" fill="#60a5fa">Databiomics</text>
+</svg>
