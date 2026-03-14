@@ -5,7 +5,6 @@ layout: landing
 <nav class="landing-nav">
   <a href="#sobre" data-i18n-key="nav_about">Sobre</a>
   <a href="#servicos" data-i18n-key="nav_services">Serviços</a>
-  <a href="{{ '/cv-others/' | relative_url }}" data-i18n-key="nav_cv_others">CV / Others</a>
   <a href="#cursos" data-i18n-key="nav_courses_talks">Cursos &amp; Palestras</a>
   <a href="#videos" data-i18n-key="nav_videos">Vídeos</a>
   <a href="#divulgacao-cursos" data-i18n-key="nav_disclosure">Divulgação</a>
@@ -14,6 +13,7 @@ layout: landing
   <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">PlanoCursos</a>
   <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
   <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects_cta">Apoie os projetos →</a>
+  <a href="{{ '/cv-others/' | relative_url }}" data-i18n-key="nav_cv_others">CV / Others</a>
   <a href="#contato" data-i18n-key="nav_contact">Contato</a>
 </nav>
 
@@ -144,8 +144,17 @@ layout: landing
       <p>Desenho, construção e implementação de programas para priorização de enzimas inéditas para validação experimental. Dentro desse tópico: ranking de candidatos com maior chance funcional; mineração de genomas para encontrar enzimas com perfil industrial; análise de milhares de genomas para encontrar candidatos para validação funcional com interesse bioquímico e industrial. Exemplo de pesquisa relacionada realizada no pós-doutorado: <a href="https://onlinelibrary.wiley.com/doi/10.1002/pro.70468" target="_blank" rel="noreferrer">FAALpred</a>.</p>
     </article>
     <article class="info-card">
-      <h3 data-i18n-key="services_card2_title">Análises Ômicas Avançadas</h3>
-      <p data-i18n-key="services_card2_text">Integração de dados genômicos, transcriptômicos e metabarcoding/metagenômicos com relatórios claros e acionáveis.</p>
+      <h3>Análise de dados biológicos</h3>
+      <ul>
+        <li>Análises genômicas</li>
+        <li>Montagem de genomas</li>
+        <li>Anotação funcional de genomas</li>
+        <li>Montagem ou mapeamento de transcriptomas</li>
+        <li>Filogenia Molecular ou Filogenômica</li>
+        <li>Análises de metabarcoding ou metagenômica</li>
+        <li>Análise de Expressão Diferencial</li>
+        <li>Relatórios claros e acionáveis</li>
+      </ul>
     </article>
     <article class="info-card">
       <h3 data-i18n-key="services_card3_title">IA &amp; IA: Machine Learning e Redes neurais profundas</h3>
@@ -319,8 +328,8 @@ layout: landing
 
 <section id="contato" class="section contact">
   <div class="section-heading">
-    <h2 data-i18n-key="contact_title">Precisa de suporte? Estamos com você a qualquer momento!</h2>
-    <p data-i18n-key="contact_subtitle">Entre em contato para consultorias, cursos e projetos personalizados.</p>
+    <h2>Envie sua mensagem</h2>
+    <p>Preencha o formulário abaixo para entrar em contato sobre serviços, propostas, colaborações, cursos, treinamentos ou consultorias.</p>
   </div>
   <div class="contact-grid">
     <div class="contact-card">
@@ -335,27 +344,73 @@ layout: landing
       <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
     </div>
     <div class="contact-card">
-      <h3 data-i18n-key="message_box">Caixa de mensagem</h3>
-      <form class="contact-form" action="https://formsubmit.co/databiomics@gmail.com" method="post">
-        <label>
-          <span data-i18n-key="full_name">Nome completo</span>
-          <input type="text" name="full-name" required>
+      <h3>Envie sua mensagem</h3>
+      <form class="contact-form" action="https://formsubmit.co/databiomics@gmail.com" method="post" id="contact-form">
+        <label for="contact-full-name">
+          <span>Nome completo</span>
+          <input id="contact-full-name" type="text" name="full-name" placeholder="Seu nome completo" required>
         </label>
-        <label>
-          <span data-i18n-key="email_label">E-mail</span>
-          <input type="email" name="contact-email" required>
+        <label for="contact-email">
+          <span>E-mail</span>
+          <input id="contact-email" type="email" name="contact-email" placeholder="nome@instituicao.com" required>
         </label>
-        <label>
-          <span data-i18n-key="message_label">Mensagem</span>
-          <textarea name="message" rows="4" data-i18n-placeholder-key="message_placeholder" placeholder="Como posso ajudar?"></textarea>
+        <label for="contact-subject">
+          <span>Assunto do contato</span>
+          <select id="contact-subject" name="assunto_contato" required>
+            <option value="" selected disabled>Selecione o assunto</option>
+            <option value="colaboracao_cientifica">Colaboração científica</option>
+            <option value="solicitacao_proposta">Solicitação de proposta</option>
+            <option value="contratacao_servicos">Contratação de serviços</option>
+            <option value="cursos_palestras_workshops">Cursos, palestras ou workshops</option>
+            <option value="mentoria_orientacao">Mentoria / orientação</option>
+            <option value="treinamento_equipes_assunto">Treinamento de equipes</option>
+            <option value="outro_assunto">Outro assunto</option>
+          </select>
+        </label>
+        <label for="contact-category">
+          <span>Categoria do interesse</span>
+          <select id="contact-category" name="categoria_interesse" required>
+            <option value="" selected disabled>Selecione a categoria</option>
+            <option value="enzimas_bioinformatica_ia">Priorização de enzimas com Bioinformática e IA</option>
+            <option value="analises_genomicas">Análises genômicas</option>
+            <option value="montagem_genomas">Montagem de genomas</option>
+            <option value="anotacao_funcional_genomas">Anotação funcional de genomas</option>
+            <option value="transcriptomica">Transcriptômica</option>
+            <option value="metabarcoding">Metabarcoding</option>
+            <option value="metagenomica">Metagenômica</option>
+            <option value="machine_learning_redes_neurais">Machine learning e redes neurais</option>
+            <option value="desenvolvimento_solucoes">Desenvolvimento de soluções</option>
+            <option value="consultoria_estrategica">Consultoria estratégica</option>
+            <option value="treinamento_equipes">Treinamento de equipes</option>
+            <option value="outro_interesse">Outro</option>
+          </select>
+        </label>
+        <div id="contact-modality-wrapper" style="display: none;">
+          <label for="contact-modality">
+            <span>Modalidade do treinamento ou curso</span>
+            <select id="contact-modality" name="modalidade_treinamento" disabled>
+              <option value="" selected disabled>Selecione a modalidade</option>
+              <option value="online_ao_vivo">Online ao vivo</option>
+              <option value="gravado">Gravado</option>
+              <option value="presencial_empresa">Presencial na empresa</option>
+              <option value="presencial_instituicao_ensino">Presencial em instituição de ensino</option>
+              <option value="workshop_personalizado">Workshop personalizado</option>
+              <option value="palestra">Palestra</option>
+              <option value="a_definir">A definir</option>
+            </select>
+          </label>
+        </div>
+        <label for="contact-message">
+          <span>Mensagem</span>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Como posso ajudar?" required></textarea>
         </label>
         <label class="checkbox">
           <input type="checkbox" name="privacy_consent_contact" required>
-          <span data-i18n-key="privacy_consent">Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
+          <span>Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.
         </label>
-        <input type="hidden" name="_subject" value="Novo contato via site - Caixa de mensagem">
+        <input type="hidden" name="_subject" value="Novo contato via site - Formulário de triagem">
         <input type="hidden" name="_captcha" value="false">
-        <button class="button primary" type="submit" data-i18n-key="send_message_btn">Enviar mensagem por e-mail</button>
+        <button class="button primary" type="submit">Enviar mensagem</button>
       </form>
     </div>
   </div>
@@ -384,6 +439,31 @@ layout: landing
 </footer>
 
 <script>
+  const contactSubject = document.getElementById("contact-subject");
+  const contactCategory = document.getElementById("contact-category");
+  const modalityWrapper = document.getElementById("contact-modality-wrapper");
+  const modalitySelect = document.getElementById("contact-modality");
+
+  const toggleTrainingModalityField = () => {
+    if (!contactSubject || !contactCategory || !modalityWrapper || !modalitySelect) return;
+
+    const shouldShow = ["cursos_palestras_workshops", "treinamento_equipes_assunto"].includes(contactSubject.value) || contactCategory.value === "treinamento_equipes";
+
+    modalityWrapper.style.display = shouldShow ? "block" : "none";
+    modalitySelect.disabled = !shouldShow;
+    modalitySelect.required = shouldShow;
+
+    if (!shouldShow) {
+      modalitySelect.value = "";
+    }
+  };
+
+  if (contactSubject && contactCategory) {
+    contactSubject.addEventListener("change", toggleTrainingModalityField);
+    contactCategory.addEventListener("change", toggleTrainingModalityField);
+    toggleTrainingModalityField();
+  }
+
   const whatsappButton = document.getElementById("whatsapp-contact-link");
   if (whatsappButton) {
     const phoneParts = ["55", "22", "99796", "8983"];
