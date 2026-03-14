@@ -21,43 +21,6 @@
   };
 
 
-  const setGoogleTranslateCookie = (lang) => {
-    const target = lang === 'pt' ? 'pt' : lang;
-    document.cookie = `googtrans=/pt/${target}; path=/`;
-    document.cookie = `googtrans=/pt/${target}; path=/; domain=.${location.hostname}`;
-  };
-
-  const applyGoogleTranslate = (lang) => {
-    if (!window.google || !window.google.translate) return;
-    const combo = document.querySelector('.goog-te-combo');
-    const target = lang === 'pt' ? 'pt' : lang;
-    if (combo) {
-      combo.value = target;
-      combo.dispatchEvent(new Event('change'));
-    } else {
-      setGoogleTranslateCookie(lang);
-    }
-  };
-
-  window.googleTranslateElementInit = () => {
-    if (!document.getElementById('google_translate_element')) return;
-    // eslint-disable-next-line no-undef
-    new google.translate.TranslateElement({
-      pageLanguage: 'pt',
-      autoDisplay: false,
-      includedLanguages: 'pt,en,es'
-    }, 'google_translate_element');
-    const saved = localStorage.getItem('siteLang') || 'pt';
-    setTimeout(() => applyGoogleTranslate(saved), 150);
-  };
-
-  if (!window.google || !window.google.translate) {
-    const script = document.createElement('script');
-    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    script.async = true;
-    document.head.appendChild(script);
-  }
-
   const applyLanguage = (lang) => {
     const dict = dictionaries[lang] || dictionaries.pt;
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
