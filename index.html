@@ -363,6 +363,7 @@ layout: landing
             <option value="contratacao_servicos">Contratação de serviços</option>
             <option value="cursos_palestras_workshops">Cursos, palestras ou workshops</option>
             <option value="mentoria_orientacao">Mentoria / orientação</option>
+            <option value="treinamento_equipes_assunto">Treinamento de equipes</option>
             <option value="outro_assunto">Outro assunto</option>
           </select>
         </label>
@@ -384,19 +385,21 @@ layout: landing
             <option value="outro_interesse">Outro</option>
           </select>
         </label>
-        <label for="contact-modality" id="contact-modality-wrapper" hidden>
-          <span>Modalidade do treinamento ou curso</span>
-          <select id="contact-modality" name="modalidade_treinamento" disabled>
-            <option value="" selected disabled>Selecione a modalidade</option>
-            <option value="online_ao_vivo">Online ao vivo</option>
-            <option value="gravado">Gravado</option>
-            <option value="presencial_empresa">Presencial na empresa</option>
-            <option value="presencial_instituicao_ensino">Presencial em instituição de ensino</option>
-            <option value="workshop_personalizado">Workshop personalizado</option>
-            <option value="palestra">Palestra</option>
-            <option value="a_definir">A definir</option>
-          </select>
-        </label>
+        <div id="contact-modality-wrapper" style="display: none;">
+          <label for="contact-modality">
+            <span>Modalidade do treinamento ou curso</span>
+            <select id="contact-modality" name="modalidade_treinamento" disabled>
+              <option value="" selected disabled>Selecione a modalidade</option>
+              <option value="online_ao_vivo">Online ao vivo</option>
+              <option value="gravado">Gravado</option>
+              <option value="presencial_empresa">Presencial na empresa</option>
+              <option value="presencial_instituicao_ensino">Presencial em instituição de ensino</option>
+              <option value="workshop_personalizado">Workshop personalizado</option>
+              <option value="palestra">Palestra</option>
+              <option value="a_definir">A definir</option>
+            </select>
+          </label>
+        </div>
         <label for="contact-message">
           <span>Mensagem</span>
           <textarea id="contact-message" name="message" rows="5" placeholder="Como posso ajudar?" required></textarea>
@@ -444,9 +447,9 @@ layout: landing
   const toggleTrainingModalityField = () => {
     if (!contactSubject || !contactCategory || !modalityWrapper || !modalitySelect) return;
 
-    const shouldShow = contactSubject.value === "cursos_palestras_workshops" || contactCategory.value === "treinamento_equipes";
+    const shouldShow = ["cursos_palestras_workshops", "treinamento_equipes_assunto"].includes(contactSubject.value) || contactCategory.value === "treinamento_equipes";
 
-    modalityWrapper.hidden = !shouldShow;
+    modalityWrapper.style.display = shouldShow ? "block" : "none";
     modalitySelect.disabled = !shouldShow;
     modalitySelect.required = shouldShow;
 
