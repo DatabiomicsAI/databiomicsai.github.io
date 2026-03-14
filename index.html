@@ -527,16 +527,16 @@ layout: landing
     const providers = [
       async () => {
         const data = await fetchJsonWithTimeout("https://ipapi.co/json/");
-        return { code: data.country_code, name: data.country_name };
+        return { code: data.country_code, name: data.country_name, ip: data.ip };
       },
       async () => {
         const data = await fetchJsonWithTimeout("https://ipwho.is/");
         if (data && data.success === false) throw new Error("ipwhois failed");
-        return { code: data.country_code, name: data.country };
+        return { code: data.country_code, name: data.country, ip: data.ip };
       },
       async () => {
-        const data = await fetchJsonWithTimeout("https://ip-api.com/json/?fields=country,countryCode");
-        return { code: data.countryCode, name: data.country };
+        const data = await fetchJsonWithTimeout("https://ip-api.com/json/?fields=country,countryCode,query");
+        return { code: data.countryCode, name: data.country, ip: data.query };
       }
     ];
 
@@ -545,7 +545,7 @@ layout: landing
         const result = await provider();
         const code = String(result.code || "").trim().toUpperCase();
         const name = String(result.name || "").trim();
-        if (code && name) return { code, name };
+        if (code && name) return { code, name, ip: result.ip || null };
       } catch (err) {
         // try next provider
       }
@@ -697,41 +697,101 @@ layout: landing
     renderTopCountries();
   };
 
+  const getTodayKey = () => {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, "0");
+    const dd = String(now.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  };
+
+  const hashText = async (value) => {
+    if (!value || !window.crypto?.subtle) return null;
+    const bytes = new TextEncoder().encode(value);
+    const digest = await window.crypto.subtle.digest("SHA-256", bytes);
+    const hex = Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
+    return hex.slice(0, 16);
+  };
+
+  const registerUniqueVisitForDay = async (ipValue) => {
+    const dayKey = getTodayKey();
+    const localDailyKey = `site-visit-registered-${dayKey}`;
+
+    if (!ipValue) {
+      const alreadyRegistered = localStorage.getItem(localDailyKey) === "1";
+      if (alreadyRegistered) return false;
+      localStorage.setItem(localDailyKey, "1");
+      return true;
+    }
+
+    const ipHash = await hashText(ipValue);
+    if (!ipHash) {
+      const alreadyRegistered = localStorage.getItem(localDailyKey) === "1";
+      if (alreadyRegistered) return false;
+      localStorage.setItem(localDailyKey, "1");
+      return true;
+    }
+
+    const uniqueCounter = await hitRemoteCounter(`site-unique-visit-${dayKey}-${ipHash}`);
+    return uniqueCounter === 1;
+  };
+
   const registerVisitor = async () => {
     applyVisitorCountryLabel();
     applyVisitorTotalLabel();
     renderTopCountries();
 
     const localTelemetry = readLocalTelemetry();
-    localTelemetry.total += 1;
-    writeLocalTelemetry(localTelemetry);
 
-    const remoteTotal = await hitRemoteCounter("site-visits");
-    visitorTelemetryState.total = Number.isFinite(remoteTotal) ? remoteTotal : localTelemetry.total;
+    try {
+      const remoteTotal = await getRemoteCounter("site-visits");
+      if (Number.isFinite(remoteTotal)) {
+        visitorTelemetryState.total = remoteTotal;
+        localTelemetry.total = Math.max(localTelemetry.total, remoteTotal);
+        writeLocalTelemetry(localTelemetry);
+      } else {
+        visitorTelemetryState.total = localTelemetry.total;
+      }
+    } catch {
+      visitorTelemetryState.total = localTelemetry.total;
+    }
     applyVisitorTotalLabel();
 
     try {
-      const { code, name } = await getVisitorCountry();
+      const { code, name, ip } = await getVisitorCountry();
       visitorCountryState.name = name;
+
       const flagImage = document.getElementById("visitor-flag");
       if (flagImage) {
         flagImage.src = `https://flagcdn.com/${code.toLowerCase()}.svg`;
         flagImage.hidden = false;
       }
 
-      localTelemetry.countries[code] = Number(localTelemetry.countries[code] || 0) + 1;
-      writeLocalTelemetry(localTelemetry);
-
-      const remoteCountry = await hitRemoteCounter(`site-visits-country-${code}`);
-      if (Number.isFinite(remoteCountry)) {
-        localTelemetry.countries[code] = remoteCountry;
+      const shouldCountVisit = await registerUniqueVisitForDay(ip);
+      if (shouldCountVisit) {
+        localTelemetry.total += 1;
         writeLocalTelemetry(localTelemetry);
+
+        const remoteTotal = await hitRemoteCounter("site-visits");
+        visitorTelemetryState.total = Number.isFinite(remoteTotal) ? remoteTotal : localTelemetry.total;
+
+        localTelemetry.countries[code] = Number(localTelemetry.countries[code] || 0) + 1;
+        writeLocalTelemetry(localTelemetry);
+
+        const remoteCountry = await hitRemoteCounter(`site-visits-country-${code}`);
+        if (Number.isFinite(remoteCountry)) {
+          localTelemetry.countries[code] = remoteCountry;
+          writeLocalTelemetry(localTelemetry);
+        }
+      } else {
+        visitorTelemetryState.total = Number.isFinite(visitorTelemetryState.total) ? visitorTelemetryState.total : localTelemetry.total;
       }
     } catch {
       visitorCountryState.name = false;
     }
 
     applyVisitorCountryLabel();
+    applyVisitorTotalLabel();
 
     try {
       await loadTopCountries(localTelemetry.countries);
