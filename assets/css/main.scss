@@ -859,6 +859,22 @@ footer  {
   display: block;
 }
 
+
+.support-projects-heading {
+  text-align: center;
+}
+
+.support-projects-title {
+  margin-bottom: 0.5rem;
+}
+
+.support-projects-logo {
+  width: min(240px, 70%);
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
 .support-divider {
   height: 2px;
   border-radius: 999px;
