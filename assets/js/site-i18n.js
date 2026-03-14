@@ -142,7 +142,14 @@
 
   const readCachedTranslation = (lang, text) => {
     try {
-      return localStorage.getItem(`${translationCachePrefix}:${lang}:${text}`);
+      const key = `${translationCachePrefix}:${lang}:${text}`;
+      const cached = localStorage.getItem(key);
+      if (!cached) return null;
+      if (hasMyMemoryWarning(cached)) {
+        localStorage.removeItem(key);
+        return null;
+      }
+      return cached;
     } catch (_) {
       return null;
     }
@@ -157,12 +164,20 @@
   };
 
 
+  const hasMyMemoryWarning = (value) => {
+    if (typeof value !== 'string') return false;
+    const upper = value.toUpperCase();
+    return upper.includes('MYMEMORY WARNING') || upper.includes('USAGELIMITS.PHP');
+  };
+
+
 
   const sanitizeMyMemoryWarning = (translatedText) => {
     if (typeof translatedText !== 'string') return '';
 
     const warningPattern = /\s*MYMEMORY WARNING:[\s\S]*$/gi;
     const cleaned = translatedText.replace(warningPattern, '').trim();
+    if (hasMyMemoryWarning(cleaned)) return '';
     return cleaned;
   };
 
@@ -180,6 +195,7 @@
         if (Number(payload?.responseStatus) >= 400) return text;
 
         const translated = sanitizeMyMemoryWarning(payload?.responseData?.translatedText);
+        if (hasMyMemoryWarning(translated)) return text;
         if (translated) {
           writeCachedTranslation(lang, text, translated);
           return translated;
