@@ -88,6 +88,21 @@ html {
 }
 html[data-theme="dark"] { @include dark-appearance; }
 
+
+@mixin colorblind-appearance {
+  html, body {
+      --headings: #0B3C5D;
+      --links: #005A9C;
+      --highlight: #FFD166;
+      --bg: #F7F7F2;
+      --bg-secondary: #EAEAEA;
+      --text: #1B1B1B;
+      --code-text: #2E4057;
+      --share-text: #4A4A4A;
+  };
+}
+html[data-theme="colorblind"] { @include colorblind-appearance; }
+
 @media (prefers-color-scheme: dark) {
   body[data-theme="auto"] { @include dark-appearance; }
 }
