@@ -750,18 +750,85 @@ layout: landing
     });
   };
 
-  const loadTopCountries = async () => {
+  const localTelemetryKey = "databiomicsVisitorTelemetryV1";
+
+  const readLocalTelemetry = () => {
+    try {
+      const raw = localStorage.getItem(localTelemetryKey);
+      if (!raw) return { total: 0, countries: {} };
+      const data = JSON.parse(raw);
+      return {
+        total: Number(data.total || 0),
+        countries: data.countries && typeof data.countries === "object" ? data.countries : {}
+      };
+    } catch {
+      return { total: 0, countries: {} };
+    }
+  };
+
+  const writeLocalTelemetry = (data) => {
+    try {
+      localStorage.setItem(localTelemetryKey, JSON.stringify(data));
+    } catch {
+      // ignore storage quota / private mode errors
+    }
+  };
+
+  const hitRemoteCounter = async (key) => {
+    const endpoints = [
+      `https://api.countapi.xyz/hit/${countNamespace}/${key}`,
+      `https://countapi.xyz/hit/${countNamespace}/${key}`
+    ];
+
+    for (const endpoint of endpoints) {
+      try {
+        const data = await fetchJsonWithTimeout(endpoint);
+        const value = Number(data.value);
+        if (Number.isFinite(value)) return value;
+      } catch {
+        // try next endpoint
+      }
+    }
+    return null;
+  };
+
+  const getRemoteCounter = async (key) => {
+    const endpoints = [
+      `https://api.countapi.xyz/get/${countNamespace}/${key}`,
+      `https://countapi.xyz/get/${countNamespace}/${key}`
+    ];
+
+    for (const endpoint of endpoints) {
+      try {
+        const data = await fetchJsonWithTimeout(endpoint);
+        const value = Number(data.value);
+        if (Number.isFinite(value)) return value;
+      } catch {
+        // try next endpoint
+      }
+    }
+    return null;
+  };
+
+  const loadTopCountries = async (fallbackCountries = null) => {
     const countryCodes = ["BR","PT","US","ES","AR","MX","CO","CL","DE","FR","GB","CA","IN","JP","AU","IT","NL","BE","SE","CH","NO","DK","IE","PL","AT","FI","RU","CN","KR","ZA"];
     const rows = await Promise.all(countryCodes.map(async (code) => {
-      try {
-        const d = await fetchJsonWithTimeout(`https://api.countapi.xyz/get/${countNamespace}/site-visits-country-${code}`);
-        return { code, value: Number(d.value || 0) };
-      } catch {
-        return { code, value: 0 };
-      }
+      const value = await getRemoteCounter(`site-visits-country-${code}`);
+      return { code, value: Number(value || 0) };
     }));
 
-    visitorTelemetryState.topCountries = rows.filter((r) => r.value > 0).sort((a, b) => b.value - a.value);
+    const remoteRows = rows.filter((r) => r.value > 0);
+    if (remoteRows.length) {
+      visitorTelemetryState.topCountries = remoteRows.sort((a, b) => b.value - a.value);
+      renderTopCountries();
+      return;
+    }
+
+    const countries = fallbackCountries || {};
+    visitorTelemetryState.topCountries = Object.entries(countries)
+      .map(([code, value]) => ({ code, value: Number(value || 0) }))
+      .filter((r) => r.code && r.value > 0)
+      .sort((a, b) => b.value - a.value);
     renderTopCountries();
   };
 
@@ -770,12 +837,12 @@ layout: landing
     applyVisitorTotalLabel();
     renderTopCountries();
 
-    try {
-      const totalRes = await fetchJsonWithTimeout(`https://api.countapi.xyz/hit/${countNamespace}/site-visits`);
-      visitorTelemetryState.total = Number(totalRes.value || 0);
-    } catch {
-      visitorTelemetryState.total = false;
-    }
+    const localTelemetry = readLocalTelemetry();
+    localTelemetry.total += 1;
+    writeLocalTelemetry(localTelemetry);
+
+    const remoteTotal = await hitRemoteCounter("site-visits");
+    visitorTelemetryState.total = Number.isFinite(remoteTotal) ? remoteTotal : localTelemetry.total;
     applyVisitorTotalLabel();
 
     try {
@@ -787,10 +854,13 @@ layout: landing
         flagImage.hidden = false;
       }
 
-      try {
-        await fetchJsonWithTimeout(`https://api.countapi.xyz/hit/${countNamespace}/site-visits-country-${code}`);
-      } catch {
-        // still continue to render available rankings
+      localTelemetry.countries[code] = Number(localTelemetry.countries[code] || 0) + 1;
+      writeLocalTelemetry(localTelemetry);
+
+      const remoteCountry = await hitRemoteCounter(`site-visits-country-${code}`);
+      if (Number.isFinite(remoteCountry)) {
+        localTelemetry.countries[code] = remoteCountry;
+        writeLocalTelemetry(localTelemetry);
       }
     } catch {
       visitorCountryState.name = false;
@@ -799,9 +869,12 @@ layout: landing
     applyVisitorCountryLabel();
 
     try {
-      await loadTopCountries();
+      await loadTopCountries(localTelemetry.countries);
     } catch {
-      visitorTelemetryState.topCountries = [];
+      visitorTelemetryState.topCountries = Object.entries(localTelemetry.countries)
+        .map(([code, value]) => ({ code, value: Number(value || 0) }))
+        .filter((r) => r.code && r.value > 0)
+        .sort((a, b) => b.value - a.value);
       renderTopCountries();
     }
   };

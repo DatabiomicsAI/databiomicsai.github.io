@@ -11,10 +11,6 @@
 
 Este financiamento foi concedido na “2ª Edição do Concurso de Projetos de Computação Avançada: Inteligência Artificial na Nuvem – 2023”, para o projeto “Desvendando os Substratos das Fatty Acyl-AMP Ligases em Cianobactérias Usando Inteligência Artificial”. Equipe: PI: Leandro de Mattos Pereira, CO-PI: Pedro Leão, Anne Liong, Maria Lígia da Silva Souza, Vitor Vasconcellos. O projeto recebeu a maior pontuação da competição. 👉 [Website do FAALPred](https://faalpred.ciimar.up.pt/)**. 
 
-**TerpenoScanner (2025): Explorando e Expandindo o Potencial Químico Natural dos Terpenos de Cianobactérias e Seu Potencial Biotecnológico em Portugal e no Brasil por meio de IA.
-CNPq - Brasil.
-Integrantes: Leandro de Mattos Pereira (integrante e coordenador da pesquisa exterior) / Mariane Bittencourt Fagundes (integrande e coordenador da pesquisa exterior) / Pedro Nuno Leão (integrante) / Leila Zepka (integrante) / Eduardo Jacob-Lopes (coordenador do projeto).
-Valor aproximado: $100.000 USD.**
 
 ***Science Communication:***
 
@@ -39,7 +35,6 @@ Outreach Publications without peer review, purpose: solely scientific outreach a
 
 - **Borges Osório, Joana; Gosch Berton, Giovanni; Pereira, Leandro Mattos; Potriquet, Jeremy; Cândido, Renata Russo F.; Mulvenna, Jason; Jones, Malcolm K.; Graeff-Teixeira, Carlos; Morassutti, Alessandra Loureiro. "Infection with Angiostrongylus cantonensis reveals up- and down-regulation of the protein profile in the mucus of infected slugs". Parasitology 152 4 (2025): 395-398. https://doi.org/10.1017/s0031182025000435.10.1017/s0031182025000435.**
 
-- **Genome-resolved metagenomics unveil metabolic pathways hotspots of Carbon fixation, Methane, Nitrogen and Sulfur cycles coupled to Iron oxidation and reduction in natural lakes over Top an extensive lateritic crust in the Amazonian Savanna. In preparation for submission.**
 
 ### 2024:
 
@@ -54,7 +49,6 @@ Outreach Publications without peer review, purpose: solely scientific outreach a
 - **In the dawn of an early invasion: No genetic diversity of Angiostrongylus cantonensis in Ecuador? Authors: Luis Fernando Solórzano-Álava, César Humberto Bedoya-Pilozo, Hilda Hernández-Álvarez, Lázara Rojas-Rivero, Misladys Rodríguez-Ortega, Jorge Fraga-Nodarse, Leandro de Mattos Pereira, Raquel de Oliveira Simões, Roberto do Val Vilela.** [Link to the Paper](https://www.mdpi.com/2076-0817/12/7/878), Pathogens, May 2023.
 
  
-
 ### 2021
 
 - **SARS-CoV-2 Mutations in Brazil: From Genomics to Clinical Conditions. L. F. S. M. Timmers.; J. V. Peixoto.;	R. G. Ducati.; J. F. R. Bachega.; L. P. de Mattos.; R. A. Caceres.; F. Majolo.; G. L. da Silva.; M. I. Goettert.; O. A. Dellagostin.; J. A.  P. Henriques.;   L.  L.  Xavier.; S. Laufer. Preprint ChemRxiv** [Link to the Paper](https://doi.org/10.26434/chemrxiv.14045783.v1)
