@@ -86,6 +86,152 @@
   window.setGoogleTranslateCookie = setGoogleTranslateCookie;
   window.applyGoogleTranslate = applyGoogleTranslate;
 
+
+
+  const textNodeSelectorExclusions = [
+    'script',
+    'style',
+    'noscript',
+    'textarea',
+    '#google_translate_element',
+    '.global-language-switcher'
+  ];
+
+  const translationCachePrefix = 'site-auto-i18n';
+  const autoTranslateInFlight = new Map();
+
+  const shouldSkipTextNode = (node) => {
+    if (!node || !node.parentElement) return true;
+    if (!node.textContent || !node.textContent.trim()) return true;
+    return textNodeSelectorExclusions.some((sel) => node.parentElement.closest(sel));
+  };
+
+  const getOriginalText = (node) => {
+    if (node.__originalText !== undefined) return node.__originalText;
+    node.__originalText = node.textContent;
+    return node.__originalText;
+  };
+
+  const getOriginalAttribute = (el, attr) => {
+    const key = `__originalAttr_${attr}`;
+    if (el[key] !== undefined) return el[key];
+    el[key] = el.getAttribute(attr) || '';
+    return el[key];
+  };
+
+
+  const captureOriginalTranslatableState = () => {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (shouldSkipTextNode(node)) continue;
+      if (node.parentElement && node.parentElement.closest('[data-i18n-key]')) continue;
+      getOriginalText(node);
+    }
+
+    document.querySelectorAll('input[placeholder], textarea[placeholder], select option').forEach((el) => {
+      if (textNodeSelectorExclusions.some((sel) => el.closest(sel))) return;
+      if (el.matches('[data-i18n-placeholder-key]')) return;
+      if (el.tagName.toLowerCase() === 'option') {
+        if (el.__originalOptionText === undefined) el.__originalOptionText = el.textContent;
+      } else {
+        getOriginalAttribute(el, 'placeholder');
+      }
+    });
+  };
+
+  const readCachedTranslation = (lang, text) => {
+    try {
+      return localStorage.getItem(`${translationCachePrefix}:${lang}:${text}`);
+    } catch (_) {
+      return null;
+    }
+  };
+
+  const writeCachedTranslation = (lang, text, value) => {
+    try {
+      localStorage.setItem(`${translationCachePrefix}:${lang}:${text}`, value);
+    } catch (_) {
+      // ignore storage failures
+    }
+  };
+
+  const fetchAutoTranslation = async (text, lang) => {
+    if (!text.trim() || lang === translationBaseLang) return text;
+    const cached = readCachedTranslation(lang, text);
+    if (cached) return cached;
+
+    const key = `${lang}::${text}`;
+    if (autoTranslateInFlight.has(key)) return autoTranslateInFlight.get(key);
+
+    const promise = fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${lang}`)
+      .then((r) => r.json())
+      .then((payload) => {
+        const translated = payload?.responseData?.translatedText;
+        if (translated && typeof translated === 'string') {
+          writeCachedTranslation(lang, text, translated);
+          return translated;
+        }
+        return text;
+      })
+      .catch(() => text)
+      .finally(() => autoTranslateInFlight.delete(key));
+
+    autoTranslateInFlight.set(key, promise);
+    return promise;
+  };
+
+  const applyInternalFullPageTranslation = async (lang) => {
+    const textNodes = [];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (shouldSkipTextNode(node)) continue;
+      if (node.parentElement && node.parentElement.closest('[data-i18n-key]')) continue;
+      textNodes.push(node);
+    }
+
+    const placeholders = Array.from(document.querySelectorAll('input[placeholder], textarea[placeholder], select option'))
+      .filter((el) => !textNodeSelectorExclusions.some((sel) => el.closest(sel)))
+      .filter((el) => !el.matches('[data-i18n-placeholder-key]'));
+
+    if (lang === translationBaseLang) {
+      textNodes.forEach((node) => {
+        node.textContent = getOriginalText(node);
+      });
+      placeholders.forEach((el) => {
+        if (el.tagName.toLowerCase() === 'option') {
+          if (el.__originalOptionText !== undefined) el.textContent = el.__originalOptionText;
+          return;
+        }
+        el.setAttribute('placeholder', getOriginalAttribute(el, 'placeholder'));
+      });
+      return;
+    }
+
+    await Promise.all(
+      textNodes.map(async (node) => {
+        const original = getOriginalText(node);
+        const translated = await fetchAutoTranslation(original, lang);
+        node.textContent = translated;
+      })
+    );
+
+    await Promise.all(
+      placeholders.map(async (el) => {
+        if (el.tagName.toLowerCase() === 'option') {
+          const k = '__originalOptionText';
+          if (el[k] === undefined) el[k] = el.textContent;
+          el.textContent = await fetchAutoTranslation(el[k], lang);
+          return;
+        }
+        const original = getOriginalAttribute(el, 'placeholder');
+        const translated = await fetchAutoTranslation(original, lang);
+        el.setAttribute('placeholder', translated);
+      })
+    );
+  };
+
   const safeApplyExternalTranslator = (lang) => {
     try {
       if (typeof window.setGoogleTranslateCookie === 'function') {
@@ -99,7 +245,7 @@
     }
   };
 
-  const applyLanguage = (lang) => {
+  const applyLanguage = async (lang) => {
     const dict = dictionaries[lang] || dictionaries.pt;
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
     document.querySelectorAll('[data-i18n-key]').forEach((el) => {
@@ -114,16 +260,17 @@
       btn.classList.toggle('is-active', btn.dataset.globalLang === lang);
     });
     localStorage.setItem('siteLang', lang);
-    safeApplyExternalTranslator(lang);
+    await applyInternalFullPageTranslation(lang);
     document.dispatchEvent(new CustomEvent('site-language-changed', { detail: { lang, dict } }));
   };
 
+  captureOriginalTranslatableState();
   const current = localStorage.getItem('siteLang') || 'pt';
   initGoogleTranslator();
   document.querySelectorAll('.global-lang-btn').forEach((btn) => {
-    btn.addEventListener('click', () => applyLanguage(btn.dataset.globalLang));
+    btn.addEventListener('click', () => { void applyLanguage(btn.dataset.globalLang); });
   });
-  applyLanguage(current);
+  void applyLanguage(current);
 
   const countEl = document.getElementById('visitor-count');
   if (countEl) {
