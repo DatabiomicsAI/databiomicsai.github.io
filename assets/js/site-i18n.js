@@ -21,6 +21,19 @@
   };
 
 
+  const safeApplyExternalTranslator = (lang) => {
+    try {
+      if (typeof window.setGoogleTranslateCookie === 'function') {
+        window.setGoogleTranslateCookie(lang);
+      }
+      if (typeof window.applyGoogleTranslate === 'function') {
+        setTimeout(() => window.applyGoogleTranslate(lang), 50);
+      }
+    } catch (_) {
+      // ignore third-party translate failures to keep local i18n working
+    }
+  };
+
   const applyLanguage = (lang) => {
     const dict = dictionaries[lang] || dictionaries.pt;
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
@@ -36,8 +49,7 @@
       btn.classList.toggle('is-active', btn.dataset.globalLang === lang);
     });
     localStorage.setItem('siteLang', lang);
-    setGoogleTranslateCookie(lang);
-    setTimeout(() => applyGoogleTranslate(lang), 50);
+    safeApplyExternalTranslator(lang);
     document.dispatchEvent(new CustomEvent('site-language-changed', { detail: { lang, dict } }));
   };
 
