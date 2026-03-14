@@ -156,6 +156,16 @@
     }
   };
 
+
+
+  const sanitizeMyMemoryWarning = (translatedText) => {
+    if (typeof translatedText !== 'string') return '';
+
+    const warningPattern = /\s*MYMEMORY WARNING:[\s\S]*$/gi;
+    const cleaned = translatedText.replace(warningPattern, '').trim();
+    return cleaned;
+  };
+
   const fetchAutoTranslation = async (text, lang) => {
     if (!text.trim() || lang === translationBaseLang) return text;
     const cached = readCachedTranslation(lang, text);
@@ -167,8 +177,10 @@
     const promise = fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${lang}`)
       .then((r) => r.json())
       .then((payload) => {
-        const translated = payload?.responseData?.translatedText;
-        if (translated && typeof translated === 'string') {
+        if (Number(payload?.responseStatus) >= 400) return text;
+
+        const translated = sanitizeMyMemoryWarning(payload?.responseData?.translatedText);
+        if (translated) {
           writeCachedTranslation(lang, text, translated);
           return translated;
         }
