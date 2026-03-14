@@ -5,8 +5,7 @@ layout: landing
 <nav class="landing-nav">
   <a href="#sobre" data-i18n-key="nav_about">Sobre</a>
   <a href="#servicos" data-i18n-key="nav_services">Serviços</a>
-  <a href="{{ '/artigos-projetos/' | relative_url }}" data-i18n-key="nav_articles_projects">Artigos / Projetos</a>
-  <a href="{{ '/formacao-complementar/' | relative_url }}" data-i18n-key="nav_training">Formação Complementar</a>
+  <a href="{{ '/cv-others/' | relative_url }}" data-i18n-key="nav_cv_others">CV / Others</a>
   <a href="#cursos" data-i18n-key="nav_courses_talks">Cursos &amp; Palestras</a>
   <a href="#videos" data-i18n-key="nav_videos">Vídeos</a>
   <a href="#divulgacao-cursos" data-i18n-key="nav_disclosure">Divulgação</a>
@@ -73,13 +72,13 @@ layout: landing
 
 <section class="section support-projects-highlight" id="apoie-destaque">
   <div class="section-heading compact">
-    <h2>Apoie os projetos da Databiomics</h2>
-    <p>Nova página completa com missão, valores, transparência, projetos em andamento e projetos pessoais, além de formulário para colaboração e financiamento.</p>
+    <h2 data-i18n-key="support_projects_title">Apoie os projetos da Databiomics</h2>
+    <p data-i18n-key="support_projects_summary">Veja missão, valores, transparência, projetos em andamento, além de formulário para colaborar e apoiar a Databiomics.</p>
   </div>
   <div class="card-grid compact">
     <article class="info-card">
-      <p>Veja a página dedicada e acompanhe as oportunidades de apoiar as iniciativas da Databiomics.</p>
-      <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}">Abrir página Apoie os projetos</a>
+      <p data-i18n-key="support_projects_intro">Veja a página dedicada e acompanhe as oportunidades de apoiar as iniciativas da Databiomics.</p>
+      <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="support_projects_btn">Abrir página Apoie os projetos</a>
     </article>
   </div>
 </section>
@@ -127,42 +126,42 @@ layout: landing
     <div class="profile-card">
       <img src="{{ '/leandro.jpeg' | relative_url }}" alt="Leandro de Mattos Pereira">
       <h3>Leandro de Mattos Pereira</h3>
-      <p>Pesquisador e Biólogo (MSc, PhD) - CRBIO2: 143240 com formação interdisciplinar em Biotecnologia, Biologia Computacional e Ciência de Dados. Atuo em bioinformática e análise de dados ômicos (genômica, transcriptômica, proteômica e metagenômica), com experiência em anotação funcional, descoberta de enzimas, reconstrução de vias metabólicas, genômica comparativa e filogenômica, mineração de clusters de genes biossintéticos (BGCs) e análises de metabarcoding/ecologia. Trabalho principalmente com Python e R, aplicando metodologias de ciência de dados e aprendizado de máquina — desde métodos clássicos (Random Forest, SVM e redes neurais profundas) até LLMs (como GPT-J e BLOOM), incluindo fine-tuning e RAG.</p>
-      <p>Desenvolvo pipelines de ponta a ponta — desde a aquisição e curadoria de dados, passando pelo processamento e modelagem, até a disponibilização de resultados em soluções do tipo Software as a Service (SaaS), incluindo configuração de ambientes, infraestrutura e implantação em produção. Esses pipelines integram machine learning clássico com modelos baseados em transformers (por exemplo, BERT e ESM2) e abordagens baseadas em embeddings (como word2vec) para prever a especificidade de substrato de enzimas. Tenho interesse em integrar Bioinformática e IA para gerar conhecimento aplicável, com impacto em biotecnologia, preservação ambiental e desenvolvimento sustentável.</p>
-      <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <p data-i18n-key="about_profile_p1">Pesquisador e Biólogo (MSc, PhD) - CRBIO2: 143240 com formação interdisciplinar em Biotecnologia, Biologia Computacional e Ciência de Dados. Atuo em bioinformática e análise de dados ômicos (genômica, transcriptômica, proteômica e metagenômica), com experiência em anotação funcional, descoberta de enzimas, reconstrução de vias metabólicas, genômica comparativa e filogenômica, mineração de clusters de genes biossintéticos (BGCs) e análises de metabarcoding/ecologia. Trabalho principalmente com Python e R, aplicando metodologias de ciência de dados e aprendizado de máquina — desde métodos clássicos (Random Forest, SVM e redes neurais profundas) até LLMs (como GPT-J e BLOOM), incluindo fine-tuning e RAG.</p>
+      <p data-i18n-key="about_profile_p2">Desenvolvo pipelines de ponta a ponta — desde a aquisição e curadoria de dados, passando pelo processamento e modelagem, até a disponibilização de resultados em soluções do tipo Software as a Service (SaaS), incluindo configuração de ambientes, infraestrutura e implantação em produção. Esses pipelines integram machine learning clássico com modelos baseados em transformers (por exemplo, BERT e ESM2) e abordagens baseadas em embeddings (como word2vec) para prever a especificidade de substrato de enzimas. Tenho interesse em integrar Bioinformática e IA para gerar conhecimento aplicável, com impacto em biotecnologia, preservação ambiental e desenvolvimento sustentável.</p>
+      <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer" data-i18n-key="about_linkedin_btn">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <section id="servicos" class="section alt">
   <div class="section-heading">
-    <h2>Serviços &amp; Consultoria</h2>
-    <p>Projetos sob medida para instituições de pesquisa, estudantes, empresas e laboratórios.</p>
+    <h2 data-i18n-key="services_title">Serviços &amp; Consultoria</h2>
+    <p data-i18n-key="services_subtitle">Projetos sob medida para instituições de pesquisa, estudantes, empresas e laboratórios.</p>
   </div>
   <div class="card-grid">
     <article class="info-card">
-      <h3>Priorização de enzimas inéditas com Bioinformática e IA</h3>
+      <h3 data-i18n-key="services_card1_title">Priorização de enzimas inéditas com Bioinformática e IA</h3>
       <p>Desenho, construção e implementação de programas para priorização de enzimas inéditas para validação experimental. Dentro desse tópico: ranking de candidatos com maior chance funcional; mineração de genomas para encontrar enzimas com perfil industrial; análise de milhares de genomas para encontrar candidatos para validação funcional com interesse bioquímico e industrial. Exemplo de pesquisa relacionada realizada no pós-doutorado: <a href="https://onlinelibrary.wiley.com/doi/10.1002/pro.70468" target="_blank" rel="noreferrer">FAALpred</a>.</p>
     </article>
     <article class="info-card">
-      <h3>Análises Ômicas Avançadas</h3>
-      <p>Integração de dados genômicos, transcriptômicos e metabarcoding/metagenômicos com relatórios claros e acionáveis.</p>
+      <h3 data-i18n-key="services_card2_title">Análises Ômicas Avançadas</h3>
+      <p data-i18n-key="services_card2_text">Integração de dados genômicos, transcriptômicos e metabarcoding/metagenômicos com relatórios claros e acionáveis.</p>
     </article>
     <article class="info-card">
-      <h3>IA &amp; IA: Machine Learning e Redes neurais profundas</h3>
-      <p>Modelos preditivos utilizando machine learning tradicional, redes neurais e NLP aplicados a dados biomoleculares e clínicas.</p>
+      <h3 data-i18n-key="services_card3_title">IA &amp; IA: Machine Learning e Redes neurais profundas</h3>
+      <p data-i18n-key="services_card3_text">Modelos preditivos utilizando machine learning tradicional, redes neurais e NLP aplicados a dados biomoleculares e clínicas.</p>
     </article>
     <article class="info-card">
-      <h3>Análises Genômicas comparativa</h3>
-      <p>Automatização de acesso a base de dados públicas e obtenção de dados em larga escala (genomas, proteomas), comparação de genomas utilizando pipelines customizados e análises filogenômicas com relatórios.</p>
+      <h3 data-i18n-key="services_card4_title">Análises Genômicas comparativa</h3>
+      <p data-i18n-key="services_card4_text">Automatização de acesso a base de dados públicas e obtenção de dados em larga escala (genomas, proteomas), comparação de genomas utilizando pipelines customizados e análises filogenômicas com relatórios.</p>
     </article>
     <article class="info-card">
-      <h3>Desenvolvimento de Soluções</h3>
-      <p>Dashboards, APIs e aplicativos científicos para automatizar fluxos e acelerar decisões.</p>
+      <h3 data-i18n-key="services_card5_title">Desenvolvimento de Soluções</h3>
+      <p data-i18n-key="services_card5_text">Dashboards, APIs e aplicativos científicos para automatizar fluxos e acelerar decisões.</p>
     </article>
     <article class="info-card">
-      <h3>Mentoria Estratégica</h3>
-      <p>Planejamento de pesquisa, revisão de pipelines e capacitação de equipes técnicas.</p>
+      <h3 data-i18n-key="services_card6_title">Mentoria Estratégica</h3>
+      <p data-i18n-key="services_card6_text">Planejamento de pesquisa, revisão de pipelines e capacitação de equipes técnicas.</p>
     </article>
   </div>
 </section>

@@ -1,0 +1,81 @@
+<div class="appearance-toggle" role="group" aria-label="Seletor de aparência">
+  <button type="button" class="appearance-btn appearance-btn-dot" data-appearance="light" aria-label="Modo claro" title="Modo claro">
+    <span class="dot dot-light" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="appearance-btn appearance-btn-dot" data-appearance="dark" aria-label="Modo escuro" title="Modo escuro">
+    <span class="dot dot-dark" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="appearance-btn appearance-btn-text" data-appearance="auto">Auto</button>
+  <button type="button" class="appearance-btn appearance-btn-text" data-appearance="colorblind">Daltônico</button>
+</div>
+
+<script>
+(() => {
+  const STORAGE_KEY = 'siteAppearanceMode';
+  const root = document.documentElement;
+  const body = document.body;
+
+  const legacyWords = ['auto', 'light', 'dark', 'colorblind', 'claro', 'escuro', 'oscuro', 'daltônico', 'daltonico'];
+
+  const removeLegacyAppearanceControls = () => {
+    const legacySelectors = '.theme-toggle, .theme-toggle-container, .theme-switcher, [data-theme-toggle]';
+    document.querySelectorAll(legacySelectors).forEach((el) => el.remove());
+
+    const allToggles = Array.from(document.querySelectorAll('.appearance-toggle'));
+    allToggles.slice(1).forEach((toggle) => toggle.remove());
+
+    const candidates = Array.from(document.querySelectorAll('div, nav, section, aside, ul, ol'));
+    candidates.forEach((el) => {
+      if (el.classList.contains('appearance-toggle') || el.closest('.appearance-toggle')) return;
+      if (el.classList.contains('global-language-switcher') || el.closest('.global-language-switcher')) return;
+
+      const controls = Array.from(el.querySelectorAll('button, a, label, span'));
+      if (!controls.length || controls.length > 20) return;
+
+      const textBlob = controls.map((c) => (c.textContent || '').trim().toLowerCase()).join(' | ');
+      const hitCount = legacyWords.reduce((acc, word) => acc + (textBlob.includes(word) ? 1 : 0), 0);
+
+      if (hitCount >= 3) el.remove();
+    });
+  };
+
+  removeLegacyAppearanceControls();
+
+  const toggles = Array.from(document.querySelectorAll('.appearance-toggle'));
+  const primaryToggle = toggles[0];
+  if (!primaryToggle) return;
+
+  const buttons = Array.from(primaryToggle.querySelectorAll('.appearance-btn'));
+
+  const syncButtonState = (mode) => {
+    buttons.forEach((btn) => btn.classList.toggle('is-active', btn.dataset.appearance === mode));
+  };
+
+  const applyAppearance = (mode) => {
+    const selectedMode = ['light', 'dark', 'auto', 'colorblind'].includes(mode) ? mode : 'light';
+    const resolvedTheme = selectedMode === 'colorblind' ? 'light' : selectedMode;
+
+    root.setAttribute('data-theme', resolvedTheme);
+    if (body) body.setAttribute('data-theme', resolvedTheme);
+
+    root.classList.toggle('colorblind-mode', selectedMode === 'colorblind');
+    if (body) body.classList.toggle('colorblind-mode', selectedMode === 'colorblind');
+
+    root.setAttribute('data-appearance-mode', selectedMode);
+    if (body) body.setAttribute('data-appearance-mode', selectedMode);
+
+    localStorage.setItem(STORAGE_KEY, selectedMode);
+    syncButtonState(selectedMode);
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => applyAppearance(btn.dataset.appearance));
+  });
+
+  const observer = new MutationObserver(() => removeLegacyAppearanceControls());
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  const initial = localStorage.getItem(STORAGE_KEY) || root.getAttribute('data-theme') || 'light';
+  applyAppearance(initial);
+})();
+</script>
