@@ -6,6 +6,11 @@
       descricao: 'Materiais digitais de apoio e estudo em bioinformática, biotecnologia, ciência de dados e inteligência artificial.'
     },
     {
+      id: 'aulas',
+      nome: 'Aulas',
+      descricao: 'Aulas, mentorias e encontros sob solicitação, voltados a temas científicos e tecnológicos.'
+    },
+    {
       id: 'livros',
       nome: 'Livros',
       descricao: 'Obras, materiais editoriais e publicações que poderão ser disponibilizados futuramente.'
@@ -19,11 +24,6 @@
       id: 'bones',
       nome: 'Bonés',
       descricao: 'Acessórios e itens visuais da marca Databiomics.'
-    },
-    {
-      id: 'aulas',
-      nome: 'Aulas',
-      descricao: 'Aulas, mentorias e encontros sob solicitação, voltados a temas científicos e tecnológicos.'
     }
   ];
 
