@@ -51,6 +51,25 @@
       </div>
     </main>
 
+
+    <script>
+      (() => {
+        const pageUrl = encodeURIComponent(window.location.href);
+        document.querySelectorAll('[data-share-network]').forEach((link) => {
+          const network = link.getAttribute('data-share-network');
+          if (!network) return;
+          if (network === 'linkedin') {
+            link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+          }
+          if (network === 'facebook') {
+            link.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+          }
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noreferrer noopener');
+        });
+      })();
+    </script>
+
     <div id="google_translate_element" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"></div>
     <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
 
