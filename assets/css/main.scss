@@ -195,6 +195,33 @@ footer  {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+
+.social-share {
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--links) 30%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+}
+
+.social-share .section-heading {
+  margin-bottom: 0.75rem;
+}
+
+.social-share .section-heading h2 {
+  margin-bottom: 0.35rem;
+}
+
+.social-share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.social-share-actions .button.ghost {
+  border-color: color-mix(in srgb, var(--links) 45%, transparent);
+}
+
 .lead-form,
 .contact-form {
   display: grid;
