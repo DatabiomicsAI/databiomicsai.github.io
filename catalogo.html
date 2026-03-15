@@ -1,0 +1,114 @@
+---
+layout: landing
+title: Catálogo Databiomics
+permalink: /catalogo/
+lang: pt-BR
+description: Catálogo institucional Databiomics para solicitação de materiais, produtos e aulas com carrinho local e envio de pedido.
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/#sobre' | relative_url }}" data-i18n-key="nav_about">About</a>
+  <a href="{{ '/#servicos' | relative_url }}" data-i18n-key="nav_services">Services</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Selected Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Course Plan</a>
+  <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Support Projects</a>
+  <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catalog</a>
+  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contact</a>
+</nav>
+
+<header class="hero catalog-hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Databiomics</p>
+    <h1>Catálogo Databiomics</h1>
+    <p class="hero-subtitle">Explore materiais, produtos e aulas disponíveis mediante solicitação.</p>
+    <p class="catalog-notice">Após o envio do pedido, você receberá por e-mail ou WhatsApp o link de pagamento para continuidade do atendimento.</p>
+    <button class="button primary" type="button" id="open-cart">Abrir pedido <span id="cart-count" class="cart-count">0</span></button>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="catalog-categories" aria-label="Categorias do catálogo"></section>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true" aria-label="Resumo do pedido">
+    <div class="cart-header">
+      <h2>Seu pedido</h2>
+      <button type="button" class="button ghost" id="close-cart">Fechar</button>
+    </div>
+    <p id="cart-empty-state">Seu pedido ainda está vazio.</p>
+    <ul id="cart-summary" class="cart-summary"></ul>
+    <div class="cart-totals">
+      <p><span>Subtotal</span> <strong id="cart-subtotal">R$ 0,00</strong></p>
+      <p><span>Total estimado</span> <strong id="cart-total">R$ 0,00</strong></p>
+    </div>
+    <button type="button" class="button ghost" id="clear-cart">Limpar carrinho</button>
+  </aside>
+
+  <section class="section alt" id="solicitacao-pedido">
+    <div class="section-heading compact">
+      <h2>Solicitação do pedido</h2>
+      <p>Finalize sua solicitação para receber retorno com as instruções de continuidade.</p>
+    </div>
+
+    <form id="catalog-order-form" class="interest-form" action="https://formspree.io/f/xpwjavvr" method="post">
+      <input type="hidden" name="_subject" value="Novo pedido via Catálogo Databiomics">
+      <input type="hidden" name="resumo_pedido" id="order-summary-input">
+
+      <label for="full-name">Nome*</label>
+      <input id="full-name" name="nome" type="text" required>
+
+      <label for="email">E-mail*</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Telefone / WhatsApp*</label>
+      <input id="phone" name="telefone_whatsapp" type="tel" required>
+
+      <div id="address-fields" hidden>
+        <label for="cidade">Cidade*</label>
+        <input id="cidade" name="cidade" type="text">
+
+        <label for="estado">Estado*</label>
+        <input id="estado" name="estado" type="text">
+
+        <label for="endereco">Endereço*</label>
+        <input id="endereco" name="endereco" type="text">
+
+        <label for="numero">Número*</label>
+        <input id="numero" name="numero" type="text">
+
+        <label for="complemento">Complemento</label>
+        <input id="complemento" name="complemento" type="text">
+
+        <label for="bairro">Bairro*</label>
+        <input id="bairro" name="bairro" type="text">
+
+        <label for="cep">CEP*</label>
+        <input id="cep" name="cep" type="text" inputmode="numeric">
+      </div>
+
+      <div id="service-fields" hidden>
+        <label for="availability">Disponibilidade para aulas*</label>
+        <textarea id="availability" name="disponibilidade_aulas" rows="3" placeholder="Informe dias e horários preferenciais."></textarea>
+      </div>
+
+      <label for="observacoes">Observações</label>
+      <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+
+      <div class="order-preview">
+        <h3>Resumo automático do pedido</h3>
+        <pre id="order-summary-preview">Seu pedido ainda está vazio.</pre>
+      </div>
+
+      <label class="checkbox" for="privacy-consent">
+        <input id="privacy-consent" type="checkbox" name="consentimento_privacidade" required>
+        Li e concordo com o tratamento de dados pessoais para organização do pedido.
+      </label>
+
+      <button class="button primary" type="submit">Enviar pedido e receber link de pagamento</button>
+      <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+      <p class="catalog-privacy-note">Os dados informados serão utilizados exclusivamente para contato, organização do pedido e envio das instruções de pagamento e entrega, quando aplicável.</p>
+    </form>
+  </section>
+</main>
+
+<script src="{{ '/assets/js/catalog-data.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/catalogo.js' | relative_url }}"></script>
