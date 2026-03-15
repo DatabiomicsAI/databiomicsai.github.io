@@ -3,19 +3,13 @@ layout: landing
 ---
 
 <nav class="landing-nav">
-  <a href="#sobre" data-i18n-key="nav_about">Sobre</a>
-  <a href="#servicos" data-i18n-key="nav_services">Serviços</a>
-  <a href="#cursos" data-i18n-key="nav_courses_talks">Cursos &amp; Palestras</a>
-  <a href="#videos" data-i18n-key="nav_videos">Vídeos</a>
-  <a href="#divulgacao-cursos" data-i18n-key="nav_disclosure">Divulgação</a>
-  <a href="#programas" data-i18n-key="nav_programs">Programas</a>
-  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">News/Articles</a>
-  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">PlanoCursos</a>
-  <a href="{{ '/depoimentos/' | relative_url }}" data-i18n-key="nav_testimonials">Depoimentos</a>
-  <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects_cta">Apoie os projetos →</a>
-  <a href="{{ '/cv-others/' | relative_url }}" data-i18n-key="nav_cv_others">CV / Others</a>
-  <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo</a>
-  <a href="#contato" data-i18n-key="nav_contact">Contato</a>
+  <a href="#sobre" data-i18n-key="nav_about">About</a>
+  <a href="#servicos" data-i18n-key="nav_services">Services</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Selected Articles</a>
+  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Course Plan</a>
+  <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Support Projects</a>
+  <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catalog</a>
+  <a href="#contato" data-i18n-key="nav_contact">Contact</a>
 </nav>
 
 <section class="hero" aria-labelledby="hero-title">
@@ -81,6 +75,21 @@ layout: landing
       <p data-i18n-key="support_projects_intro">Veja a página dedicada e acompanhe as oportunidades de apoiar as iniciativas da Databiomics.</p>
       <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="support_projects_btn">Abrir página Apoie os projetos</a>
     </article>
+  </div>
+</section>
+
+<section class="section explore-more" id="explore-more">
+  <div class="section-heading compact">
+    <h2>Explore More</h2>
+    <p>Acesse conteúdos complementares e áreas estratégicas que continuam disponíveis na Databiomics.</p>
+  </div>
+  <div class="quick-links-grid" aria-label="Links secundários">
+    <a class="quick-link" href="#cursos">Courses &amp; Talks</a>
+    <a class="quick-link" href="#videos">Videos</a>
+    <a class="quick-link" href="#divulgacao-cursos">Outreach</a>
+    <a class="quick-link" href="#programas">Programs</a>
+    <a class="quick-link" href="{{ '/depoimentos/' | relative_url }}">Testimonials</a>
+    <a class="quick-link" href="{{ '/cv-others/' | relative_url }}">CV / Others</a>
   </div>
 </section>
 
