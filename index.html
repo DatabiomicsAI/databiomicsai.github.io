@@ -460,6 +460,7 @@ layout: landing
       </div>
       <h3 id="all-countries-title">Países visitantes</h3>
       <p id="distinct-countries-count" class="visitor-count">Países distintos: carregando...</p>
+      <p id="distinct-countries-clock" class="visitor-count">Hora local: --:--:--</p>
       <div class="country-list-scroll">
         <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
       </div>
@@ -516,7 +517,8 @@ layout: landing
       noCountryData: "Sem dados por país ainda.",
       allCountriesTitle: "Países visitantes",
       distinctCountriesPrefix: "Países distintos: ",
-      distinctCountriesLoading: "Países distintos: carregando..."
+      distinctCountriesLoading: "Países distintos: carregando...",
+      clockPrefix: "Hora local: "
     },
     en: {
       loadingCountry: "Loading visitor country...",
@@ -528,7 +530,8 @@ layout: landing
       noCountryData: "No country data yet.",
       allCountriesTitle: "Visitor countries",
       distinctCountriesPrefix: "Distinct countries: ",
-      distinctCountriesLoading: "Distinct countries: loading..."
+      distinctCountriesLoading: "Distinct countries: loading...",
+      clockPrefix: "Local time: "
     },
     es: {
       loadingCountry: "Cargando país del visitante...",
@@ -540,8 +543,24 @@ layout: landing
       noCountryData: "Aún no hay datos por país.",
       allCountriesTitle: "Países visitantes",
       distinctCountriesPrefix: "Países distintos: ",
-      distinctCountriesLoading: "Países distintos: cargando..."
+      distinctCountriesLoading: "Países distintos: cargando...",
+      clockPrefix: "Hora local: "
     }
+  };
+
+  const countryCodeToFlagEmoji = (code) => {
+    const normalized = String(code || "").trim().toUpperCase();
+    if (!/^[A-Z]{2}$/.test(normalized)) return "🏳️";
+    return String.fromCodePoint(...[...normalized].map((char) => 127397 + char.charCodeAt(0)));
+  };
+
+  const updateDistinctCountriesClock = () => {
+    const clockEl = document.getElementById("distinct-countries-clock");
+    if (!clockEl) return;
+    const d = getLangDict();
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    clockEl.textContent = `${d.clockPrefix}${time}`;
   };
 
   const getLangDict = () => {
@@ -657,7 +676,7 @@ layout: landing
     rowsForTop.slice(0, 10).forEach(({ code, value }) => {
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${code}">${countryCodeToFlagEmoji(code)}</span> <span>${code}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
 
       const card = document.createElement("span");
@@ -673,7 +692,7 @@ layout: landing
     allCountries.forEach(({ code, value }) => {
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${code}">${countryCodeToFlagEmoji(code)}</span> <span>${code}</span> <strong>${value}</strong>`;
       allListEl.appendChild(li);
     });
   };
@@ -880,7 +899,11 @@ layout: landing
     applyVisitorCountryLabel();
     applyVisitorTotalLabel();
     renderTopCountries();
+    updateDistinctCountriesClock();
   });
+
+  updateDistinctCountriesClock();
+  setInterval(updateDistinctCountriesClock, 1000);
 
   registerVisitor();
 </script>
