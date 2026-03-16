@@ -458,6 +458,11 @@ layout: landing
       <div class="country-list-scroll">
         <ul id="visitor-country-list" class="visitor-country-list"></ul>
       </div>
+      <h3 id="all-countries-title">Países visitantes</h3>
+      <p id="distinct-countries-count" class="visitor-count">Países distintos: carregando...</p>
+      <div class="country-list-scroll">
+        <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
+      </div>
     </div>
   </div>
 </footer>
@@ -497,7 +502,7 @@ layout: landing
   }
 
   const visitorCountryState = { name: null };
-  const visitorTelemetryState = { total: null, topCountries: [] };
+  const visitorTelemetryState = { total: null, topCountries: [], allCountries: [] };
   const countNamespace = "databiomicsai-github-io";
 
   const visitorI18n = {
@@ -508,7 +513,10 @@ layout: landing
       totalPrefix: "Total de visitas: ",
       totalLoading: "Total de visitas: carregando...",
       totalUnavailable: "Total de visitas: indisponível no momento.",
-      noCountryData: "Sem dados por país ainda."
+      noCountryData: "Sem dados por país ainda.",
+      allCountriesTitle: "Países visitantes",
+      distinctCountriesPrefix: "Países distintos: ",
+      distinctCountriesLoading: "Países distintos: carregando..."
     },
     en: {
       loadingCountry: "Loading visitor country...",
@@ -517,7 +525,10 @@ layout: landing
       totalPrefix: "Total visits: ",
       totalLoading: "Total visits: loading...",
       totalUnavailable: "Total visits: unavailable at the moment.",
-      noCountryData: "No country data yet."
+      noCountryData: "No country data yet.",
+      allCountriesTitle: "Visitor countries",
+      distinctCountriesPrefix: "Distinct countries: ",
+      distinctCountriesLoading: "Distinct countries: loading..."
     },
     es: {
       loadingCountry: "Cargando país del visitante...",
@@ -526,7 +537,10 @@ layout: landing
       totalPrefix: "Total de visitas: ",
       totalLoading: "Total de visitas: cargando...",
       totalUnavailable: "Total de visitas: no disponible en este momento.",
-      noCountryData: "Aún no hay datos por país."
+      noCountryData: "Aún no hay datos por país.",
+      allCountriesTitle: "Países visitantes",
+      distinctCountriesPrefix: "Países distintos: ",
+      distinctCountriesLoading: "Países distintos: cargando..."
     }
   };
 
@@ -609,20 +623,38 @@ layout: landing
 
   const renderTopCountries = () => {
     const listEl = document.getElementById("visitor-country-list");
+    const allListEl = document.getElementById("visitor-country-list-all");
     const stripEl = document.getElementById("visitor-flags-strip");
-    if (!listEl || !stripEl) return;
+    const allCountriesTitleEl = document.getElementById("all-countries-title");
+    const distinctCountriesEl = document.getElementById("distinct-countries-count");
+    if (!listEl || !allListEl || !stripEl || !allCountriesTitleEl || !distinctCountriesEl) return;
     const d = getLangDict();
 
+    allCountriesTitleEl.textContent = d.allCountriesTitle;
+
     listEl.innerHTML = "";
+    allListEl.innerHTML = "";
     stripEl.innerHTML = "";
 
-    if (!visitorTelemetryState.topCountries.length) {
+    const allCountries = Array.isArray(visitorTelemetryState.allCountries)
+      ? visitorTelemetryState.allCountries
+      : [];
+    const topCountries = Array.isArray(visitorTelemetryState.topCountries)
+      ? visitorTelemetryState.topCountries
+      : [];
+
+    if (!allCountries.length) {
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
+      allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
+      distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
     }
 
-    visitorTelemetryState.topCountries.forEach(({ code, value }) => {
+    distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${allCountries.length}`;
+
+    const rowsForTop = topCountries.length ? topCountries : allCountries;
+    rowsForTop.slice(0, 10).forEach(({ code, value }) => {
       const li = document.createElement("li");
       li.className = "country-row";
       li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
@@ -636,6 +668,13 @@ layout: landing
         <strong class="country-flag-count">${value}</strong>
       `;
       stripEl.appendChild(card);
+    });
+
+    allCountries.forEach(({ code, value }) => {
+      const li = document.createElement("li");
+      li.className = "country-row";
+      li.innerHTML = `<img src="https://flagcdn.com/24x18/${code.toLowerCase()}.png" alt="${code}" loading="lazy"> <span>${code}</span> <strong>${value}</strong>`;
+      allListEl.appendChild(li);
     });
   };
 
@@ -702,22 +741,29 @@ layout: landing
   const loadTopCountries = async (fallbackCountries = null) => {
     const countryCodes = ["BR","PT","US","ES","AR","MX","CO","CL","DE","FR","GB","CA","IN","JP","AU","IT","NL","BE","SE","CH","NO","DK","IE","PL","AT","FI","RU","CN","KR","ZA"];
     const rows = await Promise.all(countryCodes.map(async (code) => {
-      const value = await getRemoteCounter(`site-visits-country-${code}`);
-      return { code, value: Number(value || 0) };
+      const [upperValue, lowerValue] = await Promise.all([
+        getRemoteCounter(`site-visits-country-${code}`),
+        getRemoteCounter(`site-visits-country-${code.toLowerCase()}`)
+      ]);
+      return { code, value: Number(Math.max(Number(upperValue || 0), Number(lowerValue || 0))) };
     }));
 
-    const remoteRows = rows.filter((r) => r.value > 0);
+    const remoteRows = rows.filter((r) => r.value > 0).sort((a, b) => b.value - a.value);
     if (remoteRows.length) {
-      visitorTelemetryState.topCountries = remoteRows.sort((a, b) => b.value - a.value);
+      visitorTelemetryState.allCountries = remoteRows;
+      visitorTelemetryState.topCountries = remoteRows.slice(0, 10);
       renderTopCountries();
       return;
     }
 
     const countries = fallbackCountries || {};
-    visitorTelemetryState.topCountries = Object.entries(countries)
-      .map(([code, value]) => ({ code, value: Number(value || 0) }))
+    const fallbackRows = Object.entries(countries)
+      .map(([code, value]) => ({ code: String(code || "").toUpperCase(), value: Number(value || 0) }))
       .filter((r) => r.code && r.value > 0)
       .sort((a, b) => b.value - a.value);
+
+    visitorTelemetryState.allCountries = fallbackRows;
+    visitorTelemetryState.topCountries = fallbackRows.slice(0, 10);
     renderTopCountries();
   };
 
@@ -820,10 +866,12 @@ layout: landing
     try {
       await loadTopCountries(localTelemetry.countries);
     } catch {
-      visitorTelemetryState.topCountries = Object.entries(localTelemetry.countries)
-        .map(([code, value]) => ({ code, value: Number(value || 0) }))
+      const fallbackRows = Object.entries(localTelemetry.countries)
+        .map(([code, value]) => ({ code: String(code || "").toUpperCase(), value: Number(value || 0) }))
         .filter((r) => r.code && r.value > 0)
         .sort((a, b) => b.value - a.value);
+      visitorTelemetryState.allCountries = fallbackRows;
+      visitorTelemetryState.topCountries = fallbackRows.slice(0, 10);
       renderTopCountries();
     }
   };
