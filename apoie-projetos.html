@@ -185,7 +185,7 @@ lang: pt-BR
 <section class="section alt" id="mensagem-final">
   <div class="section-heading compact">
     <h2>Mensagem final</h2>
-    <p>Apoiar a Databiomics é acreditar que ciência, tecnologia, inclusão, colaboração e inovação podem caminhar juntas. É fortalecer uma iniciativa que busca contribuir para o futuro da biotecnologia, da saúde e do conhecimento aplicado, com seriedade, propósito e compromisso social.</p>
+    <p>Apoiar a Databiomics é fortalecer uma iniciativa comprometida com ciência de excelência, inovação com propósito e impacto positivo para a sociedade. Cada proposta qualificada contribui para ampliar a capacidade técnica, a colaboração interdisciplinar e a geração de soluções responsáveis em biotecnologia, saúde e conhecimento aplicado — sempre com integridade, transparência e visão de longo prazo.</p>
   </div>
 </section>
 
@@ -193,21 +193,22 @@ lang: pt-BR
 
 <section class="section alt" id="contato-apoio">
   <div class="section-heading compact">
-    <h2>Contato para colaboração, apoio institucional, parceria estratégica ou contribuição voluntária</h2>
-    <p>Se você deseja colaborar com a Databiomics, apoiar institucionalmente, propor parceria estratégica ou realizar uma contribuição voluntária para um projeto específico, preencha o formulário abaixo.</p>
+    <h2>Canal institucional para apoio, parcerias e propostas estratégicas</h2>
+    <p>Este espaço é destinado ao envio de propostas de apoio institucional, patrocínio, colaboração técnica, parceria científica ou iniciativas estratégicas relacionadas aos projetos da Databiomics. Utilize o formulário para apresentar sua proposta de forma objetiva.</p>
+    <p>Propostas de parceria, colaboração ou investimento de longo prazo são analisadas com critério e consideradas somente quando houver alinhamento real com os valores, a missão e a visão da Databiomics, incluindo compromisso com ética, rigor científico, transparência e impacto para o bem comum.</p>
   </div>
 
   <form class="interest-form" action="https://formsubmit.co/databiomics@gmail.com" method="post">
     <input type="hidden" name="_subject" value="Nova proposta de colaboração/apoio - Apoie os projetos">
     <input type="hidden" name="_captcha" value="false">
 
-    <label for="ap-nome">Nome da pessoa responsável*</label>
+    <label for="ap-nome">Nome da pessoa responsável pela proposta*</label>
     <input id="ap-nome" type="text" name="nome_responsavel" required>
 
-    <label for="ap-instituto">Instituição / Empresa</label>
+    <label for="ap-instituto">Instituição / organização</label>
     <input id="ap-instituto" type="text" name="instituicao" required>
 
-    <label for="ap-pais">País*</label>
+    <label for="ap-pais">País de atuação*</label>
     <input id="ap-pais" type="text" name="pais" required>
 
     <label for="ap-telefone">Telefone*</label>
@@ -216,16 +217,20 @@ lang: pt-BR
     <label for="ap-email">E-mail*</label>
     <input id="ap-email" type="email" name="email" required>
 
-    <label for="ap-tipo-contato">Tipo de contato*</label>
+    <label for="ap-tipo-contato">Natureza da proposta*</label>
     <select id="ap-tipo-contato" name="tipo_contato" required>
       <option value="" disabled selected>Selecione uma opção</option>
-      <option>Colaboração técnica</option>
       <option>Apoio institucional</option>
+      <option>Parceria científica</option>
       <option>Parceria estratégica</option>
-      <option>Contribuição voluntária via Pix</option>
+      <option>Patrocínio de projeto</option>
+      <option>Colaboração técnica especializada</option>
+      <option>Investimento estratégico</option>
+      <option>Proposta de cooperação de longo prazo</option>
+      <option>Contribuição voluntária para projeto específico</option>
     </select>
 
-    <label for="ap-projeto">Projeto que deseja apoiar ou discutir*</label>
+    <label for="ap-projeto">Projeto ou frente de interesse*</label>
     <select id="ap-projeto" name="projeto_interesse" required>
       <option value="" disabled selected>Selecione um projeto</option>
       <option>Apoio geral à Databiomics</option>
@@ -237,21 +242,21 @@ lang: pt-BR
       <option>Agro de Precisão Norte/Noroeste Fluminense</option>
     </select>
 
-    <label for="ap-valor-contribuicao">Valor da contribuição (opcional)</label>
+    <label for="ap-valor-contribuicao">Valor estimado do apoio (opcional)</label>
     <input id="ap-valor-contribuicao" type="text" name="valor_contribuicao" placeholder="Ex.: R$ 250,00">
 
-    <label for="ap-data-pix">Data (opcional)</label>
+    <label for="ap-data-pix">Data prevista ou realizada (opcional)</label>
     <input id="ap-data-pix" type="date" name="data_pix">
 
-    <label for="ap-comprovante">Identificador ou comprovante da transação (opcional)</label>
+    <label for="ap-comprovante">Referência da transação ou documento de registro (opcional)</label>
     <input id="ap-comprovante" type="text" name="comprovante_transacao" placeholder="Ex.: ID da transação ou referência do comprovante">
 
-    <label for="ap-proposta">Mensagem / proposta*</label>
-    <textarea id="ap-proposta" name="proposta" rows="6" placeholder="Descreva o objetivo do contato, o escopo da proposta, o formato da parceria ou o tipo de apoio pretendido." required></textarea>
+    <label for="ap-proposta">Resumo da proposta*</label>
+    <textarea id="ap-proposta" name="proposta" rows="6" placeholder="Descreva o objetivo, o escopo, o formato da parceria e os resultados esperados da proposta." required></textarea>
 
     <label><input type="checkbox" name="privacy_consent_support" required> Li e concordo com o tratamento dos meus dados pessoais conforme a <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a> e o <a href="{{ '/privacidade/' | relative_url }}#aviso-de-privacidade" target="_blank" rel="noopener">Aviso de Privacidade</a>.</label>
     <p><a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener"><strong>Política de Privacidade</strong></a> | <a href="{{ '/privacidade/' | relative_url }}#aviso-de-privacidade" target="_blank" rel="noopener"><strong>Aviso de Privacidade</strong></a></p>
 
-    <button class="button primary" type="submit">Enviar proposta para avaliação</button>
+    <button class="button primary" type="submit">Submeter proposta para análise institucional</button>
   </form>
 </section>
