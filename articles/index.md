@@ -29,6 +29,32 @@ Página dedicada a publicações e divulgação científica.
 
   <article class="article-card">
     <div class="article-text">
+      <h3>Coral microbiome manipulation elicits metabolic and genetic restructuring to mitigate heat stress and evade mortality</h3>
+      <p class="article-meta"><strong>Revista:</strong> Science Advances 7(33):abg3088 (2021).</p>
+      <p class="article-authors"><strong>Autores:</strong> Santoro EP, Borges RM, Espinoza JL, Freire M, Pereira LDM, et al.</p>
+      <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1126/sciadv.abg3088" target="_blank" rel="noopener">10.1126/sciadv.abg3088</a></p>
+    </div>
+    <figure class="article-figure">
+      <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg' | relative_url }}" alt="Figura do artigo de Santoro et al. sobre manipulação do microbioma de corais" loading="lazy" />
+      <figcaption>Illustrative figure.</figcaption>
+    </figure>
+  </article>
+
+  <article class="article-card">
+    <div class="article-text">
+      <h3>Recycled paper sludge microbial community as a potential source of cellulase and xylanase enzymes</h3>
+      <p class="article-meta"><strong>Revista:</strong> Waste and Biomass Valorization 8:1907-1917 (2017).</p>
+      <p class="article-authors"><strong>Autores:</strong> Heinz KGH, Zanoni PRS, Oliveira RR, Medina-Silva R, Simão TLL, Trindade FJ, Pereira LM, et al.</p>
+      <p class="article-links"><a href="https://doi.org/10.1007/s12649-017-9939-9" target="_blank" rel="noopener">Acesso ao artigo</a></p>
+    </div>
+    <figure class="article-figure">
+      <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
+      <figcaption>Illustrative figure.</figcaption>
+    </figure>
+  </article>
+
+  <article class="article-card">
+    <div class="article-text">
       <h3>SARS-CoV-2 mutations in Brazil: from genomics to putative clinical conditions</h3>
       <p class="article-meta"><strong>Revista:</strong> Scientific Reports (2021).</p>
       <p class="article-authors"><strong>Autores:</strong> L. F. S. M. Timmers; J. V. Peixoto; R. G. Ducati; J. F. R. Bachega; L. P. de Mattos; R. A. Caceres; F. Majolo; G. L. da Silva; M. I. Goettert; O. A. Dellagostin; J. A. P. Henriques; L. L. Xavier; S. Laufer.</p>
