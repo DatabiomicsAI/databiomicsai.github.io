@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title2 desc2">
+  <title id="title2">Recycled paper sludge enzymes illustration</title>
+  <desc id="desc2">Ilustração abstrata para o artigo sobre fonte microbiana de celulases e xilanases.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f2f2f"/>
+      <stop offset="100%" stop-color="#6b4f2c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg2)"/>
+  <rect x="80" y="110" width="640" height="240" rx="20" fill="#f4e7d5" opacity="0.95"/>
+  <g stroke="#8b5a2b" stroke-width="6" fill="none">
+    <path d="M140 180 H660"/>
+    <path d="M140 230 H660"/>
+    <path d="M140 280 H660"/>
+    <path d="M220 140 V330"/>
+    <path d="M360 140 V330"/>
+    <path d="M500 140 V330"/>
+  </g>
+  <circle cx="640" cy="140" r="36" fill="#7cc576"/>
+  <circle cx="680" cy="185" r="24" fill="#4ea64f"/>
+  <text x="50%" y="62" fill="#ffffff" text-anchor="middle" font-size="28" font-family="Arial, sans-serif">Heinz et al. (2017) · Waste and Biomass Valorization</text>
+  <text x="50%" y="92" fill="#f8eecf" text-anchor="middle" font-size="20" font-family="Arial, sans-serif">Microbial source of cellulase and xylanase enzymes</text>
+</svg>

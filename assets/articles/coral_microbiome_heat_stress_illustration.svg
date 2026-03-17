@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Coral microbiome heat stress illustration</title>
+  <desc id="desc">Ilustração abstrata para o artigo sobre manipulação de microbioma de corais.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#072b45"/>
+      <stop offset="100%" stop-color="#0f6a8b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="200" cy="320" r="90" fill="#ff7f50" opacity="0.9"/>
+  <circle cx="320" cy="280" r="70" fill="#ffa07a" opacity="0.8"/>
+  <circle cx="430" cy="330" r="65" fill="#ffb199" opacity="0.85"/>
+  <path d="M120 360 C200 180, 300 430, 390 220" stroke="#ffd9c7" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M280 380 C360 220, 460 430, 560 240" stroke="#ffd9c7" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <text x="50%" y="60" fill="#ffffff" text-anchor="middle" font-size="28" font-family="Arial, sans-serif">Santoro et al. (2021) · Science Advances</text>
+  <text x="50%" y="94" fill="#d6f3ff" text-anchor="middle" font-size="20" font-family="Arial, sans-serif">Coral microbiome manipulation and heat-stress resilience</text>
+</svg>
