@@ -35,7 +35,7 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1126/sciadv.abg3088" target="_blank" rel="noopener">10.1126/sciadv.abg3088</a></p>
     </div>
     <figure class="article-figure">
-      <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg' | relative_url }}" alt="Figura do artigo de Santoro et al. sobre manipulação do microbioma de corais" loading="lazy" />
+      <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Santoro et al. sobre manipulação do microbioma de corais" loading="lazy" />
       <figcaption>Illustrative figure.</figcaption>
     </figure>
   </article>
@@ -48,7 +48,7 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-links"><a href="https://doi.org/10.1007/s12649-017-9939-9" target="_blank" rel="noopener">Acesso ao artigo</a></p>
     </div>
     <figure class="article-figure">
-      <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
+      <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
       <figcaption>Illustrative figure.</figcaption>
     </figure>
   </article>
