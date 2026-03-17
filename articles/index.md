@@ -1,15 +1,15 @@
 ---
 layout: default
-title: News & Articles
+title: Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
 permalink: /articles/
 ---
 
-# News & Articles
+# Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
 
 Página dedicada a publicações e divulgação científica.
 
 
-## Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira.
+## Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores.
 
 <section class="article-list">
   <article class="article-card">
