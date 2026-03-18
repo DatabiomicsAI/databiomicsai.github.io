@@ -19,7 +19,7 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Anne Liong; Pedro N. Leão.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noopener">https://doi.org/10.1002/pro.70468</a></p>
       <p class="article-links"><strong>FAALPred:</strong> <a href="https://faalpred.ciimar.up.pt/" target="_blank" rel="noopener">https://faalpred.ciimar.up.pt/</a></p>
-      <p class="article-meta">As análises computacionais de bioinformática e IA foram possíveis com apoio e suporte do Google/FCT (Fundação para a Ciência e a Tecnologia), projeto aprovado por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, melhor nota da competição.</p>
+      <p class="article-meta">As análises computacionais de bioinformática e IA foram viabilizadas com disponibilidade de infraestrutura computacionao do Google cloud, projeto aprovado (melhor nota da competição) por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, Google e FCT (Fundação para a Ciência e a Tecnologia).</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/faalpred-2026.svg' | relative_url }}" alt="Figura do artigo Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred" loading="lazy" />
@@ -131,4 +131,3 @@ Página dedicada a publicações e divulgação científica.
     </figure>
   </article>
 </section>
-
