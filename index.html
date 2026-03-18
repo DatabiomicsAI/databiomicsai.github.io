@@ -6,7 +6,7 @@ layout: landing
   <a href="#sobre" data-i18n-key="nav_about">About</a>
   <a href="#servicos" data-i18n-key="nav_services">Services</a>
   <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Veja Selected Articles</a>
-  <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">Course Plan</a>
+  <a href="#cursos">Hub de Cursos, Vídeos & Treinamentos</a>
   <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Support Projects</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catalog</a>
   <a href="#contato" data-i18n-key="nav_contact">Contact</a>
@@ -22,6 +22,24 @@ layout: landing
     <a class="button ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=" data-share-network="linkedin" data-share-title="Databiomics - Página principal">LinkedIn</a>
     <a class="button ghost" href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">Instagram</a>
     <a class="button ghost" href="https://www.facebook.com/sharer/sharer.php?u=" data-share-network="facebook" data-share-title="Databiomics - Página principal">Facebook</a>
+  </div>
+</section>
+
+<section class="section follow-cta" aria-label="Siga a Databiomics nas redes sociais">
+  <p class="follow-cta-text">Siga a Databiomics, seja um agente de mudança.</p>
+  <div class="follow-cta-actions" role="group" aria-label="Redes sociais oficiais da Databiomics">
+    <a class="button ghost social-follow-link" href="https://www.linkedin.com/company/databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Siga a Databiomics no LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.94 8.5H3.56V19h3.38zm.22-3.5a1.96 1.96 0 1 0-3.92 0 1.96 1.96 0 0 0 3.92 0M20.5 13.2c0-3.26-1.74-4.78-4.06-4.78a3.5 3.5 0 0 0-3.2 1.76V8.5H9.86V19h3.38v-5.2c0-1.38.26-2.72 1.98-2.72 1.7 0 1.72 1.6 1.72 2.8V19h3.38z"/></svg>
+      <span>LinkedIn</span>
+    </a>
+    <a class="button ghost social-follow-link" href="https://www.instagram.com/databiomics_ai" target="_blank" rel="noreferrer noopener" aria-label="Siga a Databiomics no Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3m0 1.8A2.95 2.95 0 0 0 4.8 7.75v8.5a2.95 2.95 0 0 0 2.95 2.95h8.5a2.95 2.95 0 0 0 2.95-2.95v-8.5a2.95 2.95 0 0 0-2.95-2.95zm8.96 1.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1M12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6m0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="button ghost social-follow-link" href="https://www.facebook.com/Databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Siga a Databiomics no Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.2 21v-7.2h2.4l.36-2.8H13.2V9.2c0-.8.22-1.34 1.36-1.34H16V5.35A19 19 0 0 0 13.88 5c-2.1 0-3.53 1.28-3.53 3.64v2.04H8v2.8h2.35V21z"/></svg>
+      <span>Facebook</span>
+    </a>
   </div>
 </section>
 
@@ -97,9 +115,7 @@ layout: landing
     <p>Explore mais sobre o autor: </p>
   </div>
   <div class="quick-links-grid" aria-label="Links secundários">
-    <a class="quick-link" href="#cursos">Courses &amp; Talks</a>
-    <a class="quick-link" href="#videos">Videos</a>
-    <a class="quick-link" href="#divulgacao-cursos">Outreach</a>
+    <a class="quick-link" href="#cursos">Cursos, Vídeos &amp; Treinamentos</a>
     <a class="quick-link" href="#programas">Programs</a>
     <a class="quick-link" href="{{ '/depoimentos/' | relative_url }}">Testimonials</a>
     <a class="quick-link" href="{{ '/cv-others/' | relative_url }}">CV / Others</a>
@@ -139,10 +155,10 @@ layout: landing
   <div class="two-column">
     <div>
       <h3 data-i18n-key="about_exp_title">Experiência</h3>
-      <p>Atuação em projetos nacionais e internacionais, com foco em genômica comparativa, filogenômica e aplicações de IA para descoberta de enzimas e anotação funcional.</p>
+      <p>Experiência em projetos nacionais e internacionais de bioinformática e biologia computacional, com foco em genômica comparativa, filogenômica, análise de dados ômicos e aplicações de IA para descoberta de enzimas e anotação funcional.</p>
       <ul class="icon-list">
         <li data-i18n-key="about_li1">Ciência de dados ômicos e pipelines reprodutíveis</li>
-        <li data-i18n-key="about_li2">Modelagem preditiva e aprendizagem supervisionada/não supervisionada</li>
+        <li data-i18n-key="about_li2">Modelagem preditiva supervisionada e não supervisionada</li>
         <li data-i18n-key="about_li3">Desenvolvimento de aplicações com Python, R, PostgreSQL, Flask e Streamlit</li>
       </ul>
     </div>
@@ -169,9 +185,11 @@ layout: landing
       <p><a class="button ghost" href="https://doi.org/10.1126/sciadv.abg3088" target="_blank" rel="noreferrer noopener">Artigo na Science Advances</a></p>
     </article>
     <article class="info-card">
-      <h3>Desenvolvimento de programas de Bioinformática e IA para enzimas com potencial biotecnológico</h3>
+      <h3>IA e Bioinformática aplicadas à descoberta de enzimas</h3>
       <ul>
         <li>Desenvolvimento de programas de Bioinformática e IA para predição de especificidade de substratos em enzimas.</li>
+        <li>Mineração em larga escala de enzimas em genomas e metagenomas, com priorização de enzimas inéditas com potencial biotecnológico para validação experimental.</li>
+        <li>Predição de especificidade de substratos em enzimas usando Bioinformática e IA.</li>
       </ul>
       <p>Exemplo de pesquisa relacionada realizada durante meu pós-doutorado:</p>
       <p><a class="button ghost" href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noreferrer noopener">FAALPred</a></p>
@@ -216,110 +234,144 @@ layout: landing
   </div>
 </section>
 
-<section id="cursos" class="section">
+<section id="cursos" class="section alt training-hub">
   <div class="section-heading">
     <h2 data-i18n-key="courses_title">Cursos, Palestras &amp; Treinamentos</h2>
     <p data-i18n-key="courses_subtitle">Programas modulares para equipes acadêmicas e corporativas com conteúdo prático e aplicado.</p>
   </div>
-  <div class="course-grid">
-    <div class="course-video">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Vídeo do curso" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    <div class="course-content">
-      <h3>Conteúdo programático sugerido para avançar sua empresa ou projeto</h3>
-      <ul class="icon-list">
-        <li>Fundamentos de bioinformática e biologia computacional</li>
-        <li>Processamento de dados de sequenciamento genético e controle de qualidade</li>
-        <li>Machine learning aplicado à predição de funções e biomarcadores moleculares</li>
-        <li>Transformers, modelos de linguagem e aplicações em biologia</li>
-        <li>Boas práticas de reprodutibilidade, versionamento e documentação</li>
-      </ul>
-      <div class="course-tags">
-        <span>Bioinformática</span>
-        <span>Genômica</span>
-        <span>IA aplicada</span>
-        <span>Data Science</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-grid compact">
-    <article class="info-card">
-      <h3>Curso Intensivo de Bioinformática</h3>
-      <p>Para profissionais que desejam dominar análise de sequências, montagem e anotação funcional.</p>
-    </article>
-    <article class="info-card">
-      <h3>IA para Biologia &amp; Saúde</h3>
-      <p>Aplicações de deep learning, NLP e modelos generativos em dados biológicos.</p>
-    </article>
-    <article class="info-card">
-      <h3>Palestras Personalizadas</h3>
-      <p>Conteúdo sob demanda para cursos, universidades e empresas.</p>
-    </article>
-  </div>
-</section>
 
-<section id="videos" class="section alt">
-  <div class="section-heading">
-    <h2 data-i18n-key="videos_title">Galeria de vídeos · Databiomics</h2>
-    <p>Selecione um vídeo para assistir direto na página. Canal: <a href="https://www.youtube.com/@Databiomics" target="_blank" rel="noreferrer">youtube.com/@Databiomics</a>.</p>
+  <div class="training-tabs" role="tablist" aria-label="Navegação de conteúdo de cursos e vídeos">
+    <button class="button ghost is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-cursos" data-tab-target="tab-cursos">Cursos</button>
+    <button class="button ghost" type="button" role="tab" aria-selected="false" aria-controls="tab-videos" data-tab-target="tab-videos">Vídeos</button>
   </div>
-  <div class="video-selector">
-    <div class="video-window">
-      <iframe name="videoPlayer" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Vídeo selecionado do canal Databiomics" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  <div id="tab-cursos" class="tab-panel is-active" role="tabpanel">
+    <div class="course-grid">
+      <div class="course-content">
+        <h3>Conteúdo programático sugerido para avançar sua empresa ou projeto</h3>
+        <ul class="icon-list">
+          <li>Fundamentos de bioinformática e biologia computacional</li>
+          <li>Processamento de dados de sequenciamento genético e controle de qualidade</li>
+          <li>Machine learning aplicado à predição de funções e biomarcadores moleculares</li>
+          <li>Transformers, modelos de linguagem e aplicações em biologia</li>
+          <li>Boas práticas de reprodutibilidade, versionamento e documentação</li>
+        </ul>
+        <div class="course-tags">
+          <span>Bioinformática</span>
+          <span>Genômica</span>
+          <span>IA aplicada</span>
+          <span>Data Science</span>
+        </div>
+      </div>
     </div>
-    <div class="video-list">
-      <button type="button" data-video="HbSAY_IjbCY">🎬 Vídeo 1 · AI Agents in the Field (Agriculture and Environmental Research)</button>
-      <button type="button" data-video="ZcPDakutVUU">🎬 Vídeo 2 · GenerativeAI in Biology: Exploring Mathematical Functions Behind the Methods.</button>
-      <button type="button" data-video="aDtwBN9vt8M">🎬 Vídeo 3 · AI's Energy Demand Today, Tomorrow, and in the Future</button>
-      <!-- Facebook logo após o Vídeo 3 -->
-      <button type="button" onclick="window.open('https://www.facebook.com/watch/?v=602999095516438','_blank')">
-                                                    🎬 Vídeo 4 · Decifrar Enzimas: Bioinformática, Processamento de Linguagem Natural e IA (Facebook)
-      </button>
-      <button type="button" data-video="VIDEO_ID_1">🎬 Vídeo 5 · Introdução à Bioinformática (Vídeo em construção)</button>
-      <button type="button" data-video="VIDEO_ID_2">🎬 Vídeo 6 · Bioinformática, Genômica e IA aplicadas à ciência real (Vídeo em construção)</button>
-      <button type="button" data-video="VIDEO_ID_3">🎬 Vídeo 7 · O que realmente importa em Bioinformática ? (Vídeo em construção)</button>
-      <button type="button" data-video="VIDEO_ID_4">🎬 Vídeo 8 · Genômica e pipelines: da teoria à prática científica (Vídeo em construção)</button>
-      <button type="button" data-video="VIDEO_ID_5">🎬 Vídeo 9 · Inteligência Artificial aplicada à biologia: o que funciona de verdade (Vídeo em construção)</button>
-      <button type="button" data-video="VIDEO_ID_6">🎬 Vídeo 10 · Estudo de caso: do dado biológico ao resultado científico (Vídeo em construção)</button>
-      <button type="button" data-video="VIDEO_ID_7">🎬 Vídeo 11 · Como posso ajudar seu projeto, laboratório ou instituição (Vídeo em construção)</button>      
+
+    <div class="card-grid compact">
+      <article class="info-card">
+        <h3>Curso Intensivo de Bioinformática</h3>
+        <p>Para profissionais que desejam dominar análise de sequências, montagem e anotação funcional.</p>
+      </article>
+      <article class="info-card">
+        <h3>IA para Biologia &amp; Saúde</h3>
+        <p>Aplicações de deep learning, NLP e modelos generativos em dados biológicos.</p>
+      </article>
+      <article class="info-card">
+        <h3>Palestras Personalizadas</h3>
+        <p>Conteúdo sob demanda para cursos, universidades e empresas.</p>
+      </article>
+    </div>
+
+    <div class="section-heading compact promo-inline-heading">
+      <h3 data-i18n-key="promo_title">Divulgação de cursos (opcional)</h3>
+      <p data-i18n-key="promo_subtitle">Espaço reservado para campanhas, lançamentos e inscrições.</p>
+    </div>
+    <div class="course-promo">
+      <div class="promo-card">
+        <h3>Curso Avançado em Bioinformática para anotação funcional de enzimas</h3>
+        <p>Turma nova em breve. Inscreva-se para receber avisos, datas e condições especiais.</p>
+        <a class="button primary" href="#contato">Quero ser avisado</a>
+      </div>
+      <div class="promo-card">
+        <h3>Palestras e Workshops</h3>
+        <p>Treinamentos personalizados para empresas, universidades e laboratórios.</p>
+        <a class="button ghost" href="#contato">Solicitar proposta</a>
+      </div>
     </div>
   </div>
+
+  <div id="tab-videos" class="tab-panel" role="tabpanel" hidden>
+    <div id="videos" class="section-heading compact">
+      <h3 data-i18n-key="videos_title">Galeria de vídeos · Databiomics</h3>
+      <p>Selecione um vídeo para assistir direto na página. Canal: <a href="https://www.youtube.com/@Databiomics" target="_blank" rel="noreferrer">youtube.com/@Databiomics</a>.</p>
+    </div>
+    <div class="video-selector">
+      <div class="video-window">
+        <iframe name="videoPlayer" src="https://www.youtube.com/embed/HbSAY_IjbCY" title="Vídeo selecionado do canal Databiomics" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-list">
+        <button type="button" data-video="HbSAY_IjbCY">🎬 Vídeo 1 · AI Agents in the Field (Agriculture and Environmental Research)</button>
+        <button type="button" data-video="ZcPDakutVUU">🎬 Vídeo 2 · GenerativeAI in Biology: Exploring Mathematical Functions Behind the Methods.</button>
+        <button type="button" data-video="aDtwBN9vt8M">🎬 Vídeo 3 · AI's Energy Demand Today, Tomorrow, and in the Future</button>
+        <button type="button" onclick="window.open('https://www.facebook.com/watch/?v=602999095516438','_blank')">🎬 Vídeo 4 · Decifrar Enzimas: Bioinformática, Processamento de Linguagem Natural e IA (Facebook)</button>
+        <button type="button" data-video="VIDEO_ID_1">🎬 Vídeo 5 · Introdução à Bioinformática (Vídeo em construção)</button>
+        <button type="button" data-video="VIDEO_ID_2">🎬 Vídeo 6 · Bioinformática, Genômica e IA aplicadas à ciência real (Vídeo em construção)</button>
+        <button type="button" data-video="VIDEO_ID_3">🎬 Vídeo 7 · O que realmente importa em Bioinformática ? (Vídeo em construção)</button>
+        <button type="button" data-video="VIDEO_ID_4">🎬 Vídeo 8 · Genômica e pipelines: da teoria à prática científica (Vídeo em construção)</button>
+        <button type="button" data-video="VIDEO_ID_5">🎬 Vídeo 9 · Inteligência Artificial aplicada à biologia: o que funciona de verdade (Vídeo em construção)</button>
+        <button type="button" data-video="VIDEO_ID_6">🎬 Vídeo 10 · Estudo de caso: do dado biológico ao resultado científico (Vídeo em construção)</button>
+        <button type="button" data-video="VIDEO_ID_7">🎬 Vídeo 11 · Como posso ajudar seu projeto, laboratório ou instituição (Vídeo em construção)</button>
+      </div>
+    </div>
+
+    <div class="section-heading compact newsletter-inline">
+      <h3 data-i18n-key="newsletter_title">Newsletter Databiomics</h3>
+      <p>Seção Newsletter Databiomics: <a href="https://www.linkedin.com/newsletters/mathematics-ai-meets-biology-7211465469294178304/" target="_blank" rel="noreferrer">Mathematics AI Meets Biology</a>.</p>
+    </div>
+  </div>
+
   <script>
-    document.querySelectorAll(".video-list button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const player = document.querySelector(".video-window iframe");
+    const trainingTabs = document.querySelectorAll('[data-tab-target]');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    const activateTab = (targetId) => {
+      trainingTabs.forEach((item) => {
+        const isTarget = item.getAttribute('data-tab-target') === targetId;
+        item.classList.toggle('is-active', isTarget);
+        item.setAttribute('aria-selected', String(isTarget));
+      });
+
+      tabPanels.forEach((panel) => {
+        const isTarget = panel.id === targetId;
+        panel.classList.toggle('is-active', isTarget);
+        panel.hidden = !isTarget;
+      });
+    };
+
+    trainingTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        activateTab(tab.getAttribute('data-tab-target'));
+      });
+    });
+
+    if (window.location.hash === '#videos') {
+      activateTab('tab-videos');
+    }
+
+    window.addEventListener('hashchange', () => {
+      if (window.location.hash === '#videos') {
+        activateTab('tab-videos');
+      }
+    });
+
+    document.querySelectorAll('#tab-videos .video-list button[data-video]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const player = document.querySelector('#tab-videos .video-window iframe');
         player.src = `https://www.youtube.com/embed/${button.dataset.video}`;
       });
     });
   </script>
 </section>
 
-<section id="newsletter" class="section">
-  <div class="section-heading">
-    <h2 data-i18n-key="newsletter_title">Newsletter Databiomics</h2>
-    <p>Seção Newsletter Databiomics: <a href="https://www.linkedin.com/newsletters/mathematics-ai-meets-biology-7211465469294178304/" target="_blank" rel="noreferrer">Mathematics AI Meets Biology</a>.</p>
-  </div>
-</section>
 
-<section id="divulgacao-cursos" class="section">
-  <div class="section-heading">
-    <h2 data-i18n-key="promo_title">Divulgação de cursos (opcional)</h2>
-    <p data-i18n-key="promo_subtitle">Espaço reservado para campanhas, lançamentos e inscrições.</p>
-  </div>
-  <div class="course-promo">
-    <div class="promo-card">
-      <h3>Curso Avançado em Bioinformática para anotação funcional de enzimas</h3>
-      <p>Turma nova em breve. Inscreva-se para receber avisos, datas e condições especiais.</p>
-      <a class="button primary" href="#contato">Quero ser avisado</a>
-    </div>
-    <div class="promo-card">
-      <h3>Palestras e Workshops</h3>
-      <p>Treinamentos personalizados para empresas, universidades e laboratórios.</p>
-      <a class="button ghost" href="#contato">Solicitar proposta</a>
-    </div>
-  </div>
-</section>
 
 <section id="programas" class="section alt">
   <div class="section-heading">
@@ -753,32 +805,59 @@ layout: landing
     return null;
   };
 
+  const normalizeCountryRows = (countries = {}) => {
+    const totalsByCountry = new Map();
+
+    Object.entries(countries).forEach(([code, value]) => {
+      const normalizedCode = String(code || "").trim().toUpperCase();
+      const normalizedValue = Number(value || 0);
+      if (!/^[A-Z]{2}$/.test(normalizedCode) || normalizedValue <= 0) return;
+      totalsByCountry.set(normalizedCode, (totalsByCountry.get(normalizedCode) || 0) + normalizedValue);
+    });
+
+    return Array.from(totalsByCountry.entries())
+      .map(([code, value]) => ({ code, value }))
+      .sort((a, b) => b.value - a.value);
+  };
+
+
+  const mapWithConcurrency = async (items, concurrency, mapper) => {
+    const values = new Array(items.length);
+    let index = 0;
+
+    const worker = async () => {
+      while (index < items.length) {
+        const currentIndex = index;
+        index += 1;
+        values[currentIndex] = await mapper(items[currentIndex], currentIndex);
+      }
+    };
+
+    const workers = Array.from({ length: Math.max(1, Math.min(concurrency, items.length)) }, () => worker());
+    await Promise.all(workers);
+    return values;
+  };
+
+  const allIsoCountryCodes = ["AF","AX","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BQ","BA","BW","BV","BR","IO","BN","BG","BF","BI","CV","KH","CM","CA","KY","CF","TD","CL","CN","CX","CC","CO","KM","CG","CD","CK","CR","CI","HR","CU","CW","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GG","GN","GW","GY","HT","HM","VA","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM","NA","NR","NP","NL","NC","NZ","NI","NE","NG","NU","NF","MK","MP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","RE","RO","RU","RW","BL","SH","KN","LC","MF","PM","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SX","SK","SI","SB","SO","ZA","GS","SS","ES","LK","SD","SR","SJ","SE","CH","SY","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","US","UM","UY","UZ","VU","VE","VN","VG","VI","WF","EH","YE","ZM","ZW"];
+
   const loadTopCountries = async (fallbackCountries = null) => {
-    const countryCodes = ["BR","PT","US","ES","AR","MX","CO","CL","DE","FR","GB","CA","IN","JP","AU","IT","NL","BE","SE","CH","NO","DK","IE","PL","AT","FI","RU","CN","KR","ZA"];
-    const rows = await Promise.all(countryCodes.map(async (code) => {
+    const rows = await mapWithConcurrency(allIsoCountryCodes, 24, async (code) => {
       const [upperValue, lowerValue] = await Promise.all([
         getRemoteCounter(`site-visits-country-${code}`),
         getRemoteCounter(`site-visits-country-${code.toLowerCase()}`)
       ]);
       return { code, value: Number(Math.max(Number(upperValue || 0), Number(lowerValue || 0))) };
-    }));
+    });
 
-    const remoteRows = rows.filter((r) => r.value > 0).sort((a, b) => b.value - a.value);
-    if (remoteRows.length) {
-      visitorTelemetryState.allCountries = remoteRows;
-      visitorTelemetryState.topCountries = remoteRows.slice(0, 10);
-      renderTopCountries();
-      return;
-    }
-
+    const remoteRows = rows.filter((r) => r.value > 0);
     const countries = fallbackCountries || {};
-    const fallbackRows = Object.entries(countries)
-      .map(([code, value]) => ({ code: String(code || "").toUpperCase(), value: Number(value || 0) }))
-      .filter((r) => r.code && r.value > 0)
-      .sort((a, b) => b.value - a.value);
+    const mergedRows = normalizeCountryRows({
+      ...countries,
+      ...Object.fromEntries(remoteRows.map((row) => [row.code, row.value]))
+    });
 
-    visitorTelemetryState.allCountries = fallbackRows;
-    visitorTelemetryState.topCountries = fallbackRows.slice(0, 10);
+    visitorTelemetryState.allCountries = mergedRows;
+    visitorTelemetryState.topCountries = mergedRows.slice(0, 10);
     renderTopCountries();
   };
 
