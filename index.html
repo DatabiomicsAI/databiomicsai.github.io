@@ -582,6 +582,20 @@ layout: landing
     return String.fromCodePoint(...[...normalized].map((char) => 127397 + char.charCodeAt(0)));
   };
 
+  const getCountryDisplayName = (code) => {
+    const normalized = String(code || "").trim().toUpperCase();
+    if (!/^[A-Z]{2}$/.test(normalized)) return normalized || "--";
+    const lang = localStorage.getItem("siteLang") || "pt";
+    const localeMap = { pt: "pt-BR", en: "en", es: "es" };
+    const locale = localeMap[lang] || "pt-BR";
+    try {
+      const displayNames = new Intl.DisplayNames([locale], { type: "region" });
+      return displayNames.of(normalized) || normalized;
+    } catch (err) {
+      return normalized;
+    }
+  };
+
   const updateDistinctCountriesClock = () => {
     const clockEl = document.getElementById("distinct-countries-clock");
     if (!clockEl) return;
@@ -702,25 +716,27 @@ layout: landing
 
     const rowsForTop = topCountries.length ? topCountries : allCountries;
     rowsForTop.slice(0, 10).forEach(({ code, value }) => {
+      const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${code}">${countryCodeToFlagEmoji(code)}</span> <span>${code}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
 
       const card = document.createElement("span");
       card.className = "country-flag-chip";
-      card.title = `${code}: ${value}`;
+      card.title = `${countryName}: ${value}`;
       card.innerHTML = `
-        <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="${code}" loading="lazy">
+        <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="Bandeira de ${countryName}" loading="lazy">
         <strong class="country-flag-count">${value}</strong>
       `;
       stripEl.appendChild(card);
     });
 
     allCountries.forEach(({ code, value }) => {
+      const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${code}">${countryCodeToFlagEmoji(code)}</span> <span>${code}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
       allListEl.appendChild(li);
     });
   };
