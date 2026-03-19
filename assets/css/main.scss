@@ -209,7 +209,7 @@ footer  {
   width: min(100%, 1100px);
   box-sizing: border-box;
   margin-inline: auto;
-  min-height: 170px;
+  min-height: 140px;
 }
 
 .social-share .section-heading {
@@ -266,7 +266,7 @@ footer  {
   width: min(100%, 1100px);
   box-sizing: border-box;
   margin-inline: auto;
-  min-height: 170px;
+  min-height: 140px;
 }
 
 .follow-cta-text {
@@ -276,6 +276,12 @@ footer  {
   white-space: normal;
   text-align: justify;
   font-size: 0.95rem;
+}
+
+.follow-cta-flag {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 0.35rem;
 }
 
 .follow-cta-actions {
