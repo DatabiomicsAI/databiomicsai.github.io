@@ -1164,21 +1164,37 @@ footer  {
 
 
 .project-like {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
   margin: 0.35rem 0 1rem;
 }
 
-.project-like-button {
-  padding: 0.45rem 0.8rem;
-  border-color: color-mix(in srgb, var(--links) 40%, transparent);
+.project-like-reactions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.project-like-count {
+.project-reaction-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border-color: color-mix(in srgb, var(--links) 40%, transparent);
+  font-size: 0.86rem;
+}
+
+.reaction-count {
   font-weight: 700;
-  font-size: 0.92rem;
-  color: var(--text);
+}
+
+.project-share-button {
+  padding: 0.45rem 0.9rem;
+  border-color: color-mix(in srgb, var(--links) 40%, transparent);
 }
 
 .appearance-toggle {
