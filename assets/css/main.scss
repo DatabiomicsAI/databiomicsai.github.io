@@ -1197,6 +1197,27 @@ footer  {
   border-color: color-mix(in srgb, var(--links) 40%, transparent);
 }
 
+.monkseal-details-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+}
+
+.monkseal-click-hint {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 .appearance-toggle {
   position: fixed;
   top: 1rem;
