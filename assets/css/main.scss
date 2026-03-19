@@ -207,6 +207,8 @@ footer  {
   justify-content: space-between;
   gap: 1rem;
   width: min(100%, 1100px);
+  box-sizing: border-box;
+  margin-inline: auto;
 }
 
 .social-share .section-heading {
@@ -214,7 +216,8 @@ footer  {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  white-space: nowrap;
+  white-space: normal;
+  flex-wrap: wrap;
 }
 
 .social-share .section-heading h2 {
@@ -243,7 +246,7 @@ footer  {
 
 
 .follow-cta {
-  margin-top: -0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
   padding: 1rem 1.25rem;
   border: 1px solid color-mix(in srgb, var(--links) 30%, transparent);
@@ -254,6 +257,8 @@ footer  {
   justify-content: space-between;
   gap: 1rem;
   width: min(100%, 1100px);
+  box-sizing: border-box;
+  margin-inline: auto;
 }
 
 .follow-cta-text {
