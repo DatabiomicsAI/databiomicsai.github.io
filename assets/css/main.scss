@@ -207,6 +207,9 @@ footer  {
   justify-content: space-between;
   gap: 1rem;
   width: min(100%, 1100px);
+  box-sizing: border-box;
+  margin-inline: auto;
+  min-height: 140px;
 }
 
 .social-share .section-heading {
@@ -214,7 +217,9 @@ footer  {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  white-space: nowrap;
+  white-space: normal;
+  flex-wrap: wrap;
+  text-align: justify;
 }
 
 .social-share .section-heading h2 {
@@ -229,21 +234,26 @@ footer  {
 
 .social-share-actions {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 0.55rem;
   margin-left: auto;
+  width: min(100%, 420px);
 }
 
 .social-share-actions .button.ghost {
   border-color: color-mix(in srgb, var(--links) 45%, transparent);
   padding: 0.55rem 1.05rem;
   font-size: 0.9rem;
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 120px;
+  flex: 1 1 calc(33.333% - 0.55rem);
 }
 
 
 .follow-cta {
-  margin-top: -0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
   padding: 1rem 1.25rem;
   border: 1px solid color-mix(in srgb, var(--links) 30%, transparent);
@@ -254,21 +264,39 @@ footer  {
   justify-content: space-between;
   gap: 1rem;
   width: min(100%, 1100px);
+  box-sizing: border-box;
+  margin-inline: auto;
+  min-height: 140px;
 }
 
 .follow-cta-text {
   margin: 0;
   font-weight: 600;
   color: var(--text);
-  white-space: nowrap;
+  white-space: normal;
+  text-align: justify;
   font-size: 0.95rem;
+}
+
+.follow-cta-flag {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 0.35rem;
 }
 
 .follow-cta-actions {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 0.65rem;
+  width: min(100%, 420px);
+}
+
+.follow-cta-actions .button.ghost {
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 120px;
+  flex: 1 1 calc(33.333% - 0.65rem);
 }
 
 .social-follow-link {
@@ -1132,6 +1160,62 @@ footer  {
 .monkseal-inline-logo {
   margin-top: 0.4rem;
   margin-bottom: 1rem;
+}
+
+
+.project-like {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 0.35rem 0 1rem;
+}
+
+.project-like-reactions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.project-reaction-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.7rem;
+  border-color: color-mix(in srgb, var(--links) 40%, transparent);
+  font-size: 0.86rem;
+}
+
+.reaction-count {
+  font-weight: 700;
+}
+
+.project-share-button {
+  padding: 0.45rem 0.9rem;
+  border-color: color-mix(in srgb, var(--links) 40%, transparent);
+}
+
+.monkseal-details-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+}
+
+.monkseal-click-hint {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .appearance-toggle {
