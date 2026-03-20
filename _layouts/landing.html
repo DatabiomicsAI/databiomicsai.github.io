@@ -44,6 +44,15 @@
           {% include toggle_theme_button.html %}
         {% endif %}
 
+        <section class="global-visitor-widget" data-visitor-widget aria-label="Visitor countries">
+          <h3 class="global-visitor-title">Visitor countries</h3>
+          <p class="global-visitor-meta" data-distinct-countries>Distinct countries: loading...</p>
+          <p class="global-visitor-meta" data-local-time>Local time: --:--:--</p>
+          <ul class="global-visitor-list" data-country-list>
+            <li>No country data yet.</li>
+          </ul>
+        </section>
+
         <div class="credits">
           &copy;&nbsp;2026&nbsp;Databiomics®
           <img class="credits-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®">
@@ -53,6 +62,7 @@
     </main>
 
 
+    <script src="{{ '/assets/js/visitor-countries.js' | relative_url }}"></script>
     <script>
       (() => {
         const pageUrl = encodeURIComponent(window.location.href);

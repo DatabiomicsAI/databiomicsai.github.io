@@ -1539,3 +1539,25 @@ html.colorblind-mode .button.ghost {
   transform: translateY(-2px);
   border-color: rgba(96, 165, 250, 0.6);
 }
+
+.global-visitor-widget {
+  margin: 2rem auto 0;
+  padding: 1rem 1.1rem;
+  max-width: 760px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+}
+
+.global-visitor-title {
+  margin: 0 0 0.45rem;
+}
+
+.global-visitor-meta {
+  margin: 0.1rem 0;
+}
+
+.global-visitor-list {
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
+}
