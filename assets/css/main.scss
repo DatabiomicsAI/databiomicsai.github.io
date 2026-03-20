@@ -1538,6 +1538,21 @@ html.colorblind-mode .button.ghost {
   display: none !important;
 }
 
+/* Hide Google Translate top banner/tooltip overlays to keep UI clean */
+body {
+  top: 0 !important;
+}
+
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-balloon-frame,
+#goog-gt-tt,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-text-highlight {
+  display: none !important;
+}
+
 .catalog-hero .hero-content {
   max-width: 780px;
 }
