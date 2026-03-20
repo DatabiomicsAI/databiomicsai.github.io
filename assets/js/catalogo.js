@@ -18,12 +18,12 @@
     {
       id: 'camisas',
       nome: 'Camisas',
-      descricao: 'Produtos institucionais e temáticos da Databiomics.'
+      descricao: 'Produtos institucionais e temáticos da Databiomics®.'
     },
     {
       id: 'bones',
       nome: 'Bonés',
-      descricao: 'Acessórios e itens visuais da marca Databiomics.'
+      descricao: 'Acessórios e itens visuais da marca Databiomics®.'
     }
   ];
 
