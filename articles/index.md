@@ -5,6 +5,7 @@ permalink: /articles/
 ---
 
 # Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
+{:.articles-main-title}
 
 Página dedicada a publicações e divulgação científica.
 
