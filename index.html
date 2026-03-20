@@ -5,7 +5,7 @@ layout: landing
 <nav class="landing-nav">
   <a href="#sobre" data-i18n-key="nav_about">About</a>
   <a href="#servicos" data-i18n-key="nav_services">Services</a>
-  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Veja Selected Articles</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Veja artigos selecionados</a>
   <a href="{{ '/planocursos/' | relative_url }}" data-i18n-key="nav_course_plan">PlanCursos</a>
   <a href="{{ '/videos/' | relative_url }}">Videos</a>
   <a href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Support Projects</a>
@@ -18,6 +18,7 @@ layout: landing
   <div class="hero-grid">
     <div class="hero-content">
       <p class="hero-eyebrow" data-i18n-key="hero_eyebrow">Dê o primeiro passo rumo a um futuro de inovação e excelência</p>
+      <img class="hero-brand-logo" src="{{ '/databiomics3.jpg' | relative_url }}" alt="Logo Databiomics®" loading="eager">
       <h1 id="hero-title">Leandro de Mattos Pereira</h1>
       <p class="hero-subtitle" data-i18n-key="hero_subtitle">Bioinformática, IA aplicada à ciência de dados ômicos e consultoria em análises avançadas.</p>
       <div class="hero-actions">
@@ -110,7 +111,7 @@ layout: landing
   </div>
 </section>
 
-<section id="sobre" class="section">
+<section id="sobre" class="section about-panel">
   <div class="section-heading">
     <h2 data-i18n-key="about_title">Sobre</h2>
     <p data-i18n-key="about_subtitle">Pesquisador e consultor com trajetória em bioinformática, biologia computacional e ciência de dados aplicada à saúde, biodiversidade e biotecnologia.</p>

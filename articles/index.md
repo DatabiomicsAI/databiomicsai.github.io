@@ -5,11 +5,9 @@ permalink: /articles/
 ---
 
 # Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
+{:.articles-main-title}
 
 Página dedicada a publicações e divulgação científica.
-
-
-## Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores.
 
 <section class="article-list">
   <article class="article-card">
@@ -20,6 +18,9 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noopener">https://doi.org/10.1002/pro.70468</a></p>
       <p class="article-links"><strong>FAALPred:</strong> <a href="https://faalpred.ciimar.up.pt/" target="_blank" rel="noopener">https://faalpred.ciimar.up.pt/</a></p>
       <p class="article-meta">As análises computacionais de bioinformática e IA foram viabilizadas com disponibilidade de infraestrutura computacionao do Google cloud, projeto aprovado (melhor nota da competição) por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, Google e FCT (Fundação para a Ciência e a Tecnologia).</p>
+      <div class="article-tags">
+        <span>FAAL enzymes</span><span>substrate specificity</span><span>machine learning</span><span>bioinformatics</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/faalpred-2026.svg' | relative_url }}" alt="Figura do artigo Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred" loading="lazy" />
@@ -33,22 +34,12 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-meta"><strong>Revista:</strong> Science Advances 7(33):abg3088 (2021).</p>
       <p class="article-authors"><strong>Autores:</strong> Santoro EP, Borges RM, Espinoza JL, Freire M, Pereira LDM, et al.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1126/sciadv.abg3088" target="_blank" rel="noopener">10.1126/sciadv.abg3088</a></p>
+      <div class="article-tags">
+        <span>coral microbiome</span><span>heat stress</span><span>metabolic restructuring</span><span>marine biology</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Santoro et al. sobre manipulação do microbioma de corais" loading="lazy" />
-      <figcaption>Illustrative figure.</figcaption>
-    </figure>
-  </article>
-
-  <article class="article-card">
-    <div class="article-text">
-      <h3>Recycled paper sludge microbial community as a potential source of cellulase and xylanase enzymes</h3>
-      <p class="article-meta"><strong>Revista:</strong> Waste and Biomass Valorization 8:1907-1917 (2017).</p>
-      <p class="article-authors"><strong>Autores:</strong> Heinz KGH, Zanoni PRS, Oliveira RR, Medina-Silva R, Simão TLL, Trindade FJ, Pereira LM, et al.</p>
-      <p class="article-links"><a href="https://doi.org/10.1007/s12649-017-9939-9" target="_blank" rel="noopener">Acesso ao artigo</a></p>
-    </div>
-    <figure class="article-figure">
-      <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
       <figcaption>Illustrative figure.</figcaption>
     </figure>
   </article>
@@ -59,10 +50,13 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-meta"><strong>Revista:</strong> Scientific Reports (2021).</p>
       <p class="article-authors"><strong>Autores:</strong> L. F. S. M. Timmers; J. V. Peixoto; R. G. Ducati; J. F. R. Bachega; L. P. de Mattos; R. A. Caceres; F. Majolo; G. L. da Silva; M. I. Goettert; O. A. Dellagostin; J. A. P. Henriques; L. L. Xavier; S. Laufer.</p>
       <p class="article-links"><a href="https://www.nature.com/articles/s41598-021-91585-6" target="_blank" rel="noopener">Acesso ao artigo</a></p>
+      <div class="article-tags">
+        <span>SARS-CoV-2</span><span>genomics</span><span>Brazil</span><span>viral mutations</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/sarscov2-2021.svg' | relative_url }}" alt="Figura do artigo SARS-CoV-2 mutations in Brazil" loading="lazy" />
-      <figcaption> Illustrative figure.</figcaption>
+      <figcaption>Illustrative figure.</figcaption>
     </figure>
   </article>
 
@@ -72,32 +66,41 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-meta"><strong>Revista:</strong> Parasitology (2021). Published online by Cambridge University Press: 17 March 2021.</p>
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Milene Pereira Guimarães de Jezuz; Amaranta Ramos Rangel; Bruna Dalcin Baldasso; Amanda Bungi Zaluskic; Carlos Graeff-Teixeira; Alessandra Loureiro Morassutti.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1017/S0031182021000469" target="_blank" rel="noopener">https://doi.org/10.1017/S0031182021000469</a></p>
+      <div class="article-tags">
+        <span>transcriptome</span><span>Angiostrongylus cantonensis</span><span>antithrombin</span><span>parasitology</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/angiostrongylus-worms-2021.svg' | relative_url }}" alt="Figura do artigo De novo transcriptome reveals blood coagulation/antithrombin factors" loading="lazy" />
       <figcaption> Illustrative figure.</figcaption>
     </figure>
   </article>
-  
+
   <article class="article-card">
     <div class="article-text">
       <h3>In depth transcriptome unravels the biotechnological potential of the Bothrops jararaca venom gland</h3>
       <p class="article-meta"><strong>Revista:</strong> J. Venom. Anim. Toxins incl. Trop. Dis. 26 (2020).</p>
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Elisa Alves Messias; Bruna Sorroche; Angela das Neves Oliveira; Lidia Maria Rebolho Batista Arantes; Ana Carolina de Carvalho; Anita Mitico Tanaka-Azevedo; Kathleen Grego; André Carvalho; Matias Melendez.</p>
       <p class="article-links"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7579844/" target="_blank" rel="noopener">Acesso open access</a></p>
+      <div class="article-tags">
+        <span>transcriptome</span><span>snake venom</span><span>Bothrops jararaca</span><span>biotechnology</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/bothrops-2020.svg' | relative_url }}" alt="Figura do artigo Bothrops jararaca venom gland" loading="lazy" />
       <figcaption> Illustrative figure.</figcaption>
     </figure>
   </article>
-
+  
   <article class="article-card">
     <div class="article-text">
       <h3>Mollusk microbiota shift during Angiostrongylus cantonensis infection in the freshwater snail Biomphalaria glabrata and the terrestrial slug Phillocaulis soleiformis</h3>
       <p class="article-meta"><strong>Revista:</strong> Parasitology Research 119 (2020).</p>
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Joana Borges Osório; Alessandra Loureiro Morassutti; Jeremy Potriquet; Adriana Giongo; Renata Russo F. Cândido; Jason Mulvenna; Malcolm Jones; Carlos Graeff-Teixeira.</p>
       <p class="article-links"><a href="https://link.springer.com/article/10.1007%2Fs00436-020-06743-y" target="_blank" rel="noopener">Acesso ao artigo</a></p>
+      <div class="article-tags">
+        <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/mollusk-microbiota-2020.svg' | relative_url }}" alt="Figura do artigo Mollusk microbiota shift" loading="lazy" />
@@ -111,6 +114,9 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-meta"><strong>Revista:</strong> Frontiers in Oncology (2019).</p>
       <p class="article-authors"><strong>Autores:</strong> Ana Carolina de Carvalho; Leandro de Mattos Pereira; José Guilherme Datorre; Wellington dos Santos; Gustavo Noriz Berardinelli; Marcus de Medeiros Matsushita; Ronilson Oliveira Durães; Denise Peixoto Guimarães; Rui Manuel Reis.</p>
       <p class="article-links"><a href="https://www.frontiersin.org/articles/10.3389/fonc.2019.00813/full" target="_blank" rel="noopener">Acesso ao artigo</a></p>
+      <div class="article-tags">
+        <span>Fusobacterium nucleatum</span><span>colorectal cancer</span><span>microbiota</span><span>oncology</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/microbiota-fusobacterium-2019.svg' | relative_url }}" alt="Figura do artigo Microbiota profile and impact of Fusobacterium nucleatum" loading="lazy" />
@@ -124,9 +130,44 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-meta"><strong>Revista:</strong> Forest Ecology and Management 453 (2019).</p>
       <p class="article-authors"><strong>Autores:</strong> Carla Müller; Leandro de Mattos Pereira; Carina Lopes; Juvenil Cares; Adriana Giongo; Luiz Gustavo dos Anjos Borges; Carlos Graeff-Teixeira; Alessandra Loureiro Morassutti.</p>
       <p class="article-links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0378112719312873" target="_blank" rel="noopener">Acesso ao artigo</a></p>
+      <div class="article-tags">
+        <span>metabarcoding</span><span>Atlantic Forest</span><span>soil biodiversity</span><span>nematodes</span>
+      </div>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/meiofaunal-2019.svg' | relative_url }}" alt="Figura do artigo Meiofaunal diversity in the Atlantic Forest soil" loading="lazy" />
+      <figcaption> Illustrative figure.</figcaption>
+    </figure>
+  </article>
+
+  <article class="article-card">
+    <div class="article-text">
+      <h3>Mining of potential drug targets through the identification of essential and analogous enzymes in the genomes of pathogens of Glycine max, Zea mays and Solanum lycopersicum</h3>
+      <p class="article-meta"><strong>Publicado em:</strong> 25 May 2018.</p>
+      <p class="article-authors"><strong>Autores:</strong> Rangeline Azevedo da Silva, Leandro de Mattos Pereira, Melise Chaves Silveira, Rodrigo Jardim, Antonio Basilio de Miranda.</p>
+      <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pone.0197511" target="_blank" rel="noopener">https://doi.org/10.1371/journal.pone.0197511</a></p>
+      <div class="article-tags">
+        <span>drug targets</span><span>essential enzymes</span><span>plant pathogens</span><span>comparative genomics</span>
+      </div>
+    </div>
+    <figure class="article-figure">
+      <img src="{{ '/assets/articles/NISE.png' | relative_url }}" alt="Figura ilustrativa do artigo sobre identificação de enzimas essenciais e análogas em patógenos de culturas agrícolas" loading="lazy" />
+      <figcaption>Illustrative figure.</figcaption>
+    </figure>
+  </article>
+
+  <article class="article-card">
+    <div class="article-text">
+      <h3>Recycled paper sludge microbial community as a potential source of cellulase and xylanase enzymes</h3>
+      <p class="article-meta"><strong>Revista:</strong> Waste and Biomass Valorization 8:1907-1917 (2017).</p>
+      <p class="article-authors"><strong>Autores:</strong> Heinz KGH, Zanoni PRS, Oliveira RR, Medina-Silva R, Simão TLL, Trindade FJ, Pereira LM, et al.</p>
+      <p class="article-links"><a href="https://doi.org/10.1007/s12649-017-9939-9" target="_blank" rel="noopener">Acesso ao artigo</a></p>
+      <div class="article-tags">
+        <span>cellulase</span><span>xylanase</span><span>microbial community</span><span>waste valorization</span>
+      </div>
+    </div>
+    <figure class="article-figure">
+      <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
       <figcaption>Illustrative figure.</figcaption>
     </figure>
   </article>
