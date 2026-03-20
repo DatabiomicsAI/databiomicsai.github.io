@@ -1,7 +1,7 @@
 window.DATABIOMICS_CATALOG_ITEMS = [
   {
     id: 'apostila-em-breve',
-    nome: 'Apostilas Databiomics — Em breve',
+    nome: 'Apostilas Databiomics® — Em breve',
     categoria: 'apostilas',
     tipo: 'digital',
     preco: 0,
@@ -14,7 +14,7 @@ window.DATABIOMICS_CATALOG_ITEMS = [
   },
   {
     id: 'livro-em-breve',
-    nome: 'Livros Databiomics — Em breve',
+    nome: 'Livros Databiomics® — Em breve',
     categoria: 'livros',
     tipo: 'fisico',
     preco: 0,
@@ -27,11 +27,11 @@ window.DATABIOMICS_CATALOG_ITEMS = [
   },
   {
     id: 'camisa-em-breve',
-    nome: 'Camisas Databiomics — Em breve',
+    nome: 'Camisas Databiomics® — Em breve',
     categoria: 'camisas',
     tipo: 'fisico',
     preco: 0,
-    descricao: 'Linha institucional e temática da Databiomics em preparação.',
+    descricao: 'Linha institucional e temática da Databiomics® em preparação.',
     imagem: '',
     ativo: false,
     destaque: false,
@@ -40,7 +40,7 @@ window.DATABIOMICS_CATALOG_ITEMS = [
   },
   {
     id: 'bone-em-breve',
-    nome: 'Bonés Databiomics — Em breve',
+    nome: 'Bonés Databiomics® — Em breve',
     categoria: 'bones',
     tipo: 'fisico',
     preco: 0,
@@ -53,7 +53,7 @@ window.DATABIOMICS_CATALOG_ITEMS = [
   },
   {
     id: 'aula-em-breve',
-    nome: 'Aulas Databiomics — Em breve',
+    nome: 'Aulas Databiomics® — Em breve',
     categoria: 'aulas',
     tipo: 'servico',
     preco: 0,
