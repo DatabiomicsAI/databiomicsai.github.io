@@ -76,6 +76,9 @@ footer  {
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.58rem 0.82rem;
+    white-space: nowrap;
     font-size: 0.95rem;
 í    padding: 0.64rem 0.95rem;
     border-radius: 999px;
@@ -1834,6 +1837,14 @@ iframe.goog-te-banner-frame,
   border-radius: 10px;
 }
 
+.partner-premium-media .partner-logo-wbp {
+  max-height: 280px;
+  object-fit: contain;
+  object-position: center;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  padding: 0.65rem;
+}
+
 .partner-premium-kicker {
   margin: 0 0 0.2rem;
   text-transform: uppercase;
@@ -1850,4 +1861,8 @@ iframe.goog-te-banner-frame,
 
 .partnership-item {
   border: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
+}
+
+.partner-support-note {
+  margin-top: 0.5rem;
 }
