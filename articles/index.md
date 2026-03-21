@@ -185,6 +185,23 @@ Página dedicada a publicações e divulgação científica.
 
   <article class="article-card">
     <div class="article-text">
+      <h3>Biogas from slaughterhouse wastewater anaerobic digestion is driven by the archaeal family Methanobacteriaceae and bacterial families Porphyromonadaceae and Tissierellaceae</h3>
+      <p class="article-meta"><strong>Published:</strong> 2018.</p>
+      <p class="article-authors"><strong>Autores:</strong> Camille E. Granada, Camila Hasan, Munique Marder, Odorico Konrad, Luciano K. Vargas, Luciane M.P. Passaglia, Adriana Giongo, Rafael R. de Oliveira, Leandro de Mattos Pereira, Fernanda de Jesus Trindade, Raul A. Sperotto.</p>
+      <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.renene.2017.10.095" target="_blank" rel="noopener">https://doi.org/10.1016/j.renene.2017.10.095</a></p>
+      <div class="article-tags">
+        <span>biogas</span><span>anaerobic digestion</span><span>Methanobacteriaceae</span><span>Porphyromonadaceae</span><span>Tissierellaceae</span><span>slaughterhouse wastewater</span>
+      </div>
+      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Perfil taxonômico e integração de dados metagenômicos para identificar famílias microbianas-chave na produção de biogás.</p>
+    </div>
+    <figure class="article-figure">
+      <img src="{{ '/assets/articles/probiotics.png' | relative_url }}" alt="Ilustração do artigo sobre digestão anaeróbia de efluente de frigorífico e produção de biogás" loading="lazy" />
+      <figcaption>Ilustração.</figcaption>
+    </figure>
+  </article>
+
+  <article class="article-card">
+    <div class="article-text">
       <h3>Recycled paper sludge microbial community as a potential source of cellulase and xylanase enzymes</h3>
       <p class="article-meta"><strong>Revista:</strong> Waste and Biomass Valorization 8:1907-1917 (2017).</p>
       <p class="article-authors"><strong>Autores:</strong> Heinz KGH, Zanoni PRS, Oliveira RR, Medina-Silva R, Simão TLL, Trindade FJ, Pereira LM, et al.</p>
