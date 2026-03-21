@@ -67,8 +67,8 @@ footer  {
 
 .landing-nav {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.65rem;
   margin-bottom: 2rem;
   align-items: stretch;
 
@@ -77,7 +77,7 @@ footer  {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    padding: 0.64rem 0.95rem;
+í    padding: 0.64rem 0.95rem;
     border-radius: 999px;
     text-align: center;
     border: 1px solid color-mix(in srgb, var(--links) 14%, transparent);
