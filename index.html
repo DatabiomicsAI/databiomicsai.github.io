@@ -4,14 +4,16 @@ layout: landing
 
 <nav class="landing-nav">
   <a href="#sobre" data-i18n-key="nav_about">Sobre</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Exemplos de
+Aplicabilidade</a>
   <a href="{{ '/servicos/' | relative_url }}" data-i18n-key="nav_services">Serviços e Aplicações</a>
   <a class="nav-pill nav-pill-support" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie os projetos</a>
   <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Parcerias Estratégicas</a>
-  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Aplicabilidade</a>
   <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
   <a href="#contato" data-i18n-key="nav_contact">Contato</a>
-  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Comunidade Databiomics</a>
+  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Comunidade
+Databiomics</a>
 </nav>
 
 
@@ -130,8 +132,14 @@ layout: landing
       <h3>Leandro de Mattos Pereira</h3>
       <p data-i18n-key="about_profile_p1">Leandro de Mattos Pereira é pesquisador, biólogo (CRBio-2 143240), doutor em Biologia Computacional e de Sistemas pela Fiocruz (RJ), mestre em Biociências e Biotecnologia pela UENF e graduado em Ciências Biológicas pela UENF, com ênfase em Biotecnologia. Realizou ainda seis pós-doutorados no Brasil (PUCRS, HCPA, UFRJ, Fiocruz, ITV) na área de Bioinformática e foi Investigador Júnior em Bioinformática no CIIMAR (Portugal), projeto BlueBio4Future financiado pela União Européia; Atua de forma estratégica em bioinformática, ciência de dados ômicos e inteligência artificial aplicada à biotecnologia, desenvolvendo soluções analíticas e computacionais para transformar dados biológicos complexos em conhecimento aplicável à pesquisa, inovação e desenvolvimento.</p>
       <p data-i18n-key="about_profile_p2">Integra bioinformática e IA com foco em resultados práticos para saúde, biotecnologia, sustentabilidade e tomada de decisão baseada em dados.</p>
-      <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer" data-i18n-key="about_linkedin_btn">LinkedIn</a>
-      <a class="button ghost" href="https://github.com/mattoslmp" target="_blank" rel="noreferrer noopener">GitHub</a>
+      <div class="profile-social-actions" role="group" aria-label="Redes sociais">
+        <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer" data-i18n-key="about_linkedin_btn">LinkedIn</a>
+        <a class="button ghost" href="https://github.com/mattoslmp" target="_blank" rel="noreferrer noopener">GitHub</a>
+        <a class="button ghost social-follow-link" href="https://www.instagram.com/databiomics_ai" target="_blank" rel="noreferrer noopener" aria-label="Instagram Databiomics @databiomics_ai">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3m0 1.8A2.95 2.95 0 0 0 4.8 7.75v8.5a2.95 2.95 0 0 0 2.95 2.95h8.5a2.95 2.95 0 0 0 2.95-2.95v-8.5a2.95 2.95 0 0 0-2.95-2.95zm8.96 1.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1M12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6m0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4"/></svg>
+          <span>Instagram</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
