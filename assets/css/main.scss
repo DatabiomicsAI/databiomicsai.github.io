@@ -1286,6 +1286,14 @@ footer  {
   .help-services-cta-actions {
     gap: 0.55rem;
   }
+
+  .global-support-cta {
+    padding: 1rem;
+  }
+
+  .global-support-cta-actions {
+    gap: 0.55rem;
+  }
   .landing-wrapper {
     padding: 2.5rem 1.2rem 3.5rem;
   }
@@ -2047,6 +2055,30 @@ iframe.goog-te-banner-frame,
   border-color: rgba(96, 165, 250, 0.6);
 }
 
+.global-support-cta {
+  margin: 2rem auto 0;
+  padding: 1.2rem 1.25rem;
+  max-width: 760px;
+  border: 1px solid color-mix(in srgb, var(--links) 24%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--bg-secondary) 90%, #dbeafe 10%);
+}
+
+.global-support-cta h3 {
+  margin: 0;
+}
+
+.global-support-cta p {
+  margin: 0.45rem 0 0;
+}
+
+.global-support-cta-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
 .global-visitor-widget {
   margin: 2rem auto 0;
   padding: 1rem 1.1rem;
@@ -2246,7 +2278,7 @@ iframe.goog-te-banner-frame,
 }
 
 .partner-support-card img {
-  max-height: 42px;
+  max-height: 60px;
   width: auto;
   object-fit: contain;
 }
@@ -2255,6 +2287,12 @@ iframe.goog-te-banner-frame,
   margin: 0.45rem 0 0;
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+.partner-support-slogan {
+  margin-top: 0.2rem;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
 }
 
 .partner-support-card-placeholder {
