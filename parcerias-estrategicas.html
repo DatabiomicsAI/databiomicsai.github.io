@@ -24,15 +24,15 @@ description: Parcerias institucionais da Databiomics® com destaque para a WBPer
 
   <article class="partner-premium-card" aria-labelledby="wbpereira-title">
     <div class="partner-premium-media">
-      <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="Parceiro institucional WBPereira" loading="lazy">
+      <img class="partner-logo-wbp" src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="Logo institucional WBPereira" loading="lazy">
     </div>
     <div class="partner-premium-content">
       <p class="partner-premium-kicker">Parceiro institucional</p>
       <h2 id="wbpereira-title">WBPereira</h2>
-      <p data-i18n-key="partnerships_wbpereira_description">A WBPereira integra nosso ecossistema de colaboração com visão estratégica, apoio à comunicação institucional e fortalecimento da presença digital orientada a resultados. Esta parceria contribui para ampliar o alcance das iniciativas da Databiomics® por meio de posicionamento editorial, estrutura de conteúdos e conexão com públicos de interesse.</p>
-      <p data-i18n-key="partnerships_wbpereira_contact">Contato institucional: atendimento via canais oficiais da WBPereira.</p>
+      <p data-i18n-key="partnerships_wbpereira_description">A WBPereira Máquinas Agrícolas integra o ecossistema de parcerias estratégicas da Databiomics®, unindo tradição, experiência prática e compromisso com qualidade. Com uma trajetória consolidada desde 1983, sua atuação fortalece a conexão entre inovação, aplicação técnica e proximidade com as demandas reais do setor produtivo.</p>
+      <p class="partner-support-note">Conheça os produtos e soluções da WBPereira no site oficial. Como primeira apoiadora dos projetos da Databiomics®, fortalecer a WBPereira também fortalece indiretamente as iniciativas científicas e educacionais da Databiomics®.</p>
       <div class="hero-actions">
-        <a class="button primary" href="https://www.wbpereira.com.br/" target="_blank" rel="noreferrer noopener" data-i18n-key="partnerships_wbpereira_site">Visitar site institucional</a>
+        <a class="button primary" href="https://www.wbpereira.com.br/" target="_blank" rel="noreferrer noopener" data-i18n-key="partnerships_wbpereira_site">Conhecer produtos e site oficial</a>
         <a class="button ghost" href="mailto:contato@wbpereira.com.br" data-i18n-key="partnerships_wbpereira_email">Entrar em contato</a>
       </div>
     </div>
@@ -41,25 +41,27 @@ description: Parcerias institucionais da Databiomics® com destaque para a WBPer
 
 <section class="section partnerships-gallery" aria-labelledby="galeria-institucional-title">
   <div class="section-heading compact">
-    <h2 id="galeria-institucional-title" data-i18n-key="partnerships_gallery_title">Galeria institucional WBPereira</h2>
-    <p data-i18n-key="partnerships_gallery_intro">Acompanhe os principais canais e conteúdos editoriais em uma vitrine responsiva e leve para GitHub Pages.</p>
+    <h2 id="galeria-institucional-title">Vídeos em destaque da WB</h2>
+    <p>Visualize o canal oficial da WBPereira diretamente no YouTube.</p>
   </div>
 
-  <div class="partnerships-grid">
-    <article class="info-card partnership-item">
-      <h3 data-i18n-key="partnerships_gallery_channel_title">Canal oficial</h3>
-      <p data-i18n-key="partnerships_gallery_channel_text">Acesse o canal institucional da WBPereira e acompanhe novos conteúdos.</p>
-      <a class="button ghost" href="https://www.youtube.com/" target="_blank" rel="noreferrer noopener">YouTube</a>
+  <div class="video-grid" aria-label="Canal oficial da WBPereira">
+    <article class="video-card">
+      <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="Canal oficial da WBPereira" loading="lazy" />
+      <div class="video-card-body">
+        <span class="status-badge is-available">Canal oficial</span>
+        <h3>WBPereira no YouTube</h3>
+        <p>Acesse o canal para visualizar os vídeos publicados pela WBPereira.</p>
+        <a class="button" href="https://www.youtube.com/@wbpereira" target="_blank" rel="noreferrer noopener">Visualizar canal</a>
+      </div>
     </article>
-    <article class="info-card partnership-item">
-      <h3 data-i18n-key="partnerships_gallery_videos_title">Vídeos em destaque</h3>
-      <p data-i18n-key="partnerships_gallery_videos_text">Coleção com vídeos selecionados para público técnico e institucional.</p>
-      <a class="button ghost" href="https://www.youtube.com/results?search_query=wbpereira" target="_blank" rel="noreferrer noopener">Ver vídeos</a>
-    </article>
-    <article class="info-card partnership-item">
-      <h3 data-i18n-key="partnerships_gallery_playlists_title">Playlists</h3>
-      <p data-i18n-key="partnerships_gallery_playlists_text">Playlists organizadas por tema para facilitar navegação e consumo editorial.</p>
-      <a class="button ghost" href="https://www.youtube.com/results?search_query=wbpereira+playlist" target="_blank" rel="noreferrer noopener">Abrir playlists</a>
-    </article>
+  </div>
+</section>
+
+<section class="section partnerships-cta-final">
+  <div class="section-heading compact">
+    <h2>Quer se tornar um parceiro estratégico?</h2>
+    <p>Participe do ecossistema Databiomics® e apoie projetos científicos, educacionais e de inovação aplicada.</p>
+    <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}">Acessar página Apoie os projetos</a>
   </div>
 </section>
