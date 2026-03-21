@@ -976,7 +976,11 @@ footer  {
 }
 
 .word-cloud {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
+  align-content: flex-start;
+  align-items: flex-start;
   min-height: 220px;
   border-radius: 14px;
   background: linear-gradient(165deg, rgba(247, 250, 252, 0.78), rgba(243, 248, 251, 0.55));
@@ -985,24 +989,13 @@ footer  {
 }
 
 .cloud-word {
+  display: inline-flex;
+  position: static !important;
   font-weight: 600;
   line-height: 1.14;
   letter-spacing: 0.01em;
   white-space: nowrap;
-}
-
-.cloud-word.measure {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.cloud-word.is-fallback {
-  position: static !important;
-  display: inline-flex;
-  margin: 0.2rem 0.4rem;
+  padding: 0.12rem 0.05rem;
 }
 
 .services-cred-note {

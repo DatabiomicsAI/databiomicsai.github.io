@@ -106,76 +106,25 @@ permalink: /servicos/
 
   const placeWords = (cloud, keywords, paletteOffset) => {
     cloud.innerHTML = "";
-    const rect = cloud.getBoundingClientRect();
-    const width = Math.max(260, rect.width);
-    const height = Math.max(220, rect.height);
     const mobile = window.matchMedia("(max-width: 640px)").matches;
     const minSize = mobile ? 10 : 11;
     const maxSize = mobile ? 18 : 20;
     const minWeight = Math.min(...keywords.map(([, w]) => w));
     const maxWeight = Math.max(...keywords.map(([, w]) => w));
-    const placed = [];
 
-    [...keywords].sort((a, b) => b[1] - a[1]).forEach(([word, weight], index) => {
+    const orderedWords = [...keywords]
+      .map(([label, weight], index) => ({ label, weight, index }))
+      .sort((a, b) => b.weight - a.weight || a.label.localeCompare(b.label));
+
+    orderedWords.forEach(({ label, weight, index }) => {
       const ratio = (weight - minWeight) / Math.max(1, maxWeight - minWeight);
       const size = Math.round(minSize + ratio * (maxSize - minSize));
-
-      const measure = document.createElement("span");
-      measure.className = "cloud-word measure";
-      measure.style.fontSize = `${size}px`;
-      measure.textContent = word;
-      cloud.appendChild(measure);
-      const wordWidth = measure.offsetWidth;
-      const wordHeight = measure.offsetHeight;
-      measure.remove();
-
       const wordEl = document.createElement("span");
       wordEl.className = "cloud-word";
-      wordEl.textContent = word;
+      wordEl.textContent = label;
       wordEl.style.fontSize = `${size}px`;
       wordEl.style.color = palette[(index + paletteOffset) % palette.length];
       wordEl.setAttribute("role", "listitem");
-
-      const maxX = Math.max(0, width - wordWidth - 4);
-      const maxY = Math.max(0, height - wordHeight - 4);
-      let x = maxX / 2;
-      let y = maxY / 2;
-      let found = false;
-      let angle = 0;
-      let radius = 0;
-
-      for (let tries = 0; tries < 2400; tries++) {
-        if (tries > 0) {
-          angle += 0.35;
-          radius += 0.12;
-          x = width / 2 + Math.cos(angle) * radius * 7 - wordWidth / 2;
-          y = height / 2 + Math.sin(angle) * radius * 6 - wordHeight / 2;
-        }
-        x = Math.min(maxX, Math.max(0, x));
-        y = Math.min(maxY, Math.max(0, y));
-
-        const box = { x, y, w: wordWidth, h: wordHeight };
-        const overlap = placed.some((p) => (
-          box.x < p.x + p.w + 8 &&
-          box.x + box.w + 8 > p.x &&
-          box.y < p.y + p.h + 7 &&
-          box.y + box.h + 7 > p.y
-        ));
-
-        if (!overlap) {
-          placed.push(box);
-          found = true;
-          break;
-        }
-      }
-
-      if (!found) {
-        wordEl.classList.add("is-fallback");
-      } else {
-        wordEl.style.left = `${x}px`;
-        wordEl.style.top = `${y}px`;
-        wordEl.style.position = "absolute";
-      }
       cloud.appendChild(wordEl);
     });
   };
