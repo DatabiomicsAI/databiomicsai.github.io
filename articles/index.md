@@ -14,10 +14,11 @@ Página dedicada a publicações e divulgação científica.
     <div class="article-text">
       <h3>Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred</h3>
       <p class="article-meta"><strong>Ano:</strong> 2026 (first published: 21 January 2026)</p>
-      <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Anne Liong; Pedro N. Leão.</p>
+      <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira†; Anne Liong†; Pedro N. Leão.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noopener">https://doi.org/10.1002/pro.70468</a></p>
       <p class="article-links"><strong>FAALPred:</strong> <a href="https://faalpred.ciimar.up.pt/" target="_blank" rel="noopener">https://faalpred.ciimar.up.pt/</a></p>
       <p class="article-meta">As análises computacionais de bioinformática e IA foram viabilizadas com disponibilidade de infraestrutura computacionao do Google cloud, projeto aprovado (melhor nota da competição) por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, Google e FCT (Fundação para a Ciência e a Tecnologia).</p>
+      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Anne Liong. Leandro de Mattos Pereira foi responsável por toda a integração de bioinformática e IA do projeto.</p>
       <div class="article-tags">
         <span>FAAL enzymes</span><span>substrate specificity</span><span>machine learning</span><span>bioinformatics</span>
       </div>
@@ -41,7 +42,7 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análises de dados de metabarcoding + transcriptoma + PCoA, integradas com IA (machine learning), para identificar comunidades microbianas associadas à produção de biogás e potenciais perfis probióticos funcionais.</p>
     </div>
     <figure class="article-figure">
-      <img src="{{ '/assets/articles/probiotics.png' | relative_url }}" alt="Ilustração do artigo sobre digestão anaeróbia de efluente de frigorífico e produção de biogás" loading="lazy" />
+      <img src="{{ '/assets/articles/methane_production.png' | relative_url }}" alt="Ilustração do artigo sobre digestão anaeróbia de efluente de frigorífico e produção de biogás" loading="lazy" />
       <figcaption>Ilustração.</figcaption>
     </figure>
   </article>
@@ -179,24 +180,6 @@ Página dedicada a publicações e divulgação científica.
     <figure class="article-figure">
       <img src="{{ '/assets/articles/NISE.png' | relative_url }}" alt="Figura ilustrativa do artigo sobre identificação de enzimas essenciais e análogas em patógenos de culturas agrícolas" loading="lazy" />
       <figcaption>Illustrative figure.</figcaption>
-    </figure>
-  </article>
-
-
-  <article class="article-card">
-    <div class="article-text">
-      <h3>Biogas from slaughterhouse wastewater anaerobic digestion is driven by the archaeal family Methanobacteriaceae and bacterial families Porphyromonadaceae and Tissierellaceae</h3>
-      <p class="article-meta"><strong>Published:</strong> 2018.</p>
-      <p class="article-authors"><strong>Autores:</strong> Camille E. Granada, Camila Hasan, Munique Marder, Odorico Konrad, Luciano K. Vargas, Luciane M.P. Passaglia, Adriana Giongo, Rafael R. de Oliveira, Leandro de Mattos Pereira, Fernanda de Jesus Trindade, Raul A. Sperotto.</p>
-      <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.renene.2017.10.095" target="_blank" rel="noopener">https://doi.org/10.1016/j.renene.2017.10.095</a></p>
-      <div class="article-tags">
-        <span>biogas</span><span>anaerobic digestion</span><span>Methanobacteriaceae</span><span>Porphyromonadaceae</span><span>Tissierellaceae</span><span>slaughterhouse wastewater</span>
-      </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Perfil taxonômico e integração de dados metagenômicos para identificar famílias microbianas-chave na produção de biogás.</p>
-    </div>
-    <figure class="article-figure">
-      <img src="{{ '/assets/articles/probiotics.png' | relative_url }}" alt="Ilustração do artigo sobre digestão anaeróbia de efluente de frigorífico e produção de biogás" loading="lazy" />
-      <figcaption>Ilustração.</figcaption>
     </figure>
   </article>
 
