@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
+title: Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
 permalink: /articles/
 ---
 
-# Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
+# Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
 {:.articles-main-title}
 
 Página dedicada a publicações e divulgação científica.
@@ -16,10 +16,10 @@ Página dedicada a publicações e divulgação científica.
       <h3>Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred</h3>
       <p class="article-meta"><strong>Ano:</strong> 2026 (first published: 21 January 2026)</p>
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira†; Anne Liong†; Pedro N. Leão.</p>
+      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Anne Liong.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noopener">https://doi.org/10.1002/pro.70468</a></p>
       <p class="article-links"><strong>FAALPred:</strong> <a href="https://faalpred.ciimar.up.pt/" target="_blank" rel="noopener">https://faalpred.ciimar.up.pt/</a></p>
-      <p class="article-meta">As análises computacionais de bioinformática e IA foram viabilizadas com disponibilidade de infraestrutura computacionao do Google cloud, projeto aprovado (melhor nota da competição) por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, Google e FCT (Fundação para a Ciência e a Tecnologia).</p>
-      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Anne Liong.</p>
+      <p class="article-meta">As análises computacionais de bioinformática e IA foram viabilizadas com disponibilidade de infraestrutura computacional do Google cloud, projeto aprovado (melhor nota da competição) por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, Google e FCT (Fundação para a Ciência e a Tecnologia).</p>
       <div class="article-tags">
         <span>FAAL enzymes</span><span>substrate specificity</span><span>machine learning</span><span>bioinformatics</span>
       </div>
@@ -120,7 +120,8 @@ Página dedicada a publicações e divulgação científica.
     <div class="article-text">
       <h3>Mollusk microbiota shift during Angiostrongylus cantonensis infection in the freshwater snail Biomphalaria glabrata and the terrestrial slug Phillocaulis soleiformis</h3>
       <p class="article-meta"><strong>Revista:</strong> Parasitology Research 119 (2020).</p>
-      <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Joana Borges Osório; Alessandra Loureiro Morassutti; Jeremy Potriquet; Adriana Giongo; Renata Russo F. Cândido; Jason Mulvenna; Malcolm Jones; Carlos Graeff-Teixeira.</p>
+      <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira†; Joana Borges Osório†; Alessandra Loureiro Morassutti; Jeremy Potriquet; Adriana Giongo; Renata Russo F. Cândido; Jason Mulvenna; Malcolm Jones; Carlos Graeff-Teixeira.</p>
+      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Joana Borges Osório.</p>
       <p class="article-links"><a href="https://link.springer.com/article/10.1007%2Fs00436-020-06743-y" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
         <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span>
