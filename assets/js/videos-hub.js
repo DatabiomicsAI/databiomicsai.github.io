@@ -5,11 +5,9 @@
   const form = document.getElementById('video-suggestion-form');
   const feedback = document.getElementById('video-form-feedback');
   const submitButton = document.getElementById('video-form-submit');
-  const gallery = document.getElementById('community-gallery');
 
   const REACTION_COUNTS_KEY = 'databiomics_video_reaction_counts_v1';
   const REACTION_VOTES_KEY = 'databiomics_video_reaction_votes_v1';
-  const COMMUNITY_KEY = 'databiomics_community_voices_v1';
 
   const load = (key, fallback) => {
     try {
@@ -93,36 +91,6 @@
     });
   });
 
-  const renderGallery = () => {
-    if (!gallery) return;
-    const voices = load(COMMUNITY_KEY, []);
-
-    if (!voices.length) {
-      gallery.innerHTML = '<p class="helper">Ainda não há contribuições públicas. Seja a primeira pessoa a compartilhar uma mensagem com a comunidade.</p>';
-      return;
-    }
-
-    gallery.innerHTML = voices.map((voice) => {
-      const avatar = voice.photoUrl && /^https?:\/\//.test(voice.photoUrl)
-        ? `<img src="${voice.photoUrl}" alt="Foto de ${voice.publicName || 'membro da comunidade'}" loading="lazy" />`
-        : `<div class="community-avatar-fallback">${(voice.publicName || 'D').slice(0, 1).toUpperCase()}</div>`;
-
-      const optionalLink = voice.socialLink && /^https?:\/\//.test(voice.socialLink)
-        ? `<a href="${voice.socialLink}" target="_blank" rel="noopener noreferrer">Perfil</a>`
-        : '';
-
-      return `
-        <article class="community-card">
-          <div class="community-avatar">${avatar}</div>
-          <h4>${voice.publicName || 'Participante da comunidade'}</h4>
-          <p class="community-meta">${voice.country || 'País não informado'} · ${voice.profession || 'Área não informada'}</p>
-          <p>${voice.publicMessage || ''}</p>
-          ${optionalLink}
-        </article>
-      `;
-    }).join('');
-  };
-
   if (form) {
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -146,20 +114,6 @@
 
         if (!response.ok) throw new Error('Falha ao enviar.');
 
-        if (data.get('consentimento_galeria') === 'sim' && (data.get('mensagem_publica') || data.get('nome_publico'))) {
-          const voices = load(COMMUNITY_KEY, []);
-          voices.unshift({
-            publicName: String(data.get('nome_publico') || '').trim(),
-            photoUrl: String(data.get('foto_url') || '').trim(),
-            country: String(data.get('pais') || '').trim(),
-            profession: String(data.get('profissao') || '').trim(),
-            socialLink: String(data.get('link_social') || '').trim(),
-            publicMessage: String(data.get('mensagem_publica') || '').trim()
-          });
-          save(COMMUNITY_KEY, voices.slice(0, 20));
-          renderGallery();
-        }
-
         feedback.textContent = 'Sugestão enviada com sucesso. Obrigado por contribuir com a Databiomics®.';
         form.reset();
       } catch (_) {
@@ -173,5 +127,4 @@
 
   setFilter('Todos');
   renderReactions();
-  renderGallery();
 })();

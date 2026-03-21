@@ -13,6 +13,7 @@ permalink: /videos/
   <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
   <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
+  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Comunidade Databiomics</a>
 </nav>
 
 <section id="videos" class="section alt videos-hub">
@@ -234,43 +235,12 @@ permalink: /videos/
       <label for="about-you">A Databiomics® quer te conhecer melhor</label>
       <textarea id="about-you" name="sobre_voce" rows="3" placeholder="Fale um pouco sobre você (opcional)."></textarea>
 
-      <fieldset>
-        <legend>Dados opcionais para Comunidade Databiomics®</legend>
-        <label for="public-name">Nome público</label>
-        <input id="public-name" name="nome_publico" type="text" placeholder="Nome para exibição" />
-
-        <label for="photo-url">URL da foto</label>
-        <input id="photo-url" name="foto_url" type="url" placeholder="https://..." />
-
-        <label for="country">País</label>
-        <input id="country" name="pais" type="text" placeholder="Brasil" />
-
-        <label for="profession">Profissão ou área</label>
-        <input id="profession" name="profissao" type="text" placeholder="Pesquisador(a), estudante, etc." />
-
-        <label for="social-link">Link social</label>
-        <input id="social-link" name="link_social" type="url" placeholder="https://linkedin.com/in/..." />
-
-        <label for="public-message">Mensagem pública</label>
-        <textarea id="public-message" name="mensagem_publica" rows="3" placeholder="Mensagem para aparecer na galeria (opcional)."></textarea>
-
-        <label><input type="checkbox" id="allow-public" name="consentimento_galeria" value="sim" /> Autorizo a exibição pública dos meus dados na galeria.</label>
-      </fieldset>
-
       <label><input type="checkbox" name="privacy_consent_videos" required /> Concordo com o uso das minhas informações para contato e melhoria de conteúdo, conforme a <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.</label>
       <p class="helper">Seus dados serão usados apenas para comunicação e melhoria de conteúdo.</p>
 
       <button class="button" id="video-form-submit" type="submit">Enviar sugestão</button>
       <p id="video-form-feedback" class="helper" role="status" aria-live="polite"></p>
     </form>
-  </section>
-
-  <section class="community-voices">
-    <div class="section-heading compact">
-      <h3>Comunidade Databiomics®</h3>
-      <p>Contribuições de quem acompanha os conteúdos e participa da evolução da plataforma.</p>
-    </div>
-    <div id="community-gallery" class="community-gallery" aria-live="polite"></div>
   </section>
 
   <div class="section-heading compact newsletter-inline">
