@@ -949,7 +949,7 @@ footer  {
 
 .applications-heading-readable {
   background: #ffffff;
-  color: #0f172a;
+  color: #000000;
   border: 2px solid #0d2f66;
   border-radius: 14px;
   padding: 0.85rem 0.95rem;
@@ -958,15 +958,7 @@ footer  {
 
 .applications-heading-readable h3,
 .applications-heading-readable p {
-  color: inherit;
-}
-
-@media (prefers-color-scheme: dark) {
-  .applications-heading-readable {
-    background: #0f172a;
-    color: #f8fafc;
-    border-color: #93c5fd;
-  }
+  color: #000000;
 }
 
 .applications-heading h3 {
@@ -2236,6 +2228,12 @@ iframe.goog-te-banner-frame,
 
 .partner-support-note {
   margin-top: 0.5rem;
+}
+
+.partner-social-cta {
+  margin: -0.35rem 0 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
 }
 
 .partner-logo-caption {
