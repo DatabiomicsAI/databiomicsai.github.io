@@ -140,19 +140,38 @@ layout: landing
     <h2 data-i18n-key="help_title">Como posso ajudar sua organização?</h2>
     <p data-i18n-key="help_subtitle">Transformo dados complexos em decisões claras, com entregas estruturadas e comunicação objetiva.</p>
   </div>
-  <div class="testimonial-grid">
-    <article class="testimonial-card">
+  <div class="help-services-grid">
+    <article class="help-service-card">
       <h3>Diagnóstico de dados</h3>
-      <p>Mapeio o fluxo atual, identifico gargalos e proponho melhorias com ganho de produtividade.</p>
+      <p>Estruturação de dados e fluxos para análises mais eficientes.</p>
     </article>
-    <article class="testimonial-card">
-      <h3>Pipeline reprodutível</h3>
-      <p>Desenvolvo soluções de bioinformática com documentação, versionamento e automação para equipes técnicas.</p>
+    <article class="help-service-card">
+      <h3>Pipelines reprodutíveis em Bioinformática</h3>
+      <p>Implementação robustas para análise padronizada de dados ômicos.</p>
     </article>
-    <article class="testimonial-card">
-      <h3>Entrega estratégica</h3>
-      <p>Relatórios e dashboards claros para gestores, cientistas e decisores.</p>
+    <article class="help-service-card">
+      <h3>IA aplicada à biologia</h3>
+      <p>Modelos computacionais para interpretação e predição de anotação funcional de enzimas e especificidade de substratos.</p>
     </article>
+    <article class="help-service-card">
+      <h3>Descoberta molecular</h3>
+      <p>Mineração e anotação de vias metabólicas, prospecção de enzimas e biomoléculas de interesse biotecnológico.</p>
+    </article>
+    <article class="help-service-card">
+      <h3>Relatórios e estratégia</h3>
+      <p>Resultados complexos convertidos em decisões claras.</p>
+    </article>
+    <article class="help-service-card">
+      <h3>Capacitação especializada</h3>
+      <p>Treinamento técnico em bioinformática, IA e dados ômicos.</p>
+    </article>
+  </div>
+  <div class="help-services-cta" aria-label="Atalhos para serviços e aplicações">
+    <p>Explore com mais detalhes <strong>Serviços</strong> e <strong>Aplicações</strong>.</p>
+    <div class="help-services-cta-actions">
+      <a class="button primary" href="{{ '/servicos/' | relative_url }}">Serviços</a>
+      <a class="button ghost" href="{{ '/servicos/#applications-title' | relative_url }}">Aplicações</a>
+    </div>
   </div>
 </section>
 
@@ -198,11 +217,10 @@ layout: landing
 <section class="section partnerships-highlight" id="parcerias-destaque">
   <div class="section-heading compact">
     <h2 data-i18n-key="partnerships_title">Parcerias Estratégicas</h2>
-    <p data-i18n-key="partnerships_home_summary">Conheça parceiros institucionais e iniciativas editoriais que fortalecem o ecossistema Databiomics®.</p>
   </div>
   <div class="card-grid compact">
     <article class="info-card partnership-item">
-      <p data-i18n-key="partnerships_home_intro">Explore a página dedicada para ver o bloco institucional da WBPereira, links oficiais e galeria de conteúdos.</p>
+      <p data-i18n-key="partnerships_home_summary">Conheça parceiros institucionais e iniciativas editoriais que fortalecem o ecossistema Databiomics®.</p>
       <a class="button primary" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="partnerships_home_btn">Abrir Parcerias Estratégicas</a>
     </article>
   </div>
@@ -215,7 +233,7 @@ layout: landing
   </div>
   <div class="quick-links-grid" aria-label="Links secundários">
     <a class="quick-link" href="{{ '/videos/' | relative_url }}">Videos</a>
-    <a class="quick-link" href="{{ '/planocursos/' | relative_url }}">PlanCursos</a>
+    <a class="quick-link" href="{{ '/planocursos/' | relative_url }}">Planejamento de Cursos</a>
     <a class="quick-link" href="#programas">Programs</a>
     <a class="quick-link" href="{{ '/depoimentos/' | relative_url }}">Testimonials</a>
     <a class="quick-link" href="{{ '/cv-others/' | relative_url }}">CV / Others</a>
@@ -231,6 +249,20 @@ layout: landing
     <a class="button ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=" data-share-network="linkedin" data-share-title="Databiomics® - Página principal">LinkedIn</a>
     <a class="button ghost" href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">Instagram</a>
     <a class="button ghost" href="https://www.facebook.com/sharer/sharer.php?u=" data-share-network="facebook" data-share-title="Databiomics® - Página principal">Facebook</a>
+  </div>
+</section>
+
+<section class="section supporters-highlight" id="apoiadores-databiomics">
+  <div class="section-heading compact">
+    <h2>Apoiadores da Databiomics®</h2>
+    <p>Conheça quem fortalece o ecossistema Databiomics® e apoia iniciativas científicas, educacionais e de inovação aplicada.</p>
+  </div>
+  <div class="card-grid compact supporters-inline-grid">
+    <article class="info-card supporter-inline-card">
+      <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="Logo da WBPereira" loading="lazy">
+      <p><strong>WBPereira</strong> · Desde 1986, servindo homem do campo.</p>
+      <a class="button ghost" href="{{ '/parcerias-estrategicas/' | relative_url }}">Ver parceiros e apoiadores</a>
+    </article>
   </div>
 </section>
 
