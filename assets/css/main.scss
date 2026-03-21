@@ -430,6 +430,56 @@ footer  {
   border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
+.help-services-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.help-service-card {
+  background: color-mix(in srgb, var(--bg) 94%, #dbeafe 6%);
+  border-radius: 18px;
+  padding: 1.4rem;
+  border: 1px solid color-mix(in srgb, #2563eb 18%, transparent);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+.help-service-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.03rem;
+  line-height: 1.32;
+}
+
+.help-service-card p {
+  margin: 0;
+  line-height: 1.58;
+}
+
+.help-services-cta {
+  margin-top: 1.35rem;
+  padding: 1rem 1.15rem;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--links) 18%, transparent);
+  background: color-mix(in srgb, var(--bg) 91%, #bfdbfe 9%);
+}
+
+.help-services-cta p {
+  margin: 0;
+}
+
+.help-services-cta-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+@media (max-width: 1024px) {
+  .help-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .section.alt {
   background: var(--bg-secondary);
   padding: 2.5rem;
@@ -832,6 +882,14 @@ footer  {
   line-height: 1.24;
 }
 
+.articles-page {
+  width: min(1120px, calc(100vw - 4rem));
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .article-card {
   display: grid;
   gap: 1.5rem;
@@ -852,7 +910,17 @@ footer  {
 }
 
 .article-insight {
-  margin: 0.75rem 0 0;
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0b3b8a, #2563eb 55%, #0ea5e9);
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.article-insight strong {
+  color: #ffffff;
 }
 
 .article-tags {
@@ -1026,6 +1094,12 @@ footer  {
   }
 }
 
+@media (max-width: 700px) {
+  .articles-page {
+    width: min(1120px, calc(100vw - 2rem));
+  }
+}
+
 
 .interest-section {
   display: flex;
@@ -1168,6 +1242,33 @@ footer  {
   .testimonials,
   .about-panel {
     padding: 2rem 1.5rem;
+  }
+
+  .help-services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .help-service-card {
+    padding: 1.15rem;
+    border-radius: 16px;
+  }
+
+  .help-service-card h3 {
+    font-size: 0.98rem;
+  }
+
+  .help-service-card p {
+    line-height: 1.5;
+  }
+
+  .help-services-cta {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .help-services-cta-actions {
+    gap: 0.55rem;
   }
   .landing-wrapper {
     padding: 2.5rem 1.2rem 3.5rem;
@@ -2097,4 +2198,49 @@ iframe.goog-te-banner-frame,
 
 .partner-contact-panel h3 {
   margin: 0 0 0.35rem;
+}
+
+.partners-support-gallery {
+  margin-top: 1.6rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid color-mix(in srgb, var(--links) 18%, transparent);
+}
+
+.partners-support-gallery h3 {
+  margin: 0 0 0.9rem;
+}
+
+.partners-support-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.partner-support-card {
+  background: color-mix(in srgb, var(--bg-secondary) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--links) 20%, transparent);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 130px;
+  text-align: center;
+}
+
+.partner-support-card img {
+  max-height: 75px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-support-card p {
+  margin: 0.65rem 0 0;
+  font-weight: 600;
+}
+
+.partner-support-card-placeholder {
+  border-style: dashed;
+  color: var(--text-secondary);
 }
