@@ -1855,14 +1855,23 @@ body {
   top: 0 !important;
 }
 
+#google_translate_element,
+.goog-te-gadget,
+.goog-te-gadget-simple,
+.goog-logo-link,
 .goog-te-banner-frame.skiptranslate,
 iframe.goog-te-banner-frame,
 .goog-te-balloon-frame,
 #goog-gt-tt,
 .goog-tooltip,
 .goog-tooltip:hover,
-.goog-text-highlight {
+.goog-text-highlight,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-yAWNEb-L7lbkb,
+.skiptranslate {
   display: none !important;
+  visibility: hidden !important;
 }
 
 .catalog-hero .hero-content {
