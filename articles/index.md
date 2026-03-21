@@ -120,7 +120,8 @@ Página dedicada a publicações e divulgação científica.
     <div class="article-text">
       <h3>Mollusk microbiota shift during Angiostrongylus cantonensis infection in the freshwater snail Biomphalaria glabrata and the terrestrial slug Phillocaulis soleiformis</h3>
       <p class="article-meta"><strong>Revista:</strong> Parasitology Research 119 (2020).</p>
-      <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Joana Borges Osório; Alessandra Loureiro Morassutti; Jeremy Potriquet; Adriana Giongo; Renata Russo F. Cândido; Jason Mulvenna; Malcolm Jones; Carlos Graeff-Teixeira.</p>
+      <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira†; Joana Borges Osório†; Alessandra Loureiro Morassutti; Jeremy Potriquet; Adriana Giongo; Renata Russo F. Cândido; Jason Mulvenna; Malcolm Jones; Carlos Graeff-Teixeira.</p>
+      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Joana Borges Osório.</p>
       <p class="article-links"><a href="https://link.springer.com/article/10.1007%2Fs00436-020-06743-y" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
         <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span>
