@@ -2199,3 +2199,48 @@ iframe.goog-te-banner-frame,
 .partner-contact-panel h3 {
   margin: 0 0 0.35rem;
 }
+
+.partners-support-gallery {
+  margin-top: 1.6rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid color-mix(in srgb, var(--links) 18%, transparent);
+}
+
+.partners-support-gallery h3 {
+  margin: 0 0 0.9rem;
+}
+
+.partners-support-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.partner-support-card {
+  background: color-mix(in srgb, var(--bg-secondary) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--links) 20%, transparent);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 130px;
+  text-align: center;
+}
+
+.partner-support-card img {
+  max-height: 75px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-support-card p {
+  margin: 0.65rem 0 0;
+  font-weight: 600;
+}
+
+.partner-support-card-placeholder {
+  border-style: dashed;
+  color: var(--text-secondary);
+}
