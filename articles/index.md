@@ -7,7 +7,7 @@ permalink: /articles/
 # Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
 {:.articles-main-title}
 
-Página dedicada a publicações e divulgação científica.
+Abaixo alguns artigos relevantes:
 
 <div class="articles-page">
 <section class="article-list">
