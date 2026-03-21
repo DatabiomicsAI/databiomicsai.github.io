@@ -7,14 +7,17 @@ description: Comunidade Databiomics® para contribuições públicas, networking
 
 <nav class="landing-nav">
   <a href="{{ '/#sobre' | relative_url }}" data-i18n-key="nav_about">Sobre</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Exemplos de Aplicabilidade</a>
   <a href="{{ '/servicos/' | relative_url }}" data-i18n-key="nav_services">Serviços e Aplicações</a>
   <a class="nav-pill nav-pill-support" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie os projetos</a>
   <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Parcerias Estratégicas</a>
-  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Aplicabilidade</a>
   <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
-  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
-  <a class="nav-pill nav-pill-community" href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Comunidade Databiomics</a>
+  <a href="#community-contact-form" data-scroll-target="community-contact-form" data-i18n-key="nav_contact">Contato</a>
+  <a class="nav-pill nav-pill-community" href="{{ '/comunidade/' | relative_url }}">
+    <span>Comunidade</span>
+    <span>Databiomics</span>
+  </a>
 </nav>
 
 <section class="section community-hero reveal-on-scroll" aria-labelledby="community-hero-title">
@@ -127,14 +130,42 @@ description: Comunidade Databiomics® para contribuições públicas, networking
       <h3 data-i18n-key="community_youtube_title">YouTube</h3>
       <p data-i18n-key="community_youtube_desc">Acompanhe vídeos e conteúdos visuais</p>
     </a>
-    <a class="community-mini-card" href="{{ '/videos/' | relative_url }}">
-      <h3 data-i18n-key="community_newsletter_card_title">Newsletter</h3>
-      <p data-i18n-key="community_newsletter_card_desc">Receba novidades e conteúdos selecionados</p>
+    <a class="community-mini-card" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7211465469294178304" target="_blank" rel="noreferrer noopener">
+      <h3>Link para assinar</h3>
+      <p>Assinar no LinkedIn</p>
     </a>
-    <a class="community-mini-card" href="{{ '/#contato' | relative_url }}">
+    <a class="community-mini-card" href="#community-contact-form" data-scroll-target="community-contact-form">
       <h3 data-i18n-key="nav_contact">Contato</h3>
-      <p data-i18n-key="community_contact_desc">Entre em contato para sugestões e parcerias</p>
+      <p>Formulário exclusivo da comunidade</p>
     </a>
+  </div>
+</section>
+
+<section class="section community-contact-section reveal-on-scroll" id="community-contact-form" aria-labelledby="community-contact-title">
+  <div class="section-heading">
+    <h2 id="community-contact-title">Contato da Comunidade Databiomics®</h2>
+    <p>Use este formulário exclusivo da comunidade para enviar dúvidas, sugestões e contribuições.</p>
+  </div>
+  <div class="community-form-card">
+    <form class="community-contact-form" data-community-contact-form novalidate>
+      <div class="community-form-grid">
+        <label for="community-contact-name">Nome</label>
+        <input id="community-contact-name" name="name" type="text" required>
+
+        <label for="community-contact-email">E-mail</label>
+        <input id="community-contact-email" name="email" type="email" required>
+
+        <label for="community-contact-subject">Assunto</label>
+        <input id="community-contact-subject" name="subject" type="text" placeholder="Assunto da sua mensagem" required>
+
+        <label for="community-contact-message">Mensagem</label>
+        <textarea id="community-contact-message" name="message" rows="6" placeholder="Digite sua mensagem para a equipe Databiomics." required></textarea>
+      </div>
+      <div class="community-form-actions">
+        <button class="button primary" type="submit">Enviar para info@databiomics.com</button>
+        <p class="form-feedback" role="status" aria-live="polite" data-community-contact-feedback></p>
+      </div>
+    </form>
   </div>
 </section>
 

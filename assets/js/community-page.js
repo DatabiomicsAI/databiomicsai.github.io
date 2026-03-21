@@ -206,3 +206,39 @@
   updatePreview();
   renderGallery();
 })();
+
+(() => {
+  const form = document.querySelector('[data-community-contact-form]');
+  if (!form) return;
+
+  const feedback = form.querySelector('[data-community-contact-feedback]');
+  const CONTACT_EMAIL = 'info@databiomics.com';
+
+  const setFeedback = (message, success = false) => {
+    if (!feedback) return;
+    feedback.textContent = message;
+    feedback.classList.toggle('is-success', success);
+  };
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) {
+      setFeedback('Revise os campos obrigatórios e tente novamente.');
+      return;
+    }
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+
+    const mailtoSubject = encodeURIComponent(`[Comunidade Databiomics] ${subject}`);
+    const mailtoBody = encodeURIComponent(
+      `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setFeedback('Seu aplicativo de e-mail foi aberto para enviar a mensagem.', true);
+    form.reset();
+  });
+})();
