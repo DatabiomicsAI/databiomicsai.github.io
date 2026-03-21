@@ -1,0 +1,165 @@
+---
+layout: landing
+title: Comunidade Databiomics®
+permalink: /comunidade/
+description: Comunidade Databiomics® para contribuições públicas, networking científico, newsletter e parcerias estratégicas.
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/#sobre' | relative_url }}" data-i18n-key="nav_about">Sobre</a>
+  <a href="{{ '/servicos/' | relative_url }}" data-i18n-key="nav_services">Serviços e Aplicações</a>
+  <a class="nav-pill nav-pill-support" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie os projetos</a>
+  <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Parcerias Estratégicas</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Aplicabilidade</a>
+  <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
+  <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
+  <a href="{{ '/#contato' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
+  <a class="nav-pill nav-pill-community" href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Comunidade Databiomics</a>
+</nav>
+
+<section class="section community-hero reveal-on-scroll" aria-labelledby="community-hero-title">
+  <div class="community-hero-bg" aria-hidden="true"></div>
+  <div class="community-hero-content">
+    <p class="community-badge" data-i18n-key="community_badge">Comunidade • Ciência • Inovação</p>
+    <h1 id="community-hero-title" data-i18n-key="community_title">Comunidade Databiomics®</h1>
+    <p class="community-subtitle" data-i18n-key="community_subtitle">Contribuições de quem acompanha os conteúdos e participa da evolução da plataforma.</p>
+    <p class="community-support-text" data-i18n-key="community_support_text">Um espaço para conectar pessoas interessadas em ciência, bioinformática, inteligência artificial, inovação e aplicações em biologia.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#community-form" data-scroll-target="community-form" data-i18n-key="community_cta_join">Participar da comunidade</a>
+      <a class="button ghost" href="#community-gallery" data-scroll-target="community-gallery" data-i18n-key="community_cta_contrib">Ver contribuições</a>
+    </div>
+  </div>
+</section>
+
+<section class="section community-form-section reveal-on-scroll" id="community-form" aria-labelledby="community-form-title">
+  <div class="section-heading">
+    <h2 id="community-form-title" data-i18n-key="community_form_title">Compartilhe sua mensagem com a Comunidade Databiomics®</h2>
+    <p data-i18n-key="community_form_subtitle">Envie uma apresentação, sugestão ou mensagem pública para aparecer na galeria da comunidade.</p>
+  </div>
+
+  <div class="community-form-card">
+    <form class="community-form" data-community-form novalidate>
+      <div class="community-form-grid">
+        <label for="public-name" data-i18n-key="community_public_name">Nome público</label>
+        <input id="public-name" name="publicName" type="text" required>
+
+        <label for="display-name" data-i18n-key="community_display_name">Nome para exibição</label>
+        <input id="display-name" name="displayName" type="text" required>
+
+        <label for="photo-url" data-i18n-key="community_photo_url">URL da foto</label>
+        <input id="photo-url" name="photoUrl" type="url" placeholder="https://..." data-i18n-placeholder-key="community_photo_placeholder">
+
+        <label for="country" data-i18n-key="community_country">País</label>
+        <input id="country" name="country" type="text" value="Brasil" required>
+
+        <label for="occupation" data-i18n-key="community_occupation">Profissão ou área</label>
+        <input id="occupation" name="occupation" type="text" placeholder="Pesquisador(a), estudante, profissional, empresa, etc." data-i18n-placeholder-key="community_occupation_placeholder" required>
+
+        <label for="social-link" data-i18n-key="community_social_link">Link social</label>
+        <input id="social-link" name="socialLink" type="url" placeholder="https://linkedin.com/in/..." data-i18n-placeholder-key="community_social_placeholder">
+
+        <label for="message" data-i18n-key="community_message">Mensagem pública</label>
+        <textarea id="message" name="message" rows="6" maxlength="420" placeholder="Mensagem para aparecer na galeria (opcional)." data-i18n-placeholder-key="community_message_placeholder"></textarea>
+        <p class="field-counter"><span data-message-count>0</span>/420</p>
+      </div>
+
+      <div class="community-checks">
+        <label class="checkbox" for="allow-public">
+          <input id="allow-public" name="allowPublic" type="checkbox" required>
+          <span data-i18n-key="community_checkbox_public">Autorizo a exibição pública dos meus dados na galeria.</span>
+        </label>
+        <label class="checkbox" for="privacy-consent-community">
+          <input id="privacy-consent-community" name="privacyConsent" type="checkbox" required>
+          <span data-i18n-key="community_checkbox_privacy">Concordo com o uso das minhas informações para contato e melhoria de conteúdo, conforme a Política de Privacidade.</span>
+        </label>
+        <p class="community-helper" data-i18n-key="community_helper">Seus dados serão usados apenas para comunicação e melhoria de conteúdo.</p>
+      </div>
+
+      <div class="community-preview" aria-live="polite">
+        <h3 data-i18n-key="community_preview_title">Pré-visualização do card</h3>
+        <article class="community-entry-card preview" data-preview-card>
+          <img src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Avatar da contribuição" data-preview-avatar>
+          <h4 data-preview-name>Nome para exibição</h4>
+          <p class="meta" data-preview-meta>Brasil • Pesquisador(a)</p>
+          <p class="message" data-preview-message>Mensagem para aparecer na galeria.</p>
+        </article>
+      </div>
+
+      <div class="community-form-actions">
+        <button class="button primary" type="submit" data-i18n-key="community_submit">Enviar sugestão</button>
+        <p class="form-feedback" role="status" aria-live="polite" data-form-feedback></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section community-gallery-section reveal-on-scroll" id="community-gallery" aria-labelledby="community-gallery-title">
+  <div class="section-heading">
+    <h2 id="community-gallery-title" data-i18n-key="community_title">Comunidade Databiomics®</h2>
+    <p data-i18n-key="community_subtitle">Contribuições de quem acompanha os conteúdos e participa da evolução da plataforma.</p>
+  </div>
+
+  <div class="community-gallery-tools">
+    <input type="search" data-gallery-search placeholder="Buscar por nome, país ou profissão" data-i18n-placeholder-key="community_search_placeholder" aria-label="Buscar contribuições">
+    <select data-gallery-country aria-label="Filtro por país">
+      <option value="all" data-i18n-key="community_filter_country_all">Todos os países</option>
+    </select>
+    <select data-gallery-occupation aria-label="Filtro por profissão">
+      <option value="all" data-i18n-key="community_filter_occupation_all">Todas as áreas</option>
+    </select>
+  </div>
+
+  <div class="community-empty" data-community-empty data-i18n-key="community_empty">Ainda não há contribuições públicas. Seja a primeira pessoa a compartilhar uma mensagem com a comunidade.</div>
+  <div class="community-gallery-grid" data-community-gallery></div>
+  <div class="community-gallery-actions">
+    <button class="button ghost" type="button" data-gallery-more hidden data-i18n-key="community_see_more">Ver mais</button>
+  </div>
+</section>
+
+<section class="section community-newsletter reveal-on-scroll" aria-labelledby="community-newsletter-title">
+  <div class="section-heading compact">
+    <h2 id="community-newsletter-title" data-i18n-key="community_newsletter_title">Newsletter Databiomics®</h2>
+    <p class="community-newsletter-tag" data-i18n-key="community_newsletter_tagline">Mathematics AI Meets Biology</p>
+    <p data-i18n-key="community_newsletter_text">Siga a Databiomics® para novos vídeos, conteúdos científicos, atualizações e iniciativas da plataforma.</p>
+  </div>
+  <div class="community-mini-cards">
+    <a class="community-mini-card" href="https://www.youtube.com/@Databiomics" target="_blank" rel="noreferrer noopener">
+      <h3 data-i18n-key="community_youtube_title">YouTube</h3>
+      <p data-i18n-key="community_youtube_desc">Acompanhe vídeos e conteúdos visuais</p>
+    </a>
+    <a class="community-mini-card" href="{{ '/videos/' | relative_url }}">
+      <h3 data-i18n-key="community_newsletter_card_title">Newsletter</h3>
+      <p data-i18n-key="community_newsletter_card_desc">Receba novidades e conteúdos selecionados</p>
+    </a>
+    <a class="community-mini-card" href="{{ '/#contato' | relative_url }}">
+      <h3 data-i18n-key="nav_contact">Contato</h3>
+      <p data-i18n-key="community_contact_desc">Entre em contato para sugestões e parcerias</p>
+    </a>
+  </div>
+</section>
+
+<section class="section community-partners reveal-on-scroll" aria-labelledby="community-partners-title">
+  <div class="section-heading compact">
+    <h2 id="community-partners-title" data-i18n-key="community_partner_title">Quer se tornar um parceiro estratégico e apoiador da Databiomics?</h2>
+    <p data-i18n-key="community_partner_text">Participe do ecossistema Databiomics® e apoie projetos científicos, educacionais e de inovação aplicada.</p>
+  </div>
+  <div class="community-mini-cards">
+    <a class="community-mini-card" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="community_partner_action_1">Acessar página Apoie os projetos</a>
+    <a class="community-mini-card" href="{{ '/apoie-projetos/#contato-apoio' | relative_url }}" data-i18n-key="community_partner_action_2">Abrir formulário institucional de apoio</a>
+    <a class="community-mini-card" href="{{ '/parcerias-estrategicas/#partners-support-title' | relative_url }}" data-i18n-key="community_partner_action_3">Veja apoiadores estratégicos</a>
+  </div>
+</section>
+
+<section class="section community-analytics reveal-on-scroll" aria-labelledby="community-analytics-title">
+  <div class="section-heading compact">
+    <h2 id="community-analytics-title" data-i18n-key="community_analytics_title">Visitor countries</h2>
+    <p data-i18n-key="community_analytics_subtitle">Presença internacional da comunidade Databiomics®</p>
+  </div>
+  <div class="community-analytics-panel" data-community-analytics>
+    <div class="analytics-item"><strong data-i18n-key="community_distinct_countries">Distinct countries:</strong> <span data-analytics-countries>1</span></div>
+    <div class="analytics-item"><strong data-i18n-key="community_local_time">Local time:</strong> <span data-analytics-time>--:--:--</span></div>
+    <div class="analytics-item" data-analytics-sample>🇧🇷 Brazil</div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/community-page.js' | relative_url }}"></script>
