@@ -127,8 +127,8 @@ layout: landing
     <div class="profile-card">
       <img src="{{ '/leandro_mattos_pereira.png' | relative_url }}" alt="Leandro de Mattos Pereira">
       <h3>Leandro de Mattos Pereira</h3>
-      <p data-i18n-key="about_profile_p1">Leandro de Mattos Pereira Sou pesquisador e biólogo (CRBio-2 143240), com doutorado em Biologia Computacional e de Sistemas pela Fiocruz (RJ), mestrado em Biociências e Biotecnologia pela UENF e graduação em Ciências Biológicas pela UENF, com ênfase em Biotecnologia. Realizei ainda seis pós-doutorados — na PUCRS, HCPA, UFRJ, Fiocruz, ITV e CIIMAR (Portugal) — na área de Bioinformática aplicada à Parasitologia, Microbiologia, Virologia e Biotecnologia. Atuo em bioinformática e análise de dados ômicos (genômica, transcriptômica, proteômica e metagenômica), com experiência em anotação funcional, descoberta de enzimas, reconstrução de vias metabólicas, genômica comparativa e filogenômica, mineração de clusters de genes biossintéticos (BGCs), análises de metabarcoding e análises estatísticas para índices ecológicos de diversidade. Trabalho principalmente com Python e R, aplicando metodologias de ciência de dados e aprendizado de máquina — desde métodos clássicos (Random Forest, SVM e redes neurais profundas) até LLMs (como GPT-J), incluindo fine-tuning e RAG.</p>
-      <p data-i18n-key="about_profile_p2">Desenvolvo pipelines de ponta a ponta — desde a aquisição e curadoria de dados, passando pelo processamento e modelagem, até a disponibilização de resultados em soluções do tipo Software as a Service (SaaS), incluindo configuração de ambientes, configuração da infraestrutura de rede e implantação em produção. Esses pipelines integram machine learning clássico com modelos baseados em transformers (por exemplo, BERT e ESM2) e abordagens baseadas em embeddings (como word2vec) para prever a especificidade de substrato de enzimas. Tenho interesse em integrar Bioinformática e IA para gerar conhecimento aplicável, com impacto em biotecnologia, preservação ambiental e desenvolvimento sustentável.</p>
+      <p data-i18n-key="about_profile_p1">Leandro de Mattos Pereira é pesquisador, biólogo (CRBio-2 143240), doutor em Biologia Computacional e de Sistemas pela Fiocruz (RJ), mestre em Biociências e Biotecnologia pela UENF e graduado em Ciências Biológicas pela UENF, com ênfase em Biotecnologia. Realizou ainda seis pós-doutorados em instituições do Brasil e de Portugal. Atua de forma estratégica em bioinformática, ciência de dados ômicos e inteligência artificial aplicada à biotecnologia, desenvolvendo soluções analíticas e computacionais para transformar dados biológicos complexos em conhecimento aplicável à pesquisa, inovação e desenvolvimento.</p>
+      <p data-i18n-key="about_profile_p2">Integra bioinformática e IA com foco em resultados práticos para saúde, biotecnologia, sustentabilidade e tomada de decisão baseada em dados.</p>
       <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer" data-i18n-key="about_linkedin_btn">LinkedIn</a>
       <a class="button ghost" href="https://github.com/mattoslmp" target="_blank" rel="noreferrer noopener">GitHub</a>
     </div>
@@ -140,19 +140,12 @@ layout: landing
     <h2 data-i18n-key="help_title">Como posso ajudar sua organização?</h2>
     <p data-i18n-key="help_subtitle">Transformo dados complexos em decisões claras, com entregas estruturadas e comunicação objetiva.</p>
   </div>
-  <div class="testimonial-grid">
-    <article class="testimonial-card">
-      <h3>Diagnóstico de dados</h3>
-      <p>Mapeio o fluxo atual, identifico gargalos e proponho melhorias com ganho de produtividade.</p>
-    </article>
-    <article class="testimonial-card">
-      <h3>Pipeline reprodutível</h3>
-      <p>Desenvolvo soluções de bioinformática com documentação, versionamento e automação para equipes técnicas.</p>
-    </article>
-    <article class="testimonial-card">
-      <h3>Entrega estratégica</h3>
-      <p>Relatórios e dashboards claros para gestores, cientistas e decisores.</p>
-    </article>
+  <div class="help-services-cta" aria-label="Atalhos para serviços e aplicações">
+    <p>Explore com mais detalhes <strong>Serviços</strong> e <strong>Aplicações</strong>.</p>
+    <div class="help-services-cta-actions">
+      <a class="button primary" href="{{ '/servicos/' | relative_url }}">Serviços</a>
+      <a class="button ghost" href="{{ '/servicos/#applications-title' | relative_url }}">Aplicações</a>
+    </div>
   </div>
 </section>
 
@@ -198,11 +191,10 @@ layout: landing
 <section class="section partnerships-highlight" id="parcerias-destaque">
   <div class="section-heading compact">
     <h2 data-i18n-key="partnerships_title">Parcerias Estratégicas</h2>
-    <p data-i18n-key="partnerships_home_summary">Conheça parceiros institucionais e iniciativas editoriais que fortalecem o ecossistema Databiomics®.</p>
   </div>
   <div class="card-grid compact">
     <article class="info-card partnership-item">
-      <p data-i18n-key="partnerships_home_intro">Explore a página dedicada para ver o bloco institucional da WBPereira, links oficiais e galeria de conteúdos.</p>
+      <p data-i18n-key="partnerships_home_summary">Conheça parceiros institucionais e iniciativas editoriais que fortalecem o ecossistema Databiomics®.</p>
       <a class="button primary" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="partnerships_home_btn">Abrir Parcerias Estratégicas</a>
     </article>
   </div>
@@ -215,7 +207,7 @@ layout: landing
   </div>
   <div class="quick-links-grid" aria-label="Links secundários">
     <a class="quick-link" href="{{ '/videos/' | relative_url }}">Videos</a>
-    <a class="quick-link" href="{{ '/planocursos/' | relative_url }}">PlanCursos</a>
+    <a class="quick-link" href="{{ '/planocursos/' | relative_url }}">Planejamento de Cursos</a>
     <a class="quick-link" href="#programas">Programs</a>
     <a class="quick-link" href="{{ '/depoimentos/' | relative_url }}">Testimonials</a>
     <a class="quick-link" href="{{ '/cv-others/' | relative_url }}">CV / Others</a>
@@ -231,6 +223,20 @@ layout: landing
     <a class="button ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=" data-share-network="linkedin" data-share-title="Databiomics® - Página principal">LinkedIn</a>
     <a class="button ghost" href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">Instagram</a>
     <a class="button ghost" href="https://www.facebook.com/sharer/sharer.php?u=" data-share-network="facebook" data-share-title="Databiomics® - Página principal">Facebook</a>
+  </div>
+</section>
+
+<section class="section supporters-highlight" id="apoiadores-databiomics">
+  <div class="section-heading compact">
+    <h2>Apoiadores da Databiomics®</h2>
+    <p>Conheça quem fortalece o ecossistema Databiomics® e apoia iniciativas científicas, educacionais e de inovação aplicada.</p>
+  </div>
+  <div class="card-grid compact supporters-inline-grid">
+    <article class="info-card supporter-inline-card">
+      <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="Logo da WBPereira" loading="lazy">
+      <p><strong>WBPereira</strong> · Desde 1986, servindo homem do campo.</p>
+      <a class="button ghost" href="{{ '/parcerias-estrategicas/' | relative_url }}">Ver parceiros e apoiadores</a>
+    </article>
   </div>
 </section>
 
