@@ -79,8 +79,6 @@ footer  {
     font-size: 0.9rem;
     padding: 0.58rem 0.82rem;
     white-space: nowrap;
-    font-size: 0.95rem;
-í    padding: 0.64rem 0.95rem;
     border-radius: 999px;
     text-align: center;
     border: 1px solid color-mix(in srgb, var(--links) 14%, transparent);
@@ -1845,6 +1843,14 @@ iframe.goog-te-banner-frame,
   padding: 0.65rem;
 }
 
+.partner-premium-media .partner-logo-wbp {
+  max-height: 210px;
+  object-fit: contain;
+  object-position: center;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  padding: 0.65rem;
+}
+
 .partner-premium-kicker {
   margin: 0 0 0.2rem;
   text-transform: uppercase;
@@ -1865,4 +1871,17 @@ iframe.goog-te-banner-frame,
 
 .partner-support-note {
   margin-top: 0.5rem;
+}
+
+.partner-channel-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: var(--links);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--bg-secondary) 88%, transparent), rgba(37, 99, 235, 0.16));
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
