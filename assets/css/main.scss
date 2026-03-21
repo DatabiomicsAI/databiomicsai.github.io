@@ -66,21 +66,37 @@ footer  {
 }
 
 .landing-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.65rem;
   margin-bottom: 2rem;
+  align-items: stretch;
+
   a {
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
-    padding: 0.35rem 0.75rem;
+    font-size: 0.95rem;
+    padding: 0.58rem 0.82rem;
     border-radius: 999px;
-    background: var(--bg-secondary);
+    text-align: center;
+    border: 1px solid color-mix(in srgb, var(--links) 14%, transparent);
+    background: color-mix(in srgb, var(--bg-secondary) 88%, transparent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
+
   a:hover {
     color: var(--links);
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--links) 35%, transparent);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+  }
+
+  .nav-pill-support,
+  .nav-pill-partnerships {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(148, 163, 184, 0.22));
+    border-color: color-mix(in srgb, var(--links) 42%, transparent);
+    font-weight: 700;
   }
 }
 
@@ -1785,4 +1801,48 @@ iframe.goog-te-banner-frame,
 .global-visitor-list {
   margin: 0.7rem 0 0;
   padding-left: 1.1rem;
+}
+
+
+.partnerships-highlight {
+  border: 1px solid color-mix(in srgb, var(--links) 24%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+}
+
+.partner-premium-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 1.35rem;
+  padding: 1.2rem;
+  border-radius: 22px;
+  border: 1px solid color-mix(in srgb, var(--links) 30%, transparent);
+  background: linear-gradient(140deg, color-mix(in srgb, var(--bg-secondary) 92%, transparent), rgba(37, 99, 235, 0.07));
+}
+
+.partner-premium-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--links) 28%, transparent);
+}
+
+.partner-premium-kicker {
+  margin: 0 0 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+  color: var(--links);
+}
+
+.partnerships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.partnership-item {
+  border: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
 }
