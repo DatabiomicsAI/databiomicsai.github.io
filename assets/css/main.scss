@@ -982,6 +982,11 @@ footer  {
   max-width: 72ch;
 }
 
+.applications-heading.applications-heading-readable h3,
+.applications-heading.applications-heading-readable p {
+  color: #000000;
+}
+
 .applications-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
