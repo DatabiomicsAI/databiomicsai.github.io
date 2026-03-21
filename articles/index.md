@@ -9,6 +9,7 @@ permalink: /articles/
 
 Página dedicada a publicações e divulgação científica.
 
+<div class="articles-page">
 <section class="article-list">
   <article class="article-card">
     <div class="article-text">
@@ -18,11 +19,11 @@ Página dedicada a publicações e divulgação científica.
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noopener">https://doi.org/10.1002/pro.70468</a></p>
       <p class="article-links"><strong>FAALPred:</strong> <a href="https://faalpred.ciimar.up.pt/" target="_blank" rel="noopener">https://faalpred.ciimar.up.pt/</a></p>
       <p class="article-meta">As análises computacionais de bioinformática e IA foram viabilizadas com disponibilidade de infraestrutura computacionao do Google cloud, projeto aprovado (melhor nota da competição) por Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI), na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, Google e FCT (Fundação para a Ciência e a Tecnologia).</p>
-      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Anne Liong. Leandro de Mattos Pereira foi responsável por toda a integração de bioinformática e IA do projeto.</p>
+      <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Anne Liong.</p>
       <div class="article-tags">
         <span>FAAL enzymes</span><span>substrate specificity</span><span>machine learning</span><span>bioinformatics</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Modelagem de proteínas e IA (machine learning) para prever especificidade de substrato e priorizar enzimas para validação experimental.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Bioinformática aplicada para mineração de clusters biossintéticos de produtos naturais contendo enzimas FAAL e desenvolvimento do FAALPred para predição da especificidade de substratos com IA.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/faalpred-2026.svg' | relative_url }}" alt="Figura do artigo Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred" loading="lazy" />
@@ -39,7 +40,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>biogas</span><span>anaerobic digestion</span><span>Methanobacteriaceae</span><span>Porphyromonadaceae</span><span>Tissierellaceae</span><span>slaughterhouse wastewater</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análises de dados de metabarcoding + transcriptoma + PCoA, integradas com IA (machine learning), para identificar comunidades microbianas associadas à produção de biogás e potenciais perfis probióticos funcionais.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Uso de sequenciamento e análise bioinformática de comunidades microbianas para identificar famílias bacterianas e arqueanas associadas à produção de metano na digestão anaeróbia de efluente de frigorífico.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/methane_production.png' | relative_url }}" alt="Ilustração do artigo sobre digestão anaeróbia de efluente de frigorífico e produção de biogás" loading="lazy" />
@@ -56,7 +57,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>coral microbiome</span><span>heat stress</span><span>metabolic restructuring</span><span>marine biology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Integração de metagenômica, perfil metabólico e estatística multivariada para mapear respostas de corais ao estresse térmico.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Integração de metagenômica/metatranscriptômica e análise de expressão gênica para mapear reestruturação microbiana e metabólica em corais, apoiando estratégias biotecnológicas de mitigação do estresse térmico.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Santoro et al. sobre manipulação do microbioma de corais" loading="lazy" />
@@ -73,7 +74,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>SARS-CoV-2</span><span>genomics</span><span>Brazil</span><span>viral mutations</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Vigilância genômica e análise de variantes para relacionar mutações virais com possíveis impactos clínicos e epidemiológicos.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Vigilância genômica e modelagem estrutural de proteínas virais para mapear mutações do SARS-CoV-2 no Brasil e inferir possíveis impactos clínicos, imunológicos e epidemiológicos.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/sarscov2-2021.svg' | relative_url }}" alt="Figura do artigo SARS-CoV-2 mutations in Brazil" loading="lazy" />
@@ -90,7 +91,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>transcriptome</span><span>Angiostrongylus cantonensis</span><span>antithrombin</span><span>parasitology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análises de transcriptoma para identificar genes ligados a mecanismos de infecção e potenciais alvos biomoleculares.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Montagem de novo e anotação de transcriptoma para identificar vias ligadas à coagulação, antitrombina e mecanismos de infecção em A. cantonensis, ampliando alvos para pesquisa translacional em parasitologia.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/angiostrongylus-worms-2021.svg' | relative_url }}" alt="Figura do artigo De novo transcriptome reveals blood coagulation/antithrombin factors" loading="lazy" />
@@ -107,7 +108,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>transcriptome</span><span>snake venom</span><span>Bothrops jararaca</span><span>biotechnology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Mineração de transcriptoma para descoberta de toxinas e moléculas bioativas com potencial biotecnológico.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Análise transcriptômica profunda da glândula de veneno de Bothrops jararaca para descoberta de toxinas, isoformas e famílias de proteínas com potencial biotecnológico e farmacêutico.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/bothrops-2020.svg' | relative_url }}" alt="Figura do artigo Bothrops jararaca venom gland" loading="lazy" />
@@ -124,7 +125,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Perfil de microbiota com análise de comunidade para entender mudanças microbianas durante a infecção parasito-hospedeiro.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Perfilamento bioinformático de microbiota em hospedeiros intermediários para detectar mudanças associadas à infecção por A. cantonensis e compreender interações hospedeiro-parasito.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/mollusk-microbiota-2020.svg' | relative_url }}" alt="Figura do artigo Mollusk microbiota shift" loading="lazy" />
@@ -141,7 +142,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>Fusobacterium nucleatum</span><span>colorectal cancer</span><span>microbiota</span><span>oncology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Associação entre abundância microbiana e dados clínicos para gerar biomarcadores de risco e progressão tumoral.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Análise integrada de microbiota e dados clínico-moleculares para avaliar o papel de Fusobacterium nucleatum no prognóstico e em características tumorais de pacientes com câncer colorretal.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/microbiota-fusobacterium-2019.svg' | relative_url }}" alt="Figura do artigo Microbiota profile and impact of Fusobacterium nucleatum" loading="lazy" />
@@ -158,7 +159,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>metabarcoding</span><span>Atlantic Forest</span><span>soil biodiversity</span><span>nematodes</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Metabarcoding com ordenação (ex.: PCoA) para caracterizar diversidade de solo e detectar assinaturas ecológicas.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Metabarcoding e bioinformática de alta vazão para caracterizar a diversidade eucariota do solo, com foco em nematoides de reserva nativa da Mata Atlântica.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/meiofaunal-2019.svg' | relative_url }}" alt="Figura do artigo Meiofaunal diversity in the Atlantic Forest soil" loading="lazy" />
@@ -175,7 +176,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>drug targets</span><span>essential enzymes</span><span>plant pathogens</span><span>comparative genomics</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Genômica comparativa para identificar enzimas essenciais e análogas como candidatos a alvos terapêuticos.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Pipeline in silico de genômica comparativa para identificar enzimas essenciais não homólogas (NISEs) em patógenos de soja, milho e tomate, priorizando potenciais alvos para controle fitossanitário.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/NISE.png' | relative_url }}" alt="Figura ilustrativa do artigo sobre identificação de enzimas essenciais e análogas em patógenos de culturas agrícolas" loading="lazy" />
@@ -192,7 +193,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>cellulase</span><span>xylanase</span><span>microbial community</span><span>waste valorization</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análise funcional de comunidade microbiana para priorizar enzimas com potencial de aplicação industrial.</p>
+      <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Análise metagenômica funcional de comunidade microbiana de lodo de papel reciclado para prospecção de enzimas celulase e xilanase com potencial de aplicação industrial.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
@@ -200,3 +201,4 @@ Página dedicada a publicações e divulgação científica.
     </figure>
   </article>
 </section>
+</div>
