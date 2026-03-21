@@ -340,6 +340,13 @@ footer  {
   fill: currentColor;
 }
 
+.profile-social-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
 .lead-form,
 .contact-form {
   display: grid;
