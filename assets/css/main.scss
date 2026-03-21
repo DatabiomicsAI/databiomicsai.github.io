@@ -103,6 +103,13 @@ footer  {
     border-color: color-mix(in srgb, var(--links) 42%, transparent);
     font-weight: 700;
   }
+
+  a[data-i18n-key="nav_news"] {
+    white-space: pre-line;
+    line-height: 1.2;
+    min-height: 50px;
+    padding: 0.62rem 1rem;
+  }
 }
 
 .hero {
