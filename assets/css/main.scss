@@ -2108,6 +2108,32 @@ iframe.goog-te-banner-frame,
   background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
 }
 
+.supporters-highlight {
+  border: 1px solid color-mix(in srgb, var(--links) 20%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--bg-secondary) 94%, transparent);
+}
+
+.supporters-inline-grid {
+  align-items: stretch;
+}
+
+.supporter-inline-card img {
+  width: min(100%, 190px);
+  max-height: 72px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.supporter-inline-card p {
+  margin: 0;
+}
+
+.supporter-inline-card .button {
+  margin-top: 0.8rem;
+}
+
 .partner-premium-card {
   display: grid;
   grid-template-columns: 1fr;
