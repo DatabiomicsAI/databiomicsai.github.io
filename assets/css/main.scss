@@ -103,6 +103,13 @@ footer  {
     border-color: color-mix(in srgb, var(--links) 42%, transparent);
     font-weight: 700;
   }
+
+  a[data-i18n-key="nav_news"] {
+    white-space: pre-line;
+    line-height: 1.2;
+    min-height: 50px;
+    padding: 0.62rem 1rem;
+  }
 }
 
 .hero {
@@ -338,6 +345,13 @@ footer  {
   width: 1rem;
   height: 1rem;
   fill: currentColor;
+}
+
+.profile-social-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
 }
 
 .lead-form,
@@ -942,7 +956,7 @@ footer  {
 
 .applications-heading-readable {
   background: #ffffff;
-  color: #0f172a;
+  color: #000000;
   border: 2px solid #0d2f66;
   border-radius: 14px;
   padding: 0.85rem 0.95rem;
@@ -951,15 +965,7 @@ footer  {
 
 .applications-heading-readable h3,
 .applications-heading-readable p {
-  color: inherit;
-}
-
-@media (prefers-color-scheme: dark) {
-  .applications-heading-readable {
-    background: #0f172a;
-    color: #f8fafc;
-    border-color: #93c5fd;
-  }
+  color: #000000;
 }
 
 .applications-heading h3 {
@@ -974,6 +980,11 @@ footer  {
   margin: 0.55rem 0 0;
   color: #ffffff;
   max-width: 72ch;
+}
+
+.applications-heading.applications-heading-readable h3,
+.applications-heading.applications-heading-readable p {
+  color: #000000;
 }
 
 .applications-grid {
@@ -2231,6 +2242,12 @@ iframe.goog-te-banner-frame,
   margin-top: 0.5rem;
 }
 
+.partner-social-cta {
+  margin: -0.35rem 0 0.35rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
 .partner-logo-caption {
   margin: 0.7rem 0 0;
   text-align: center;
@@ -2305,6 +2322,14 @@ iframe.goog-te-banner-frame,
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(14, 116, 144, 0.18));
   border-color: color-mix(in srgb, var(--links) 42%, transparent);
   font-weight: 700;
+  padding: 0.62rem 1.35rem;
+  white-space: normal;
+  line-height: 1.2;
+  min-height: 50px;
+}
+
+.landing-nav .nav-pill-community span {
+  display: block;
 }
 
 .community-hero {
@@ -2354,6 +2379,10 @@ iframe.goog-te-banner-frame,
 }
 
 .community-form-card { padding: clamp(1.2rem, 2.4vw, 2rem); }
+
+.community-contact-form textarea {
+  min-height: 140px;
+}
 
 .community-form-grid {
   display: grid;
