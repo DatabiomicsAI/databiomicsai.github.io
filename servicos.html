@@ -24,6 +24,14 @@ permalink: /servicos/
       <p><a href="https://cfbio.gov.br/2024/04/26/resolucao-no-700-de-20-de-abril-de-2024/" target="_blank" rel="noreferrer noopener">Ver áreas de atuação do Biólogo</a></p>
     </div>
   </div>
+  <section class="applications-subsection" aria-labelledby="applications-title">
+    <div class="applications-heading">
+      <h3 id="applications-title">Impacto da bioinformática e inteligência artificial em aplicações reais</h3>
+      <p>Aplicações estratégicas em biotecnologia, saúde, agricultura, agropecuária e indústria.</p>
+    </div>
+    <div class="applications-grid" id="applications-grid"></div>
+  </section>
+
   <div class="card-grid">
     <article class="info-card">
       <h3>Genômica e Metagenômica Aplicadas à Biotecnologia</h3>
@@ -69,3 +77,138 @@ permalink: /servicos/
     </article>
   </div>
 </section>
+
+
+<script>
+(() => {
+  const datasets = [
+    {
+      title: "Genômica e Metagenômica Aplicadas",
+      keywords: [["Biofertilizantes",10],["Probióticos",9],["Controle biológico",10],["Sanidade animal",8],["Diagnóstico molecular",9],["Detecção de patógenos",9],["Saúde intestinal",8],["Segurança dos alimentos",8],["Aquicultura",7],["Agropecuária",8],["Agricultura sustentável",10],["Melhoramento de culturas",8],["Qualidade microbiológica",9],["Microrganismos benéficos",9],["Biotecnologia agrícola",10],["Monitoramento microbiológico",8]]
+    },
+    {
+      title: "IA e Bioinformática para Enzimas e Compostos",
+      keywords: [["Descoberta de fármacos",10],["Novos antibióticos",9],["Biocatalisadores",8],["Enzimas industriais",9],["Química verde",8],["Biocombustíveis",8],["Aditivos alimentares",7],["Cosméticos bioativos",7],["Moléculas anticâncer",9],["Produtos naturais",8],["Bioativos",7],["Catálise enzimática",9],["Triagem molecular",8],["Inovação biotecnológica",10],["Desenvolvimento de compostos",9],["Aplicações farmacêuticas",9]]
+    },
+    {
+      title: "Genômica Comparativa e Filogenômica",
+      keywords: [["Alvos terapêuticos",9],["Desenvolvimento de vacinas",10],["Resistência antimicrobiana",10],["Epidemiologia molecular",9],["Vigilância genômica",9],["Rastreabilidade de cepas",8],["Controle de surtos",8],["Evolução de patógenos",8],["Genes essenciais",7],["Segurança biológica",7],["Identificação de variantes",8],["Comparação genômica",9],["Filogenia",7],["Saúde pública",8],["Biomedicina",7],["Medicina de precisão",9]]
+    },
+    {
+      title: "Diversidade Microbiana e Ecologia",
+      keywords: [["Monitoramento ambiental",9],["Biorremediação",8],["Recuperação de ecossistemas",9],["Qualidade da água",8],["Qualidade do solo",8],["Sustentabilidade",9],["Impacto ambiental",8],["Bioindicadores",7],["Gestão ambiental",8],["Ecologia microbiana",8],["Biodiversidade",8],["Licenciamento ambiental",8],["Biotecnologia ambiental",9],["Diagnóstico ecológico",8],["Conservação",7],["Soluções sustentáveis",9]]
+    }
+  ];
+
+  const palette = ["#0d2f66", "#165db7", "#108c8f", "#2f9d78", "#1f7aa8"];
+  const grid = document.getElementById("applications-grid");
+  if (!grid) return;
+
+  const placeWords = (cloud, keywords, paletteOffset) => {
+    cloud.innerHTML = "";
+    const rect = cloud.getBoundingClientRect();
+    const width = Math.max(260, rect.width);
+    const height = Math.max(220, rect.height);
+    const mobile = window.matchMedia("(max-width: 640px)").matches;
+    const minSize = mobile ? 10 : 11;
+    const maxSize = mobile ? 18 : 20;
+    const minWeight = Math.min(...keywords.map(([, w]) => w));
+    const maxWeight = Math.max(...keywords.map(([, w]) => w));
+    const placed = [];
+
+    [...keywords].sort((a, b) => b[1] - a[1]).forEach(([word, weight], index) => {
+      const ratio = (weight - minWeight) / Math.max(1, maxWeight - minWeight);
+      const size = Math.round(minSize + ratio * (maxSize - minSize));
+
+      const measure = document.createElement("span");
+      measure.className = "cloud-word measure";
+      measure.style.fontSize = `${size}px`;
+      measure.textContent = word;
+      cloud.appendChild(measure);
+      const wordWidth = measure.offsetWidth;
+      const wordHeight = measure.offsetHeight;
+      measure.remove();
+
+      const wordEl = document.createElement("span");
+      wordEl.className = "cloud-word";
+      wordEl.textContent = word;
+      wordEl.style.fontSize = `${size}px`;
+      wordEl.style.color = palette[(index + paletteOffset) % palette.length];
+      wordEl.setAttribute("role", "listitem");
+
+      const maxX = Math.max(0, width - wordWidth - 4);
+      const maxY = Math.max(0, height - wordHeight - 4);
+      let x = maxX / 2;
+      let y = maxY / 2;
+      let found = false;
+      let angle = 0;
+      let radius = 0;
+
+      for (let tries = 0; tries < 2400; tries++) {
+        if (tries > 0) {
+          angle += 0.35;
+          radius += 0.12;
+          x = width / 2 + Math.cos(angle) * radius * 7 - wordWidth / 2;
+          y = height / 2 + Math.sin(angle) * radius * 6 - wordHeight / 2;
+        }
+        x = Math.min(maxX, Math.max(0, x));
+        y = Math.min(maxY, Math.max(0, y));
+
+        const box = { x, y, w: wordWidth, h: wordHeight };
+        const overlap = placed.some((p) => (
+          box.x < p.x + p.w + 8 &&
+          box.x + box.w + 8 > p.x &&
+          box.y < p.y + p.h + 7 &&
+          box.y + box.h + 7 > p.y
+        ));
+
+        if (!overlap) {
+          placed.push(box);
+          found = true;
+          break;
+        }
+      }
+
+      if (!found) {
+        wordEl.classList.add("is-fallback");
+      } else {
+        wordEl.style.left = `${x}px`;
+        wordEl.style.top = `${y}px`;
+        wordEl.style.position = "absolute";
+      }
+      cloud.appendChild(wordEl);
+    });
+  };
+
+  datasets.forEach((item, cardIndex) => {
+    const card = document.createElement("article");
+    card.className = "application-card";
+
+    const header = document.createElement("header");
+    header.className = "application-card-header";
+
+    const logo = document.createElement("img");
+    logo.src = "{{ '/assets/databiomics-logo.svg' | relative_url }}";
+    logo.alt = "Databiomics";
+    logo.loading = "lazy";
+    logo.className = "application-logo";
+
+    const title = document.createElement("h4");
+    title.textContent = item.title;
+    header.append(logo, title);
+
+    const cloud = document.createElement("div");
+    cloud.className = "word-cloud";
+    cloud.setAttribute("role", "list");
+    cloud.setAttribute("aria-label", `Aplicações: ${item.title}`);
+
+    card.append(header, cloud);
+    grid.appendChild(card);
+
+    const render = () => placeWords(cloud, item.keywords, cardIndex);
+    const observer = new ResizeObserver(() => window.requestAnimationFrame(render));
+    observer.observe(cloud);
+    render();
+  });
+})();
+</script>
