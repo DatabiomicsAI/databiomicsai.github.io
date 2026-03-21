@@ -851,6 +851,10 @@ footer  {
   margin: 0.5rem 0;
 }
 
+.article-insight {
+  margin: 0.75rem 0 0;
+}
+
 .article-tags {
   margin-top: 0.85rem;
   display: flex;
@@ -1837,6 +1841,14 @@ iframe.goog-te-banner-frame,
 
 .partner-premium-media .partner-logo-wbp {
   max-height: 280px;
+  object-fit: contain;
+  object-position: center;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  padding: 0.65rem;
+}
+
+.partner-premium-media .partner-logo-wbp {
+  max-height: 210px;
   object-fit: contain;
   object-position: center;
   background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
