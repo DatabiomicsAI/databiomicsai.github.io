@@ -21,11 +21,28 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>FAAL enzymes</span><span>substrate specificity</span><span>machine learning</span><span>bioinformatics</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Modelagem de proteínas e IA (machine learning) para prever especificidade de substrato e priorizar enzimas para validação experimental.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Modelagem de proteínas e IA (machine learning) para prever especificidade de substrato e priorizar enzimas para validação experimental.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/faalpred-2026.svg' | relative_url }}" alt="Figura do artigo Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred" loading="lazy" />
       <figcaption> Illustrative figure.</figcaption>
+    </figure>
+  </article>
+
+  <article class="article-card">
+    <div class="article-text">
+      <h3>Biogas from slaughterhouse wastewater anaerobic digestion is driven by the archaeal family Methanobacteriaceae and bacterial families Porphyromonadaceae and Tissierellaceae</h3>
+      <p class="article-meta"><strong>Published:</strong> 2018.</p>
+      <p class="article-authors"><strong>Autores:</strong> Camille E. Granada, Camila Hasan, Munique Marder, Odorico Konrad, Luciano K. Vargas, Luciane M.P. Passaglia, Adriana Giongo, Rafael R. de Oliveira, Leandro de Mattos Pereira, Fernanda de Jesus Trindade, Raul A. Sperotto.</p>
+      <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.renene.2017.10.095" target="_blank" rel="noopener">https://doi.org/10.1016/j.renene.2017.10.095</a></p>
+      <div class="article-tags">
+        <span>biogas</span><span>anaerobic digestion</span><span>Methanobacteriaceae</span><span>Porphyromonadaceae</span><span>Tissierellaceae</span><span>slaughterhouse wastewater</span>
+      </div>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análises de dados de metabarcoding + transcriptoma + PCoA, integradas com IA (machine learning), para identificar comunidades microbianas associadas à produção de biogás e potenciais perfis probióticos funcionais.</p>
+    </div>
+    <figure class="article-figure">
+      <img src="{{ '/assets/articles/probiotics.png' | relative_url }}" alt="Ilustração do artigo sobre digestão anaeróbia de efluente de frigorífico e produção de biogás" loading="lazy" />
+      <figcaption>Ilustração.</figcaption>
     </figure>
   </article>
 
@@ -38,7 +55,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>coral microbiome</span><span>heat stress</span><span>metabolic restructuring</span><span>marine biology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Integração de metagenômica, perfil metabólico e estatística multivariada para mapear respostas de corais ao estresse térmico.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Integração de metagenômica, perfil metabólico e estatística multivariada para mapear respostas de corais ao estresse térmico.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Santoro et al. sobre manipulação do microbioma de corais" loading="lazy" />
@@ -55,7 +72,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>SARS-CoV-2</span><span>genomics</span><span>Brazil</span><span>viral mutations</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Vigilância genômica e análise de variantes para relacionar mutações virais com possíveis impactos clínicos e epidemiológicos.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Vigilância genômica e análise de variantes para relacionar mutações virais com possíveis impactos clínicos e epidemiológicos.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/sarscov2-2021.svg' | relative_url }}" alt="Figura do artigo SARS-CoV-2 mutations in Brazil" loading="lazy" />
@@ -72,7 +89,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>transcriptome</span><span>Angiostrongylus cantonensis</span><span>antithrombin</span><span>parasitology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Análises de transcriptoma para identificar genes ligados a mecanismos de infecção e potenciais alvos biomoleculares.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análises de transcriptoma para identificar genes ligados a mecanismos de infecção e potenciais alvos biomoleculares.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/angiostrongylus-worms-2021.svg' | relative_url }}" alt="Figura do artigo De novo transcriptome reveals blood coagulation/antithrombin factors" loading="lazy" />
@@ -89,7 +106,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>transcriptome</span><span>snake venom</span><span>Bothrops jararaca</span><span>biotechnology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Mineração de transcriptoma para descoberta de toxinas e moléculas bioativas com potencial biotecnológico.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Mineração de transcriptoma para descoberta de toxinas e moléculas bioativas com potencial biotecnológico.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/bothrops-2020.svg' | relative_url }}" alt="Figura do artigo Bothrops jararaca venom gland" loading="lazy" />
@@ -106,7 +123,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Perfil de microbiota com análise de comunidade para entender mudanças microbianas durante a infecção parasito-hospedeiro.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Perfil de microbiota com análise de comunidade para entender mudanças microbianas durante a infecção parasito-hospedeiro.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/mollusk-microbiota-2020.svg' | relative_url }}" alt="Figura do artigo Mollusk microbiota shift" loading="lazy" />
@@ -123,7 +140,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>Fusobacterium nucleatum</span><span>colorectal cancer</span><span>microbiota</span><span>oncology</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Associação entre abundância microbiana e dados clínicos para gerar biomarcadores de risco e progressão tumoral.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Associação entre abundância microbiana e dados clínicos para gerar biomarcadores de risco e progressão tumoral.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/microbiota-fusobacterium-2019.svg' | relative_url }}" alt="Figura do artigo Microbiota profile and impact of Fusobacterium nucleatum" loading="lazy" />
@@ -140,7 +157,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>metabarcoding</span><span>Atlantic Forest</span><span>soil biodiversity</span><span>nematodes</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Metabarcoding com ordenação (ex.: PCoA) para caracterizar diversidade de solo e detectar assinaturas ecológicas.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Metabarcoding com ordenação (ex.: PCoA) para caracterizar diversidade de solo e detectar assinaturas ecológicas.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/meiofaunal-2019.svg' | relative_url }}" alt="Figura do artigo Meiofaunal diversity in the Atlantic Forest soil" loading="lazy" />
@@ -157,13 +174,14 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>drug targets</span><span>essential enzymes</span><span>plant pathogens</span><span>comparative genomics</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Genômica comparativa para identificar enzimas essenciais e análogas como candidatos a alvos terapêuticos.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Genômica comparativa para identificar enzimas essenciais e análogas como candidatos a alvos terapêuticos.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/NISE.png' | relative_url }}" alt="Figura ilustrativa do artigo sobre identificação de enzimas essenciais e análogas em patógenos de culturas agrícolas" loading="lazy" />
       <figcaption>Illustrative figure.</figcaption>
     </figure>
   </article>
+
 
   <article class="article-card">
     <div class="article-text">
@@ -191,7 +209,7 @@ Página dedicada a publicações e divulgação científica.
       <div class="article-tags">
         <span>cellulase</span><span>xylanase</span><span>microbial community</span><span>waste valorization</span>
       </div>
-      <p class="article-insight"><strong>Como a bioinformática pode ser aplicada aqui?</strong> Análise funcional de comunidade microbiana para priorizar enzimas com potencial de aplicação industrial.</p>
+      <p class="article-insight"><strong>Como a bioinformática pode ser usada aqui?</strong> <strong>Resposta:</strong> Análise funcional de comunidade microbiana para priorizar enzimas com potencial de aplicação industrial.</p>
     </div>
     <figure class="article-figure">
       <img src="{{ '/assets/articles/recycled_paper_sludge_enzymes_illustration.svg?v=20260317' | relative_url }}" alt="Figura do artigo de Heinz et al. sobre enzimas de lodo de papel reciclado" loading="lazy" />
