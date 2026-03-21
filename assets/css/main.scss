@@ -985,6 +985,28 @@ footer  {
   margin-bottom: 1.2rem;
 }
 
+.applications-heading-readable {
+  background: #ffffff;
+  color: #0f172a;
+  border: 2px solid #0d2f66;
+  border-radius: 14px;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+}
+
+.applications-heading-readable h3,
+.applications-heading-readable p {
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .applications-heading-readable {
+    background: #0f172a;
+    color: #f8fafc;
+    border-color: #93c5fd;
+  }
+}
+
 .applications-heading h3 {
   margin: 0;
   font-size: clamp(1.15rem, 2.1vw, 1.65rem);
