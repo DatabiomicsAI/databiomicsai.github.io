@@ -832,6 +832,14 @@ footer  {
   line-height: 1.24;
 }
 
+.articles-page {
+  width: min(1120px, calc(100vw - 4rem));
+  margin: 0 auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .article-card {
   display: grid;
   gap: 1.5rem;
@@ -852,7 +860,17 @@ footer  {
 }
 
 .article-insight {
-  margin: 0.75rem 0 0;
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0b3b8a, #2563eb 55%, #0ea5e9);
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.article-insight strong {
+  color: #ffffff;
 }
 
 .article-tags {
@@ -1023,6 +1041,12 @@ footer  {
   .article-card {
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .articles-page {
+    width: min(1120px, calc(100vw - 2rem));
   }
 }
 
