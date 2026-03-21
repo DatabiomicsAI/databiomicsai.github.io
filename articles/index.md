@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
+title: Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
 permalink: /articles/
 ---
 
-# Artigos de autoria ou co-autoria publicados por Leandro de Mattos Pereira e colaboradores
+# Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
 {:.articles-main-title}
 
 Página dedicada a publicações e divulgação científica.
