@@ -76,8 +76,9 @@ footer  {
     color: var(--text);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     padding: 0.58rem 0.82rem;
+    white-space: nowrap;
     border-radius: 999px;
     text-align: center;
     border: 1px solid color-mix(in srgb, var(--links) 14%, transparent);
@@ -1829,6 +1830,14 @@ iframe.goog-te-banner-frame,
   border: 1px solid color-mix(in srgb, var(--links) 28%, transparent);
 }
 
+.partner-premium-media .partner-logo-wbp {
+  max-height: 210px;
+  object-fit: contain;
+  object-position: center;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  padding: 0.65rem;
+}
+
 .partner-premium-kicker {
   margin: 0 0 0.2rem;
   text-transform: uppercase;
@@ -1845,4 +1854,36 @@ iframe.goog-te-banner-frame,
 
 .partnership-item {
   border: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
+}
+
+.partner-support-note {
+  margin-top: 0.5rem;
+}
+
+.partner-logo-caption {
+  margin: 0.7rem 0 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.partner-contact-panel {
+  margin-top: 1rem;
+  border: 1px solid color-mix(in srgb, var(--links) 20%, transparent);
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+}
+
+.partner-contact-panel summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.partner-contact-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.partner-contact-panel[open] summary {
+  margin-bottom: 0.8rem;
 }
