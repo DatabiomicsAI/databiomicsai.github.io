@@ -1098,6 +1098,50 @@ footer  {
   font-weight: 600;
 }
 
+.services-trust-card {
+  margin: 1.75rem auto 0;
+  max-width: 980px;
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.34);
+  background: color-mix(in srgb, var(--bg-secondary) 94%, var(--bg) 6%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.services-trust-card h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.58rem;
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  color: color-mix(in srgb, var(--text-main) 92%, var(--links) 8%);
+}
+
+.services-trust-card p {
+  margin: 0.55rem 0 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.services-trust-icon {
+  width: 1.55rem;
+  height: 1.55rem;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--links) 14%, transparent);
+  color: color-mix(in srgb, var(--links) 78%, var(--text-main) 22%);
+}
+
+.services-trust-icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  display: block;
+  fill: currentColor;
+}
+
 @media (min-width: 960px) {
   .article-card {
     grid-template-columns: 1.1fr 0.9fr;
@@ -1316,6 +1360,16 @@ footer  {
     min-height: 210px;
   }
 
+  .services-trust-card {
+    margin-top: 1.4rem;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+  }
+
+  .services-trust-card h3 {
+    font-size: 1rem;
+  }
+
   .interest-shell {
     padding: 1.4rem;
   }
@@ -1529,6 +1583,16 @@ footer  {
   height: 36px;
   border-radius: 3px;
   display: block;
+}
+
+.country-flag-fallback {
+  width: 48px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .country-flag-count {
