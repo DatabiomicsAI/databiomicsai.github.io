@@ -1585,6 +1585,16 @@ footer  {
   display: block;
 }
 
+.country-flag-fallback {
+  width: 48px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 .country-flag-count {
   margin-top: 0.2rem;
   font-size: 0.8rem;
