@@ -96,24 +96,62 @@ Comunidade</a>
 
 <script>
 (() => {
-  const datasets = [
-    {
-      title: "Genômica e Metagenômica Aplicadas",
-      keywords: [["Biofertilizantes",10],["Probióticos",9],["Controle biológico",10],["Sanidade animal",8],["Diagnóstico molecular",9],["Detecção de patógenos",9],["Saúde intestinal",8],["Segurança dos alimentos",8],["Aquicultura",7],["Agropecuária",8],["Agricultura sustentável",10],["Melhoramento de culturas",8],["Qualidade microbiológica",9],["Microrganismos benéficos",9],["Biotecnologia agrícola",10],["Monitoramento microbiológico",8]]
-    },
-    {
-      title: "IA e Bioinformática para Enzimas e Compostos",
-      keywords: [["Descoberta de fármacos",10],["Novos antibióticos",9],["Biocatalisadores",8],["Enzimas industriais",9],["Química verde",8],["Biocombustíveis",8],["Aditivos alimentares",7],["Cosméticos bioativos",7],["Moléculas anticâncer",9],["Produtos naturais",8],["Natural Products",8],["IA",10],["NLP",9],["word2vec",9],["Protein embeddings",9],["Bioativos",7],["Catálise enzimática",9],["Triagem molecular",8],["Inovação biotecnológica",10],["Desenvolvimento de compostos",9],["Aplicações farmacêuticas",9]]
-    },
-    {
-      title: "Genômica Comparativa e Filogenômica",
-      keywords: [["Alvos terapêuticos",9],["Desenvolvimento de vacinas",10],["Resistência antimicrobiana",10],["Epidemiologia molecular",9],["Vigilância genômica",9],["Rastreabilidade de cepas",8],["Controle de surtos",8],["Evolução de patógenos",8],["Genes essenciais",7],["Segurança biológica",7],["Identificação de variantes",8],["Comparação genômica",9],["Filogenia",7],["Saúde pública",8],["Biomedicina",7],["Medicina de precisão",9]]
-    },
-    {
-      title: "Diversidade Microbiana e Ecologia",
-      keywords: [["Monitoramento ambiental",9],["Biorremediação",8],["Recuperação de ecossistemas",9],["Qualidade da água",8],["Qualidade do solo",8],["Sustentabilidade",9],["Impacto ambiental",8],["Bioindicadores",7],["Gestão ambiental",8],["Ecologia microbiana",8],["Biodiversidade",8],["Licenciamento ambiental",8],["Biotecnologia ambiental",9],["Diagnóstico ecológico",8],["Conservação",7],["Soluções sustentáveis",9]]
-    }
-  ];
+  const DATASETS_BY_LANG = {
+    pt: [
+      {
+        title: "Genômica e Metagenômica Aplicadas",
+        keywords: [["Biofertilizantes",10],["Probióticos",9],["Controle biológico",10],["Sanidade animal",8],["Diagnóstico molecular",9],["Detecção de patógenos",9],["Saúde intestinal",8],["Segurança dos alimentos",8],["Aquicultura",7],["Agropecuária",8],["Agricultura sustentável",10],["Melhoramento de culturas",8],["Qualidade microbiológica",9],["Microrganismos benéficos",9],["Biotecnologia agrícola",10],["Monitoramento microbiológico",8]]
+      },
+      {
+        title: "IA e Bioinformática para Enzimas e Compostos",
+        keywords: [["Descoberta de fármacos",10],["Novos antibióticos",9],["Biocatalisadores",8],["Enzimas industriais",9],["Química verde",8],["Biocombustíveis",8],["Aditivos alimentares",7],["Cosméticos bioativos",7],["Moléculas anticâncer",9],["Produtos naturais",8],["Natural Products",8],["IA",10],["NLP",9],["word2vec",9],["Protein embeddings",9],["Bioativos",7],["Catálise enzimática",9],["Triagem molecular",8],["Inovação biotecnológica",10],["Desenvolvimento de compostos",9],["Aplicações farmacêuticas",9]]
+      },
+      {
+        title: "Genômica Comparativa e Filogenômica",
+        keywords: [["Alvos terapêuticos",9],["Desenvolvimento de vacinas",10],["Resistência antimicrobiana",10],["Epidemiologia molecular",9],["Vigilância genômica",9],["Rastreabilidade de cepas",8],["Controle de surtos",8],["Evolução de patógenos",8],["Genes essenciais",7],["Segurança biológica",7],["Identificação de variantes",8],["Comparação genômica",9],["Filogenia",7],["Saúde pública",8],["Biomedicina",7],["Medicina de precisão",9]]
+      },
+      {
+        title: "Diversidade Microbiana e Ecologia",
+        keywords: [["Monitoramento ambiental",9],["Biorremediação",8],["Recuperação de ecossistemas",9],["Qualidade da água",8],["Qualidade do solo",8],["Sustentabilidade",9],["Impacto ambiental",8],["Bioindicadores",7],["Gestão ambiental",8],["Ecologia microbiana",8],["Biodiversidade",8],["Licenciamento ambiental",8],["Biotecnologia ambiental",9],["Diagnóstico ecológico",8],["Conservação",7],["Soluções sustentáveis",9]]
+      }
+    ],
+    en: [
+      {
+        title: "Applied Genomics and Metagenomics",
+        keywords: [["Biofertilizers",10],["Probiotics",9],["Biological control",10],["Animal health",8],["Molecular diagnostics",9],["Pathogen detection",9],["Gut health",8],["Food safety",8],["Aquaculture",7],["Livestock",8],["Sustainable agriculture",10],["Crop improvement",8],["Microbiological quality",9],["Beneficial microorganisms",9],["Agricultural biotechnology",10],["Microbiological monitoring",8]]
+      },
+      {
+        title: "AI and Bioinformatics for Enzymes and Compounds",
+        keywords: [["Drug discovery",10],["New antibiotics",9],["Biocatalysts",8],["Industrial enzymes",9],["Green chemistry",8],["Biofuels",8],["Food additives",7],["Bioactive cosmetics",7],["Anticancer molecules",9],["Natural products",8],["Natural Products",8],["AI",10],["NLP",9],["word2vec",9],["Protein embeddings",9],["Bioactives",7],["Enzymatic catalysis",9],["Molecular screening",8],["Biotechnological innovation",10],["Compound development",9],["Pharmaceutical applications",9]]
+      },
+      {
+        title: "Comparative Genomics and Phylogenomics",
+        keywords: [["Therapeutic targets",9],["Vaccine development",10],["Antimicrobial resistance",10],["Molecular epidemiology",9],["Genomic surveillance",9],["Strain traceability",8],["Outbreak control",8],["Pathogen evolution",8],["Essential genes",7],["Biological safety",7],["Variant identification",8],["Genomic comparison",9],["Phylogeny",7],["Public health",8],["Biomedicine",7],["Precision medicine",9]]
+      },
+      {
+        title: "Microbial Diversity and Ecology",
+        keywords: [["Environmental monitoring",9],["Bioremediation",8],["Ecosystem recovery",9],["Water quality",8],["Soil quality",8],["Sustainability",9],["Environmental impact",8],["Bioindicators",7],["Environmental management",8],["Microbial ecology",8],["Biodiversity",8],["Environmental licensing",8],["Environmental biotechnology",9],["Ecological diagnostics",8],["Conservation",7],["Sustainable solutions",9]]
+      }
+    ],
+    es: [
+      {
+        title: "Genómica y Metagenómica Aplicadas",
+        keywords: [["Biofertilizantes",10],["Probióticos",9],["Control biológico",10],["Sanidad animal",8],["Diagnóstico molecular",9],["Detección de patógenos",9],["Salud intestinal",8],["Seguridad alimentaria",8],["Acuicultura",7],["Agropecuaria",8],["Agricultura sostenible",10],["Mejoramiento de cultivos",8],["Calidad microbiológica",9],["Microorganismos benéficos",9],["Biotecnología agrícola",10],["Monitoreo microbiológico",8]]
+      },
+      {
+        title: "IA y Bioinformática para Enzimas y Compuestos",
+        keywords: [["Descubrimiento de fármacos",10],["Nuevos antibióticos",9],["Biocatalizadores",8],["Enzimas industriales",9],["Química verde",8],["Biocombustibles",8],["Aditivos alimentarios",7],["Cosméticos bioactivos",7],["Moléculas anticáncer",9],["Productos naturales",8],["Natural Products",8],["IA",10],["NLP",9],["word2vec",9],["Protein embeddings",9],["Bioactivos",7],["Catálisis enzimática",9],["Tamizaje molecular",8],["Innovación biotecnológica",10],["Desarrollo de compuestos",9],["Aplicaciones farmacéuticas",9]]
+      },
+      {
+        title: "Genómica Comparativa y Filogenómica",
+        keywords: [["Objetivos terapéuticos",9],["Desarrollo de vacunas",10],["Resistencia antimicrobiana",10],["Epidemiología molecular",9],["Vigilancia genómica",9],["Trazabilidad de cepas",8],["Control de brotes",8],["Evolución de patógenos",8],["Genes esenciales",7],["Seguridad biológica",7],["Identificación de variantes",8],["Comparación genómica",9],["Filogenia",7],["Salud pública",8],["Biomedicina",7],["Medicina de precisión",9]]
+      },
+      {
+        title: "Diversidad Microbiana y Ecología",
+        keywords: [["Monitoreo ambiental",9],["Biorremediación",8],["Recuperación de ecosistemas",9],["Calidad del agua",8],["Calidad del suelo",8],["Sostenibilidad",9],["Impacto ambiental",8],["Bioindicadores",7],["Gestión ambiental",8],["Ecología microbiana",8],["Biodiversidad",8],["Licenciamiento ambiental",8],["Biotecnología ambiental",9],["Diagnóstico ecológico",8],["Conservación",7],["Soluciones sostenibles",9]]
+      }
+    ]
+  };
 
   const palette = ["#0d2f66", "#165db7", "#108c8f", "#2f9d78", "#1f7aa8"];
   const grid = document.getElementById("applications-grid");
@@ -144,7 +182,10 @@ Comunidade</a>
     });
   };
 
-  datasets.forEach((item, cardIndex) => {
+  const cards = [];
+  const datasetCount = DATASETS_BY_LANG.pt.length;
+
+  for (let cardIndex = 0; cardIndex < datasetCount; cardIndex += 1) {
     const card = document.createElement("article");
     card.className = "application-card";
 
@@ -158,21 +199,89 @@ Comunidade</a>
     logo.className = "application-logo";
 
     const title = document.createElement("h4");
-    title.textContent = item.title;
+    title.textContent = "";
     header.append(logo, title);
 
     const cloud = document.createElement("div");
     cloud.className = "word-cloud";
     cloud.setAttribute("role", "list");
-    cloud.setAttribute("aria-label", `Aplicações: ${item.title}`);
+    cloud.setAttribute("aria-label", "Aplicações");
 
     card.append(header, cloud);
     grid.appendChild(card);
+    cards.push({ title, cloud, cardIndex });
+  }
 
-    const render = () => placeWords(cloud, item.keywords, cardIndex);
-    const observer = new ResizeObserver(() => window.requestAnimationFrame(render));
-    observer.observe(cloud);
-    render();
+  const getCurrentLang = () => {
+    const lang = localStorage.getItem("siteLang") || "pt";
+    return DATASETS_BY_LANG[lang] ? lang : "pt";
+  };
+
+  const renderCloudsByLanguage = () => {
+    const lang = getCurrentLang();
+    const datasets = DATASETS_BY_LANG[lang] || DATASETS_BY_LANG.pt;
+
+    cards.forEach(({ title, cloud, cardIndex }) => {
+      const item = datasets[cardIndex] || DATASETS_BY_LANG.pt[cardIndex];
+      if (!item) return;
+      title.textContent = item.title;
+      cloud.setAttribute("aria-label", `${item.title}`);
+      placeWords(cloud, item.keywords, cardIndex);
+    });
+  };
+
+  const observer = new ResizeObserver(() => {
+    window.requestAnimationFrame(renderCloudsByLanguage);
   });
+  cards.forEach(({ cloud }) => observer.observe(cloud));
+
+  const SERVICE_CARD_CLOUDS_BY_LANG = {
+    pt: [
+      [["Genômica",10],["Metagenômica",10],["Pipelines",9],["Mineração de dados",9],["Microrganismos",8],["Biotecnologia",9],["IA",9],["In silico",8]],
+      [["Bioinformática",10],["Enzimas",9],["Produtos naturais",9],["BGCs",8],["NLP",8],["word2vec",8],["Protein embeddings",8],["Inovação",9]],
+      [["Filogenômica",10],["Comparação genômica",9],["Proteomas",8],["Bases públicas",8],["Evolução",8],["Relatórios",7],["Vigilância",8],["Precisão",7]],
+      [["Metabarcoding",10],["Diversidade alfa",9],["Diversidade beta",9],["PCoA",8],["NMDS",8],["Ecologia",9],["Taxonomia",8],["Abundância diferencial",8]],
+      [["Mentoria",10],["Capacitação",9],["Treinamento",9],["Estratégia",8],["Fluxo de trabalho",8],["Artigos científicos",8],["Dissertações",7],["Teses",7]]
+    ],
+    en: [
+      [["Genomics",10],["Metagenomics",10],["Pipelines",9],["Data mining",9],["Microorganisms",8],["Biotechnology",9],["AI",9],["In silico",8]],
+      [["Bioinformatics",10],["Enzymes",9],["Natural products",9],["BGCs",8],["NLP",8],["word2vec",8],["Protein embeddings",8],["Innovation",9]],
+      [["Phylogenomics",10],["Genomic comparison",9],["Proteomes",8],["Public databases",8],["Evolution",8],["Reports",7],["Surveillance",8],["Precision",7]],
+      [["Metabarcoding",10],["Alpha diversity",9],["Beta diversity",9],["PCoA",8],["NMDS",8],["Ecology",9],["Taxonomy",8],["Differential abundance",8]],
+      [["Mentoring",10],["Training",9],["Upskilling",9],["Strategy",8],["Workflow",8],["Scientific papers",8],["Dissertations",7],["Theses",7]]
+    ],
+    es: [
+      [["Genómica",10],["Metagenómica",10],["Pipelines",9],["Minería de datos",9],["Microorganismos",8],["Biotecnología",9],["IA",9],["In silico",8]],
+      [["Bioinformática",10],["Enzimas",9],["Productos naturales",9],["BGCs",8],["NLP",8],["word2vec",8],["Protein embeddings",8],["Innovación",9]],
+      [["Filogenómica",10],["Comparación genómica",9],["Proteomas",8],["Bases públicas",8],["Evolución",8],["Informes",7],["Vigilancia",8],["Precisión",7]],
+      [["Metabarcoding",10],["Diversidad alfa",9],["Diversidad beta",9],["PCoA",8],["NMDS",8],["Ecología",9],["Taxonomía",8],["Abundancia diferencial",8]],
+      [["Mentoría",10],["Capacitación",9],["Entrenamiento",9],["Estrategia",8],["Flujo de trabajo",8],["Artículos científicos",8],["Disertaciones",7],["Tesis",7]]
+    ]
+  };
+
+  const serviceCards = Array.from(document.querySelectorAll(".card-grid .info-card"));
+  const serviceCloudNodes = serviceCards.map((card) => {
+    const cloud = document.createElement("div");
+    cloud.className = "word-cloud service-word-cloud";
+    cloud.setAttribute("role", "list");
+    cloud.setAttribute("aria-label", "Nuvem de palavras do serviço");
+    card.appendChild(cloud);
+    observer.observe(cloud);
+    return cloud;
+  });
+
+  const renderServiceCardCloudsByLanguage = () => {
+    const lang = getCurrentLang();
+    const clouds = SERVICE_CARD_CLOUDS_BY_LANG[lang] || SERVICE_CARD_CLOUDS_BY_LANG.pt;
+    serviceCloudNodes.forEach((cloud, index) => {
+      const keywords = clouds[index] || SERVICE_CARD_CLOUDS_BY_LANG.pt[index] || [];
+      placeWords(cloud, keywords, index + 2);
+    });
+  };
+
+  document.addEventListener("site-language-changed", renderCloudsByLanguage);
+  document.addEventListener("site-language-changed", renderServiceCardCloudsByLanguage);
+  renderCloudsByLanguage();
+  renderServiceCardCloudsByLanguage();
 })();
 </script>
