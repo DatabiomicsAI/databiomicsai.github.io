@@ -32,8 +32,10 @@
 
   const render = (widget, countriesMap) => {
     const distinctEl = widget.querySelector('[data-distinct-countries]');
+    const brazilCounterEl = widget.querySelector('[data-brazil-counter]');
+    const otherCountriesStripEl = widget.querySelector('[data-other-countries-strip]');
     const listEl = widget.querySelector('[data-country-list]');
-    if (!distinctEl || !listEl) return;
+    if (!distinctEl || !listEl || !brazilCounterEl || !otherCountriesStripEl) return;
 
     const rows = Object.entries(countriesMap)
       .map(([code, data]) => ({
@@ -46,9 +48,22 @@
 
     distinctEl.textContent = `Distinct countries: ${rows.length || 'loading...'}`;
 
+    const brazilRow = rows.find((row) => row.code === 'BR');
+    const otherRows = rows.filter((row) => row.code !== 'BR');
+    brazilCounterEl.textContent = `🇧🇷 Brazil: ${Number(brazilRow?.count || 0)}`;
+
     if (!rows.length) {
       listEl.innerHTML = `<li>${EMPTY_TEXT}</li>`;
+      otherCountriesStripEl.innerHTML = `<span class="country-flag-empty">${EMPTY_TEXT}</span>`;
       return;
+    }
+
+    if (!otherRows.length) {
+      otherCountriesStripEl.innerHTML = `<span class="country-flag-empty">No country data beyond Brazil yet.</span>`;
+    } else {
+      otherCountriesStripEl.innerHTML = otherRows
+        .map((row) => `<span class="country-flag-chip" title="${row.name}: ${row.count}"><span class="country-flag-fallback">${countryCodeToFlag(row.code)}</span><strong class="country-flag-count">${row.count}</strong></span>`)
+        .join('');
     }
 
     listEl.innerHTML = rows
