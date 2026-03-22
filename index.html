@@ -12,8 +12,8 @@ Aplicabilidade</a>
   <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
   <a href="#contato" data-i18n-key="nav_contact">Contato</a>
-  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Comunidade
-Databiomics</a>
+  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Databiomics
+Comunidade</a>
 </nav>
 
 
@@ -479,6 +479,11 @@ Databiomics</a>
     return String.fromCodePoint(...[...normalized].map((char) => 127397 + char.charCodeAt(0)));
   };
 
+  const normalizeCountryCode = (code) => {
+    const normalized = String(code || "").trim().toUpperCase();
+    return /^[A-Z]{2}$/.test(normalized) ? normalized : null;
+  };
+
   const getCountryDisplayName = (code) => {
     const normalized = String(code || "").trim().toUpperCase();
     if (!/^[A-Z]{2}$/.test(normalized)) return normalized || "--";
@@ -597,11 +602,17 @@ Databiomics</a>
     const allCountries = Array.isArray(visitorTelemetryState.allCountries)
       ? visitorTelemetryState.allCountries
       : [];
+    const safeAllCountries = allCountries
+      .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
+      .filter((row) => row.code && row.value > 0);
     const topCountries = Array.isArray(visitorTelemetryState.topCountries)
       ? visitorTelemetryState.topCountries
       : [];
+    const safeTopCountries = topCountries
+      .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
+      .filter((row) => row.code && row.value > 0);
 
-    if (!allCountries.length) {
+    if (!safeAllCountries.length) {
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
@@ -609,9 +620,9 @@ Databiomics</a>
       return;
     }
 
-    distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${allCountries.length}`;
+    distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
 
-    const rowsForTop = topCountries.length ? topCountries : allCountries;
+    const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
     rowsForTop.slice(0, 10).forEach(({ code, value }) => {
       const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
@@ -624,12 +635,24 @@ Databiomics</a>
       card.title = `${countryName}: ${value}`;
       card.innerHTML = `
         <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="Bandeira de ${countryName}" loading="lazy">
+        <span class="country-flag-fallback" aria-hidden="true" hidden>${countryCodeToFlagEmoji(code)}</span>
         <strong class="country-flag-count">${value}</strong>
       `;
+      const image = card.querySelector("img");
+      const fallback = card.querySelector(".country-flag-fallback");
+      if (image && fallback) {
+        image.addEventListener("error", () => {
+          image.hidden = true;
+          fallback.hidden = false;
+        });
+        image.addEventListener("load", () => {
+          fallback.hidden = true;
+        });
+      }
       stripEl.appendChild(card);
     });
 
-    allCountries.forEach(({ code, value }) => {
+    safeAllCountries.forEach(({ code, value }) => {
       const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
       li.className = "country-row";
@@ -816,11 +839,13 @@ Databiomics</a>
 
     try {
       const { code, name, ip } = await getVisitorCountry();
+      const normalizedCode = normalizeCountryCode(code);
+      if (!normalizedCode) throw new Error("Invalid visitor country code");
       visitorCountryState.name = name;
 
       const flagImage = document.getElementById("visitor-flag");
       if (flagImage) {
-        flagImage.src = `https://flagcdn.com/${code.toLowerCase()}.svg`;
+        flagImage.src = `https://flagcdn.com/${normalizedCode.toLowerCase()}.svg`;
         flagImage.hidden = false;
       }
 
@@ -832,16 +857,26 @@ Databiomics</a>
         const remoteTotal = await hitRemoteCounter("site-visits");
         visitorTelemetryState.total = Number.isFinite(remoteTotal) ? remoteTotal : localTelemetry.total;
 
-        localTelemetry.countries[code] = Number(localTelemetry.countries[code] || 0) + 1;
+        localTelemetry.countries[normalizedCode] = Number(localTelemetry.countries[normalizedCode] || 0) + 1;
         writeLocalTelemetry(localTelemetry);
 
-        const remoteCountry = await hitRemoteCounter(`site-visits-country-${code}`);
+        const remoteCountry = await hitRemoteCounter(`site-visits-country-${normalizedCode}`);
         if (Number.isFinite(remoteCountry)) {
-          localTelemetry.countries[code] = remoteCountry;
+          localTelemetry.countries[normalizedCode] = remoteCountry;
           writeLocalTelemetry(localTelemetry);
         }
       } else {
         visitorTelemetryState.total = Number.isFinite(visitorTelemetryState.total) ? visitorTelemetryState.total : localTelemetry.total;
+      }
+
+      const remoteCountrySnapshot = await Promise.all([
+        getRemoteCounter(`site-visits-country-${normalizedCode}`),
+        getRemoteCounter(`site-visits-country-${normalizedCode.toLowerCase()}`)
+      ]);
+      const countryTotal = Number(Math.max(Number(remoteCountrySnapshot[0] || 0), Number(remoteCountrySnapshot[1] || 0)));
+      if (Number.isFinite(countryTotal) && countryTotal > 0) {
+        localTelemetry.countries[normalizedCode] = Math.max(Number(localTelemetry.countries[normalizedCode] || 0), countryTotal);
+        writeLocalTelemetry(localTelemetry);
       }
     } catch {
       visitorCountryState.name = false;

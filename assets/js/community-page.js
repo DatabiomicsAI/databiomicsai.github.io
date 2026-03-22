@@ -237,8 +237,9 @@
       `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`
     );
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${mailtoSubject}&body=${mailtoBody}`;
-    setFeedback('Seu aplicativo de e-mail foi aberto para enviar a mensagem.', true);
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    window.open(mailtoUrl, '_blank', 'noopener');
+    setFeedback('Direcionado para enviar a mensagem ao e-mail info@databiomics.com.', true);
     form.reset();
   });
 })();
