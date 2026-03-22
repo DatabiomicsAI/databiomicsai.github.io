@@ -2370,10 +2370,33 @@ iframe.goog-te-banner-frame,
   font-size: 0.8rem;
   font-weight: 700;
   background: color-mix(in srgb, var(--links) 14%, #fff);
+  color: #0b1220;
 }
 
 .community-subtitle { font-size: 1.1rem; max-width: 720px; }
 .community-support-text { max-width: 780px; }
+
+.community-hero h1,
+.community-hero .community-subtitle,
+.community-hero .community-support-text {
+  color: #0f172a;
+}
+
+.community-hero .hero-actions .button {
+  font-weight: 700;
+}
+
+.community-hero .hero-actions .button.primary {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.community-hero .hero-actions .button.ghost {
+  background: #ffffff;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
 
 .community-form-card,
 .community-analytics-panel,
