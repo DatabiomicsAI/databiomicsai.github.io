@@ -110,6 +110,13 @@ footer  {
     min-height: 50px;
     padding: 0.62rem 1rem;
   }
+
+  a[data-i18n-key="nav_community"] {
+    white-space: pre-line;
+    line-height: 1.2;
+    min-height: 50px;
+    padding: 0.62rem 1rem;
+  }
 }
 
 .hero {
