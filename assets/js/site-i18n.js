@@ -28,21 +28,31 @@
   const translationBaseLang = 'pt';
   let googleTranslateReady = true;
 
+  const normalizeLang = (lang) => {
+    if (typeof lang !== 'string') return translationBaseLang;
+    const normalized = lang.trim().toLowerCase();
+    if (!normalized) return translationBaseLang;
+    if (normalized.startsWith('pt')) return 'pt';
+    if (normalized.startsWith('en')) return 'en';
+    if (normalized.startsWith('es')) return 'es';
+    return dictionaries[normalized] ? normalized : translationBaseLang;
+  };
+
   const setGoogleTranslateCookie = (lang) => {
-    const targetLang = dictionaries[lang] ? lang : translationBaseLang;
+    const targetLang = normalizeLang(lang);
     const value = `/pt/${targetLang}`;
     document.cookie = `googtrans=${value}; path=/`;
     document.cookie = `googtrans=${value}; domain=.${window.location.hostname}; path=/`;
   };
 
   const applyGoogleTranslate = (lang) => {
-    const targetLang = dictionaries[lang] ? lang : translationBaseLang;
+    const targetLang = normalizeLang(lang);
     setGoogleTranslateCookie(targetLang);
     return targetLang;
   };
 
   const initGoogleTranslator = () => {
-    const lang = localStorage.getItem('siteLang') || translationBaseLang;
+    const lang = normalizeLang(localStorage.getItem('siteLang'));
     applyGoogleTranslate(lang);
   };
 
@@ -289,8 +299,9 @@
   };
 
   const applyLanguage = async (lang) => {
-    const dict = dictionaries[lang] || dictionaries.pt;
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    const resolvedLang = normalizeLang(lang);
+    const dict = dictionaries[resolvedLang] || dictionaries.pt;
+    document.documentElement.lang = resolvedLang === 'pt' ? 'pt-BR' : resolvedLang;
     document.querySelectorAll('[data-i18n-key]').forEach((el) => {
       const key = el.getAttribute('data-i18n-key');
       if (dict[key]) el.textContent = dict[key];
@@ -300,20 +311,26 @@
       if (dict[key]) el.setAttribute('placeholder', dict[key]);
     });
     document.querySelectorAll('.global-lang-btn').forEach((btn) => {
-      btn.classList.toggle('is-active', btn.dataset.globalLang === lang);
+      btn.classList.toggle('is-active', normalizeLang(btn.dataset.globalLang) === resolvedLang);
     });
-    localStorage.setItem('siteLang', lang);
-    await applyInternalFullPageTranslation(lang);
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.classList.toggle('is-active', normalizeLang(btn.dataset.lang) === resolvedLang);
+    });
+    localStorage.setItem('siteLang', resolvedLang);
+    await applyInternalFullPageTranslation(resolvedLang);
     scrubMyMemoryWarningsFromDom();
-    document.dispatchEvent(new CustomEvent('site-language-changed', { detail: { lang, dict } }));
+    document.dispatchEvent(new CustomEvent('site-language-changed', { detail: { lang: resolvedLang, dict } }));
   };
 
   purgeWarningCacheEntries();
   captureOriginalTranslatableState();
-  const current = localStorage.getItem('siteLang') || 'pt';
+  const current = normalizeLang(localStorage.getItem('siteLang') || 'pt');
   initGoogleTranslator();
   document.querySelectorAll('.global-lang-btn').forEach((btn) => {
     btn.addEventListener('click', () => { void applyLanguage(btn.dataset.globalLang); });
+  });
+  document.querySelectorAll('.lang-btn[data-lang]').forEach((btn) => {
+    btn.addEventListener('click', () => { void applyLanguage(btn.dataset.lang); });
   });
   void applyLanguage(current);
 
