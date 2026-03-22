@@ -200,34 +200,48 @@
 
   const fetchAutoTranslation = async (text, lang) => {
     if (!text.trim() || lang === translationBaseLang) return text;
-    if (isMyMemoryTemporarilyBlocked()) return text;
     const cached = readCachedTranslation(lang, text);
     if (cached) return cached;
 
     const key = `${lang}::${text}`;
     if (autoTranslateInFlight.has(key)) return autoTranslateInFlight.get(key);
 
-    const promise = fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${lang}`)
+    const fetchGoogleFallback = () => fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=pt&tl=${encodeURIComponent(lang)}&dt=t&q=${encodeURIComponent(text)}`)
+      .then((r) => r.json())
+      .then((payload) => {
+        const translated = Array.isArray(payload?.[0])
+          ? payload[0].map((part) => (Array.isArray(part) ? (part[0] || '') : '')).join('').trim()
+          : '';
+        if (!translated || hasMyMemoryWarning(translated)) return text;
+        writeCachedTranslation(lang, text, translated);
+        return translated;
+      })
+      .catch(() => text);
+
+    const fetchMyMemory = () => fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=pt|${lang}`)
       .then((r) => r.json())
       .then((payload) => {
         const status = Number(payload?.responseStatus || 0);
         if (status >= 400) {
           if (hasMyMemoryWarning(JSON.stringify(payload || {}))) blockMyMemoryForHours();
-          return text;
+          return null;
         }
 
         const translated = sanitizeMyMemoryWarning(payload?.responseData?.translatedText);
         if (hasMyMemoryWarning(translated)) {
           blockMyMemoryForHours();
-          return text;
+          return null;
         }
         if (translated) {
           writeCachedTranslation(lang, text, translated);
           return translated;
         }
-        return text;
+        return null;
       })
-      .catch(() => text)
+      .catch(() => null);
+
+    const promise = (isMyMemoryTemporarilyBlocked() ? Promise.resolve(null) : fetchMyMemory())
+      .then((translated) => translated || fetchGoogleFallback())
       .finally(() => autoTranslateInFlight.delete(key));
 
     autoTranslateInFlight.set(key, promise);
