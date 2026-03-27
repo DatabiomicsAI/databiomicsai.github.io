@@ -8,7 +8,8 @@ layout: landing
 Aplicabilidade</a>
   <a href="{{ '/servicos/' | relative_url }}" data-i18n-key="nav_services">Serviços e Aplicações</a>
   <a class="nav-pill nav-pill-support" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie os projetos</a>
-  <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Parcerias Estratégicas</a>
+  <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Apoio empresarial</a>
+  <a href="{{ '/parcerias/' | relative_url }}" data-i18n-key="nav_partnerships_new">Parcerias</a>
   <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
   <a href="#contato" data-i18n-key="nav_contact">Contato</a>
@@ -225,7 +226,7 @@ Comunidade</a>
 
 <section class="section partnerships-highlight" id="parcerias-destaque">
   <div class="section-heading compact">
-    <h2 data-i18n-key="partnerships_title">Parcerias Estratégicas</h2>
+    <h2 data-i18n-key="partnerships_title">Apoio empresarial</h2>
   </div>
   <div class="card-grid compact">
     <article class="info-card partnership-item">
@@ -377,6 +378,10 @@ Comunidade</a>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
       <div class="visitor-quick-overview">
         <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
+        <p id="visitor-brazil-count" class="visitor-count">🇧🇷 Brasil: 0</p>
+      </div>
+      <p class="visitor-count">Outros países</p>
+      <div class="visitor-quick-overview">
         <div id="visitor-flags-strip" class="visitor-flags-strip" aria-label="Bandeiras dos países visitantes"></div>
       </div>
       <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
@@ -588,9 +593,10 @@ Comunidade</a>
     const listEl = document.getElementById("visitor-country-list");
     const allListEl = document.getElementById("visitor-country-list-all");
     const stripEl = document.getElementById("visitor-flags-strip");
+    const brazilCounterEl = document.getElementById("visitor-brazil-count");
     const allCountriesTitleEl = document.getElementById("all-countries-title");
     const distinctCountriesEl = document.getElementById("distinct-countries-count");
-    if (!listEl || !allListEl || !stripEl || !allCountriesTitleEl || !distinctCountriesEl) return;
+    if (!listEl || !allListEl || !stripEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
     const d = getLangDict();
 
     allCountriesTitleEl.textContent = d.allCountriesTitle;
@@ -616,11 +622,15 @@ Comunidade</a>
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
+      brazilCounterEl.textContent = "🇧🇷 Brasil: 0";
       distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
     }
 
     distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
+    const brazilRow = safeAllCountries.find((row) => row.code === "BR");
+    const otherCountries = safeAllCountries.filter((row) => row.code !== "BR");
+    brazilCounterEl.textContent = `🇧🇷 Brasil: ${Number(brazilRow?.value || 0)}`;
 
     const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
     rowsForTop.slice(0, 10).forEach(({ code, value }) => {
@@ -649,8 +659,12 @@ Comunidade</a>
           fallback.hidden = true;
         });
       }
-      stripEl.appendChild(card);
+      if (code !== "BR") stripEl.appendChild(card);
     });
+
+    if (!otherCountries.length) {
+      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
+    }
 
     safeAllCountries.forEach(({ code, value }) => {
       const countryName = getCountryDisplayName(code);
