@@ -2160,7 +2160,16 @@ iframe.goog-te-banner-frame,
 
 .global-visitor-list {
   margin: 0.7rem 0 0;
-  padding-left: 1.1rem;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.global-visitor-widget .visitor-flags-strip {
+  margin-top: 0.45rem;
+  margin-bottom: 0.35rem;
+  min-height: 64px;
 }
 
 
