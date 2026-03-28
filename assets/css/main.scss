@@ -217,6 +217,10 @@ footer  {
   color: #fff;
 }
 
+html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key="lead_title"] {
+  color: #b9f2ff; /* cor diamante no modo claro */
+}
+
 .button {
   display: inline-flex;
   align-items: center;
