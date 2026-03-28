@@ -1672,6 +1672,17 @@ footer  {
   display: block;
 }
 
+.sea-scient-logo-box {
+  max-width: min(520px, 100%);
+}
+
+.sea-scient-logo {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  background: #fff;
+}
+
 .project-logo-box figcaption {
   margin-top: 0.55rem;
   color: #cbd5e1;
