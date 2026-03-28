@@ -181,6 +181,17 @@ footer  {
   border-radius: 8px;
 }
 
+.hero-profile-photo {
+  width: clamp(96px, 15vw, 132px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.32);
+  margin: 0.25rem 0 0.75rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
