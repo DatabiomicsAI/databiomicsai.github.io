@@ -466,6 +466,23 @@ Comunidade</a>
   const visitorTelemetryState = { total: null, topCountries: [], allCountries: [] };
   const countNamespace = "databiomicsai-github-io";
 
+  const ensureSingleElement = (selector) => {
+    const nodes = Array.from(document.querySelectorAll(selector));
+    nodes.forEach((node, index) => {
+      if (index > 0) node.remove();
+    });
+  };
+
+  [
+    ".footer-credit-band",
+    "#visitor-country",
+    "#visitor-count",
+    "#visitor-flags-strip",
+    "#visitor-country-list",
+    "#visitor-country-list-all",
+    "#visitor-brazil-count"
+  ].forEach(ensureSingleElement);
+
   const visitorI18n = {
     pt: {
       loadingCountry: "Carregando país do visitante...",

@@ -2296,10 +2296,14 @@ iframe.goog-te-banner-frame,
 }
 
 .supporter-inline-card img {
-  width: min(100%, 190px);
-  max-height: 72px;
+  width: min(100%, 320px);
+  max-height: 132px;
   object-fit: contain;
   display: block;
+  background: #fff;
+  padding: 0.65rem 0.85rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
   margin-bottom: 0.75rem;
 }
 
