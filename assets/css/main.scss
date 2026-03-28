@@ -386,6 +386,40 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   fill: currentColor;
 }
 
+.social-qr-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  width: min(100%, 560px);
+}
+
+.social-qr-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.6rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-secondary) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--links) 18%, transparent);
+}
+
+.social-qr-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.3rem;
+}
+
+.social-qr-card span {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
 .profile-social-actions {
   display: flex;
   flex-wrap: wrap;
