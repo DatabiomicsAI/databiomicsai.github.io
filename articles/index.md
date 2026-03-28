@@ -4,6 +4,11 @@ title: Publicações científicas de autoria e coautoria de Leandro de Mattos Pe
 permalink: /articles/
 ---
 
+<div class="articles-brand-intro">
+  <img class="articles-brand-logo" src="{{ '/databiomics3.jpg' | relative_url }}" alt="Logo Databiomics®" loading="lazy" />
+  <p class="articles-brand-tagline">Transforming data into knowledge.</p>
+</div>
+
 # Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
 {:.articles-main-title}
 
@@ -52,8 +57,9 @@ Abaixo alguns artigos relevantes:
     <div class="article-text">
       <h3>Coral microbiome manipulation elicits metabolic and genetic restructuring to mitigate heat stress and evade mortality</h3>
       <p class="article-meta"><strong>Revista:</strong> Science Advances 7(33):abg3088 (2021).</p>
-      <p class="article-authors"><strong>Autores:</strong> Santoro EP, Borges RM, Espinoza JL, Freire M, Pereira LDM, et al.</p>
+      <p class="article-authors"><strong>Autores:</strong> Santoro EP, Borges RM, Espinoza JL, Freire M, Pereira LDM, et al.; último autor: Peixoto RS.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1126/sciadv.abg3088" target="_blank" rel="noopener">10.1126/sciadv.abg3088</a></p>
+      <p class="article-links"><strong>Forbes (2021):</strong> <a href="https://www.forbes.com/sites/grrlscientist/2021/07/31/probiotic-supplements-may-help-coral-reefs-just-like-they-help-people/" target="_blank" rel="noopener">Probiotic Supplements May Help Coral Reefs (Just Like They Help People)</a></p>
       <div class="article-tags">
         <span>coral microbiome</span><span>heat stress</span><span>metabolic restructuring</span><span>marine biology</span>
       </div>
