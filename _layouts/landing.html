@@ -56,27 +56,16 @@
           </section>
         {% endunless %}
 
-        <section class="global-visitor-widget" data-visitor-widget aria-label="Visitor countries">
-          <h3 class="global-visitor-title">Visitor countries</h3>
-          <p class="global-visitor-meta" data-distinct-countries>Distinct countries: loading...</p>
-          <p class="global-visitor-meta" data-brazil-counter>🇧🇷 Brazil: 0</p>
-          <p class="global-visitor-meta" data-local-time>Local time: --:--:--</p>
-          <div class="visitor-flags-strip" data-other-countries-strip aria-label="Flags and counts for other countries"></div>
-          <ul class="global-visitor-list" data-country-list>
-            <li>No country data yet.</li>
-          </ul>
-        </section>
-
         <div class="credits">
           &copy;&nbsp;2026&nbsp;Databiomics®
           <img class="credits-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®">
           <small class="credits-note">Marca registrada no INPI (Instituto Nacional da Propriedade Industrial).</small>
+          <small class="credits-dev">Website desenvolvido por Leandro de Mattos Pereira (Databiomics).</small>
         </div>
       </div>
     </main>
 
 
-    <script src="{{ '/assets/js/visitor-countries.js' | relative_url }}"></script>
     <script>
       (() => {
         const pageUrl = encodeURIComponent(window.location.href);
