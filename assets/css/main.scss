@@ -1672,6 +1672,12 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   background: rgba(15, 23, 42, 0.35);
 }
 
+.country-flag-chip-brazil {
+  min-width: 72px;
+  border-color: rgba(110, 231, 183, 0.5);
+  background: color-mix(in srgb, rgba(15, 23, 42, 0.35) 80%, rgba(16, 185, 129, 0.2) 20%);
+}
+
 .country-flag-chip img {
   width: 48px;
   height: 36px;

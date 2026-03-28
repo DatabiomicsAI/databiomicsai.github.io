@@ -399,8 +399,10 @@ Comunidade</a>
       <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
       <div class="visitor-quick-overview">
-        <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
-        <p id="visitor-brazil-count" class="visitor-count">🇧🇷 Brasil: 0</p>
+        <span class="country-flag-chip country-flag-chip-brazil" title="Brasil: 0">
+          <img src="https://flagcdn.com/48x36/br.png" alt="Bandeira do Brasil" loading="lazy">
+          <strong id="visitor-brazil-count" class="country-flag-count">0</strong>
+        </span>
       </div>
       <p class="visitor-count">Outros países</p>
       <div class="visitor-quick-overview">
@@ -650,7 +652,7 @@ Comunidade</a>
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
-      brazilCounterEl.textContent = "🇧🇷 Brasil: 0";
+      brazilCounterEl.textContent = "0";
       distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
     }
@@ -658,7 +660,7 @@ Comunidade</a>
     distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
     const brazilRow = safeAllCountries.find((row) => row.code === "BR");
     const otherCountries = safeAllCountries.filter((row) => row.code !== "BR");
-    brazilCounterEl.textContent = `🇧🇷 Brasil: ${Number(brazilRow?.value || 0)}`;
+    brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
 
     const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
     rowsForTop.slice(0, 10).forEach(({ code, value }) => {
@@ -887,12 +889,6 @@ Comunidade</a>
       const normalizedCode = normalizeCountryCode(code);
       if (!normalizedCode) throw new Error("Invalid visitor country code");
       visitorCountryState.name = name;
-
-      const flagImage = document.getElementById("visitor-flag");
-      if (flagImage) {
-        flagImage.src = `https://flagcdn.com/${normalizedCode.toLowerCase()}.svg`;
-        flagImage.hidden = false;
-      }
 
       const shouldCountVisit = await registerUniqueVisitForDay(ip);
       if (shouldCountVisit) {
