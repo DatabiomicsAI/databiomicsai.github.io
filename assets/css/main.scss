@@ -937,6 +937,27 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   line-height: 1.24;
 }
 
+.articles-brand-intro {
+  display: grid;
+  justify-items: start;
+  gap: 0.65rem;
+  margin: 0.85rem 0 1.05rem;
+}
+
+.articles-brand-logo {
+  width: min(100%, 420px);
+  max-height: 124px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.articles-brand-tagline {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--headings) 86%, var(--text) 14%);
+}
+
 .articles-page {
   width: min(1120px, calc(100vw - 4rem));
   margin: 0 auto;
