@@ -1650,6 +1650,10 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   margin: 0.45rem 0 0.75rem;
 }
 
+.visitor-extended-details {
+  display: none;
+}
+
 .visitor-flags-strip {
   display: flex;
   align-items: flex-start;
