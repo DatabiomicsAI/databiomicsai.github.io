@@ -38,7 +38,7 @@
     partnerships_seascient_service_3: 'Detecção de disbiose e indicadores de saúde',
     partnerships_seascient_service_4: 'Suporte para ensaios de nutrição e testes de desafio',
     partnerships_seascient_service_5: 'Bioinformática e interpretação de dados',
-    partnerships_seascient_desc_2: 'A plataforma de análise de microbioma de camarões está sendo desenvolvida no âmbito de um projeto aprovado na chamada CNPq 2024 – Conhecimento Brasil e liderado pela Sea Scient Group. Nesta iniciativa, a Databiomics contribui para o desenvolvimento da plataforma, especialmente em bioinformática e análise de dados.',
+    partnerships_seascient_desc_2: 'A plataforma de análise de microbioma de camarões está sendo desenvolvida no âmbito de um projeto aprovado na chamada CNPq 2024 – Conhecimento Brasil e liderado pela Sea Scient Group. Nesta iniciativa, a Databiomics contribui para o desenvolvimento da plataforma de bioinformática e análise de dados de microbioma.',
     partnerships_seascient_site: 'Conhecer site oficial da Sea Scient Group',
     partnerships_terpenoscanner_desc: 'Explorando e ampliando o potencial químico natural de terpenos de cianobactérias e seu potencial biotecnológico em Portugal e no Brasil por meio de IA.',
     partnerships_public_notice_title: 'Edital público',
