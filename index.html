@@ -113,6 +113,24 @@ Comunidade</a>
       <span>Facebook</span>
     </a>
   </div>
+  <div class="social-qr-grid" aria-label="QR Codes oficiais Databiomics®">
+    <a class="social-qr-card" href="https://www.linkedin.com/company/databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Abrir LinkedIn da Databiomics®">
+      <img src="{{ '/assets/qrcode/linkdin-qr-code.png' | relative_url }}" alt="QR Code do LinkedIn da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/linkdin-qr-code.png';">
+      <span>LinkedIn</span>
+    </a>
+    <a class="social-qr-card" href="https://www.instagram.com/databiomics_ai" target="_blank" rel="noreferrer noopener" aria-label="Abrir Instagram da Databiomics®">
+      <img src="{{ '/assets/qrcode/instagram-qr-code.png' | relative_url }}" alt="QR Code do Instagram da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/instagram-qr-code.png';">
+      <span>Instagram</span>
+    </a>
+    <a class="social-qr-card" href="https://www.facebook.com/Databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Abrir Facebook da Databiomics®">
+      <img src="{{ '/assets/qrcode/facebook-qr-code.png' | relative_url }}" alt="QR Code do Facebook da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/facebook-qr-code.png';">
+      <span>Facebook</span>
+    </a>
+    <a class="social-qr-card" href="{{ '/' | relative_url }}" aria-label="Abrir website da Databiomics®">
+      <img src="{{ '/assets/qrcode/website-qr-code.png' | relative_url }}" alt="QR Code do website da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/website-qr-code.png';">
+      <span>Website</span>
+    </a>
+  </div>
 </section>
 
 <section id="sobre" class="section about-panel">
@@ -131,7 +149,7 @@ Comunidade</a>
     <div class="profile-card">
       <img src="{{ '/leandro_mattos_pereira.png' | relative_url }}" alt="Leandro de Mattos Pereira">
       <h3>Leandro de Mattos Pereira</h3>
-      <p data-i18n-key="about_profile_p1">Leandro de Mattos Pereira é pesquisador, biólogo (CRBio-2 143240), doutor em Biologia Computacional e de Sistemas pela Fiocruz (RJ), mestre em Biociências e Biotecnologia pela UENF e graduado em Ciências Biológicas pela UENF, com ênfase em Biotecnologia. Realizou ainda seis pós-doutorados no Brasil (PUCRS, HCPA, UFRJ, Fiocruz, ITV) na área de Bioinformática e foi Investigador Júnior em Bioinformática no CIIMAR (Portugal), projeto BlueBio4Future (https://bb4f.ciimar.up.pt/) financiado pela União Européia; Atua de forma estratégica em bioinformática, ciência de dados ômicos e inteligência artificial aplicada à biotecnologia, desenvolvendo soluções analíticas e computacionais para transformar dados biológicos complexos em conhecimento aplicável à pesquisa, inovação e desenvolvimento.</p>
+      <p data-i18n-key="about_profile_p1">Leandro de Mattos Pereira é pesquisador, biólogo (CRBio-2 143240), doutor em Biologia Computacional e de Sistemas pela Fiocruz (RJ), mestre em Biociências e Biotecnologia pela UENF e graduado em Ciências Biológicas pela UENF, com ênfase em Biotecnologia. Realizou ainda seis pós-doutorados no Brasil (PUCRS, HCPA, UFRJ, Fiocruz, ITV) na área de Bioinformática, foi colaborador voluntário do IPR (Instituto do Petróleo e Recursos Naturais, PUCRS), e foi Investigador Júnior em Bioinformática no CIIMAR (Portugal), projeto BlueBio4Future (https://bb4f.ciimar.up.pt/) financiado pela União Européia; Atua de forma estratégica em bioinformática, ciência de dados ômicos e inteligência artificial aplicada à biotecnologia, desenvolvendo soluções analíticas e computacionais para transformar dados biológicos complexos em conhecimento aplicável à pesquisa, inovação e desenvolvimento.</p>
       <p data-i18n-key="about_profile_p2">Integra bioinformática e IA com foco em resultados práticos para saúde, biotecnologia, sustentabilidade e tomada de decisão baseada em dados.</p>
       <div class="profile-social-actions" role="group" aria-label="Redes sociais">
         <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer" data-i18n-key="about_linkedin_btn">LinkedIn</a>
@@ -381,8 +399,10 @@ Comunidade</a>
       <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
       <div class="visitor-quick-overview">
-        <img id="visitor-flag" class="visitor-flag" alt="Bandeira do país visitante" loading="lazy" hidden>
-        <p id="visitor-brazil-count" class="visitor-count">🇧🇷 Brasil: 0</p>
+        <span class="country-flag-chip country-flag-chip-brazil" title="Brasil: 0">
+          <img src="https://flagcdn.com/48x36/br.png" alt="Bandeira do Brasil" loading="lazy">
+          <strong id="visitor-brazil-count" class="country-flag-count">0</strong>
+        </span>
       </div>
       <p class="visitor-count">Outros países</p>
       <div class="visitor-quick-overview">
@@ -397,6 +417,9 @@ Comunidade</a>
       <p id="distinct-countries-clock" class="visitor-count">Hora local: --:--:--</p>
       <div class="country-list-scroll">
         <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
+      </div>
+      <div class="footer-credit-band" role="note" aria-label="Crédito de desenvolvimento do website">
+        Website desenvolvido por Leandro de Mattos Pereira (Databiomics).
       </div>
     </div>
   </div>
@@ -626,7 +649,7 @@ Comunidade</a>
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
-      brazilCounterEl.textContent = "🇧🇷 Brasil: 0";
+      brazilCounterEl.textContent = "0";
       distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
     }
@@ -634,7 +657,7 @@ Comunidade</a>
     distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
     const brazilRow = safeAllCountries.find((row) => row.code === "BR");
     const otherCountries = safeAllCountries.filter((row) => row.code !== "BR");
-    brazilCounterEl.textContent = `🇧🇷 Brasil: ${Number(brazilRow?.value || 0)}`;
+    brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
 
     const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
     rowsForTop.slice(0, 10).forEach(({ code, value }) => {
@@ -643,7 +666,10 @@ Comunidade</a>
       li.className = "country-row";
       li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
+    });
 
+    otherCountries.slice(0, 20).forEach(({ code, value }) => {
+      const countryName = getCountryDisplayName(code);
       const card = document.createElement("span");
       card.className = "country-flag-chip";
       card.title = `${countryName}: ${value}`;
@@ -663,7 +689,7 @@ Comunidade</a>
           fallback.hidden = true;
         });
       }
-      if (code !== "BR") stripEl.appendChild(card);
+      stripEl.appendChild(card);
     });
 
     if (!otherCountries.length) {
@@ -860,12 +886,6 @@ Comunidade</a>
       const normalizedCode = normalizeCountryCode(code);
       if (!normalizedCode) throw new Error("Invalid visitor country code");
       visitorCountryState.name = name;
-
-      const flagImage = document.getElementById("visitor-flag");
-      if (flagImage) {
-        flagImage.src = `https://flagcdn.com/${normalizedCode.toLowerCase()}.svg`;
-        flagImage.hidden = false;
-      }
 
       const shouldCountVisit = await registerUniqueVisitForDay(ip);
       if (shouldCountVisit) {
