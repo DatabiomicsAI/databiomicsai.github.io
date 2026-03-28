@@ -4,17 +4,7 @@ title: Publicações científicas de autoria e coautoria de Leandro de Mattos Pe
 permalink: /articles/
 ---
 
-<div class="articles-brand-intro">
-  <img class="articles-brand-logo" src="{{ '/databiomics3.jpg' | relative_url }}" alt="Logo Databiomics®" loading="lazy" />
-  <p class="articles-brand-tagline">Transforming data into knowledge.</p>
-</div>
-
 <h1 class="articles-main-title">Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.</h1>
-
-<div class="articles-brand-intro">
-  <img class="articles-brand-logo" src="{{ '/databiomics3.jpg' | relative_url }}" alt="Logo Databiomics®" loading="lazy" />
-  <p class="articles-brand-tagline">Transforming data into knowledge.</p>
-</div>
 
 Abaixo alguns artigos relevantes:
 
