@@ -50,6 +50,23 @@ footer  {
   color: var(--links);
 }
 
+.footer-credit-band {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: color-mix(in srgb, var(--headings) 84%, var(--text) 16%);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--links) 22%, transparent),
+    color-mix(in srgb, var(--bg-secondary) 62%, transparent),
+    color-mix(in srgb, var(--links) 22%, transparent)
+  );
+  border-top: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
+}
+
 .visitor-flag {
   margin-top: 0.75rem;
   width: 64px;
@@ -215,6 +232,10 @@ footer  {
 
 .hero-card .card-intro {
   color: #fff;
+}
+
+html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key="lead_title"] {
+  color: #b9f2ff; /* cor diamante no modo claro */
 }
 
 .button {
