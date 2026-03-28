@@ -9,8 +9,7 @@ permalink: /articles/
   <p class="articles-brand-tagline">Transforming data into knowledge.</p>
 </div>
 
-# Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.
-{:.articles-main-title}
+<h1 class="articles-main-title">Publicações científicas de autoria e coautoria de Leandro de Mattos Pereira, incluindo trabalhos como autor principal e em colaboração ao longo de sua trajetória acadêmica.</h1>
 
 Abaixo alguns artigos relevantes:
 
