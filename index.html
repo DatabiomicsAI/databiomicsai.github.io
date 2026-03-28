@@ -416,6 +416,9 @@ Comunidade</a>
       <div class="country-list-scroll">
         <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
       </div>
+      <div class="footer-credit-band" role="note" aria-label="Crédito de desenvolvimento do website">
+        Website desenvolvido por Leandro de Mattos Pereira (Databiomics).
+      </div>
     </div>
   </div>
   <div class="footer-credit-band" role="note" aria-label="Crédito de desenvolvimento do website">
@@ -664,7 +667,10 @@ Comunidade</a>
       li.className = "country-row";
       li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
+    });
 
+    otherCountries.slice(0, 20).forEach(({ code, value }) => {
+      const countryName = getCountryDisplayName(code);
       const card = document.createElement("span");
       card.className = "country-flag-chip";
       card.title = `${countryName}: ${value}`;
@@ -684,7 +690,7 @@ Comunidade</a>
           fallback.hidden = true;
         });
       }
-      if (code !== "BR") stripEl.appendChild(card);
+      stripEl.appendChild(card);
     });
 
     if (!otherCountries.length) {
