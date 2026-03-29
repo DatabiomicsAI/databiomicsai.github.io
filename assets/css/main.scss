@@ -1192,6 +1192,21 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   font-weight: 600;
 }
 
+
+.services-feature-image {
+  margin: 1.25rem auto 0;
+  max-width: 980px;
+}
+
+.services-feature-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--links) 20%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+}
+
 .services-trust-card {
   margin: 1.75rem auto 0;
   max-width: 980px;
@@ -2733,4 +2748,17 @@ iframe.goog-te-banner-frame,
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+.site-dev-ribbon {
+  margin: 1.15rem auto 0;
+  padding: 0.9rem 1rem;
+  max-width: 760px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--links) 24%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 88%, #bfdbfe 12%);
+  color: var(--text);
+  text-align: center;
+  font-weight: 600;
 }
