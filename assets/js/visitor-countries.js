@@ -1,6 +1,6 @@
 (() => {
   const STORAGE_KEY = 'databiomics-visitor-countries-v1';
-  const EMPTY_TEXT = 'No country data yet.';
+  const EMPTY_TEXT = 'Sem dados por país ainda.';
 
   const safeParse = (value) => {
     try {
@@ -24,18 +24,11 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
   };
 
-  const updateClock = (clockEl) => {
-    const now = new Date();
-    const time = now.toLocaleTimeString('en-GB', { hour12: false });
-    clockEl.textContent = `Local time: ${time}`;
-  };
-
   const render = (widget, countriesMap) => {
-    const distinctEl = widget.querySelector('[data-distinct-countries]');
+    const totalEl = widget.querySelector('[data-total-visits]');
     const brazilCounterEl = widget.querySelector('[data-brazil-counter]');
     const otherCountriesStripEl = widget.querySelector('[data-other-countries-strip]');
-    const listEl = widget.querySelector('[data-country-list]');
-    if (!distinctEl || !listEl || !brazilCounterEl || !otherCountriesStripEl) return;
+    if (!brazilCounterEl || !otherCountriesStripEl) return;
 
     const rows = Object.entries(countriesMap)
       .map(([code, data]) => ({
@@ -46,29 +39,42 @@
       .filter((row) => row.count > 0)
       .sort((a, b) => b.count - a.count);
 
-    distinctEl.textContent = `Distinct countries: ${rows.length || 'loading...'}`;
+    const totalVisits = rows.reduce((sum, row) => sum + Number(row.count || 0), 0);
+    if (totalEl) totalEl.textContent = `Total de visitas: ${totalVisits}`;
 
     const brazilRow = rows.find((row) => row.code === 'BR');
     const otherRows = rows.filter((row) => row.code !== 'BR');
-    brazilCounterEl.textContent = `🇧🇷 Brazil: ${Number(brazilRow?.count || 0)}`;
+    brazilCounterEl.textContent = `${Number(brazilRow?.count || 0)}`;
 
     if (!rows.length) {
-      listEl.innerHTML = `<li>${EMPTY_TEXT}</li>`;
       otherCountriesStripEl.innerHTML = `<span class="country-flag-empty">${EMPTY_TEXT}</span>`;
       return;
     }
 
     if (!otherRows.length) {
-      otherCountriesStripEl.innerHTML = `<span class="country-flag-empty">No country data beyond Brazil yet.</span>`;
+      otherCountriesStripEl.innerHTML = `<span class="country-flag-empty">${EMPTY_TEXT}</span>`;
     } else {
-      otherCountriesStripEl.innerHTML = otherRows
-        .map((row) => `<span class="country-flag-chip" title="${row.name}: ${row.count}"><span class="country-flag-fallback">${countryCodeToFlag(row.code)}</span><strong class="country-flag-count">${row.count}</strong></span>`)
+      otherCountriesStripEl.innerHTML = otherRows.slice(0, 20)
+        .map((row) => `<span class="country-flag-chip" title="${row.name}: ${row.count}">
+          <img src="https://flagcdn.com/48x36/${String(row.code || '').toLowerCase()}.png" alt="Bandeira de ${row.name}" loading="lazy">
+          <span class="country-flag-fallback" aria-hidden="true" hidden>${countryCodeToFlag(row.code)}</span>
+          <strong class="country-flag-count">${row.count}</strong>
+        </span>`)
         .join('');
-    }
 
-    listEl.innerHTML = rows
-      .map((row) => `<li>${countryCodeToFlag(row.code)} ${row.name}: <strong>${row.count}</strong></li>`)
-      .join('');
+      otherCountriesStripEl.querySelectorAll('.country-flag-chip img').forEach((imgEl) => {
+        const chip = imgEl.closest('.country-flag-chip');
+        const fallback = chip && chip.querySelector('.country-flag-fallback');
+        if (!chip || !fallback) return;
+        imgEl.addEventListener('error', () => {
+          imgEl.hidden = true;
+          fallback.hidden = false;
+        });
+        imgEl.addEventListener('load', () => {
+          fallback.hidden = true;
+        });
+      });
+    }
   };
 
   const fetchVisitorCountry = async () => {
@@ -111,11 +117,6 @@
     const countriesMap = loadMap();
 
     widgets.forEach((widget) => {
-      const clockEl = widget.querySelector('[data-local-time]');
-      if (clockEl) {
-        updateClock(clockEl);
-        setInterval(() => updateClock(clockEl), 1000);
-      }
       render(widget, countriesMap);
     });
 
