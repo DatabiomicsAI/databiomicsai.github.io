@@ -2734,3 +2734,16 @@ iframe.goog-te-banner-frame,
   opacity: 1;
   transform: translateY(0);
 }
+
+
+.site-dev-ribbon {
+  margin: 1.15rem auto 0;
+  padding: 0.9rem 1rem;
+  max-width: 760px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--links) 24%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 88%, #bfdbfe 12%);
+  color: var(--text);
+  text-align: center;
+  font-weight: 600;
+}
