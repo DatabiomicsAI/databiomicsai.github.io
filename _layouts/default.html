@@ -54,16 +54,20 @@
           </div>
         </section>
 
-        <section class="global-visitor-widget" data-visitor-widget aria-label="Visitor countries">
-          <h3 class="global-visitor-title">Visitor countries</h3>
-          <p class="global-visitor-meta" data-distinct-countries>Distinct countries: loading...</p>
-          <p class="global-visitor-meta" data-brazil-counter>🇧🇷 Brazil: 0</p>
-          <p class="global-visitor-meta" data-local-time>Local time: --:--:--</p>
-          <div class="visitor-flags-strip" data-other-countries-strip aria-label="Flags and counts for other countries"></div>
-          <ul class="global-visitor-list" data-country-list>
-            <li>No country data yet.</li>
-          </ul>
+        {% unless page.url == '/' or page.url == '/index.html' %}
+        <section class="global-visitor-widget" data-visitor-widget aria-label="Visitante">
+          <h3 class="global-visitor-title">Visitante</h3>
+          <p class="global-visitor-meta" data-total-visits>Total de visitas: carregando...</p>
+          <div class="visitor-quick-overview">
+            <span class="country-flag-chip country-flag-chip-brazil" title="Brasil: 0">
+              <img src="https://flagcdn.com/48x36/br.png" alt="Bandeira do Brasil" loading="lazy">
+              <strong class="country-flag-count" data-brazil-counter>0</strong>
+            </span>
+          </div>
+          <p class="global-visitor-meta">Outros países</p>
+          <div class="visitor-flags-strip" data-other-countries-strip aria-label="Bandeiras e contagens de outros países"></div>
         </section>
+        {% endunless %}
 
         <div class="credits">
           &copy;&nbsp;2026&nbsp;Databiomics®
@@ -74,8 +78,8 @@
     </main>
 
     <div id="google_translate_element" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"></div>
-    <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/visitor-countries.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
 
     {%- if site.soopr -%}
       {%- if site.soopr.publish_token and jekyll.environment == "production" -%}
