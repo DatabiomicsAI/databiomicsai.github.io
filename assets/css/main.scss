@@ -116,6 +116,15 @@ footer  {
 
   .nav-pill-support,
   .nav-pill-partnerships {
+    font-weight: 600;
+  }
+
+  .nav-pill-support:hover,
+  .nav-pill-support:focus-visible,
+  .nav-pill-support:active,
+  .nav-pill-partnerships:hover,
+  .nav-pill-partnerships:focus-visible,
+  .nav-pill-partnerships:active {
     background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(148, 163, 184, 0.22));
     border-color: color-mix(in srgb, var(--links) 42%, transparent);
     font-weight: 700;
