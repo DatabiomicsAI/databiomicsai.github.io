@@ -1,0 +1,48 @@
+---
+layout: landing
+title: Chat IA Databiomics®
+permalink: /chatbot/
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/#sobre' | relative_url }}">Sobre</a>
+  <a href="{{ '/servicos/' | relative_url }}">Serviços</a>
+  <a href="{{ '/comunidade/' | relative_url }}">Comunidade</a>
+  <a href="{{ '/#contato' | relative_url }}">Contato</a>
+</nav>
+
+<section class="section chatbot-embed-section" aria-labelledby="chatbot-title">
+  <div class="section-heading">
+    <h1 id="chatbot-title">Assistente Databiomics®</h1>
+    <p class="chatbot-intro">
+      Atendimento inteligente para tirar dúvidas sobre serviços, projetos e aplicações.
+    </p>
+  </div>
+
+  <div class="chatbot-embed-frame-wrap chatbot-embed-ready">
+    <p>
+      Fale diretamente comigo e receba orientação personalizada para seu caso.
+    </p>
+  </div>
+
+  <div class="chatbot-embed-actions">
+    <a id="whatsapp-chatbot-link" class="button primary" href="#" target="_blank" rel="noopener noreferrer">
+      Iniciar conversa no WhatsApp
+    </a>
+  </div>
+
+  <p class="chatbot-embed-note">
+    Ao clicar no botão, abrimos uma mensagem pronta para acelerar o atendimento.
+  </p>
+</section>
+
+<script>
+  (function () {
+    const whatsappButton = document.getElementById("whatsapp-chatbot-link");
+    if (!whatsappButton) return;
+    const phoneParts = ["55", "22", "99796", "8983"];
+    const phoneNumber = phoneParts.join("");
+    const message = encodeURIComponent("Olá Leandro! Usei o Chat IA no site Databiomics® e quero continuar o atendimento por aqui.");
+    whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
+  })();
+</script>
