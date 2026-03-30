@@ -190,7 +190,7 @@ Comunidade</a>
       .map(([label, weight], index) => ({ label, weight, index }))
       .sort((a, b) => b.weight - a.weight || a.label.localeCompare(b.label));
 
-    orderedWords.forEach(({ label, weight, index }) => {
+    orderedWords.forEach(({ label, weight, index }, orderIndex) => {
       const ratio = (weight - minWeight) / Math.max(1, maxWeight - minWeight);
       const size = Math.round(minSize + ratio * (maxSize - minSize));
       const wordEl = document.createElement("span");
@@ -198,6 +198,10 @@ Comunidade</a>
       wordEl.textContent = label;
       wordEl.style.fontSize = `${size}px`;
       wordEl.style.color = palette[(index + paletteOffset) % palette.length];
+      const span = ratio > 0.66 ? 4 : ratio > 0.33 ? 3 : 2;
+      const align = ["start", "center", "end"][(orderIndex + paletteOffset) % 3];
+      wordEl.style.gridColumn = `span ${span}`;
+      wordEl.style.justifySelf = align;
       wordEl.setAttribute("role", "listitem");
       cloud.appendChild(wordEl);
     });

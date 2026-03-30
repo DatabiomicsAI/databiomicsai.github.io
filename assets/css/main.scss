@@ -1142,11 +1142,11 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
 }
 
 .word-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.6rem;
-  align-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(28px, auto);
+  gap: 0.5rem 0.55rem;
+  align-content: start;
   min-height: 220px;
   border-radius: 14px;
   background: linear-gradient(165deg, rgba(247, 250, 252, 0.78), rgba(243, 248, 251, 0.55));
@@ -1163,7 +1163,7 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
 
 .cloud-word {
   display: inline-flex;
-  position: static !important;
+  align-items: center;
   font-weight: 600;
   line-height: 1.14;
   letter-spacing: 0.01em;
@@ -1466,6 +1466,7 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   }
 
   .word-cloud {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
     min-height: 210px;
   }
 
