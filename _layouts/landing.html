@@ -90,9 +90,20 @@
       {%- endif -%}
     {%- endif -%}
     {%- if page.url == "/" -%}
-      <div class="site-dev-ribbon" role="note" aria-label="Créditos de desenvolvimento do website">
+      <div id="site-dev-ribbon" class="site-dev-ribbon" role="note" aria-label="Créditos de desenvolvimento do website" hidden>
         Website desenvolvido por Leandro de Mattos Pereira (Databiomics®).
       </div>
+      <script>
+        (function () {
+          const ribbon = document.getElementById('site-dev-ribbon');
+          if (!ribbon) return;
+          const toggleRibbon = () => {
+            ribbon.hidden = window.location.hash !== '#sobre';
+          };
+          toggleRibbon();
+          window.addEventListener('hashchange', toggleRibbon);
+        })();
+      </script>
     {%- endif -%}
   </body>
 </html>
