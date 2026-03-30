@@ -1,0 +1,49 @@
+---
+layout: landing
+title: Chat IA Databiomics®
+permalink: /chatbot/
+---
+
+<nav class="landing-nav">
+  <a href="{{ '/#sobre' | relative_url }}">Sobre</a>
+  <a href="{{ '/servicos/' | relative_url }}">Serviços</a>
+  <a href="{{ '/comunidade/' | relative_url }}">Comunidade</a>
+  <a href="{{ '/#contato' | relative_url }}">Contato</a>
+</nav>
+
+<section class="section chatbot-embed-section" aria-labelledby="chatbot-title">
+  <div class="section-heading">
+    <h1 id="chatbot-title">Chat IA Databiomics®</h1>
+  </div>
+
+  <div class="chatbot-embed-frame-wrap chatbot-embed-unavailable">
+    <p>
+      O HuggingChat não está mais disponível como Space incorporável.
+      Para usar o chat, abra diretamente em nova aba.
+    </p>
+  </div>
+
+  <div class="chatbot-embed-actions">
+    <a class="button ghost" href="https://hf.co/chat" target="_blank" rel="noopener noreferrer">
+      Abrir HuggingChat em nova aba
+    </a>
+    <a id="whatsapp-chatbot-link" class="button primary" href="#" target="_blank" rel="noopener noreferrer">
+      Falar comigo no WhatsApp
+    </a>
+  </div>
+
+  <p class="chatbot-embed-note">
+    Observação: ao clicar no botão do WhatsApp, abrimos uma mensagem pronta para você continuar o atendimento manualmente após usar o chat em nova aba.
+  </p>
+</section>
+
+<script>
+  (function () {
+    const whatsappButton = document.getElementById("whatsapp-chatbot-link");
+    if (!whatsappButton) return;
+    const phoneParts = ["55", "22", "99796", "8983"];
+    const phoneNumber = phoneParts.join("");
+    const message = encodeURIComponent("Olá Leandro! Usei o Chat IA no site Databiomics® e quero continuar o atendimento por aqui.");
+    whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
+  })();
+</script>
