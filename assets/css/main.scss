@@ -2796,17 +2796,25 @@ iframe.goog-te-banner-frame,
 }
 
 
-.chatbot-embed-unavailable {
-  min-height: auto;
-  padding: 1.25rem;
-  display: grid;
-  place-items: center;
+.chatbot-intro {
+  margin: 0.3rem auto 0;
+  max-width: 760px;
   text-align: center;
 }
 
-.chatbot-embed-unavailable p {
+.chatbot-embed-ready {
+  min-height: auto;
+  padding: 1.35rem 1.1rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, color-mix(in srgb, #2563eb 8%, var(--bg-elevated)), color-mix(in srgb, #14b8a6 10%, var(--bg-elevated)));
+}
+
+.chatbot-embed-ready p {
   margin: 0;
   max-width: 680px;
+  font-weight: 600;
 }
 
 .chatbot-embed-frame {
