@@ -1214,6 +1214,16 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   line-height: 1.5;
 }
 
+.services-legal-disclosure {
+  margin-top: 0.65rem;
+}
+
+.services-legal-disclosure summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--links);
+}
+
 .services-feature-image {
   margin: 1.25rem auto 0;
   max-width: 980px;
