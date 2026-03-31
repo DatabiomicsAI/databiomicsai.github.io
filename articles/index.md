@@ -37,7 +37,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> Camille E. Granada, Camila Hasan, Munique Marder, Odorico Konrad, Luciano K. Vargas, Luciane M.P. Passaglia, Adriana Giongo, Rafael R. de Oliveira, Leandro de Mattos Pereira, Fernanda de Jesus Trindade, Raul A. Sperotto.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.renene.2017.10.095" target="_blank" rel="noopener">https://doi.org/10.1016/j.renene.2017.10.095</a></p>
       <div class="article-tags">
-        <span>biogas</span><span>anaerobic digestion</span><span>Methanobacteriaceae</span><span>Porphyromonadaceae</span><span>Tissierellaceae</span><span>slaughterhouse wastewater</span>
+        <span>biogas</span><span>anaerobic digestion</span><span>Methanobacteriaceae</span><span>Porphyromonadaceae</span><span>Tissierellaceae</span><span>slaughterhouse wastewater</span><span>Análises de Metabarcoding</span><span>Bioinformática</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Uso de sequenciamento e análise bioinformática de comunidades microbianas para identificar famílias bacterianas e arqueanas associadas à produção de metano na digestão anaeróbia de efluente de frigorífico.</p>
     </div>
@@ -55,7 +55,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1126/sciadv.abg3088" target="_blank" rel="noopener">10.1126/sciadv.abg3088</a></p>
       <p class="article-links"><strong>Forbes (2021):</strong> <a href="https://www.forbes.com/sites/grrlscientist/2021/07/31/probiotic-supplements-may-help-coral-reefs-just-like-they-help-people/" target="_blank" rel="noopener">Probiotic Supplements May Help Coral Reefs (Just Like They Help People)</a></p>
       <div class="article-tags">
-        <span>coral microbiome</span><span>heat stress</span><span>metabolic restructuring</span><span>marine biology</span>
+        <span>coral microbiome</span><span>heat stress</span><span>metabolic restructuring</span><span>marine biology</span><span>Análises de Metabarcoding</span><span>transcriptômica</span><span>Machine learning</span><span>Análises não supervisionada</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Integração de metagenômica/metatranscriptômica e análise de expressão gênica para mapear reestruturação microbiana e metabólica em corais, apoiando estratégias biotecnológicas de mitigação do estresse térmico.</p>
     </div>
@@ -89,7 +89,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Milene Pereira Guimarães de Jezuz; Amaranta Ramos Rangel; Bruna Dalcin Baldasso; Amanda Bungi Zaluskic; Carlos Graeff-Teixeira; Alessandra Loureiro Morassutti.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1017/S0031182021000469" target="_blank" rel="noopener">https://doi.org/10.1017/S0031182021000469</a></p>
       <div class="article-tags">
-        <span>transcriptome</span><span>Angiostrongylus cantonensis</span><span>antithrombin</span><span>parasitology</span>
+        <span>transcriptome</span><span>Angiostrongylus cantonensis</span><span>antithrombin</span><span>parasitology</span><span>Análise de transcriptomas</span><span>Genômica comparativa</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Montagem de novo e anotação de transcriptoma para identificar vias ligadas à coagulação, antitrombina e mecanismos de infecção em A. cantonensis, ampliando alvos para pesquisa translacional em parasitologia.</p>
     </div>
@@ -106,7 +106,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> Leandro de Mattos Pereira; Elisa Alves Messias; Bruna Sorroche; Angela das Neves Oliveira; Lidia Maria Rebolho Batista Arantes; Ana Carolina de Carvalho; Anita Mitico Tanaka-Azevedo; Kathleen Grego; André Carvalho; Matias Melendez.</p>
       <p class="article-links"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7579844/" target="_blank" rel="noopener">Acesso open access</a></p>
       <div class="article-tags">
-        <span>transcriptome</span><span>snake venom</span><span>Bothrops jararaca</span><span>biotechnology</span>
+        <span>transcriptome</span><span>snake venom</span><span>Bothrops jararaca</span><span>biotechnology</span><span>Filogenia molecular</span><span>Genômica comparativa</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Análise transcriptômica profunda da glândula de veneno de Bothrops jararaca para descoberta de toxinas, isoformas e famílias de proteínas com potencial biotecnológico e farmacêutico.</p>
     </div>
