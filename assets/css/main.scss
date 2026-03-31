@@ -1201,6 +1201,18 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   font-weight: 600;
 }
 
+.services-cred-actions {
+  margin-top: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.services-legal-text {
+  margin-top: 0.65rem !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 
 .services-feature-image {
   margin: 1.25rem auto 0;
