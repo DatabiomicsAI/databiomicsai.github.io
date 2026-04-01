@@ -122,23 +122,26 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(900px 520px at 12% -6%, rgba(29, 78, 216, 0.14), transparent 64%),
-    radial-gradient(760px 460px at 88% -10%, rgba(14, 116, 144, 0.12), transparent 62%),
-    linear-gradient(160deg, color-mix(in srgb, var(--bg) 95%, #dbeafe 5%), var(--bg));
+    radial-gradient(980px 620px at 18% -14%, rgba(37, 99, 235, 0.12), transparent 58%),
+    radial-gradient(980px 620px at 82% -14%, rgba(14, 116, 144, 0.10), transparent 58%),
+    linear-gradient(180deg, rgba(30, 64, 175, 0.05), rgba(2, 132, 199, 0.03) 46%, transparent 72%),
+    linear-gradient(165deg, color-mix(in srgb, var(--bg) 96%, #dbeafe 4%), var(--bg));
 }
 
 html[data-theme="dark"] body::before {
   background:
-    radial-gradient(960px 560px at 10% -8%, rgba(37, 99, 235, 0.28), transparent 62%),
-    radial-gradient(820px 520px at 90% -14%, rgba(14, 116, 144, 0.22), transparent 60%),
-    linear-gradient(165deg, color-mix(in srgb, var(--bg) 92%, #0b1f3a 8%), var(--bg));
+    radial-gradient(1060px 640px at 18% -16%, rgba(37, 99, 235, 0.30), transparent 57%),
+    radial-gradient(1060px 640px at 82% -16%, rgba(6, 182, 212, 0.24), transparent 57%),
+    linear-gradient(180deg, rgba(30, 64, 175, 0.16), rgba(8, 47, 73, 0.12) 48%, transparent 75%),
+    linear-gradient(168deg, color-mix(in srgb, var(--bg) 90%, #050b17 10%), var(--bg));
 }
 
 html.colorblind-mode body::before {
   background:
-    radial-gradient(860px 520px at 14% -8%, rgba(0, 90, 156, 0.16), transparent 64%),
-    radial-gradient(760px 500px at 88% -14%, rgba(255, 209, 102, 0.14), transparent 60%),
-    linear-gradient(165deg, color-mix(in srgb, var(--bg) 94%, #e7eef7 6%), var(--bg));
+    radial-gradient(980px 620px at 18% -14%, rgba(0, 90, 156, 0.20), transparent 58%),
+    radial-gradient(980px 620px at 82% -14%, rgba(255, 209, 102, 0.18), transparent 58%),
+    linear-gradient(180deg, rgba(11, 60, 93, 0.08), rgba(0, 90, 156, 0.05) 45%, transparent 74%),
+    linear-gradient(168deg, color-mix(in srgb, var(--bg) 95%, #e7eef7 5%), var(--bg));
 }
 h1, h2, h3, h4, h5, h6 {
     color: var(--headings);
