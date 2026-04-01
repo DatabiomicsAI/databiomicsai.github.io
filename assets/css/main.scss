@@ -145,6 +145,11 @@ footer  {
   }
 }
 
+.landing-nav a[data-i18n-key="nav_partnerships_new"] {
+  white-space: pre-line;
+  line-height: 1.2;
+}
+
 .hero {
   background-image: linear-gradient(120deg, rgba(16, 24, 40, 0.88), rgba(9, 18, 33, 0.92));
   background-size: cover;
@@ -1092,7 +1097,7 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
 
 .applications-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 1.25rem;
 }
 
@@ -1104,7 +1109,7 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   padding: 1.15rem 1.25rem 1.25rem;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
   overflow: hidden;
-  min-height: 320px;
+  min-height: 350px;
 }
 
 .application-card::before {
@@ -1156,7 +1161,7 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   gap: 0.45rem 0.6rem;
   align-content: flex-start;
   align-items: flex-start;
-  min-height: 220px;
+  min-height: 250px;
   border-radius: 14px;
   background: linear-gradient(165deg, rgba(247, 250, 252, 0.78), rgba(243, 248, 251, 0.55));
   border: 1px solid rgba(148, 163, 184, 0.22);
@@ -1176,7 +1181,8 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   font-weight: 600;
   line-height: 1.14;
   letter-spacing: 0.01em;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 100%;
   padding: 0.12rem 0.05rem;
 }
 
@@ -2381,6 +2387,17 @@ iframe.goog-te-banner-frame,
   margin-top: 0.8rem;
 }
 
+.supporter-social-row {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.supporter-social-row .button {
+  margin-top: 0;
+}
+
 .partner-premium-card {
   display: grid;
   grid-template-columns: 1fr;
@@ -2572,6 +2589,31 @@ iframe.goog-te-banner-frame,
   margin-top: 0.2rem;
   font-size: 0.76rem;
   color: var(--text-secondary);
+}
+
+.partner-support-social {
+  margin-top: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.partner-support-social .social-follow-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 95%, transparent);
+  color: var(--links);
+  text-decoration: none;
+}
+
+.partner-support-social .social-follow-link:hover {
+  background: color-mix(in srgb, var(--links) 14%, transparent);
 }
 
 .partner-support-card-placeholder {
