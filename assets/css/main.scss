@@ -929,6 +929,55 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   padding: 1.8rem;
 }
 
+/* Painéis com acabamento "líquido"/espelhado para visual corporativo */
+.info-card,
+.contact-card,
+.partnerships-highlight,
+.supporters-highlight,
+.partner-premium-card,
+.partner-support-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.info-card::before,
+.contact-card::before,
+.partnerships-highlight::before,
+.supporters-highlight::before,
+.partner-premium-card::before,
+.partner-support-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.04) 36%, transparent 62%),
+    radial-gradient(130% 60% at 0% 100%, color-mix(in srgb, var(--links) 10%, transparent), transparent 60%),
+    radial-gradient(130% 60% at 100% 0%, color-mix(in srgb, var(--links) 9%, transparent), transparent 58%);
+  z-index: -1;
+}
+
+.info-card::after,
+.contact-card::after,
+.partnerships-highlight::after,
+.supporters-highlight::after,
+.partner-premium-card::after,
+.partner-support-card::after {
+  content: "";
+  position: absolute;
+  left: -12%;
+  right: -12%;
+  height: 46%;
+  bottom: -24%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  filter: blur(10px);
+  opacity: 0.55;
+  z-index: -1;
+}
+
 .cookie-banner {
   margin-top: 2rem;
   background: var(--bg-secondary);
