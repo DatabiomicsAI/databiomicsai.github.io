@@ -72,7 +72,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> L. F. S. M. Timmers; J. V. Peixoto; R. G. Ducati; J. F. R. Bachega; L. P. de Mattos; R. A. Caceres; F. Majolo; G. L. da Silva; M. I. Goettert; O. A. Dellagostin; J. A. P. Henriques; L. L. Xavier; S. Laufer.</p>
       <p class="article-links"><a href="https://www.nature.com/articles/s41598-021-91585-6" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
-        <span>SARS-CoV-2</span><span>genomics</span><span>Brazil</span><span>viral mutations</span>
+        <span>SARS-CoV-2</span><span>genomics</span><span>Brazil</span><span>viral mutations</span><span>Análises de Estruturas 3D</span><span>Genômica Comparativa</span><span>Análises de mutações</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Vigilância genômica e modelagem estrutural de proteínas virais para mapear mutações do SARS-CoV-2 no Brasil e inferir possíveis impactos clínicos, imunológicos e epidemiológicos.</p>
     </div>
@@ -124,7 +124,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Joana Borges Osório.</p>
       <p class="article-links"><a href="https://link.springer.com/article/10.1007%2Fs00436-020-06743-y" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
-        <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span>
+        <span>microbiota</span><span>mollusks</span><span>Angiostrongylus cantonensis</span><span>host-parasite interaction</span><span>Análises de metabarcoding</span><span>Análises de machine learning não supervisionadas</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Perfilamento bioinformático de microbiota em hospedeiros intermediários para detectar mudanças associadas à infecção por A. cantonensis e compreender interações hospedeiro-parasito.</p>
     </div>
@@ -141,7 +141,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> Ana Carolina de Carvalho; Leandro de Mattos Pereira; José Guilherme Datorre; Wellington dos Santos; Gustavo Noriz Berardinelli; Marcus de Medeiros Matsushita; Ronilson Oliveira Durães; Denise Peixoto Guimarães; Rui Manuel Reis.</p>
       <p class="article-links"><a href="https://www.frontiersin.org/articles/10.3389/fonc.2019.00813/full" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
-        <span>Fusobacterium nucleatum</span><span>colorectal cancer</span><span>microbiota</span><span>oncology</span>
+        <span>Fusobacterium nucleatum</span><span>colorectal cancer</span><span>microbiota</span><span>oncology</span><span>Análises de Metabarcoding</span><span>Análises de machine learning não supervisionadas</span><span>Análises preditivas</span><span>Análises de variantes genéticas</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Análise integrada de microbiota e dados clínico-moleculares para avaliar o papel de Fusobacterium nucleatum no prognóstico e em características tumorais de pacientes com câncer colorretal.</p>
     </div>
@@ -158,7 +158,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> Carla Müller; Leandro de Mattos Pereira; Carina Lopes; Juvenil Cares; Adriana Giongo; Luiz Gustavo dos Anjos Borges; Carlos Graeff-Teixeira; Alessandra Loureiro Morassutti.</p>
       <p class="article-links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0378112719312873" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
-        <span>metabarcoding</span><span>Atlantic Forest</span><span>soil biodiversity</span><span>nematodes</span>
+        <span>metabarcoding</span><span>Atlantic Forest</span><span>soil biodiversity</span><span>nematodes</span><span>Análises de metabarcoding</span><span>Análises de índices ecológicos</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Metabarcoding e bioinformática de alta vazão para caracterizar a diversidade eucariota do solo, com foco em nematoides de reserva nativa da Mata Atlântica.</p>
     </div>
@@ -192,7 +192,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-authors"><strong>Autores:</strong> Heinz KGH, Zanoni PRS, Oliveira RR, Medina-Silva R, Simão TLL, Trindade FJ, Pereira LM, et al.</p>
       <p class="article-links"><a href="https://doi.org/10.1007/s12649-017-9939-9" target="_blank" rel="noopener">Acesso ao artigo</a></p>
       <div class="article-tags">
-        <span>cellulase</span><span>xylanase</span><span>microbial community</span><span>waste valorization</span>
+        <span>cellulase</span><span>xylanase</span><span>microbial community</span><span>waste valorization</span><span>Análises de metabarcoding</span><span>Identificação de enzimas com valor industrial</span>
       </div>
       <p class="article-insight"><strong>Impacto da bioinformática e inteligência artificial em aplicações reais:</strong> Análise metagenômica funcional de comunidade microbiana de lodo de papel reciclado para prospecção de enzimas celulase e xilanase com potencial de aplicação industrial.</p>
     </div>
