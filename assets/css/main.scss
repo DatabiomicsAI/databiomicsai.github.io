@@ -2381,6 +2381,17 @@ iframe.goog-te-banner-frame,
   margin-top: 0.8rem;
 }
 
+.supporter-social-row {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.supporter-social-row .button {
+  margin-top: 0;
+}
+
 .partner-premium-card {
   display: grid;
   grid-template-columns: 1fr;
