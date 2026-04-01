@@ -2585,6 +2585,31 @@ iframe.goog-te-banner-frame,
   color: var(--text-secondary);
 }
 
+.partner-support-social {
+  margin-top: 0.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.partner-support-social .social-follow-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--links) 22%, transparent);
+  background: color-mix(in srgb, var(--bg-secondary) 95%, transparent);
+  color: var(--links);
+  text-decoration: none;
+}
+
+.partner-support-social .social-follow-link:hover {
+  background: color-mix(in srgb, var(--links) 14%, transparent);
+}
+
 .partner-support-card-placeholder {
   border-style: dashed;
   color: var(--text-secondary);
