@@ -18,7 +18,7 @@ Abaixo alguns artigos relevantes:
       <p class="article-meta">† Contribuição igual entre Leandro de Mattos Pereira e Anne Liong.</p>
       <p class="article-links"><strong>DOI:</strong> <a href="https://doi.org/10.1002/pro.70468" target="_blank" rel="noopener">https://doi.org/10.1002/pro.70468</a></p>
       <p class="article-links"><strong>FAALPred:</strong> <a href="https://faalpred.ciimar.up.pt/" target="_blank" rel="noopener">https://faalpred.ciimar.up.pt/</a></p>
-      <p class="article-meta">As análises computacionais de Bioinformática e IA foram viabilizadas com apoio de infraestrutura computacional do Google Cloud, no âmbito de projeto aprovado com a maior pontuação na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, promovido pela Google e pela FCT. Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI).</p>
+      <p class="article-meta">As análises computacionais de Bioinformática e IA foram viabilizadas com apoio de infraestrutura computacional do Google Cloud, no âmbito de projeto aprovado com a maior pontuação na 2ª edição do Concurso de Computação Avançada: Inteligência Artificial em Cloud, promovido pela Google e pela FCT. Leandro de Mattos Pereira (PI) e Pedro Leão (CO-PI). Prêmio de 158 mil dólares para utilização no Google Cloud.</p>
       <div class="article-tags">
         <span>FAAL enzymes</span><span>substrate specificity</span><span>machine learning</span><span>bioinformatics</span><span>AI</span><span>Linguagem de Processamento Natural</span><span>Análises Filogenética</span><span>Genômica Comparativa</span>
       </div>
