@@ -2,7 +2,7 @@
 layout: landing
 title: Notícias Bioinfo/AI
 permalink: /comunidade/
-description: Notícias Bioinfo/AI com atualizações, artigos e vídeos sobre bioinformática e inteligência artificial.
+description: Notícias Bioinfo/AI com atualizações de bioinformática, inteligência artificial e aplicações em biologia.
 ---
 
 <nav class="landing-nav">
@@ -15,38 +15,45 @@ Aplicabilidade</a>
   <a href="{{ '/parcerias/' | relative_url }}" data-i18n-key="nav_partnerships_new">Parcerias<br>Colaborações</a>
   <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
   <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
+  <a href="{{ '/contato/' | relative_url }}" data-i18n-key="nav_contact">Contato</a>
   <a class="nav-pill nav-pill-community" href="{{ '/comunidade/' | relative_url }}">
-    <span>Notícias</span>
-    <span>Bioinfo/AI</span>
+    <span>Databiomics</span>
+    <span>Notícias Bioinfo/AI</span>
   </a>
 </nav>
 
-<section class="section community-hero reveal-on-scroll" aria-labelledby="community-hero-title">
+<section class="section community-hero reveal-on-scroll" aria-labelledby="news-hero-title">
   <div class="community-hero-bg" aria-hidden="true"></div>
   <div class="community-hero-content">
-    <p class="community-badge">Atualizações • Bioinformática • IA</p>
-    <h1 id="community-hero-title">Notícias Bioinfo/AI</h1>
-    <p class="community-subtitle">Página dedicada a notícias e atualizações sobre Bioinformática e Inteligência Artificial.</p>
-    <p class="community-subtitle">Nota importante: no momento, Leandro de Mattos Pereira encontra-se integralmente dedicado a um projeto de pós-doutorado no ITV, com duração de 10 meses. Durante esse período, novas atividades externas estão temporariamente pausadas. Para contatos institucionais ou oportunidades futuras, favor entrar em contato por e-mail: info@databiomics.com, research@databiomics.com ou mattoslmp@gmail.com.</p>
+    <p class="community-badge">Bioinformática • IA • Biologia</p>
+    <h1 id="news-hero-title">Notícias Bioinfo/AI</h1>
+    <p class="community-subtitle">Atualizações, conteúdos e destaques sobre ciência, bioinformática e inteligência artificial aplicada.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="{{ '/articles' | relative_url }}">Ver artigos</a>
+      <a class="button ghost" href="{{ '/videos/' | relative_url }}">Ver vídeos</a>
+    </div>
   </div>
 </section>
 
-<section class="section reveal-on-scroll" aria-labelledby="news-links-title">
+<section class="section community-newsletter reveal-on-scroll" aria-labelledby="news-links-title">
   <div class="section-heading compact">
-    <h2 id="news-links-title">Acompanhe as atualizações</h2>
+    <h2 id="news-links-title">Canais de atualização</h2>
+    <p>Escolha um canal para acompanhar novos conteúdos.</p>
   </div>
   <div class="community-mini-cards">
-    <a class="community-mini-card" href="{{ '/articles/' | relative_url }}">
-      <h3>Artigos e aplicações</h3>
-      <p>Veja publicações e exemplos de aplicabilidade em Bioinfo/AI.</p>
-    </a>
-    <a class="community-mini-card" href="{{ '/videos/' | relative_url }}">
-      <h3>Vídeos</h3>
-      <p>Acesse conteúdos em vídeo sobre ciência, bioinformática e IA.</p>
+    <a class="community-mini-card" href="https://www.youtube.com/@Databiomics" target="_blank" rel="noreferrer noopener">
+      <h3>YouTube</h3>
+      <p>Acompanhe vídeos e conteúdos visuais</p>
     </a>
     <a class="community-mini-card" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7211465469294178304" target="_blank" rel="noreferrer noopener">
       <h3>Newsletter</h3>
-      <p>Assine para receber atualizações no LinkedIn.</p>
+      <p>Assinar no LinkedIn</p>
+    </a>
+    <a class="community-mini-card" href="{{ '/contato/' | relative_url }}">
+      <h3>Contato</h3>
+      <p>Enviar mensagem para a equipe</p>
     </a>
   </div>
 </section>
+
+<script src="{{ '/assets/js/community-page.js' | relative_url }}"></script>
