@@ -266,6 +266,29 @@ footer  {
   color: #fff;
 }
 
+.transparency-note {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.transparency-note-card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid color-mix(in srgb, var(--links) 28%, transparent);
+  border-left: 5px solid var(--links);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-secondary) 90%, var(--links) 10%);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.transparency-note-card h2 {
+  margin-top: 0;
+}
+
+.transparency-note-card p:last-child {
+  margin-bottom: 0;
+}
+
 html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key="lead_title"] {
   color: #b9f2ff; /* cor diamante no modo claro */
 }
