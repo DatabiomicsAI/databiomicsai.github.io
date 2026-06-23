@@ -54,7 +54,19 @@
       const title = card.querySelector('h3')?.textContent || '';
       return /Bioeconomia: diversidade e riqueza.*Fiocruz/i.test(title);
     });
-    brokenBioeconomyCard?.remove();
+    if (brokenBioeconomyCard) {
+      const iframe = brokenBioeconomyCard.querySelector('iframe');
+      const title = brokenBioeconomyCard.querySelector('h3');
+      const description = brokenBioeconomyCard.querySelector('.ods-video-copy p');
+      const tags = brokenBioeconomyCard.querySelector('.ods-tags');
+      if (iframe) {
+        iframe.src = 'https://www.youtube-nocookie.com/embed/M3LIPctFCZc';
+        iframe.title = 'Compostagem vegetal — Embrapa Agrobiologia, UFRRJ e Pesagro-Rio';
+      }
+      if (title) title.textContent = 'Compostagem vegetal — Embrapa Agrobiologia, UFRRJ e Pesagro-Rio';
+      if (description) description.textContent = 'Apresenta uma tecnologia biológica simples para aproveitar materiais vegetais, produzir composto e devolver nutrientes ao sistema produtivo.';
+      if (tags) tags.innerHTML = '<span class="ods-tag">ODS 2</span><span class="ods-tag">ODS 12</span><span class="ods-tag">ODS 13</span><span class="ods-tag">Biologia do solo</span>';
+    }
 
     const videosSection = document.getElementById('videos-ods');
     const listeningSection = document.getElementById('escuta');
@@ -76,7 +88,7 @@
               <h2 id="convite-questionario-title">Ajude a identificar os temas que merecem mais informação e atenção na região</h2>
               <p>Este questionário integra um <strong>projeto de extensão universitária</strong> da disciplina <strong>Atividades Extensionistas I — Desenvolvimento Sustentável</strong>, do curso de Licenciatura em Ciências Biológicas. A proposta da extensão é aproximar universidade e sociedade: o conhecimento apresentado na página é compartilhado com a comunidade, e as respostas da comunidade ajudam a orientar a continuidade da ação.</p>
               <p>Ao participar, você contribui para compreender quais ODS, desafios ambientais e possibilidades de ciência e inovação são percebidos como mais importantes para <strong>Itaperuna, o Noroeste Fluminense e o Estado do Rio de Janeiro</strong>.</p>
-              <p class="ods-extension-note"><strong>Não se trata de fiscalização, denúncia, cadastro comercial, avaliação de empresa ou inspeção de propriedades.</strong> A escuta tem finalidade exclusivamente acadêmica, educativa e participativa.</p>
+              <p class="ods-extension-note"><strong>Finalidade da escuta:</strong> reunir percepções da comunidade para fins acadêmicos, educativos e participativos. O formulário não solicita identificação de empresa ou propriedade e não avalia situações individuais.</p>
               <a class="ods-button primary" href="#escuta">Responder à escuta inicial</a>
             </div>
             <ul class="ods-questionnaire-cta-list" aria-label="Características do questionário">
