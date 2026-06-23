@@ -1,18 +1,32 @@
 (() => {
   const normalizedPath = window.location.pathname.replace(/\/+$/, '');
   if (normalizedPath.endsWith('/ods-no-campo')) {
-    if (!document.querySelector('link[data-ods-enhancements]')) {
+    const stylesheets = [
+      ['/assets/css/ods-no-campo-enhancements.css?v=20260623-3', 'data-ods-enhancements'],
+      ['/assets/css/ods-no-campo-flow-fixes.css?v=20260623-3', 'data-ods-flow-fixes']
+    ];
+
+    stylesheets.forEach(([href, marker]) => {
+      if (document.querySelector(`link[${marker}]`)) return;
       const stylesheet = document.createElement('link');
       stylesheet.rel = 'stylesheet';
-      stylesheet.href = '/assets/css/ods-no-campo-enhancements.css?v=20260623-2';
-      stylesheet.setAttribute('data-ods-enhancements', 'true');
+      stylesheet.href = href;
+      stylesheet.setAttribute(marker, 'true');
       document.head.appendChild(stylesheet);
-    }
+    });
+
     if (!document.querySelector('script[data-ods-enhancements]')) {
-      const script = document.createElement('script');
-      script.src = '/assets/js/ods-no-campo-enhancements.js?v=20260623-2';
-      script.setAttribute('data-ods-enhancements', 'true');
-      document.head.appendChild(script);
+      const enhancements = document.createElement('script');
+      enhancements.src = '/assets/js/ods-no-campo-enhancements.js?v=20260623-3';
+      enhancements.setAttribute('data-ods-enhancements', 'true');
+      enhancements.addEventListener('load', () => {
+        if (document.querySelector('script[data-ods-flow-fixes]')) return;
+        const flowFixes = document.createElement('script');
+        flowFixes.src = '/assets/js/ods-no-campo-flow-fixes.js?v=20260623-3';
+        flowFixes.setAttribute('data-ods-flow-fixes', 'true');
+        document.head.appendChild(flowFixes);
+      });
+      document.head.appendChild(enhancements);
     }
   }
 })();
