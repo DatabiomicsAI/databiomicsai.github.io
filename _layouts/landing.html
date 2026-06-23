@@ -36,6 +36,10 @@
       <button type="button" class="global-lang-btn" data-global-lang="es">Español</button>
     </div>
 
+    {% if page.permalink == '/ods-no-campo/' %}
+      <link rel="stylesheet" href="{{ '/assets/css/ods-no-campo-visitors.css' | relative_url }}?v=20260623-1">
+    {% endif %}
+
     <main class="page-content" aria-label="Content">
       <div class="w landing-wrapper">
         {{ content }}
@@ -58,7 +62,6 @@
 
       </div>
     </main>
-
 
     <script>
       (() => {
@@ -116,6 +119,9 @@
 
     <div id="google_translate_element" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"></div>
     <script src="{{ '/assets/js/visitor-countries.js' | relative_url }}"></script>
+    {% if page.permalink == '/ods-no-campo/' %}
+      <script src="{{ '/assets/js/ods-no-campo-visitors.js' | relative_url }}?v=20260623-1"></script>
+    {% endif %}
     <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
 
     {%- if site.soopr -%}
