@@ -1,0 +1,105 @@
+.ods-page .ods-official-links {
+  margin: 16px 0 20px;
+  padding: 17px;
+  border: 1px solid #cfe2cc;
+  border-radius: 17px;
+  background: #f8fcf7;
+}
+
+.ods-page .ods-official-links summary {
+  cursor: pointer;
+  color: #0b5730;
+  font-weight: 900;
+}
+
+.ods-page .ods-official-links p {
+  margin: 9px 0 13px;
+  color: #4b6253;
+  font-size: .92rem;
+}
+
+.ods-page .ods-official-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ods-page .ods-official-link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 9px 11px;
+  border: 1px solid #d5e5d3;
+  border-radius: 11px;
+  background: #fff;
+  color: #174b2a;
+  font-size: .85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.ods-page .ods-official-link:hover,
+.ods-page .ods-official-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: #6ba65b;
+  box-shadow: 0 8px 18px rgba(15, 107, 58, .12);
+}
+
+.ods-page .ods-profile-credentials {
+  margin-top: 14px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.ods-page .ods-profile-credentials p,
+.ods-page .ods-profile-credentials strong {
+  color: #fff !important;
+}
+
+.ods-page .ods-databiomics-role {
+  padding: 13px 14px;
+  border-left: 4px solid #c7ed74;
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, .08);
+}
+
+.ods-page .ods-sources .ods-source-links {
+  display: grid;
+  gap: 8px;
+  margin: 13px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ods-page .ods-sources .ods-source-links a {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid #d7e6d5;
+  border-radius: 11px;
+  background: #f8fcf7;
+  color: #14522d;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.ods-page .ods-sources .ods-source-links a:hover,
+.ods-page .ods-sources .ods-source-links a:focus-visible {
+  border-color: #69a45a;
+  background: #edf7ea;
+}
+
+@media (max-width: 900px) {
+  .ods-page .ods-official-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .ods-page .ods-official-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
