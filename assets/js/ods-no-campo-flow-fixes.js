@@ -145,5 +145,12 @@
       script.setAttribute('data-ods-links-profile', 'true');
       document.head.appendChild(script);
     }
+
+    if (!document.querySelector('script[data-ods-regional]')) {
+      const regional = document.createElement('script');
+      regional.src = '/assets/js/ods-no-campo-regional.js?v=20260623-1';
+      regional.setAttribute('data-ods-regional', 'true');
+      document.head.appendChild(regional);
+    }
   });
 })();
