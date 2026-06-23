@@ -1,0 +1,309 @@
+---
+layout: landing
+permalink: /ods-no-campo/
+title: ODS no Campo — Itaperuna e Noroeste Fluminense
+lang: pt-BR
+---
+
+<nav class="landing-nav" aria-label="Navegação principal Databiomics">
+  <a href="{{ '/' | relative_url }}">Início</a>
+  <a href="{{ '/' | relative_url }}#sobre" data-i18n-key="nav_about">Sobre</a>
+  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Exemplos de Aplicabilidade</a>
+  <a href="{{ '/servicos/' | relative_url }}" data-i18n-key="nav_services">Serviços e Aplicações</a>
+  <a class="nav-pill nav-pill-support" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie os projetos</a>
+  <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Apoio empresarial</a>
+  <a href="{{ '/parcerias/' | relative_url }}" data-i18n-key="nav_partnerships_new">Parcerias e Colaborações</a>
+  <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
+  <a href="{{ '/chatbot/' | relative_url }}" target="_blank" rel="noopener noreferrer">Chat IA</a>
+  <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
+  <a href="{{ '/' | relative_url }}#contato" data-i18n-key="nav_contact">Contato</a>
+  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Notícias Bioinfo/AI</a>
+</nav>
+
+<style>
+  .ods-page{--ods-green:#0f6b3a;--ods-green-dark:#083d24;--ods-lime:#b9e85c;--ods-blue:#159bd2;--ods-gold:#d5a126;--ods-climate:#3d7d45;--ods-ink:#163021;--ods-muted:#52645a;--ods-paper:#f5faf4;--ods-line:#d6e7d5;max-width:1180px;margin:0 auto;padding:18px 0 60px;color:var(--ods-ink)}
+  .ods-page *{box-sizing:border-box}
+  .ods-hero{position:relative;overflow:hidden;border-radius:32px;padding:clamp(34px,6vw,72px);background:linear-gradient(125deg,#062e1b 0%,#0f6b3a 54%,#74a92e 100%);color:#fff;box-shadow:0 24px 70px rgba(7,49,28,.28)}
+  .ods-hero:before,.ods-hero:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.09)}
+  .ods-hero:before{width:360px;height:360px;right:-100px;top:-130px}.ods-hero:after{width:230px;height:230px;right:180px;bottom:-150px}
+  .ods-hero-content{position:relative;z-index:1;max-width:850px}.ods-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.34);border-radius:999px;background:rgba(255,255,255,.12);font-weight:800}
+  .ods-hero h1{font-size:clamp(2.5rem,6vw,5.2rem);line-height:.98;margin:20px 0 18px;color:#fff}.ods-hero h1 span{color:#d8f58c}.ods-hero-lead{font-size:clamp(1.08rem,2vw,1.38rem);line-height:1.55;max-width:820px}.ods-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.ods-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 19px;border-radius:14px;text-decoration:none;font-weight:850;border:1px solid transparent;cursor:pointer}.ods-button.primary{background:var(--ods-lime);color:#173319}.ods-button.secondary{background:#fff;color:var(--ods-green-dark)}.ods-button.outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.72)}
+  .ods-hero-facts{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:34px}.ods-hero-fact{padding:16px;border-radius:17px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2)}.ods-hero-fact strong{display:block;font-size:1.35rem}.ods-hero-fact span{font-size:.92rem;color:#e9f7ed}
+  .ods-section{padding:74px 12px}.ods-section.alt{margin-left:-12px;margin-right:-12px;padding-left:24px;padding-right:24px;border-radius:30px;background:linear-gradient(180deg,#eff7ed,#f9fcf8)}.ods-heading{max-width:860px;margin:0 auto 38px;text-align:center}.ods-kicker{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--ods-green)}.ods-heading h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.08;margin:9px 0 14px}.ods-heading p{font-size:1.08rem;color:var(--ods-muted)}
+  .ods-grid{display:grid;gap:20px}.ods-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.ods-grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}.ods-card{padding:25px;border:1px solid var(--ods-line);border-radius:23px;background:#fff;box-shadow:0 14px 38px rgba(15,68,36,.08)}.ods-card h3{margin:.2rem 0 .7rem}.ods-card p,.ods-card li{color:var(--ods-muted)}.ods-card ul{padding-left:1.15rem}.ods-card-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:#e6f4df;font-size:1.55rem;margin-bottom:14px}
+  .ods-definition{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:stretch}.ods-definition-main{padding:31px;border-radius:26px;background:var(--ods-green-dark);color:#fff}.ods-definition-main h2{color:#fff;margin-top:0}.ods-definition-main p{color:#e3f1e6;font-size:1.08rem}.ods-definition-list{display:grid;gap:14px}.ods-definition-item{display:flex;gap:14px;padding:18px;border:1px solid var(--ods-line);border-radius:18px;background:#fff}.ods-number{display:grid;place-items:center;min-width:48px;height:48px;border-radius:14px;background:#dff0d8;color:var(--ods-green-dark);font-weight:950;font-size:1.2rem}
+  .ods-not-box{margin-top:22px;padding:20px 22px;border-left:5px solid var(--ods-gold);border-radius:0 16px 16px 0;background:#fff8e7}.ods-not-box strong{color:#6f5000}
+  .ods-local-banner{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;padding:30px;border-radius:27px;background:linear-gradient(135deg,#e4f3df,#d9eff7);border:1px solid #c8dfca}.ods-local-banner h3{font-size:1.75rem;margin-top:0}.ods-local-stat{display:grid;gap:10px}.ods-local-stat div{padding:15px;border-radius:15px;background:rgba(255,255,255,.8)}.ods-local-stat strong{display:block;color:var(--ods-green-dark);font-size:1.12rem}
+  .ods-benefit{border-top:5px solid var(--ods-green)}.ods-benefit.community{border-color:var(--ods-blue)}.ods-benefit.business{border-color:var(--ods-gold)}.ods-benefit.brazil{border-color:var(--ods-climate)}
+  .ods-cycle{counter-reset:step;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.ods-step{position:relative;padding:22px 19px;border-radius:20px;background:#fff;border:1px solid var(--ods-line)}.ods-step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--ods-green);color:#fff;font-weight:900;margin-bottom:12px}
+  .ods-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.ods-video{overflow:hidden;border:1px solid var(--ods-line);border-radius:22px;background:#fff;box-shadow:0 14px 38px rgba(15,68,36,.08)}.ods-video-frame{position:relative;padding-top:56.25%;background:#0b2014}.ods-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.ods-video-copy{padding:20px}.ods-video-copy h3{margin-top:0}
+  .ods-quiz{padding:28px;border-radius:27px;background:#092f1c;color:#fff}.ods-quiz h2{color:#fff;margin-top:0}.ods-question{padding:18px 0;border-top:1px solid rgba(255,255,255,.14)}.ods-question:first-of-type{border-top:0}.ods-question strong{display:block;margin-bottom:10px}.ods-answer-row{display:flex;gap:9px;flex-wrap:wrap}.ods-answer{border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;padding:9px 13px;font-weight:750}.ods-answer:hover,.ods-answer:focus{background:rgba(255,255,255,.18)}.ods-answer.correct{background:#c5ec70;color:#173319;border-color:#c5ec70}.ods-answer.wrong{background:#8d2f2f;border-color:#d86b6b}.ods-feedback{min-height:28px;margin:9px 0 0;color:#dcefe2}
+  .ods-listening{display:grid;grid-template-columns:.78fr 1.22fr;gap:25px;align-items:start}.ods-invite{position:sticky;top:25px;padding:28px;border-radius:26px;background:linear-gradient(150deg,#0b4b2b,#17834a);color:#fff}.ods-invite h2{color:#fff;margin-top:0}.ods-invite p,.ods-invite li{color:#e7f6eb}.ods-invite ol{padding-left:1.2rem}.ods-time{display:inline-block;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.14);font-weight:800}
+  .ods-form{padding:27px;border:1px solid var(--ods-line);border-radius:27px;background:#fff;box-shadow:0 18px 48px rgba(15,68,36,.1)}.ods-form h3{margin-top:0}.ods-field{display:grid;gap:7px;margin-bottom:18px}.ods-field label,.ods-legend{font-weight:850}.ods-field input[type="text"],.ods-field select,.ods-field textarea{width:100%;padding:12px 13px;border:1px solid #acc5b1;border-radius:12px;background:#fff;color:#15251a}.ods-field textarea{min-height:105px;resize:vertical}.ods-theme{margin:18px 0;padding:19px;border:1px solid var(--ods-line);border-radius:19px}.ods-theme legend{padding:0 8px;font-weight:900}.ods-theme small{display:block;margin:3px 0 12px;color:var(--ods-muted)}.ods-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ods-check{display:flex;align-items:flex-start;gap:9px;padding:11px;border:1px solid #d8e7d7;border-radius:12px;background:#f8fbf7;font-weight:650}.ods-check input{width:auto;margin-top:4px}.ods-theme.t2{border-left:5px solid #86ae2f}.ods-theme.t6{border-left:5px solid var(--ods-blue)}.ods-theme.t12{border-left:5px solid var(--ods-gold)}.ods-theme.t13{border-left:5px solid var(--ods-climate)}.ods-form-status{padding:13px 15px;border-radius:13px;background:#edf6ea;color:#235a31;margin:15px 0;display:none}.ods-form-status.show{display:block}.ods-consent{display:flex;align-items:flex-start;gap:10px;padding:14px;border-radius:14px;background:#f3f7f2}.ods-consent input{margin-top:4px}.ods-progress{height:10px;border-radius:999px;background:#e6eee5;overflow:hidden;margin:12px 0 5px}.ods-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ods-green),var(--ods-lime));transition:width .2s}.ods-progress-label{font-size:.88rem;color:var(--ods-muted)}
+  .ods-stage-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.ods-stage{padding:18px;border-radius:17px;border:1px solid var(--ods-line);background:#fff}.ods-stage b{display:block;color:var(--ods-green);margin-bottom:5px}
+  .ods-sources{font-size:.95rem}.ods-sources li{margin-bottom:8px}.ods-source-note{padding:16px;border-radius:14px;background:#eef6ec;color:var(--ods-muted)}
+  .ods-academic{padding:30px;border-radius:28px;background:linear-gradient(135deg,#092f1c,#12683b);color:#fff}.ods-academic h2{color:#fff;margin-top:0}.ods-academic p{color:#e5f4e9}.ods-academic-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}.ods-academic-card{padding:21px;border-radius:19px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.17)}
+  @media(max-width:900px){.ods-hero-facts,.ods-grid.four,.ods-cycle,.ods-stage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-definition,.ods-local-banner,.ods-listening,.ods-academic-grid{grid-template-columns:1fr}.ods-invite{position:static}}
+  @media(max-width:650px){.ods-page{padding-top:8px}.ods-hero{border-radius:22px}.ods-hero-facts,.ods-grid.two,.ods-grid.three,.ods-grid.four,.ods-cycle,.ods-video-grid,.ods-checks,.ods-stage-grid{grid-template-columns:1fr}.ods-section{padding:55px 6px}.ods-section.alt{margin-left:0;margin-right:0;padding-left:15px;padding-right:15px}.ods-form{padding:19px}}
+</style>
+
+<main class="ods-page">
+  <section class="ods-hero" aria-labelledby="ods-title">
+    <div class="ods-hero-content">
+      <span class="ods-badge">🌱 Ação extensionista • Itaperuna e Noroeste Fluminense</span>
+      <h1 id="ods-title">ODS no Campo: <span>metas globais, escolhas locais</span></h1>
+      <p class="ods-hero-lead"><strong>ODS</strong> significa <strong>Objetivos de Desenvolvimento Sustentável</strong>. Eles funcionam como um mapa comum para governos, comunidades, escolas, produtores e empresas enfrentarem problemas reais — como desperdício de água, perda de solo, resíduos, insegurança alimentar e eventos climáticos — sem separar desenvolvimento econômico, bem-estar social e proteção ambiental.</p>
+      <div class="ods-hero-actions">
+        <a class="ods-button primary" href="#entenda">Entender os ODS em 3 minutos</a>
+        <a class="ods-button secondary" href="#escuta">Participar da escuta inicial</a>
+        <a class="ods-button outline" href="#videos-ods">Assistir aos vídeos</a>
+      </div>
+    </div>
+    <div class="ods-hero-facts" aria-label="Resumo da Agenda 2030">
+      <div class="ods-hero-fact"><strong>17 ODS</strong><span>objetivos interligados</span></div>
+      <div class="ods-hero-fact"><strong>169 metas</strong><span>orientações até 2030</span></div>
+      <div class="ods-hero-fact"><strong>193 países</strong><span>adotaram a Agenda 2030</span></div>
+      <div class="ods-hero-fact"><strong>4 temas locais</strong><span>agricultura, água, resíduos e clima</span></div>
+    </div>
+  </section>
+
+  <section id="entenda" class="ods-section">
+    <div class="ods-definition">
+      <div class="ods-definition-main">
+        <span class="ods-kicker" style="color:#cdeb86">Comece por aqui</span>
+        <h2>O que são os ODS e quem os definiu?</h2>
+        <p>Em setembro de 2015, os <strong>193 Estados-membros das Nações Unidas</strong>, incluindo o Brasil, aprovaram a <strong>Agenda 2030 para o Desenvolvimento Sustentável</strong>. O documento reúne 17 objetivos e 169 metas para orientar ações até 2030.</p>
+        <p>Os ODS não tratam apenas de meio ambiente. Eles conectam cinco dimensões: <strong>pessoas, planeta, prosperidade, paz e parcerias</strong>. Por isso, uma ação sobre água também pode reduzir custos; uma ação sobre solo pode melhorar produtividade; e uma ação sobre resíduos pode proteger a saúde e criar oportunidades econômicas.</p>
+      </div>
+      <div class="ods-definition-list">
+        <div class="ods-definition-item"><span class="ods-number">1</span><div><strong>Uma linguagem comum</strong><br>Permite que município, empresas, escolas, produtores e sociedade conversem sobre os mesmos problemas e acompanhem resultados.</div></div>
+        <div class="ods-definition-item"><span class="ods-number">2</span><div><strong>Um guia de planejamento</strong><br>Ajuda a transformar necessidades amplas em prioridades, metas, indicadores, projetos e prestação de contas.</div></div>
+        <div class="ods-definition-item"><span class="ods-number">3</span><div><strong>Um convite à ação local</strong><br>As metas globais só avançam quando viram decisões concretas nos bairros, propriedades, escolas, órgãos públicos e empresas.</div></div>
+      </div>
+    </div>
+    <div class="ods-not-box"><strong>Importante:</strong> os ODS não são um imposto, uma lei municipal ou um selo automático de qualidade. Eles são uma referência internacional de planejamento e cooperação. Adotar os ODS não substitui legislação ambiental, assistência técnica ou políticas públicas; ajuda a organizar prioridades e demonstrar resultados.</div>
+  </section>
+
+  <section class="ods-section alt" aria-labelledby="local-title">
+    <div class="ods-heading">
+      <span class="ods-kicker">Por que isso importa aqui?</span>
+      <h2 id="local-title">Itaperuna e o Noroeste Fluminense têm muito a ganhar</h2>
+      <p>O desenvolvimento sustentável não é uma ideia distante. Ele aparece no preço da energia para bombear água, na conservação do solo, na qualidade de nascentes, no descarte de óleo e embalagens, na produtividade rural, na segurança alimentar e na capacidade de enfrentar secas e chuvas intensas.</p>
+    </div>
+    <div class="ods-local-banner">
+      <div>
+        <h3>Um centro regional ligado ao campo, aos serviços e à inovação</h3>
+        <p>Itaperuna possui mais de 100 mil habitantes e uma área territorial superior a 1.100 km². O município exerce influência regional e se conecta a cadeias como agricultura familiar, pecuária, café, comércio, serviços, pesca e aquicultura.</p>
+        <p>No Noroeste Fluminense, a cafeicultura tem peso expressivo: dados da Secretaria de Agricultura do Estado indicam que a região respondeu por cerca de 85% da produção fluminense e movimentou mais de R$ 240 milhões em 2023. Isso reforça a necessidade de combinar produtividade, qualidade, água, solo, clima, tecnologia e permanência do produtor no campo.</p>
+      </div>
+      <div class="ods-local-stat">
+        <div><strong>Água e energia</strong>Bombas bem dimensionadas, manutenção e redução de vazamentos diminuem perdas e custos.</div>
+        <div><strong>Solo e produção</strong>Cobertura, conservação e planejamento reduzem erosão e favorecem produtividade.</div>
+        <div><strong>Clima e risco</strong>Registros, alertas e adaptação apoiam decisões diante de estiagens, calor e chuvas fortes.</div>
+        <div><strong>Resíduos e saúde</strong>Destinação correta de óleo, filtros, peças e embalagens protege pessoas, solo e água.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ods-section" aria-labelledby="ganhos-title">
+    <div class="ods-heading"><span class="ods-kicker">Benefícios concretos</span><h2 id="ganhos-title">O que cada parte da sociedade pode ganhar?</h2><p>Os benefícios dependem de planejamento, execução e acompanhamento. Os ODS ajudam a organizar esse processo e a tornar as decisões mais transparentes.</p></div>
+    <div class="ods-grid four">
+      <article class="ods-card ods-benefit"><div class="ods-card-icon">🏛️</div><h3>Município</h3><ul><li>identificar prioridades com participação social;</li><li>integrar agricultura, ambiente, educação, saúde e desenvolvimento;</li><li>definir indicadores e acompanhar resultados;</li><li>estruturar projetos e justificar captação de recursos;</li><li>comunicar à população o que está sendo feito.</li></ul></article>
+      <article class="ods-card ods-benefit community"><div class="ods-card-icon">👥</div><h3>Comunidade</h3><ul><li>acesso a informação simples e confiável;</li><li>oportunidade de apontar problemas reais;</li><li>redução de desperdícios e custos domésticos ou produtivos;</li><li>mais proteção à água, ao solo e à saúde;</li><li>participação na construção de soluções locais.</li></ul></article>
+      <article class="ods-card ods-benefit business"><div class="ods-card-icon">🏢</div><h3>Empresas públicas e privadas</h3><ul><li>melhor gestão de água, energia, materiais e riscos;</li><li>evidências para relatórios de sustentabilidade e governança;</li><li>fortalecimento de reputação e relacionamento comunitário;</li><li>identificação de inovação, eficiência e parcerias;</li><li>maior preparo para exigências de clientes e cadeias produtivas.</li></ul></article>
+      <article class="ods-card ods-benefit brazil"><div class="ods-card-icon">🇧🇷</div><h3>Brasil</h3><ul><li>transformar compromissos nacionais em ações territoriais;</li><li>comparar avanços por indicadores comuns;</li><li>reduzir desigualdades entre regiões;</li><li>fortalecer segurança hídrica, alimentar e climática;</li><li>aproximar ciência, políticas públicas e setor produtivo.</li></ul></article>
+    </div>
+  </section>
+
+  <section class="ods-section alt" aria-labelledby="escuta-explica-title">
+    <div class="ods-heading"><span class="ods-kicker">A atividade de extensão</span><h2 id="escuta-explica-title">Para que serve a escuta inicial?</h2><p>Antes de produzir cartilhas, vídeos ou propostas, é preciso ouvir quem vive a realidade local. A escuta inicial evita que a ação seja baseada apenas em suposições.</p></div>
+    <div class="ods-cycle">
+      <div class="ods-step"><h3>Ouvir</h3><p>Identificar quais dificuldades são percebidas por moradores, produtores, estudantes, trabalhadores e profissionais.</p></div>
+      <div class="ods-step"><h3>Priorizar</h3><p>Descobrir quais temas merecem explicações mais claras e quais práticas podem gerar maior benefício local.</p></div>
+      <div class="ods-step"><h3>Devolver</h3><p>Apresentar uma síntese agregada, sem identificar participantes, mostrando os assuntos mais apontados.</p></div>
+      <div class="ods-step"><h3>Melhorar</h3><p>Usar as respostas para ajustar conteúdos educativos e orientar futuras ações, oficinas e parcerias.</p></div>
+    </div>
+    <div class="ods-not-box"><strong>A escuta não é uma prova nem um cadastro comercial.</strong> O preenchimento é voluntário, leva cerca de dois minutos e não exige nome, telefone ou e-mail. As respostas serão analisadas em conjunto, para fins acadêmicos e educativos.</div>
+  </section>
+
+  <section id="videos-ods" class="ods-section" aria-labelledby="videos-title">
+    <div class="ods-heading"><span class="ods-kicker">Assista e compartilhe</span><h2 id="videos-title">Dois vídeos oficiais para entender rapidamente</h2><p>Conteúdos do canal oficial da ONU Brasil explicam a Agenda 2030 e mostram por que os ODS são um chamado à participação de todas as pessoas.</p></div>
+    <div class="ods-video-grid">
+      <article class="ods-video"><div class="ods-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/lYkZKT1ZkH0" title="O que são os Objetivos de Desenvolvimento Sustentável — ONU Brasil" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="ods-video-copy"><h3>O que são os Objetivos de Desenvolvimento Sustentável?</h3><p>Vídeo curto da ONU Brasil sobre os 17 objetivos, as metas e a participação social.</p></div></article>
+      <article class="ods-video"><div class="ods-video-frame"><iframe src="https://www.youtube-nocookie.com/embed/TWw6ZpY3j-Y" title="O que é a Agenda 2030 — ONU Brasil" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="ods-video-copy"><h3>O que é a Agenda 2030?</h3><p>Visão geral do plano global adotado em 2015 e de sua relação com pessoas, planeta e prosperidade.</p></div></article>
+    </div>
+  </section>
+
+  <section class="ods-section" aria-labelledby="quiz-title">
+    <div class="ods-quiz">
+      <span class="ods-kicker" style="color:#cdeb86">Teste rápido</span>
+      <h2 id="quiz-title">Você já entendeu a ideia principal?</h2>
+      <div class="ods-question" data-correct="b"><strong>1. Quem adotou a Agenda 2030?</strong><div class="ods-answer-row"><button type="button" class="ods-answer" data-answer="a">Somente empresas</button><button type="button" class="ods-answer" data-answer="b">Os 193 Estados-membros da ONU</button><button type="button" class="ods-answer" data-answer="c">Apenas municípios rurais</button></div><p class="ods-feedback" aria-live="polite"></p></div>
+      <div class="ods-question" data-correct="c"><strong>2. Os ODS tratam apenas de meio ambiente?</strong><div class="ods-answer-row"><button type="button" class="ods-answer" data-answer="a">Sim</button><button type="button" class="ods-answer" data-answer="b">Somente de clima</button><button type="button" class="ods-answer" data-answer="c">Não; integram dimensões sociais, econômicas e ambientais</button></div><p class="ods-feedback" aria-live="polite"></p></div>
+      <div class="ods-question" data-correct="a"><strong>3. Por que realizar a escuta inicial?</strong><div class="ods-answer-row"><button type="button" class="ods-answer" data-answer="a">Para priorizar necessidades reais e melhorar a ação</button><button type="button" class="ods-answer" data-answer="b">Para vender dados pessoais</button><button type="button" class="ods-answer" data-answer="c">Para substituir políticas públicas</button></div><p class="ods-feedback" aria-live="polite"></p></div>
+    </div>
+  </section>
+
+  <section id="escuta" class="ods-section alt" aria-labelledby="escuta-title">
+    <div class="ods-listening">
+      <aside class="ods-invite">
+        <span class="ods-time">⏱️ Aproximadamente 2 minutos</span>
+        <h2 id="escuta-title">Convite à comunidade</h2>
+        <p>Marque as situações que você já observou ou considera importantes em Itaperuna e no Noroeste Fluminense. Não é necessário escrever um texto.</p>
+        <ol><li>Escolha seu perfil geral.</li><li>Marque quantas opções desejar.</li><li>Envie sem informar nome, telefone ou e-mail.</li><li>Consulte depois a devolutiva agregada da ação.</li></ol>
+        <p><strong>Escuta aberta até 23 de junho de 2026, às 23h59.</strong> Depois disso, a página permanecerá disponível como material educativo.</p>
+      </aside>
+
+      <form id="ods-listening-form" class="ods-form" action="https://formsubmit.co/contact@databiomics.com" method="post">
+        <input type="hidden" name="_subject" value="ODS no Campo — Escuta inicial Itaperuna e Noroeste Fluminense">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://databiomics.com/ods-no-campo/?enviado=1#obrigado">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <h3>Escuta inicial: quais desafios merecem mais atenção?</h3>
+        <p>Você pode marcar várias opções. O objetivo é identificar temas prioritários para informação e educação socioambiental.</p>
+
+        <div class="ods-field"><label for="perfil">Sua relação com o tema</label><select id="perfil" name="perfil" required><option value="">Selecione uma opção</option><option>Produtor(a) rural ou agricultor(a) familiar</option><option>Trabalhador(a) rural</option><option>Morador(a) da região</option><option>Estudante</option><option>Professor(a) ou educador(a)</option><option>Profissional técnico ou pesquisador(a)</option><option>Representante de empresa</option><option>Servidor(a) ou gestor(a) público(a)</option><option>Outro perfil</option></select></div>
+        <div class="ods-field"><label for="localidade">Município ou localidade <small>(opcional)</small></label><input id="localidade" name="municipio_localidade" type="text" placeholder="Ex.: Itaperuna, distrito ou município vizinho"></div>
+
+        <fieldset class="ods-theme t2"><legend>ODS 2 — Agricultura sustentável e segurança alimentar</legend><small>Marque o que você percebe como desafio ou tema importante.</small><div class="ods-checks">
+          <label class="ods-check"><input type="checkbox" name="desafios_ods2" value="Erosão, compactação ou perda de solo"> Erosão, compactação ou perda de solo</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods2" value="Baixa cobertura vegetal ou pouca conservação do solo"> Baixa cobertura vegetal ou pouca conservação do solo</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods2" value="Perdas na produção, armazenamento ou comercialização"> Perdas na produção, armazenamento ou comercialização</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods2" value="Pouco acesso a assistência técnica e informação"> Pouco acesso a assistência técnica e informação</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods2" value="Necessidade de diversificar cultivos e renda"> Necessidade de diversificar cultivos e renda</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods2" value="Dificuldade para adotar práticas sustentáveis"> Dificuldade para adotar práticas sustentáveis</label>
+        </div></fieldset>
+
+        <fieldset class="ods-theme t6"><legend>ODS 6 — Água limpa, uso eficiente e saneamento</legend><small>Marque o que você percebe como desafio ou tema importante.</small><div class="ods-checks">
+          <label class="ods-check"><input type="checkbox" name="desafios_ods6" value="Vazamentos ou desperdício de água"> Vazamentos ou desperdício de água</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods6" value="Alto custo de energia para bombeamento"> Alto custo de energia para bombeamento</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods6" value="Bombas ou tubulações mal dimensionadas"> Bombas ou tubulações mal dimensionadas</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods6" value="Dúvidas sobre qualidade da água"> Dúvidas sobre qualidade da água</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods6" value="Escassez de água em períodos secos"> Escassez de água em períodos secos</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods6" value="Necessidade de proteger nascentes e reservatórios"> Necessidade de proteger nascentes e reservatórios</label>
+        </div></fieldset>
+
+        <fieldset class="ods-theme t12"><legend>ODS 12 — Consumo, produção e resíduos responsáveis</legend><small>Marque o que você percebe como desafio ou tema importante.</small><div class="ods-checks">
+          <label class="ods-check"><input type="checkbox" name="desafios_ods12" value="Descarte inadequado de óleo, filtros ou peças"> Descarte inadequado de óleo, filtros ou peças</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods12" value="Dúvidas sobre embalagens e resíduos contaminados"> Dúvidas sobre embalagens e resíduos contaminados</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods12" value="Pouca manutenção preventiva de máquinas"> Pouca manutenção preventiva de máquinas</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods12" value="Desperdício de materiais, alimentos ou insumos"> Desperdício de materiais, alimentos ou insumos</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods12" value="Poucas opções locais de reciclagem ou logística reversa"> Poucas opções locais de reciclagem ou logística reversa</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods12" value="Necessidade de compras e estoques mais eficientes"> Necessidade de compras e estoques mais eficientes</label>
+        </div></fieldset>
+
+        <fieldset class="ods-theme t13"><legend>ODS 13 — Clima, prevenção e adaptação</legend><small>Marque o que você percebe como desafio ou tema importante.</small><div class="ods-checks">
+          <label class="ods-check"><input type="checkbox" name="desafios_ods13" value="Estiagens, calor excessivo ou secas prolongadas"> Estiagens, calor excessivo ou secas prolongadas</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods13" value="Chuvas intensas, enxurradas ou alagamentos"> Chuvas intensas, enxurradas ou alagamentos</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods13" value="Falta de informação climática simples e local"> Falta de informação climática simples e local</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods13" value="Dificuldade de planejar plantio, irrigação ou manejo"> Dificuldade de planejar plantio, irrigação ou manejo</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods13" value="Pouca preparação para emergências ambientais"> Pouca preparação para emergências ambientais</label>
+          <label class="ods-check"><input type="checkbox" name="desafios_ods13" value="Necessidade de recuperar vegetação e proteger recursos hídricos"> Necessidade de recuperar vegetação e proteger recursos hídricos</label>
+        </div></fieldset>
+
+        <fieldset class="ods-theme"><legend>Que tipo de conteúdo seria mais útil?</legend><div class="ods-checks">
+          <label class="ods-check"><input type="checkbox" name="conteudo_desejado" value="Cartilhas curtas e ilustradas"> Cartilhas curtas e ilustradas</label>
+          <label class="ods-check"><input type="checkbox" name="conteudo_desejado" value="Vídeos rápidos"> Vídeos rápidos</label>
+          <label class="ods-check"><input type="checkbox" name="conteudo_desejado" value="Oficinas ou palestras locais"> Oficinas ou palestras locais</label>
+          <label class="ods-check"><input type="checkbox" name="conteudo_desejado" value="Painel com dados e indicadores"> Painel com dados e indicadores</label>
+          <label class="ods-check"><input type="checkbox" name="conteudo_desejado" value="Guias para empresas e propriedades"> Guias para empresas e propriedades</label>
+          <label class="ods-check"><input type="checkbox" name="conteudo_desejado" value="Materiais para escolas"> Materiais para escolas</label>
+        </div></fieldset>
+
+        <div class="ods-field"><label for="comentario">Deseja acrescentar algo? <small>(opcional)</small></label><textarea id="comentario" name="comentario_opcional" placeholder="Use este espaço apenas se quiser. Não é necessário escrever para participar."></textarea></div>
+        <div class="ods-progress" aria-hidden="true"><span id="ods-progress-bar"></span></div><div id="ods-progress-label" class="ods-progress-label">Nenhum desafio marcado ainda.</div>
+        <label class="ods-consent"><input type="checkbox" name="consentimento" required> <span>Concordo com o uso das respostas de forma <strong>agrupada e anonimizada</strong> para fins acadêmicos, educativos e de melhoria desta ação extensionista. Não informarei dados sensíveis.</span></label>
+        <div id="ods-form-status" class="ods-form-status" role="alert"></div>
+        <button class="ods-button primary" type="submit" style="margin-top:18px">Enviar minha contribuição</button>
+        <p style="font-size:.88rem;color:var(--ods-muted);margin-bottom:0">Ao enviar, o serviço FormSubmit encaminhará as respostas ao e-mail institucional da Databiomics. O formulário não solicita nome, telefone ou e-mail.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="obrigado" class="ods-section" aria-labelledby="etapas-title">
+    <div class="ods-heading"><span class="ods-kicker">Da escuta à devolutiva</span><h2 id="etapas-title">Como a ação extensionista será conduzida</h2><p>A atividade forma um ciclo completo, e não apenas a publicação de uma página.</p></div>
+    <div class="ods-stage-grid">
+      <div class="ods-stage"><b>Etapa 1</b>Apresentação dos ODS e convite à comunidade.</div><div class="ods-stage"><b>Etapa 2</b>Escuta inicial voluntária e acessível.</div><div class="ods-stage"><b>Etapa 3</b>Organização das respostas por tema.</div><div class="ods-stage"><b>Etapa 4</b>Priorização dos assuntos mais indicados.</div><div class="ods-stage"><b>Etapa 5</b>Produção e divulgação de materiais educativos.</div><div class="ods-stage"><b>Etapa 6</b>Monitoramento do alcance da página.</div><div class="ods-stage"><b>Etapa 7</b>Devolutiva pública em dados agregados.</div><div class="ods-stage"><b>Etapa 8</b>Avaliação crítica e proposta de continuidade.</div>
+    </div>
+  </section>
+
+  <section class="ods-section alt" aria-labelledby="fontes-title">
+    <div class="ods-heading"><span class="ods-kicker">Transparência</span><h2 id="fontes-title">Fontes e leituras recomendadas</h2><p>Os conteúdos foram estruturados com base em fontes institucionais. Os dados locais podem ser atualizados pelos órgãos responsáveis.</p></div>
+    <div class="ods-grid two">
+      <article class="ods-card ods-sources"><h3>Agenda 2030 e ODS</h3><ul><li><a href="https://brasil.un.org/pt-br/91863-agenda-2030-para-o-desenvolvimento-sustent%C3%A1vel" target="_blank" rel="noopener">ONU Brasil — Agenda 2030</a></li><li><a href="https://www.ipea.gov.br/ods/" target="_blank" rel="noopener">Ipea — Objetivos de Desenvolvimento Sustentável</a></li><li><a href="https://www.gov.br/secretariageral/pt-br/cnods/agenda-2030" target="_blank" rel="noopener">Comissão Nacional para os ODS — Agenda 2030</a></li><li><a href="https://www.gov.br/mma/pt-br/acesso-a-informacao/informacoes-ambientais/historico-ods" target="_blank" rel="noopener">Ministério do Meio Ambiente — Histórico e localização dos ODS</a></li></ul></article>
+      <article class="ods-card ods-sources"><h3>Itaperuna e Noroeste Fluminense</h3><ul><li><a href="https://www.ibge.gov.br/cidades-e-estados/rj/itaperuna.html" target="_blank" rel="noopener">IBGE — Itaperuna: Cidades e Estados</a></li><li><a href="https://www.rj.gov.br/agricultura/node/644" target="_blank" rel="noopener">Secretaria de Agricultura do RJ — Cafeicultura no Noroeste Fluminense</a></li><li><a href="https://www.rj.gov.br/fiperj/node/992" target="_blank" rel="noopener">FIPERJ — Tecnologias sustentáveis e piscicultura no Noroeste</a></li><li><a href="https://www.rj.gov.br/agricultura/node/333" target="_blank" rel="noopener">Emater-Rio — Práticas e sustentabilidade da cafeicultura em Itaperuna</a></li></ul></article>
+    </div>
+    <p class="ods-source-note"><strong>Limite da iniciativa:</strong> esta página é educativa e participativa. Ela não constitui diagnóstico técnico, laudo ambiental, pesquisa estatística representativa de toda a população, certificação ODS ou compromisso oficial da Prefeitura de Itaperuna.</p>
+  </section>
+
+  <section class="ods-section">
+    <div class="ods-academic">
+      <div class="ods-academic-grid">
+        <div><span class="ods-kicker" style="color:#cdeb86">Identificação acadêmica</span><h2>Atividades Extensionistas I — Desenvolvimento Sustentável</h2><p>Esta página integra uma ação acadêmica extensionista vinculada ao Centro de Educação, Humanidades, Letras e Artes (CEHLA), aproximando conhecimento universitário, comunidade e contexto regional.</p><p><strong>Estudante:</strong> Leandro de Mattos Pereira — R.A. nº 450257-2026<br><strong>Curso:</strong> Licenciatura em Ciências Biológicas — 2ª graduação<br><strong>Instituição:</strong> Centro Universitário Cidade Verde — UniCV</p></div>
+        <div class="ods-academic-card"><h3>Organizações envolvidas</h3><p><strong>WBPereira Comércio e Serviços</strong><br>CNPJ 31.037.104/0001-02</p><p><strong>Databiomics®</strong><br>Laboratório de Tecnologia responsável pelo desenvolvimento da página e pelo apoio à organização da informação.</p><p>A participação das organizações nesta ação tem caráter educativo, tecnológico e extensionista.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  document.querySelectorAll('.ods-question').forEach(function(question){
+    question.querySelectorAll('.ods-answer').forEach(function(button){
+      button.addEventListener('click',function(){
+        question.querySelectorAll('.ods-answer').forEach(function(b){b.classList.remove('correct','wrong')});
+        var correct=button.dataset.answer===question.dataset.correct;
+        button.classList.add(correct?'correct':'wrong');
+        var feedback=question.querySelector('.ods-feedback');
+        feedback.textContent=correct?'Correto! Você entendeu o ponto principal.':'Ainda não. Tente outra opção — a resposta ajuda a entender o propósito da ação.';
+      });
+    });
+  });
+
+  var form=document.getElementById('ods-listening-form');
+  var challengeBoxes=form?Array.from(form.querySelectorAll('input[name^="desafios_ods"]')):[];
+  var progressBar=document.getElementById('ods-progress-bar');
+  var progressLabel=document.getElementById('ods-progress-label');
+  var status=document.getElementById('ods-form-status');
+  function updateProgress(){
+    var count=challengeBoxes.filter(function(box){return box.checked}).length;
+    var pct=Math.min(100,(count/8)*100);
+    if(progressBar)progressBar.style.width=pct+'%';
+    if(progressLabel)progressLabel.textContent=count===0?'Nenhum desafio marcado ainda.':count+' desafio'+(count>1?'s':'')+' marcado'+(count>1?'s':'')+'. Você já pode enviar quando concluir.';
+  }
+  challengeBoxes.forEach(function(box){box.addEventListener('change',updateProgress)});
+  updateProgress();
+
+  if(form){
+    form.addEventListener('submit',function(event){
+      var selected=challengeBoxes.some(function(box){return box.checked});
+      if(!selected){
+        event.preventDefault();
+        status.textContent='Marque pelo menos uma opção de desafio em qualquer um dos quatro temas antes de enviar.';
+        status.classList.add('show');
+        var first=form.querySelector('.ods-theme input[type="checkbox"]');
+        if(first)first.focus();
+      }
+    });
+  }
+
+  var params=new URLSearchParams(window.location.search);
+  if(params.get('enviado')==='1'){
+    var thanks=document.getElementById('obrigado');
+    if(thanks){
+      var message=document.createElement('div');
+      message.className='ods-not-box';
+      message.innerHTML='<strong>Obrigado pela participação!</strong> Sua contribuição foi encaminhada e será considerada na síntese agregada da ação.';
+      thanks.insertBefore(message,thanks.firstChild);
+    }
+  }
+
+  var deadline=new Date('2026-06-23T23:59:59-03:00');
+  if(new Date()>deadline && form){
+    form.querySelectorAll('input,select,textarea,button').forEach(function(el){el.disabled=true});
+    status.textContent='O período de participação foi encerrado em 23 de junho de 2026. O conteúdo educativo permanece disponível.';
+    status.classList.add('show');
+  }
+})();
+</script>
