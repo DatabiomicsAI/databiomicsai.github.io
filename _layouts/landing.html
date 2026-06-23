@@ -44,7 +44,7 @@
           {% include toggle_theme_button.html %}
         {% endif %}
 
-        {% unless page.permalink == '/parcerias-estrategicas/' or page.permalink == '/apoie-projetos/' %}
+        {% unless page.permalink == '/parcerias-estrategicas/' or page.permalink == '/apoie-projetos/' or page.permalink == '/ods-no-campo/' %}
           <section class="global-support-cta" aria-label="Apoio institucional Databiomics">
             <h3>Quer colaborar estrategicamente com a Databiomics?</h3>
             <p>Seja um colaborador no desenvolvimento conjunto de projetos científicos, educacionais e de inovação aplicada, bem como na submissão colaborativa de propostas a editais de pesquisa e fomento. As propostas de colaborações são analisadas com critério técnico e consideradas quando houver alinhamento com a missão científica da Databiomics®, valores, ética, acessibilidade, inovação responsável e potencial de aplicação concreta.</p>
@@ -78,6 +78,42 @@
       })();
     </script>
 
+    <style>
+      .landing-nav .nav-pill-ods {
+        background: linear-gradient(135deg, #0f6b3a, #76a92d);
+        color: #fff;
+        border: 1px solid rgba(185, 232, 92, .65);
+        box-shadow: 0 8px 22px rgba(15, 107, 58, .2);
+      }
+      .landing-nav .nav-pill-ods:hover,
+      .landing-nav .nav-pill-ods:focus-visible {
+        background: linear-gradient(135deg, #0b5730, #668f27);
+        color: #fff;
+      }
+      .landing-nav .nav-pill-ods[aria-current="page"] {
+        outline: 2px solid #b9e85c;
+        outline-offset: 3px;
+      }
+    </style>
+    <script>
+      (() => {
+        const target = "{{ '/ods-no-campo/' | relative_url }}";
+        document.querySelectorAll('.landing-nav').forEach((nav) => {
+          if (nav.querySelector('[data-ods-nav]')) return;
+          const link = document.createElement('a');
+          link.href = target;
+          link.textContent = 'ODS no Campo';
+          link.className = 'nav-pill nav-pill-ods';
+          link.setAttribute('data-ods-nav', 'true');
+          link.setAttribute('aria-label', 'ODS no Campo — ação extensionista em Itaperuna e no Noroeste Fluminense');
+          if (window.location.pathname.replace(/\/+$/, '') === target.replace(/\/+$/, '')) {
+            link.setAttribute('aria-current', 'page');
+          }
+          nav.appendChild(link);
+        });
+      })();
+    </script>
+
     <div id="google_translate_element" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"></div>
     <script src="{{ '/assets/js/visitor-countries.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/site-i18n.js' | relative_url }}"></script>
@@ -87,8 +123,8 @@
         <script async defer data-soopr-token="{{ site.soopr.publish_token }}" src="https://sdk.soopr.co/soopr.js"></script>
       {%- else -%}
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
-      {%- endif -%}
-    {%- endif -%}
+      {%- endif %}
+    {%- endif %}
     {%- if page.url == "/" -%}
       <div id="site-dev-ribbon" class="site-dev-ribbon" role="note" aria-label="Créditos de desenvolvimento do website" hidden>
         Website desenvolvido por Leandro de Mattos Pereira (Databiomics®).
