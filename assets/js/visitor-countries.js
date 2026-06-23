@@ -2,8 +2,8 @@
   const normalizedPath = window.location.pathname.replace(/\/+$/, '');
   if (normalizedPath.endsWith('/ods-no-campo')) {
     const stylesheets = [
-      ['/assets/css/ods-no-campo-enhancements.css?v=20260623-3', 'data-ods-enhancements'],
-      ['/assets/css/ods-no-campo-flow-fixes.css?v=20260623-3', 'data-ods-flow-fixes']
+      ['/assets/css/ods-no-campo-enhancements.css?v=20260623-4', 'data-ods-enhancements'],
+      ['/assets/css/ods-no-campo-flow-fixes.css?v=20260623-4', 'data-ods-flow-fixes']
     ];
 
     stylesheets.forEach(([href, marker]) => {
@@ -17,12 +17,12 @@
 
     if (!document.querySelector('script[data-ods-enhancements]')) {
       const enhancements = document.createElement('script');
-      enhancements.src = '/assets/js/ods-no-campo-enhancements.js?v=20260623-3';
+      enhancements.src = '/assets/js/ods-no-campo-enhancements.js?v=20260623-4';
       enhancements.setAttribute('data-ods-enhancements', 'true');
       enhancements.addEventListener('load', () => {
         if (document.querySelector('script[data-ods-flow-fixes]')) return;
         const flowFixes = document.createElement('script');
-        flowFixes.src = '/assets/js/ods-no-campo-flow-fixes.js?v=20260623-3';
+        flowFixes.src = '/assets/js/ods-no-campo-flow-fixes.js?v=20260623-4';
         flowFixes.setAttribute('data-ods-flow-fixes', 'true');
         document.head.appendChild(flowFixes);
       });
