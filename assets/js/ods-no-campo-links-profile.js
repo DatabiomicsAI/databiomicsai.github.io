@@ -55,9 +55,7 @@
     document.documentElement.dataset.odsLinksProfile = 'true';
 
     const form = document.getElementById('ods-listening-form');
-    if (form) {
-      form.action = 'https://formsubmit.co/info@databiomics.com';
-    }
+    if (form) form.action = 'https://formsubmit.co/info@databiomics.com';
     replaceEmail(page);
 
     const priorityBlock = document.getElementById('ods-priority-block');
@@ -72,11 +70,8 @@
           ${odsLinks.map(([number, title]) => `<a class="ods-official-link" href="https://www.ipea.gov.br/ods/ods${number}.html" target="_blank" rel="noopener noreferrer">ODS ${number} — ${title}</a>`).join('')}
         </div>`;
       const help = priorityBlock.querySelector('.ods-block-help');
-      if (help) {
-        help.insertAdjacentElement('afterend', officialLinks);
-      } else {
-        priorityBlock.prepend(officialLinks);
-      }
+      if (help) help.insertAdjacentElement('afterend', officialLinks);
+      else priorityBlock.prepend(officialLinks);
     }
 
     const sourceCards = Array.from(page.querySelectorAll('.ods-card.ods-sources'));
@@ -112,7 +107,6 @@
     if (academicGrid) {
       const academicProfile = academicGrid.children[0];
       const organizationsCard = academicGrid.querySelector('.ods-academic-card');
-
       if (academicProfile) {
         academicProfile.innerHTML = `
           <span class="ods-kicker" style="color:#cdeb86">Identificação acadêmica</span>
@@ -125,7 +119,6 @@
             <p><strong>Formação e trajetória científica:</strong> Bacharel em Ciências Biológicas pela Universidade Estadual do Norte Fluminense Darcy Ribeiro (UENF), com ênfase em Biotecnologia; mestre em Biotecnologia e Biociências; doutor em Biologia Computacional e de Sistemas; pesquisador com experiência em bioinformática, genômica, microbioma, biotecnologia e inteligência artificial aplicada às ciências biológicas, além de experiências de pós-doutoramento em instituições de pesquisa no Brasil e em Portugal.</p>
           </div>`;
       }
-
       if (organizationsCard) {
         organizationsCard.innerHTML = `
           <h3>Organizações envolvidas</h3>
@@ -139,5 +132,12 @@
     }
 
     replaceEmail(page);
+
+    if (!document.querySelector('script[data-ods-regional]')) {
+      const regional = document.createElement('script');
+      regional.src = 'https://cdn.jsdelivr.net/gh/DatabiomicsAI/databiomicsai.github.io@ajustes-ods-regiao-tecnologia/assets/js/ods-no-campo-regional.js';
+      regional.setAttribute('data-ods-regional', 'true');
+      document.head.appendChild(regional);
+    }
   });
 })();
