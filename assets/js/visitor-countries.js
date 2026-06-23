@@ -1,4 +1,23 @@
 (() => {
+  const normalizedPath = window.location.pathname.replace(/\/+$/, '');
+  if (normalizedPath.endsWith('/ods-no-campo')) {
+    if (!document.querySelector('link[data-ods-enhancements]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = '/assets/css/ods-no-campo-enhancements.css?v=20260623-2';
+      stylesheet.setAttribute('data-ods-enhancements', 'true');
+      document.head.appendChild(stylesheet);
+    }
+    if (!document.querySelector('script[data-ods-enhancements]')) {
+      const script = document.createElement('script');
+      script.src = '/assets/js/ods-no-campo-enhancements.js?v=20260623-2';
+      script.setAttribute('data-ods-enhancements', 'true');
+      document.head.appendChild(script);
+    }
+  }
+})();
+
+(() => {
   const STORAGE_KEY = 'databiomics-visitor-countries-v1';
   const EMPTY_TEXT = 'Sem dados por país ainda.';
 
