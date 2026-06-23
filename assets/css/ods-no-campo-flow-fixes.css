@@ -1,0 +1,86 @@
+.ods-page .ods-questionnaire-cta {
+  margin: 24px 0 0;
+  padding: clamp(24px, 4vw, 38px);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(185, 232, 92, .2), transparent 30%),
+    linear-gradient(135deg, #082f1c, #0f6b3a);
+  color: #fff;
+  box-shadow: 0 20px 55px rgba(8, 47, 28, .22);
+}
+
+.ods-page .ods-questionnaire-cta h2,
+.ods-page .ods-questionnaire-cta h3,
+.ods-page .ods-questionnaire-cta p,
+.ods-page .ods-questionnaire-cta li,
+.ods-page .ods-questionnaire-cta strong,
+.ods-page .ods-questionnaire-cta .ods-kicker {
+  color: #fff !important;
+}
+
+.ods-page .ods-questionnaire-cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.ods-page .ods-questionnaire-cta-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ods-page .ods-questionnaire-cta-list li {
+  position: relative;
+  padding: 13px 14px 13px 44px;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .08);
+}
+
+.ods-page .ods-questionnaire-cta-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #c7ed74;
+  color: #173319;
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.ods-page .ods-questionnaire-cta .ods-button {
+  margin-top: 16px;
+}
+
+.ods-page .ods-extension-note {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 4px solid #c7ed74;
+  border-radius: 0 13px 13px 0;
+  background: rgba(255, 255, 255, .09);
+  color: #eef8f1 !important;
+  font-size: .94rem;
+}
+
+.ods-page .ods-innovation-section {
+  padding-top: 74px;
+}
+
+.ods-page #escuta {
+  scroll-margin-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .ods-page .ods-questionnaire-cta-grid {
+    grid-template-columns: 1fr;
+  }
+}
