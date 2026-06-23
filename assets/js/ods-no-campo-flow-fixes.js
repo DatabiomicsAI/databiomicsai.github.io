@@ -130,5 +130,20 @@
         invite.appendChild(extra);
       }
     }
+
+    if (!document.querySelector('link[data-ods-links-profile]')) {
+      const stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.href = '/assets/css/ods-no-campo-links-profile.css?v=20260623-5';
+      stylesheet.setAttribute('data-ods-links-profile', 'true');
+      document.head.appendChild(stylesheet);
+    }
+
+    if (!document.querySelector('script[data-ods-links-profile]')) {
+      const script = document.createElement('script');
+      script.src = '/assets/js/ods-no-campo-links-profile.js?v=20260623-5';
+      script.setAttribute('data-ods-links-profile', 'true');
+      document.head.appendChild(script);
+    }
   });
 })();
