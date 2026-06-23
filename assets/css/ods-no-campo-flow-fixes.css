@@ -79,6 +79,68 @@
   scroll-margin-top: 24px;
 }
 
+.ods-page .ods-theme-innovation {
+  border-left: 5px solid #386cb0;
+  background: linear-gradient(180deg, #f8fbff, #eef5fb);
+}
+
+.ods-page .ods-theme-innovation legend {
+  color: #204d7d;
+}
+
+.ods-page .ods-cross-ods-note {
+  margin: 10px 0 0;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: #eaf2fb;
+  color: #294c70;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.ods-page .ods-other-field {
+  display: none;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px dashed #9fb9a4;
+  border-radius: 14px;
+  background: #f8fbf7;
+}
+
+.ods-page .ods-other-field.show {
+  display: grid;
+  gap: 8px;
+}
+
+.ods-page .ods-other-field label {
+  font-weight: 850;
+  color: #244a30;
+}
+
+.ods-page .ods-other-field textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px 13px;
+  border: 1px solid #acc5b1;
+  border-radius: 12px;
+  background: #fff;
+  color: #15251a;
+  resize: vertical;
+}
+
+.ods-page .ods-local-focus {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-left: 4px solid #86b943;
+  border-radius: 0 13px 13px 0;
+  background: rgba(255,255,255,.76);
+  color: #314b38;
+}
+
+.ods-page .ods-local-focus strong {
+  color: #123f24;
+}
+
 @media (max-width: 760px) {
   .ods-page .ods-questionnaire-cta-grid {
     grid-template-columns: 1fr;
