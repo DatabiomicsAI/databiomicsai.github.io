@@ -135,7 +135,7 @@
 
     if (!document.querySelector('script[data-ods-regional]')) {
       const regional = document.createElement('script');
-      regional.src = 'https://cdn.jsdelivr.net/gh/DatabiomicsAI/databiomicsai.github.io@ajustes-ods-regiao-tecnologia/assets/js/ods-no-campo-regional.js';
+      regional.src = 'https://cdn.jsdelivr.net/gh/DatabiomicsAI/databiomicsai.github.io@3c22229b505ccb26387105352182cc8f4dbbcde4/assets/js/ods-no-campo-regional.js';
       regional.setAttribute('data-ods-regional', 'true');
       document.head.appendChild(regional);
     }
