@@ -11,6 +11,10 @@
 .ods-page .ods-quiz-option:has(input:checked){background:#dff3a4;border-color:#dff3a4;color:#173319!important}
 .ods-page .ods-quiz-option:has(input:checked) span,.ods-page .ods-quiz-option:has(input:checked){color:#173319!important}
 .ods-page .ods-quiz-option input{margin-top:3px;accent-color:#7ba935}
+.ods-page .ods-quiz-location-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.ods-page .ods-quiz-location-grid label{display:grid;gap:7px;font-weight:850}
+.ods-page .ods-quiz-location-grid select{width:100%;padding:12px 13px;border:1px solid rgba(255,255,255,.38);border-radius:12px;background:#fff;color:#173319}
+.ods-page .ods-quiz-location-grid select:disabled{background:#dfe8df;color:#738078;cursor:not-allowed}
 .ods-page .ods-quiz-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
 .ods-page .ods-quiz-submit{border:0;border-radius:14px;padding:13px 19px;background:#c7ed74;color:#173319;font-weight:900;cursor:pointer}
 .ods-page .ods-quiz-submit:hover,.ods-page .ods-quiz-submit:focus-visible{background:#dcf6a6}
@@ -33,6 +37,6 @@
 .ods-page .ods-quiz-list li{margin:5px 0;color:#42564a}
 .ods-page .ods-quiz-stats-note{margin-top:14px!important;color:#66766c!important;font-size:.82rem;line-height:1.5}
 .ods-page .ods-quiz-option.is-correct{background:#dff3a4!important;border-color:#dff3a4!important}.ods-page .ods-quiz-option.is-correct span{color:#173319!important}.ods-page .ods-quiz-option.is-wrong{background:#7d2f35!important;border-color:#d97980!important}.ods-page .ods-quiz-option.is-wrong span{color:#fff!important}
-@media(max-width:900px){.ods-page .ods-quiz-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:720px){.ods-page .ods-quiz-head,.ods-page .ods-quiz-charts{grid-template-columns:1fr}.ods-page .ods-quiz-count-badge{white-space:normal}.ods-page .ods-quiz-chart-card{min-height:300px}}
+@media(max-width:900px){.ods-page .ods-quiz-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-page .ods-quiz-location-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){.ods-page .ods-quiz-head,.ods-page .ods-quiz-charts,.ods-page .ods-quiz-location-grid{grid-template-columns:1fr}.ods-page .ods-quiz-count-badge{white-space:normal}.ods-page .ods-quiz-chart-card{min-height:300px}}
 @media(max-width:480px){.ods-page .ods-quiz-metrics{grid-template-columns:1fr}}
