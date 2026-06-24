@@ -28,6 +28,32 @@
 .ods-page .ods-listening-updated{color:#68776e;font-size:.84rem}
 .ods-page .ods-listening-empty{display:grid;place-items:center;height:100%;padding:20px;text-align:center;color:#718078}
 .ods-page .ods-listening-submit-note{margin-top:14px;padding:12px 14px;border-radius:13px;background:#edf6ea;color:#31583d;font-size:.88rem;line-height:1.5}
-@media(max-width:920px){.ods-page .ods-listening-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-page .ods-listening-report-head{grid-template-columns:1fr}.ods-page .ods-listening-live{width:max-content}}
-@media(max-width:760px){.ods-page .ods-listening-chart-grid,.ods-page .ods-listening-topics{grid-template-columns:1fr}.ods-page .ods-listening-chart-card.wide{grid-column:auto}.ods-page .ods-listening-chart-card,.ods-page .ods-listening-chart-card.wide{min-height:330px}.ods-page .ods-listening-chart-wrap,.ods-page .ods-listening-chart-card.wide .ods-listening-chart-wrap{height:280px}}
-@media(max-width:500px){.ods-page .ods-listening-metrics{grid-template-columns:1fr}}
+.ods-page .ods-ranking-panel{margin:0 0 22px;padding:22px;border:1px solid #c7ddc4;border-radius:22px;background:linear-gradient(180deg,#fff,#f8fcf7)}
+.ods-page .ods-ranking-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start}
+.ods-page .ods-ranking-head h3{margin:0 0 7px;color:#113f26;font-size:1.35rem}
+.ods-page .ods-ranking-head p{margin:0;color:#5c6d62;line-height:1.55}
+.ods-page .ods-ranking-badge{padding:9px 12px;border-radius:999px;background:#e4f3df;color:#155430;font-size:.82rem;font-weight:900;white-space:nowrap}
+.ods-page .ods-ranking-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:17px 0}
+.ods-page .ods-ranking-summary-item{padding:14px;border:1px solid #d7e5d4;border-radius:14px;background:#fff}
+.ods-page .ods-ranking-summary-item strong{display:block;color:#0d5d35;font-size:1.45rem;line-height:1.05}
+.ods-page .ods-ranking-summary-item span{display:block;margin-top:5px;color:#627067;font-size:.82rem;line-height:1.35}
+.ods-page .ods-ranking-podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0 18px}
+.ods-page .ods-podium-card{position:relative;padding:17px;border:1px solid #d4e2d1;border-radius:17px;background:#fff;overflow:hidden}
+.ods-page .ods-podium-card::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:#9cb7a1}
+.ods-page .ods-podium-card.gold::before{background:#d5a126}.ods-page .ods-podium-card.silver::before{background:#9aa6ad}.ods-page .ods-podium-card.bronze::before{background:#b77942}
+.ods-page .ods-podium-place{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:50%;background:#edf5eb;color:#184d2d;font-weight:950}
+.ods-page .ods-podium-card h4{margin:11px 0 6px;color:#173d25;font-size:1rem;line-height:1.35}
+.ods-page .ods-podium-card p{margin:0;color:#5b6a61;font-size:.86rem}
+.ods-page .ods-ranking-list{display:grid;gap:9px;margin-top:12px}
+.ods-page .ods-ranking-row{display:grid;grid-template-columns:42px minmax(190px,1fr) minmax(150px,1.2fr) 120px;gap:12px;align-items:center;padding:12px 13px;border:1px solid #d9e6d6;border-radius:14px;background:#fff}
+.ods-page .ods-ranking-position{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#edf5eb;color:#194e2e;font-weight:950}
+.ods-page .ods-ranking-label{color:#274a32;font-weight:850;line-height:1.35}
+.ods-page .ods-ranking-ods{display:inline-flex;margin-right:7px;padding:4px 7px;border-radius:8px;background:#0f6b3a;color:#fff;font-size:.76rem;font-weight:900}
+.ods-page .ods-ranking-progress{height:11px;border-radius:999px;background:#e7efe5;overflow:hidden}
+.ods-page .ods-ranking-progress span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#7fb34a,#0f6b3a)}
+.ods-page .ods-ranking-values{text-align:right;color:#42564a;font-size:.86rem;line-height:1.35}
+.ods-page .ods-ranking-values strong{display:block;color:#0d5d35;font-size:1rem}
+.ods-page .ods-ranking-explanation{margin:14px 0 0;padding:12px 14px;border-left:4px solid #85b83f;border-radius:0 12px 12px 0;background:#eef7eb;color:#4c6152;font-size:.86rem;line-height:1.55}
+@media(max-width:920px){.ods-page .ods-listening-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-page .ods-listening-report-head{grid-template-columns:1fr}.ods-page .ods-listening-live{width:max-content}.ods-page .ods-ranking-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-page .ods-ranking-row{grid-template-columns:42px 1fr 110px}.ods-page .ods-ranking-progress{grid-column:2/-1}.ods-page .ods-ranking-values{grid-column:3;grid-row:1}}
+@media(max-width:760px){.ods-page .ods-listening-chart-grid,.ods-page .ods-listening-topics{grid-template-columns:1fr}.ods-page .ods-listening-chart-card.wide{grid-column:auto}.ods-page .ods-listening-chart-card,.ods-page .ods-listening-chart-card.wide{min-height:330px}.ods-page .ods-listening-chart-wrap,.ods-page .ods-listening-chart-card.wide .ods-listening-chart-wrap{height:280px}.ods-page .ods-ranking-head{grid-template-columns:1fr}.ods-page .ods-ranking-badge{width:max-content}.ods-page .ods-ranking-podium{grid-template-columns:1fr}.ods-page .ods-ranking-row{grid-template-columns:38px 1fr}.ods-page .ods-ranking-values{grid-column:2;text-align:left}.ods-page .ods-ranking-progress{grid-column:2}}
+@media(max-width:500px){.ods-page .ods-listening-metrics,.ods-page .ods-ranking-summary{grid-template-columns:1fr}}
