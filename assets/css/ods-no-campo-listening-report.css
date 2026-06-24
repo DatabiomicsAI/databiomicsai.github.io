@@ -1,0 +1,33 @@
+.ods-page .ods-listening-report{margin:10px 0 34px;padding:clamp(24px,4vw,38px);border:1px solid #cfe2ce;border-radius:28px;background:linear-gradient(180deg,#f7fbf6,#eef7ec);box-shadow:0 20px 52px rgba(13,77,39,.1)}
+.ods-page .ods-listening-report-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
+.ods-page .ods-listening-report h2{margin:7px 0 10px;color:#0b4d2b;font-size:clamp(1.9rem,4vw,2.8rem)}
+.ods-page .ods-listening-report-intro{max-width:880px;margin:0;color:#52645a;line-height:1.65}
+.ods-page .ods-listening-live{display:inline-flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid #cbe0c7;border-radius:999px;background:#fff;color:#1c5832;font-weight:850;white-space:nowrap}
+.ods-page .ods-listening-live::before{content:"";width:9px;height:9px;border-radius:50%;background:#32a852;box-shadow:0 0 0 5px rgba(50,168,82,.14)}
+.ods-page .ods-listening-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin:22px 0}
+.ods-page .ods-listening-metric{padding:18px;border:1px solid #d5e5d3;border-radius:17px;background:#fff}
+.ods-page .ods-listening-metric strong{display:block;color:#0d5d35;font-size:clamp(1.55rem,3vw,2.15rem);line-height:1.05}
+.ods-page .ods-listening-metric span{display:block;margin-top:6px;color:#5d6d63;font-size:.88rem;line-height:1.35}
+.ods-page .ods-listening-chart-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.ods-page .ods-listening-chart-card{padding:18px;border:1px solid #d5e5d3;border-radius:19px;background:#fff;min-height:360px}
+.ods-page .ods-listening-chart-card.wide{grid-column:1/-1;min-height:430px}
+.ods-page .ods-listening-chart-card h3{margin:0 0 5px;color:#173d25;font-size:1.08rem}
+.ods-page .ods-listening-chart-card p{margin:0 0 12px;color:#66766c;font-size:.86rem}
+.ods-page .ods-listening-chart-wrap{position:relative;height:285px}
+.ods-page .ods-listening-chart-card.wide .ods-listening-chart-wrap{height:340px}
+.ods-page .ods-listening-topics{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.ods-page .ods-listening-topic-list{padding:18px;border:1px solid #d5e5d3;border-radius:19px;background:#fff}
+.ods-page .ods-listening-topic-list h3{margin:0 0 10px;color:#173d25;font-size:1.08rem}
+.ods-page .ods-listening-topic-list ol{margin:0;padding-left:23px}
+.ods-page .ods-listening-topic-list li{margin:8px 0;color:#42564a;line-height:1.45}
+.ods-page .ods-listening-topic-list b{color:#0d5d35}
+.ods-page .ods-listening-report-note{margin:18px 0 0;padding:14px 16px;border-left:5px solid #85b83f;border-radius:0 14px 14px 0;background:#fff;color:#52645a;font-size:.9rem;line-height:1.6}
+.ods-page .ods-listening-report-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px}
+.ods-page .ods-listening-refresh{border:1px solid #b8d2b5;border-radius:12px;padding:10px 14px;background:#fff;color:#17532f;font-weight:850;cursor:pointer}
+.ods-page .ods-listening-refresh:hover,.ods-page .ods-listening-refresh:focus-visible{background:#eaf5e7}
+.ods-page .ods-listening-updated{color:#68776e;font-size:.84rem}
+.ods-page .ods-listening-empty{display:grid;place-items:center;height:100%;padding:20px;text-align:center;color:#718078}
+.ods-page .ods-listening-submit-note{margin-top:14px;padding:12px 14px;border-radius:13px;background:#edf6ea;color:#31583d;font-size:.88rem;line-height:1.5}
+@media(max-width:920px){.ods-page .ods-listening-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.ods-page .ods-listening-report-head{grid-template-columns:1fr}.ods-page .ods-listening-live{width:max-content}}
+@media(max-width:760px){.ods-page .ods-listening-chart-grid,.ods-page .ods-listening-topics{grid-template-columns:1fr}.ods-page .ods-listening-chart-card.wide{grid-column:auto}.ods-page .ods-listening-chart-card,.ods-page .ods-listening-chart-card.wide{min-height:330px}.ods-page .ods-listening-chart-wrap,.ods-page .ods-listening-chart-card.wide .ods-listening-chart-wrap{height:280px}}
+@media(max-width:500px){.ods-page .ods-listening-metrics{grid-template-columns:1fr}}
