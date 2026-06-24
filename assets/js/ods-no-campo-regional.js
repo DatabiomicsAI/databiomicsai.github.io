@@ -23,22 +23,33 @@
     const localTitle = document.getElementById('local-title');
     const localSection = localTitle?.closest('.ods-section');
     const localBanner = localSection?.querySelector('.ods-local-banner');
-    if (localTitle) localTitle.textContent = 'Demandas produtivas da região e sua relação com os ODS';
+    if (localTitle) localTitle.textContent = 'Agropecuária, produção de alimentos e desenvolvimento sustentável na região';
+
     const localIntro = localSection?.querySelector('.ods-heading p');
     if (localIntro) {
-      localIntro.textContent = 'Itaperuna e o Noroeste Fluminense reúnem atividades agropecuárias, produção de alimentos, comércio, serviços e cadeias que dependem de água, solo, energia, infraestrutura, conhecimento e capacidade de inovação. Os ODS ajudam a relacionar essas demandas produtivas ao desenvolvimento econômico, social e ambiental.';
+      localIntro.textContent = 'Itaperuna e o Noroeste Fluminense possuem uma economia marcada pela agropecuária, pela produção de leite e derivados, pela criação animal, pelos cultivos agrícolas, pela agricultura familiar, pelo comércio e pelos serviços ligados ao agro. Os ODS ajudam a relacionar essas atividades às necessidades de água, solo, energia, infraestrutura, conhecimento, inovação, geração de renda e conservação ambiental.';
     }
+
     if (localBanner) {
       const heading = localBanner.querySelector('h3');
       const paragraphs = localBanner.querySelectorAll(':scope > div:first-child > p');
       const stats = localBanner.querySelectorAll('.ods-local-stat > div');
-      if (heading) heading.textContent = 'Um território produtivo que pode avançar com sustentabilidade, ciência e inovação';
-      if (paragraphs[0]) paragraphs[0].textContent = 'A região possui agricultura familiar e empresarial, pecuária, produção vegetal e animal, comércio, serviços técnicos e atividades relacionadas aos recursos naturais. Essas cadeias precisam conciliar produtividade, geração de renda, conservação ambiental, qualificação profissional e acesso a soluções adequadas às condições locais.';
+
+      if (heading) heading.textContent = 'Um território agropecuário que pode produzir mais e melhor com sustentabilidade, ciência e inovação';
+
+      if (paragraphs[0]) {
+        paragraphs[0].textContent = 'A região reúne pecuária leiteira e de corte, produção de leite e derivados, agricultura familiar e empresarial, horticultura, fruticultura, grãos, forragens, criação de pequenos animais, processamento de alimentos, comércio de insumos, máquinas, assistência técnica e outros serviços relacionados ao agro. Essas atividades sustentam famílias, movimentam a economia e dependem de condições adequadas de produção, logística, qualificação e acesso a tecnologias.';
+      }
+
       if (paragraphs[1]) {
-        paragraphs[1].textContent = 'Relacionar as demandas produtivas aos ODS permite identificar oportunidades para reduzir perdas e custos, melhorar o uso de água e energia, ampliar o acesso ao conhecimento, fortalecer pequenos e médios produtores, estimular inovação responsável e criar parcerias entre comunidade, instituições de ensino, poder público e empresas.';
+        paragraphs[1].textContent = 'A aplicação dos ODS ao contexto agropecuário permite identificar oportunidades para melhorar a produtividade e a qualidade dos alimentos, reduzir perdas, usar água e energia de forma eficiente, conservar o solo, fortalecer a sanidade animal e vegetal, ampliar o acesso à assistência técnica e apoiar a inovação em propriedades, cooperativas, empresas e instituições públicas.';
         paragraphs[1].classList.add('ods-local-focus');
       }
-      if (stats[3]) stats[3].innerHTML = '<strong>Tecnologia e conhecimento</strong>Assistência técnica, conectividade, capacitação, sensores, análise de dados e inovação podem melhorar decisões e ampliar oportunidades.';
+
+      if (stats[0]) stats[0].innerHTML = '<strong>Água e produção</strong>Uso eficiente da água, irrigação adequada, abastecimento animal e manutenção de sistemas produtivos reduzem perdas e aumentam a segurança da produção.';
+      if (stats[1]) stats[1].innerHTML = '<strong>Solo, pastagens e cultivos</strong>Conservação do solo, manejo de pastagens, nutrição vegetal e planejamento produtivo favorecem produtividade e resiliência.';
+      if (stats[2]) stats[2].innerHTML = '<strong>Produção animal e alimentos</strong>Boas práticas, sanidade, qualidade do leite, bem-estar animal e segurança dos alimentos fortalecem as cadeias agropecuárias.';
+      if (stats[3]) stats[3].innerHTML = '<strong>Tecnologia e conhecimento</strong>Assistência técnica, capacitação, conectividade, sensores, análises laboratoriais e dados podem melhorar decisões e ampliar oportunidades no agro.';
     }
 
     const ods2 = page.querySelector('.ods-theme.t2');
@@ -54,13 +65,13 @@
         block.innerHTML = `
           <legend>ODS 4, 9 e 17 — conhecimento, tecnologia, inovação e parcerias</legend>
           <small>${helpText}</small>
-          <p class="ods-cross-ods-note"><strong>Relação com os ODS:</strong> educação e formação se relacionam ao ODS 4; infraestrutura, tecnologia e inovação ao ODS 9; e cooperação entre comunidade, instituições de ensino, poder público e empresas ao ODS 17. Esses fatores também apoiam o ODS 2 no setor agropecuário.</p>
+          <p class="ods-cross-ods-note"><strong>Relação com os ODS:</strong> educação e formação se relacionam ao ODS 4; infraestrutura, tecnologia e inovação ao ODS 9; e cooperação entre comunidade, instituições de ensino, poder público e empresas ao ODS 17. Esses fatores também apoiam o ODS 2 e o desenvolvimento da agropecuária regional.</p>
           <div class="ods-checks">
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Acesso limitado à internet ou conectividade no campo"> Acesso limitado à internet ou conectividade no campo</label>
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Pouco acesso a cursos, capacitação, extensão rural ou conhecimento científico"> Pouco acesso a cursos, capacitação, extensão rural ou conhecimento científico</label>
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Dificuldade para conhecer ou adotar sensores, aplicativos, automação, drones ou agricultura de precisão"> Dificuldade para conhecer ou adotar sensores, aplicativos, automação, drones ou agricultura de precisão</label>
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Custo elevado de equipamentos, análises ou soluções tecnológicas"> Custo elevado de equipamentos, análises ou soluções tecnológicas</label>
-            <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Pouco acesso a análises de solo, água, clima, plantas ou dados produtivos"> Pouco acesso a análises de solo, água, clima, plantas ou dados produtivos</label>
+            <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Pouco acesso a análises de solo, água, clima, plantas, leite, saúde animal ou dados produtivos"> Pouco acesso a análises de solo, água, clima, plantas, leite, saúde animal ou dados produtivos</label>
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Falta de projetos demonstrativos adaptados à realidade regional"> Falta de projetos demonstrativos adaptados à realidade regional</label>
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Pouca integração entre produtores, escolas, universidades, órgãos públicos e empresas"> Pouca integração entre produtores, escolas, universidades, órgãos públicos e empresas</label>
             <label class="ods-check"><input type="checkbox" name="desafios_tecnologia_inovacao[]" value="Dificuldade para transformar conhecimento em soluções práticas e acessíveis"> Dificuldade para transformar conhecimento em soluções práticas e acessíveis</label>
