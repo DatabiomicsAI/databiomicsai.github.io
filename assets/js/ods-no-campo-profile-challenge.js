@@ -302,45 +302,145 @@
     ctx.beginPath(); ctx.roundRect(x, y, w, h, r); ctx.fillStyle = fill; ctx.fill();
   }
 
-  function downloadPassport(profile, scores) {
+  function getProfileIdByTitle(title) {
+    return PROFILE_ORDER.find((id) => PROFILES[id].title === title) || 'agro';
+  }
+
+  function loadPassportImage(src) {
+    return new Promise((resolve) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = () => resolve(null);
+      image.src = src;
+    });
+  }
+
+  function drawContainImage(ctx, image, x, y, w, h) {
+    if (!image) return false;
+    const scale = Math.min(w / image.width, h / image.height);
+    const dw = image.width * scale;
+    const dh = image.height * scale;
+    ctx.drawImage(image, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
+    return true;
+  }
+
+  function drawCoverImage(ctx, image, x, y, w, h) {
+    if (!image) return false;
+    const scale = Math.max(w / image.width, h / image.height);
+    const sw = w / scale;
+    const sh = h / scale;
+    const sx = (image.width - sw) / 2;
+    const sy = (image.height - sh) / 2;
+    ctx.drawImage(image, sx, sy, sw, sh, x, y, w, h);
+    return true;
+  }
+
+  const PASSPORT_ARTWORKS = {
+    agro: '/assets/ods-no-campo/passaportes/passaporte-agro.svg',
+    agua: '/assets/ods-no-campo/passaportes/passaporte-agua.svg',
+    biodiversidade: '/assets/ods-no-campo/passaportes/passaporte-biodiversidade.svg',
+    clima: '/assets/ods-no-campo/passaportes/passaporte-clima.svg',
+    comunidade: '/assets/ods-no-campo/passaportes/passaporte-comunidade.svg'
+  };
+
+  function drawPassportArt(ctx, profileId, artworkImage) {
+    const themes = {
+      agro: { a: '#062c1b', b: '#167545', c: '#d6f36d', sky: '#dff5d1', accent: '#f0c35b' },
+      agua: { a: '#052a3f', b: '#087aa1', c: '#9be6ff', sky: '#d7f5ff', accent: '#5cc7df' },
+      biodiversidade: { a: '#123313', b: '#3b7d34', c: '#c7ee73', sky: '#e9f8d7', accent: '#f3b764' },
+      clima: { a: '#202d55', b: '#4e7ab6', c: '#ffe38b', sky: '#edf5ff', accent: '#ffb35c' },
+      comunidade: { a: '#2c2458', b: '#7b4da6', c: '#ffd07a', sky: '#fff3dc', accent: '#87d3a2' }
+    };
+    const theme = themes[profileId] || themes.agro;
+    const g = ctx.createLinearGradient(0, 0, 1080, 1920);
+    g.addColorStop(0, theme.a); g.addColorStop(.58, theme.b); g.addColorStop(1, '#f7fbf4');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, 1080, 1920);
+
+    ctx.save();
+    ctx.globalAlpha = .22;
+    for (let i = 0; i < 36; i += 1) {
+      const x = (i * 173) % 1120;
+      const y = (i * 271) % 1500;
+      ctx.beginPath();
+      ctx.arc(x, y, 18 + (i % 5) * 12, 0, Math.PI * 2);
+      ctx.fillStyle = i % 2 ? theme.c : '#ffffff';
+      ctx.fill();
+    }
+    ctx.restore();
+
+    roundRect(ctx, 58, 230, 964, 610, 48, 'rgba(255,255,255,.94)');
+    const sky = ctx.createLinearGradient(58, 230, 58, 840);
+    sky.addColorStop(0, theme.sky); sky.addColorStop(1, '#ffffff');
+    roundRect(ctx, 82, 254, 916, 562, 38, sky);
+
+    ctx.save();
+    ctx.beginPath(); ctx.roundRect(82, 254, 916, 562, 38); ctx.clip();
+    if (artworkImage) {
+      drawCoverImage(ctx, artworkImage, 82, 254, 916, 562);
+      const fade = ctx.createLinearGradient(82, 254, 82, 816);
+      fade.addColorStop(0, 'rgba(0,0,0,0)'); fade.addColorStop(1, 'rgba(0,0,0,.18)');
+      ctx.fillStyle = fade; ctx.fillRect(82, 254, 916, 562);
+    } else if (profileId === 'agua') {
+      ctx.fillStyle = '#c9eef9'; ctx.fillRect(82, 254, 916, 562);
+      for (let i = 0; i < 6; i += 1) {
+        ctx.beginPath(); ctx.moveTo(82, 620 + i * 30);
+        for (let x = 82; x <= 998; x += 40) ctx.lineTo(x, 620 + i * 30 + Math.sin((x + i * 40) / 70) * 18);
+        ctx.lineTo(998, 816); ctx.lineTo(82, 816); ctx.close(); ctx.fillStyle = i % 2 ? '#7ed0e8' : '#55bad8'; ctx.globalAlpha = .55; ctx.fill();
+      }
+      ctx.globalAlpha = 1; ctx.fillStyle = '#127c91'; ctx.fillRect(290, 360, 64, 230); ctx.fillRect(630, 360, 64, 230); ctx.fillStyle = '#e8f8ff'; ctx.fillRect(250, 335, 485, 55); ctx.fillStyle = theme.accent; ctx.fillRect(430, 430, 130, 110);
+      ctx.fillStyle = '#0f6b3a'; ctx.beginPath(); ctx.ellipse(350, 670, 165, 38, 0, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.ellipse(705, 662, 145, 34, 0, 0, Math.PI * 2); ctx.fill();
+    } else if (profileId === 'biodiversidade') {
+      ctx.fillStyle = '#e5f7d7'; ctx.fillRect(82, 254, 916, 562);
+      for (let i = 0; i < 18; i += 1) { const x = 120 + i * 52; const h = 210 + (i % 5) * 38; ctx.fillStyle = i % 2 ? '#1f6b35' : '#3d8d41'; ctx.fillRect(x, 685 - h, 28, h); ctx.beginPath(); ctx.arc(x + 14, 650 - h, 58, 0, Math.PI * 2); ctx.fill(); }
+      ctx.fillStyle = '#6db34d'; ctx.beginPath(); ctx.moveTo(82, 735); ctx.bezierCurveTo(330, 620, 600, 780, 998, 640); ctx.lineTo(998, 816); ctx.lineTo(82, 816); ctx.close(); ctx.fill();
+      ctx.fillStyle = '#f4b85f'; ctx.font = '110px Arial'; ctx.fillText('🦋', 472, 500); ctx.font = '94px Arial'; ctx.fillText('🐝', 665, 565);
+    } else if (profileId === 'clima') {
+      ctx.fillStyle = '#e6f2ff'; ctx.fillRect(82, 254, 916, 562); ctx.fillStyle = '#ffd66d'; ctx.beginPath(); ctx.arc(770, 365, 86, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = 'rgba(255,255,255,.9)'; for (const [x,y,r] of [[260,370,58],[330,352,78],[425,378,60],[610,455,64],[690,430,88],[795,460,58]]) { ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill(); }
+      ctx.fillStyle = '#9ac2de'; ctx.beginPath(); ctx.moveTo(82, 705); ctx.bezierCurveTo(300, 575, 510, 760, 998, 610); ctx.lineTo(998,816); ctx.lineTo(82,816); ctx.close(); ctx.fill();
+      ctx.strokeStyle = '#2770a9'; ctx.lineWidth = 9; for (let i=0;i<5;i+=1){ctx.beginPath(); ctx.moveTo(250+i*95, 535); ctx.lineTo(220+i*95, 595); ctx.stroke();}
+    } else if (profileId === 'comunidade') {
+      ctx.fillStyle = '#fff1d6'; ctx.fillRect(82, 254, 916, 562); ctx.fillStyle = '#d4e9d2'; ctx.beginPath(); ctx.moveTo(82, 690); ctx.bezierCurveTo(350, 600, 640, 740, 998, 640); ctx.lineTo(998,816); ctx.lineTo(82,816); ctx.close(); ctx.fill();
+      const people = [['#0f6b3a',310,575],['#159bd2',450,545],['#d5a126',590,570],['#7b4da6',725,545]];
+      people.forEach(([color,x,y])=>{ctx.fillStyle=color; ctx.beginPath(); ctx.arc(x,y,46,0,Math.PI*2); ctx.fill(); roundRect(ctx,x-55,y+55,110,145,45,color);});
+      ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 12; ctx.beginPath(); ctx.moveTo(355,655); ctx.lineTo(448,630); ctx.lineTo(590,655); ctx.lineTo(680,630); ctx.stroke();
+    } else {
+      ctx.fillStyle = '#eaf7dc'; ctx.fillRect(82, 254, 916, 562);
+      for (let i = 0; i < 13; i += 1) { ctx.fillStyle = i % 2 ? '#81b74d' : '#9dca57'; ctx.beginPath(); ctx.moveTo(82 + i * 76, 816); ctx.lineTo(180 + i * 76, 520); ctx.lineTo(255 + i * 76, 816); ctx.close(); ctx.fill(); }
+      ctx.fillStyle = '#55422b'; ctx.fillRect(430, 558, 250, 112); ctx.fillStyle = '#d5a126'; ctx.fillRect(455, 525, 175, 65); ctx.fillStyle = '#1c2930'; ctx.beginPath(); ctx.arc(490, 682, 38, 0, Math.PI * 2); ctx.arc(650, 682, 38, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#ffffff'; ctx.font = '78px Arial'; ctx.fillText('✦', 790, 405);
+    }
+    ctx.restore();
+  }
+
+  async function downloadPassport(profile, scores) {
+    const profileId = getProfileIdByTitle(profile.title);
+    const [databiomicsLogo, companyLogo, artworkImage] = await Promise.all([loadPassportImage('/assets/databiomics-logo.svg'), loadPassportImage('/assets/parceiros/parceiro_wbpereira.jpeg'), loadPassportImage(PASSPORT_ARTWORKS[profileId])]);
     const canvas = document.createElement('canvas');
     canvas.width = 1080; canvas.height = 1920;
     const ctx = canvas.getContext('2d');
-    const gradient = ctx.createLinearGradient(0, 0, 1080, 1920);
-    gradient.addColorStop(0, '#052b19'); gradient.addColorStop(.52, '#0f6b3a'); gradient.addColorStop(1, '#72a52d');
-    ctx.fillStyle = gradient; ctx.fillRect(0, 0, 1080, 1920);
-    ctx.fillStyle = 'rgba(255,255,255,.08)'; ctx.beginPath(); ctx.arc(945, 120, 280, 0, Math.PI * 2); ctx.fill(); ctx.beginPath(); ctx.arc(120, 1810, 260, 0, Math.PI * 2); ctx.fill();
+    drawPassportArt(ctx, profileId, artworkImage);
 
-    ctx.textAlign = 'left'; ctx.fillStyle = '#d8f58c'; ctx.font = '800 32px Arial'; ctx.fillText('ODS NO CAMPO', 86, 105);
-    ctx.fillStyle = '#ffffff'; ctx.font = '700 24px Arial'; ctx.fillText('PASSAPORTE DE AFINIDADES PARA O FUTURO SUSTENTÁVEL', 86, 148);
-    roundRect(ctx, 82, 205, 916, 390, 34, 'rgba(255,255,255,.12)');
-    ctx.textAlign = 'center'; ctx.font = '112px Arial'; ctx.fillText(profile.emoji, 540, 350);
-    ctx.font = '800 62px Arial'; ctx.fillStyle = '#ffffff'; wrapText(ctx, profile.title, 540, 455, 820, 70, 2);
-    ctx.font = '700 28px Arial'; ctx.fillStyle = '#d8f58c'; ctx.fillText(profile.ods.join('   •   '), 540, 555);
+    ctx.textAlign = 'left'; ctx.fillStyle = '#ffffff'; ctx.font = '900 34px Arial'; ctx.fillText('ODS NO CAMPO', 86, 105);
+    ctx.fillStyle = '#e9f9df'; ctx.font = '700 24px Arial'; ctx.fillText('PASSAPORTE DE AFINIDADES PARA O FUTURO SUSTENTÁVEL', 86, 148);
+    roundRect(ctx, 82, 895, 916, 300, 34, 'rgba(255,255,255,.92)');
+    ctx.textAlign = 'center'; ctx.font = '900 56px Arial'; ctx.fillStyle = '#0b4728'; wrapText(ctx, profile.title, 540, 975, 820, 64, 2);
+    ctx.font = '800 28px Arial'; ctx.fillStyle = '#0f6b3a'; ctx.fillText(profile.ods.join('   •   '), 540, 1115);
+    ctx.font = '400 27px Arial'; ctx.fillStyle = '#314b3a'; ctx.textAlign = 'left'; wrapText(ctx, profile.description, 126, 1170, 828, 38, 3);
 
-    ctx.textAlign = 'left'; ctx.fillStyle = '#ffffff'; ctx.font = '800 34px Arial'; ctx.fillText('Síntese do seu perfil', 86, 670);
-    ctx.font = '400 30px Arial'; ctx.fillStyle = '#edf8ef'; wrapText(ctx, profile.description, 86, 722, 900, 43, 5);
-
-    ctx.fillStyle = '#ffffff'; ctx.font = '800 34px Arial'; ctx.fillText('Mapa de afinidades', 86, 930);
-    let y = 980;
+    ctx.fillStyle = '#ffffff'; ctx.font = '900 34px Arial'; ctx.fillText('Mapa de afinidades', 86, 1285);
+    let y = 1335;
     PROFILE_ORDER.forEach((id) => {
-      const item = PROFILES[id]; const value = scores[id] || 0; const width = Math.max(10, value * 150);
+      const item = PROFILES[id]; const value = scores[id] || 0; const width = Math.max(10, value * 178);
       ctx.font = '700 25px Arial'; ctx.fillStyle = '#ffffff'; ctx.fillText(`${item.emoji}  ${item.label}`, 86, y);
       ctx.textAlign = 'right'; ctx.fillStyle = '#d8f58c'; ctx.fillText(`${value}/5`, 978, y); ctx.textAlign = 'left';
-      roundRect(ctx, 86, y + 18, 892, 24, 12, 'rgba(255,255,255,.15)');
-      roundRect(ctx, 86, y + 18, width, 24, 12, '#d8f58c'); y += 92;
+      roundRect(ctx, 86, y + 18, 892, 24, 12, 'rgba(255,255,255,.2)');
+      roundRect(ctx, 86, y + 18, width, 24, 12, '#d8f58c'); y += 78;
     });
 
-    ctx.fillStyle = '#ffffff'; ctx.font = '800 34px Arial'; ctx.fillText('Três caminhos práticos', 86, 1490);
-    profile.actions.forEach((action, index) => {
-      roundRect(ctx, 82, 1530 + index * 105, 916, 82, 18, 'rgba(255,255,255,.11)');
-      ctx.fillStyle = '#d8f58c'; ctx.font = '800 28px Arial'; ctx.fillText(`${index + 1}`, 110, 1581 + index * 105);
-      ctx.fillStyle = '#ffffff'; ctx.font = '500 23px Arial'; wrapText(ctx, action, 165, 1568 + index * 105, 790, 31, 2);
-    });
-
-    ctx.fillStyle = '#ffffff'; ctx.font = '800 28px Arial'; ctx.fillText(`${latestStats.total} pessoas já concluíram o desafio`, 86, 1870);
-    ctx.textAlign = 'right'; ctx.fillStyle = '#d8f58c'; ctx.font = '700 25px Arial'; ctx.fillText('databiomics.com/ods-no-campo/', 994, 1870);
-    ctx.textAlign = 'left'; ctx.fillStyle = '#e8f5eb'; ctx.font = '400 18px Arial'; ctx.fillText('Resultado educativo, calculado localmente e sem cadastro.', 86, 1905);
+    roundRect(ctx, 82, 1750, 916, 118, 28, 'rgba(255,255,255,.94)');
+    drawContainImage(ctx, companyLogo, 145, 1780, 320, 66);
+    drawContainImage(ctx, databiomicsLogo, 615, 1780, 320, 66);
 
     const link = document.createElement('a');
     link.download = `passaporte-ods-${profile.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-')}.png`;
