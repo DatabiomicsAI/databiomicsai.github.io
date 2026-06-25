@@ -5,23 +5,60 @@ document.addEventListener('DOMContentLoaded', function () {
     var paragraphs = card.querySelectorAll('p');
     for (var i = 0; i < paragraphs.length; i += 1) {
       if ((paragraphs[i].textContent || '').indexOf('Databiomics') !== -1) {
-        paragraphs[i].innerHTML = '<strong>Databiomics®</strong><br>Leandro de Mattos Pereira atua como sócio-administrador e consultor da WBPereira Comércio e Serviços, sem vínculo empregatício.';
+        var institutionalText = '<strong>Databiomics®</strong><br>Leandro de Mattos Pereira atua como sócio-administrador e consultor da WBPereira Comércio e Serviços, sem vínculo empregatício.';
+        if (paragraphs[i].innerHTML !== institutionalText) paragraphs[i].innerHTML = institutionalText;
         break;
       }
     }
   }
 
+  function updateLgpdDisclosure() {
+    var privacy = document.getElementById('ods-privacy-panel');
+    if (privacy) {
+      var items = privacy.querySelectorAll('li');
+      items.forEach(function (item) {
+        var text = (item.textContent || '').replace(/\s+/g, ' ').trim();
+        if (text.indexOf('Finalidade:') === 0) {
+          var purpose = '<strong>Finalidade:</strong> compreender percepções da comunidade, avaliar o alcance e a inclusão da ação, produzir sínteses agregadas, materiais educativos e o relatório da atividade extensionista. Caso a participação alcance volume e diversidade suficientes, poderá também ser elaborada uma síntese técnica, agregada e anonimizada para eventual encaminhamento a órgãos públicos, conselhos, instituições de pesquisa, entidades representativas e outras instituições competentes, exclusivamente como subsídio informativo ao planejamento e ao possível aprimoramento de políticas públicas relacionadas aos temas identificados.';
+          if (item.innerHTML !== purpose) item.innerHTML = purpose;
+        }
+        if (text.indexOf('Compartilhamento:') === 0) {
+          var sharing = '<strong>Compartilhamento:</strong> não serão compartilhados nomes, contatos, comentários individualizados, dados sensíveis, microdados, respostas individuais nem combinações que permitam identificar ou reidentificar participantes. Eventual encaminhamento institucional ficará restrito a resultados estatísticos agregados e anonimizados, observados os princípios da finalidade, adequação, necessidade, transparência, segurança, prevenção e não discriminação previstos na LGPD.';
+          if (item.innerHTML !== sharing) item.innerHTML = sharing;
+        }
+      });
+    }
+
+    var consent = document.querySelector('#ods-listening-form input[name="consentimento"]');
+    var consentText = consent && consent.closest('label') ? consent.closest('label').querySelector('span') : null;
+    if (consentText) {
+      var consentHtml = 'Li o aviso de privacidade e <strong>consinto livremente</strong> com o tratamento das respostas para as finalidades acadêmicas, educativas e de eventual contribuição institucional descritas nesta página. Sei que posso participar sem informar nome, bairro, faixa etária ou identidade de gênero e que nenhum dado pessoal ou resposta individual será encaminhado a terceiros.';
+      if (consentText.innerHTML !== consentHtml) consentText.innerHTML = consentHtml;
+    }
+
+    var submitNote = document.querySelector('#ods-listening-form .ods-listening-submit-note');
+    if (submitNote) {
+      var submitHtml = '<strong>Transparência:</strong> o relatório público contabiliza somente categorias agregadas — perfil geral, temas marcados, ODS prioritários, formatos de conteúdo, áreas de ciência e município agrupado. Nome, bairro, identidade de gênero, comentários, textos livres, microdados e respostas individuais não são publicados nem encaminhados a instituições externas.';
+      if (submitNote.innerHTML !== submitHtml) submitNote.innerHTML = submitHtml;
+    }
+  }
+
   function addPublicPolicyNote() {
     var report = document.getElementById('ods-listening-report');
-    if (!report || report.querySelector('.ods-listening-policy-note')) return false;
+    if (!report) return false;
 
     var privacyNote = report.querySelector('.ods-listening-report-note');
     if (!privacyNote) return false;
 
-    var note = document.createElement('p');
-    note.className = 'ods-listening-report-note ods-listening-policy-note';
-    note.innerHTML = '<strong>Possível contribuição institucional:</strong> caso a participação alcance volume e diversidade suficientes para produzir uma síntese informativa consistente, os resultados agregados e anonimizados poderão ser sistematizados e encaminhados, de forma técnica, institucional e apartidária, a órgãos públicos, conselhos, instituições de pesquisa, entidades representativas e demais autoridades competentes. O objetivo será oferecer subsídios para o planejamento, o debate público e o eventual aprimoramento de políticas públicas relacionadas aos temas identificados. Esse encaminhamento não implicará apoio, oposição ou preferência por partidos, candidaturas, mandatos ou agentes políticos e não substituirá pesquisas amostrais, consultas oficiais ou processos decisórios legalmente constituídos.';
-    privacyNote.insertAdjacentElement('afterend', note);
+    var note = report.querySelector('.ods-listening-policy-note');
+    if (!note) {
+      note = document.createElement('p');
+      note.className = 'ods-listening-report-note ods-listening-policy-note';
+      privacyNote.insertAdjacentElement('afterend', note);
+    }
+
+    var policyHtml = '<strong>Possível contribuição institucional e proteção de dados:</strong> caso a participação alcance volume e diversidade suficientes para produzir uma síntese informativa consistente, poderão ser sistematizados e encaminhados apenas resultados estatísticos agregados e anonimizados, de forma técnica, institucional e apartidária, a órgãos públicos, conselhos, instituições de pesquisa, entidades representativas e outras instituições competentes. Não serão compartilhados nomes, contatos, comentários individualizados, dados sensíveis, microdados, respostas individuais ou combinações que permitam identificar ou reidentificar participantes. O objetivo será oferecer subsídios informativos ao planejamento e ao eventual aprimoramento de políticas públicas relacionadas aos temas identificados. Esse encaminhamento não implicará apoio, oposição ou preferência por partidos, candidaturas, mandatos ou agentes políticos e não substituirá pesquisas amostrais, consultas públicas oficiais ou processos decisórios legalmente constituídos.';
+    if (note.innerHTML !== policyHtml) note.innerHTML = policyHtml;
     return true;
   }
 
@@ -52,51 +89,23 @@ document.addEventListener('DOMContentLoaded', function () {
       var links = card.querySelectorAll('.ods-bioai-link');
 
       if (title.indexOf('Biodiversidade e inovação farmacêutica') !== -1) {
-        setLink(
-          links[0],
-          'https://revistafitos.far.fiocruz.br/index.php/revista-fitos/article/view/1346',
-          'Artigo científico externo — Revista Fitos/Fiocruz: descoberta de fármacos por produtos naturais'
-        );
-        setLink(
-          links[1],
-          'https://www.gov.br/agricultura/pt-br/assuntos/noticias/2022/mapa-e-fiocruz-identificam-26-produtos-da-biodiversidade-com-potencial-de-mercado/',
-          'Fonte institucional externa — MAPA/Fiocruz: biodiversidade e mercado'
-        );
+        setLink(links[0], 'https://revistafitos.far.fiocruz.br/index.php/revista-fitos/article/view/1346', 'Artigo científico externo — Revista Fitos/Fiocruz: descoberta de fármacos por produtos naturais');
+        setLink(links[1], 'https://www.gov.br/agricultura/pt-br/assuntos/noticias/2022/mapa-e-fiocruz-identificam-26-produtos-da-biodiversidade-com-potencial-de-mercado/', 'Fonte institucional externa — MAPA/Fiocruz: biodiversidade e mercado');
       }
 
       if (title.indexOf('Mata Atlântica: patrimônio biológico') !== -1) {
-        setLink(
-          links[0],
-          'https://www.gov.br/mma/pt-br/assuntos/biodiversidade-e-biomas/biomas-e-ecossistemas/biomas/mata-atlantica',
-          'Fonte institucional externa — Ministério do Meio Ambiente: Mata Atlântica'
-        );
-        setLink(
-          links[1],
-          'https://www.gov.br/inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe/monitoramento-do-territorio-florestas/o-que-resta-da-mata',
-          'Fonte institucional externa — INPE: remanescentes do bioma'
-        );
+        setLink(links[0], 'https://www.gov.br/mma/pt-br/assuntos/biodiversidade-e-biomas/biomas-e-ecossistemas/biomas/mata-atlantica', 'Fonte institucional externa — Ministério do Meio Ambiente: Mata Atlântica');
+        setLink(links[1], 'https://www.gov.br/inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe/monitoramento-do-territorio-florestas/o-que-resta-da-mata', 'Fonte institucional externa — INPE: remanescentes do bioma');
       }
 
       if (title.indexOf('Norte e Noroeste Fluminense') !== -1) {
-        setLink(
-          links[0],
-          'https://www.scielo.br/pdf/asoc/v27/1809-4422-asoc-27-e01701.pdf',
-          'Artigo científico externo — Ambiente & Sociedade: Norte e Noroeste Fluminense'
-        );
+        setLink(links[0], 'https://www.scielo.br/pdf/asoc/v27/1809-4422-asoc-27-e01701.pdf', 'Artigo científico externo — Ambiente & Sociedade: Norte e Noroeste Fluminense');
         for (var j = 1; j < links.length; j += 1) links[j].remove();
       }
 
       if (title.indexOf('IA, dados e monitoramento ambiental') !== -1) {
-        setLink(
-          links[0],
-          'https://www.youtube.com/watch?v=zjZNtGn7y5w',
-          'Vídeo externo — Embrapa: inteligência artificial na agricultura'
-        );
-        setLink(
-          links[1],
-          'https://www.gov.br/inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe/monitoramento-do-territorio-florestas/o-que-resta-da-mata',
-          'Fonte institucional externa — INPE: monitoramento dos remanescentes'
-        );
+        setLink(links[0], 'https://www.youtube.com/watch?v=zjZNtGn7y5w', 'Vídeo externo — Embrapa: inteligência artificial na agricultura');
+        setLink(links[1], 'https://www.gov.br/inpe/pt-br/acesso-a-informacao/perguntas-frequentes/principais-produtos-e-servicos-do-inpe/monitoramento-do-territorio-florestas/o-que-resta-da-mata', 'Fonte institucional externa — INPE: monitoramento dos remanescentes');
       }
     });
 
@@ -110,22 +119,22 @@ document.addEventListener('DOMContentLoaded', function () {
     return true;
   }
 
-  updateInstitutionalCredit();
-  addPublicPolicyNote();
-  patchExternalSources();
-
-  var observer = new MutationObserver(function () {
+  function applyUpdates() {
     updateInstitutionalCredit();
+    updateLgpdDisclosure();
     addPublicPolicyNote();
     patchExternalSources();
+  }
+
+  applyUpdates();
+
+  var observer = new MutationObserver(function () {
+    applyUpdates();
   });
   observer.observe(document.body, { childList: true, subtree: true });
   window.setTimeout(function () { observer.disconnect(); }, 20000);
 
   document.addEventListener('site-language-changed', function () {
-    window.setTimeout(function () {
-      addPublicPolicyNote();
-      patchExternalSources();
-    }, 250);
+    window.setTimeout(applyUpdates, 250);
   });
 });
