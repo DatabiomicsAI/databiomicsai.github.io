@@ -30,5 +30,5 @@
   loadScript('/assets/js/ods-no-campo-quiz-dashboard.js?v=20260624-1', 'data-ods-quiz-dashboard-js');
   loadScript('/assets/js/ods-no-campo-listening-report.js?v=20260624-1', 'data-ods-listening-report-js');
   loadScript('/assets/js/ods-no-campo-ods-ranking.js?v=20260624-1', 'data-ods-ranking-js');
-  loadScript('/assets/js/ods-no-campo-credit-text-v2.js?v=20260625-2', 'data-ods-credit-text-v2-js');
+  loadScript('/assets/js/ods-no-campo-credit-text-v2.js?v=20260625-3', 'data-ods-credit-text-v2-js');
 })();
