@@ -24,6 +24,14 @@
     return true;
   }
 
+  function hideSourceNotice() {
+    document.querySelectorAll('.ods-bioai-external-note').forEach((notice) => {
+      notice.hidden = true;
+      notice.setAttribute('aria-hidden', 'true');
+      notice.style.display = 'none';
+    });
+  }
+
   function loadPrivacyUpdate() {
     if (document.querySelector('script[data-ods-lgpd-complete]')) return;
     const script = document.createElement('script');
@@ -33,13 +41,18 @@
     document.head.appendChild(script);
   }
 
-  function boot() {
+  function applyUpdates() {
     applyCreditText();
+    hideSourceNotice();
+  }
+
+  function boot() {
+    applyUpdates();
     loadPrivacyUpdate();
 
-    const observer = new MutationObserver(() => applyCreditText());
+    const observer = new MutationObserver(applyUpdates);
     observer.observe(document.body, { childList: true, subtree: true });
-    window.setTimeout(() => observer.disconnect(), 15000);
+    window.setTimeout(() => observer.disconnect(), 30000);
   }
 
   if (document.readyState === 'loading') {
