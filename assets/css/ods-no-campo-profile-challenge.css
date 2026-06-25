@@ -1,0 +1,61 @@
+.ods-page .ods-profile-challenge{position:relative;margin:24px 12px 0;padding:clamp(24px,5vw,44px);overflow:hidden;border:1px solid #cfe3ce;border-radius:28px;background:radial-gradient(circle at 94% 10%,rgba(21,155,210,.16),transparent 29%),radial-gradient(circle at 8% 92%,rgba(185,232,92,.22),transparent 32%),linear-gradient(135deg,#f7fcf5,#edf8f0);box-shadow:0 18px 48px rgba(10,67,35,.11)}
+.ods-page .ods-profile-challenge:after{content:"";position:absolute;width:220px;height:220px;right:-90px;bottom:-100px;border-radius:50%;background:rgba(15,107,58,.08)}
+.ods-page .ods-profile-challenge-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
+.ods-page .ods-profile-kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#e2f2dc;color:#174b2a;font-size:.82rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+.ods-page .ods-profile-challenge h2{margin:14px 0 10px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;color:#0b4728}
+.ods-page .ods-profile-challenge p{max-width:760px;color:#52645a;font-size:1.03rem;line-height:1.65}
+.ods-page .ods-profile-benefits{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.ods-page .ods-profile-benefit{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid #d6e7d5;border-radius:999px;background:#fff;color:#214c30;font-size:.86rem;font-weight:800}
+.ods-page .ods-profile-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ods-page .ods-profile-start{border:0;border-radius:14px;padding:14px 19px;background:linear-gradient(135deg,#0f6b3a,#178a4d);color:#fff;font-weight:900;cursor:pointer;box-shadow:0 11px 24px rgba(15,107,58,.22)}
+.ods-page .ods-profile-start:hover,.ods-page .ods-profile-start:focus-visible{transform:translateY(-1px);background:linear-gradient(135deg,#0b5730,#136f40)}
+.ods-page .ods-profile-secondary{display:inline-flex;align-items:center;padding:13px 16px;border:1px solid #afcdb1;border-radius:14px;background:#fff;color:#174b2a;text-decoration:none;font-weight:850}
+.ods-page .ods-profile-preview{display:grid;gap:11px;padding:20px;border:1px solid rgba(255,255,255,.5);border-radius:24px;background:linear-gradient(145deg,#0a4327,#106f3e);color:#fff;box-shadow:0 16px 35px rgba(8,61,36,.2)}
+.ods-page .ods-profile-preview strong{font-size:1.2rem;color:#fff}
+.ods-page .ods-profile-preview p{margin:0;color:#e5f4e9;font-size:.94rem}
+.ods-page .ods-profile-preview-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:15px;background:rgba(255,255,255,.1)}
+.ods-page .ods-profile-preview-icon{display:grid;place-items:center;flex:0 0 44px;height:44px;border-radius:13px;background:rgba(255,255,255,.15);font-size:1.4rem}
+.ods-profile-dialog[hidden]{display:none!important}
+.ods-profile-dialog{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:18px;background:rgba(4,24,14,.76);backdrop-filter:blur(8px)}
+.ods-profile-panel{position:relative;width:min(760px,100%);max-height:min(92vh,900px);overflow:auto;border-radius:26px;background:#fff;color:#173321;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.ods-profile-panel-head{position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px 20px;border-bottom:1px solid #dbe9da;background:rgba(255,255,255,.96);backdrop-filter:blur(8px)}
+.ods-profile-panel-head strong{color:#0f5d35}
+.ods-profile-close{display:grid;place-items:center;width:40px;height:40px;border:1px solid #c9ddca;border-radius:12px;background:#f7fbf6;color:#173321;font-size:1.25rem;cursor:pointer}
+.ods-profile-progress{height:8px;background:#e6eee5}
+.ods-profile-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#0f6b3a,#b9e85c);transition:width .25s ease}
+.ods-profile-body{padding:clamp(22px,4vw,36px)}
+.ods-profile-step-count{margin:0 0 7px;color:#0f6b3a;font-size:.82rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.ods-profile-question{margin:0 0 18px;font-size:clamp(1.55rem,4vw,2.2rem);line-height:1.13;color:#102e1d}
+.ods-profile-help{margin:0 0 20px;color:#617067}
+.ods-profile-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.ods-profile-option{display:flex;align-items:center;gap:11px;min-height:72px;padding:14px;border:1px solid #cfdfcf;border-radius:16px;background:#f9fcf8;color:#173321;text-align:left;font:inherit;font-weight:800;cursor:pointer;transition:.18s ease}
+.ods-profile-option:hover,.ods-profile-option:focus-visible{border-color:#67a974;background:#eef8eb;transform:translateY(-1px)}
+.ods-profile-option.is-selected{border-color:#0f6b3a;background:#e2f3dd;box-shadow:0 0 0 2px rgba(15,107,58,.12)}
+.ods-profile-option-icon{font-size:1.45rem}
+.ods-profile-nav{display:flex;justify-content:space-between;gap:10px;margin-top:23px}
+.ods-profile-nav button{padding:12px 16px;border-radius:13px;font-weight:900;cursor:pointer}
+.ods-profile-back{border:1px solid #c9dcca;background:#fff;color:#214c30}
+.ods-profile-next{margin-left:auto;border:0;background:#0f6b3a;color:#fff}
+.ods-profile-next:disabled{opacity:.45;cursor:not-allowed}
+.ods-profile-result{text-align:center}
+.ods-profile-result-emoji{display:grid;place-items:center;width:88px;height:88px;margin:0 auto 14px;border-radius:27px;background:linear-gradient(145deg,#e4f4df,#d9eff7);font-size:2.7rem}
+.ods-profile-result h3{margin:0 0 8px;font-size:clamp(1.8rem,5vw,2.7rem);color:#0b4728}
+.ods-profile-result-lead{max-width:620px;margin:0 auto 18px;color:#52645a;line-height:1.65}
+.ods-profile-ods{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0}
+.ods-profile-ods span{padding:7px 11px;border-radius:999px;background:#e7f4e2;color:#174b2a;font-weight:900;font-size:.84rem}
+.ods-profile-actions-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0;text-align:left}
+.ods-profile-action-card{padding:14px;border:1px solid #d5e4d3;border-radius:15px;background:#f8fbf7;color:#385546;font-size:.91rem;line-height:1.45}
+.ods-profile-community{margin:19px 0;padding:14px 16px;border-left:4px solid #159bd2;border-radius:0 14px 14px 0;background:#eef7fb;color:#36566a;text-align:left}
+.ods-profile-result-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:20px}
+.ods-profile-result-buttons button,.ods-profile-result-buttons a{display:inline-flex;align-items:center;justify-content:center;padding:12px 15px;border-radius:13px;text-decoration:none;font-weight:900;cursor:pointer}
+.ods-profile-share{border:0;background:#0f6b3a;color:#fff}
+.ods-profile-download{border:1px solid #99c09f;background:#fff;color:#174b2a}
+.ods-profile-survey{border:0;background:#159bd2;color:#fff}
+.ods-profile-restart{border:0;background:transparent;color:#52645a;text-decoration:underline!important}
+.ods-profile-privacy{margin-top:16px!important;color:#6a776f!important;font-size:.82rem!important}
+.ods-profile-toast{position:fixed;left:50%;bottom:25px;z-index:10001;transform:translateX(-50%);padding:11px 15px;border-radius:12px;background:#102f1d;color:#fff;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.24)}
+.ods-profile-toast[hidden]{display:none}
+body.ods-profile-dialog-open{overflow:hidden}
+@media(max-width:850px){.ods-page .ods-profile-challenge-grid{grid-template-columns:1fr}.ods-page .ods-profile-preview{grid-template-columns:repeat(3,minmax(0,1fr))}.ods-page .ods-profile-preview>strong,.ods-page .ods-profile-preview>p{grid-column:1/-1}.ods-page .ods-profile-preview-row{display:grid;text-align:center}.ods-page .ods-profile-preview-icon{margin:0 auto}}
+@media(max-width:620px){.ods-page .ods-profile-challenge{margin-left:4px;margin-right:4px;border-radius:21px}.ods-page .ods-profile-preview{grid-template-columns:1fr}.ods-page .ods-profile-preview>strong,.ods-page .ods-profile-preview>p{grid-column:auto}.ods-profile-dialog{padding:0;align-items:end}.ods-profile-panel{width:100%;max-height:95vh;border-radius:24px 24px 0 0}.ods-profile-options,.ods-profile-actions-list{grid-template-columns:1fr}.ods-profile-result-buttons{display:grid}.ods-profile-result-buttons>*{width:100%}}
+@media(prefers-reduced-motion:reduce){.ods-page .ods-profile-start,.ods-page .ods-profile-option,.ods-profile-progress span{transition:none!important}}
