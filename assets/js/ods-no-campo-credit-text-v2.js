@@ -11,7 +11,7 @@
     const target = paragraphs.find((paragraph) => /Databiomics/i.test(paragraph.textContent || ''));
     if (!target) return false;
 
-    target.innerHTML = newText;
+    if (target.innerHTML !== newText) target.innerHTML = newText;
 
     paragraphs.forEach((paragraph) => {
       if (paragraph === target) return;
@@ -24,11 +24,22 @@
     return true;
   }
 
+  function loadPrivacyUpdate() {
+    if (document.querySelector('script[data-ods-lgpd-complete]')) return;
+    const script = document.createElement('script');
+    script.src = '/assets/js/ods-no-campo-credit-text.js?v=20260625-4';
+    script.async = false;
+    script.setAttribute('data-ods-lgpd-complete', 'true');
+    document.head.appendChild(script);
+  }
+
   function boot() {
     applyCreditText();
-    const observer = new MutationObserver(applyCreditText);
-    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-    window.setTimeout(() => observer.disconnect(), 30000);
+    loadPrivacyUpdate();
+
+    const observer = new MutationObserver(() => applyCreditText());
+    observer.observe(document.body, { childList: true, subtree: true });
+    window.setTimeout(() => observer.disconnect(), 15000);
   }
 
   if (document.readyState === 'loading') {
