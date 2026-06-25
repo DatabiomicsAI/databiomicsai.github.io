@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  function addPublicPolicyNote() {
+    var report = document.getElementById('ods-listening-report');
+    if (!report || report.querySelector('.ods-listening-policy-note')) return false;
+
+    var privacyNote = report.querySelector('.ods-listening-report-note');
+    if (!privacyNote) return false;
+
+    var note = document.createElement('p');
+    note.className = 'ods-listening-report-note ods-listening-policy-note';
+    note.innerHTML = '<strong>Possível contribuição institucional:</strong> caso a participação alcance volume e diversidade suficientes para produzir uma síntese informativa consistente, os resultados agregados e anonimizados poderão ser sistematizados e encaminhados, de forma técnica, institucional e apartidária, a órgãos públicos, conselhos, instituições de pesquisa, entidades representativas e demais autoridades competentes. O objetivo será oferecer subsídios para o planejamento, o debate público e o eventual aprimoramento de políticas públicas relacionadas aos temas identificados. Esse encaminhamento não implicará apoio, oposição ou preferência por partidos, candidaturas, mandatos ou agentes políticos e não substituirá pesquisas amostrais, consultas oficiais ou processos decisórios legalmente constituídos.';
+    privacyNote.insertAdjacentElement('afterend', note);
+    return true;
+  }
+
   function setLink(link, href, label) {
     if (!link) return;
     link.href = href;
@@ -89,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!document.getElementById('ods-external-source-style')) {
       var style = document.createElement('style');
       style.id = 'ods-external-source-style';
-      style.textContent = '.ods-page .ods-bioai-external-note{margin:15px 0 0;padding:13px 15px;border-left:4px solid #c7ed74;border-radius:0 12px 12px 0;background:rgba(255,255,255,.1);color:#eff9f1!important;font-size:.88rem;line-height:1.55}.ods-page .ods-bioai-external-note strong{color:#fff!important}';
+      style.textContent = '.ods-page .ods-bioai-external-note{margin:15px 0 0;padding:13px 15px;border-left:4px solid #c7ed74;border-radius:0 12px 12px 0;background:rgba(255,255,255,.1);color:#eff9f1!important;font-size:.88rem;line-height:1.55}.ods-page .ods-bioai-external-note strong{color:#fff!important}.ods-page .ods-listening-policy-note{border-left-color:#159bd2;background:#f3f8fb;color:#36556a}';
       document.head.appendChild(style);
     }
 
@@ -97,16 +111,21 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   updateInstitutionalCredit();
+  addPublicPolicyNote();
   patchExternalSources();
 
   var observer = new MutationObserver(function () {
     updateInstitutionalCredit();
+    addPublicPolicyNote();
     patchExternalSources();
   });
   observer.observe(document.body, { childList: true, subtree: true });
   window.setTimeout(function () { observer.disconnect(); }, 20000);
 
   document.addEventListener('site-language-changed', function () {
-    window.setTimeout(patchExternalSources, 250);
+    window.setTimeout(function () {
+      addPublicPolicyNote();
+      patchExternalSources();
+    }, 250);
   });
 });
