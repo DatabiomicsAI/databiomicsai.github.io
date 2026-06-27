@@ -530,7 +530,6 @@ Bioinfo/AI</a>
   };
 
   [
-    "#visitor-country",
     "#visitor-count",
     "#visitor-country-list",
     "#visitor-country-list-all",
@@ -591,12 +590,6 @@ Bioinfo/AI</a>
     }
   };
 
-  const countryCodeToFlagEmoji = (code) => {
-    const normalized = String(code || "").trim().toUpperCase();
-    if (!/^[A-Z]{2}$/.test(normalized)) return "🏳️";
-    return String.fromCodePoint(...[...normalized].map((char) => 127397 + char.charCodeAt(0)));
-  };
-
   const normalizeCountryCode = (code) => {
     const normalized = String(code || "").trim().toUpperCase();
     return /^[A-Z]{2}$/.test(normalized) ? normalized : null;
@@ -616,14 +609,7 @@ Bioinfo/AI</a>
     }
   };
 
-  const updateDistinctCountriesClock = () => {
-    const clockEl = document.getElementById("distinct-countries-clock");
-    if (!clockEl) return;
-    const d = getLangDict();
-    const now = new Date();
-    const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    clockEl.textContent = `${d.clockPrefix}${time}`;
-  };
+  const updateDistinctCountriesClock = () => {};
 
   const getLangDict = () => {
     const lang = localStorage.getItem("siteLang") || "pt";
@@ -712,6 +698,8 @@ Bioinfo/AI</a>
     countLabel.textContent = `${d.totalPrefix}${visitorTelemetryState.total}`;
   };
 
+  const pieChartColors = ["#38bdf8", "#22c55e", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316", "#84cc16"];
+
   const renderTopCountries = () => {
     const listEl = document.getElementById("visitor-country-list");
     const allListEl = document.getElementById("visitor-country-list-all");
@@ -731,13 +719,10 @@ Bioinfo/AI</a>
       : [];
     const safeAllCountries = allCountries
       .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0);
-    const topCountries = Array.isArray(visitorTelemetryState.topCountries)
-      ? visitorTelemetryState.topCountries
-      : [];
-    const safeTopCountries = topCountries
-      .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0);
+      .filter((row) => row.code && row.value > 0)
+      .sort((a, b) => b.value - a.value);
+
+    pieLegendEl.innerHTML = "";
 
     if (!safeAllCountries.length) {
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
@@ -763,15 +748,14 @@ Bioinfo/AI</a>
     // A visualização principal é o mapa mundial; não renderizamos mais o strip legado de bandeiras.
 
 
-    safeAllCountries.forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
+    segments.forEach((segment) => {
+      const countryName = getCountryDisplayName(segment.code);
       const li = document.createElement("li");
       li.className = "country-row";
       li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
       allListEl.appendChild(li);
     });
   };
-
 
   const sanitizeLocationPart = (value) => String(value || "")
     .normalize("NFD")
