@@ -1029,7 +1029,11 @@ Bioinfo/AI</a>
     renderVisitorMap();
 
     const localTelemetry = readLocalTelemetry();
+    const localCountryRows = normalizeCountryRows(localTelemetry.countries || {});
+    visitorTelemetryState.allCountries = localCountryRows;
+    visitorTelemetryState.topCountries = localCountryRows.slice(0, 10);
     visitorTelemetryState.locations = Object.values(localTelemetry.locations || {});
+    renderTopCountries();
     renderVisitorMap();
 
     try {
