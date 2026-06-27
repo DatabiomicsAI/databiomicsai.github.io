@@ -426,29 +426,19 @@ Bioinfo/AI</a>
     <div class="footer-block">
       <h2 data-i18n-key="visitor_title">Visitante</h2>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
-      <div class="visitor-map-panel" aria-labelledby="visitor-map-title">
-        <h3 id="visitor-map-title">Mapa mundial de visitantes</h3>
-        <div class="visitor-world-map" id="visitor-world-map" role="img" aria-label="Mapa mundial com marcadores de visitantes" style="position:relative;overflow:hidden;width:100%;min-height:220px;border:1px solid rgba(96,165,250,.35);border-radius:18px;background:linear-gradient(135deg,rgba(14,165,233,.16),rgba(15,23,42,.08));">
-          <svg viewBox="0 0 1000 500" aria-hidden="true" focusable="false">
-              <rect width="1000" height="500" rx="24"></rect>
-              <path d="M150 120c55-45 140-45 195-8 37 25 20 72-31 80-38 6-42 46-18 73 32 36 5 91-55 91-84 0-153-66-164-143-6-43 18-72 73-93Z"></path>
-              <path d="M280 294c35-15 79 9 92 46 18 51-8 114-55 143-41-33-61-92-48-141 5-19 2-31 11-48Z"></path>
-              <path d="M455 110c42-29 92-35 146-21 28 7 55 8 88 1 67-15 142 16 173 70-64 12-104 35-121 70-23 47-74 61-121 37-29-15-58-14-88 3-47 26-98 10-117-38-20-50-6-94 40-122Z"></path>
-              <path d="M545 287c58-17 129 11 153 69 20 48-2 96-49 116-36-31-62-50-92-67-41-24-55-73-12-118Z"></path>
-              <path d="M770 310c52-25 119-2 149 44-32 42-91 54-143 29-35-17-38-51-6-73Z"></path>
-          </svg>
-          <div class="visitor-map-markers" id="visitor-map-markers"></div>
+      <p class="visitor-count visitor-map-summary">Brasil: <strong id="visitor-brazil-count">0</strong></p>
+      <div id="visitor-flags-strip" class="visitor-flags-strip visitor-flags-strip-hidden" aria-hidden="true"></div>
+      <div class="visitor-extended-details" aria-hidden="false">
+        <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
+        <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
+        <div class="country-list-scroll">
+          <ul id="visitor-country-list" class="visitor-country-list"></ul>
         </div>
-        <div class="visitor-country-chart" aria-labelledby="visitor-country-chart-title">
-          <h3 id="visitor-country-chart-title">Visitantes por país</h3>
-          <div class="visitor-pie-chart-row">
-            <div id="visitor-country-pie" class="visitor-country-pie" role="img" aria-label="Gráfico em pizza de visitantes por país" style="width:min(140px,38vw);aspect-ratio:1;border-radius:999px;background:conic-gradient(#64748b 0 100%);"></div>
-            <ul id="visitor-country-pie-legend" class="visitor-country-pie-legend"><li>Carregando contagem por país...</li></ul>
-          </div>
-        </div>
-        <p class="visitor-count" id="visitor-current-location">Localização do visitante: carregando...</p>
-        <div class="country-list-scroll visitor-location-scroll">
-          <ul id="visitor-location-list" class="visitor-country-list"></ul>
+        <h3 id="all-countries-title">Países visitantes</h3>
+        <p id="distinct-countries-count" class="visitor-count">Países distintos: carregando...</p>
+        <p id="distinct-countries-clock" class="visitor-count">Hora local: --:--:--</p>
+        <div class="country-list-scroll">
+          <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
         </div>
       </div>
     </div>
@@ -541,6 +531,9 @@ Bioinfo/AI</a>
 
   [
     "#visitor-count",
+    "#visitor-country-list",
+    "#visitor-country-list-all",
+    "#visitor-brazil-count",
     "#visitor-current-location",
     "#visitor-location-list",
     "#visitor-map-markers"
@@ -708,10 +701,18 @@ Bioinfo/AI</a>
   const pieChartColors = ["#38bdf8", "#22c55e", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316", "#84cc16"];
 
   const renderTopCountries = () => {
-    const pieEl = document.getElementById("visitor-country-pie");
-    const pieLegendEl = document.getElementById("visitor-country-pie-legend");
-    if (!pieEl || !pieLegendEl) return;
+    const listEl = document.getElementById("visitor-country-list");
+    const allListEl = document.getElementById("visitor-country-list-all");
+    const brazilCounterEl = document.getElementById("visitor-brazil-count");
+    const allCountriesTitleEl = document.getElementById("all-countries-title");
+    const distinctCountriesEl = document.getElementById("distinct-countries-count");
+    if (!listEl || !allListEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
     const d = getLangDict();
+
+    allCountriesTitleEl.textContent = d.allCountriesTitle;
+
+    listEl.innerHTML = "";
+    allListEl.innerHTML = "";
 
     const allCountries = Array.isArray(visitorTelemetryState.allCountries)
       ? visitorTelemetryState.allCountries
@@ -724,38 +725,35 @@ Bioinfo/AI</a>
     pieLegendEl.innerHTML = "";
 
     if (!safeAllCountries.length) {
-      pieEl.style.background = "conic-gradient(#64748b 0 100%)";
-      pieEl.setAttribute("aria-label", d.noCountryData);
-      pieLegendEl.innerHTML = `<li>${d.noCountryData}</li>`;
+      listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
+      allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
+      brazilCounterEl.textContent = "0";
+      distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
     }
 
-    const total = safeAllCountries.reduce((sum, row) => sum + row.value, 0);
-    let cursor = 0;
-    const segments = safeAllCountries.slice(0, 8).map((row, index) => {
-      const start = cursor;
-      const size = total > 0 ? (row.value / total) * 100 : 0;
-      cursor += size;
-      return {
-        ...row,
-        color: pieChartColors[index % pieChartColors.length],
-        start,
-        end: cursor,
-        percent: size
-      };
+    distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
+    const brazilRow = safeAllCountries.find((row) => row.code === "BR");
+    brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
+
+    const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
+    rowsForTop.slice(0, 10).forEach(({ code, value }) => {
+      const countryName = getCountryDisplayName(code);
+      const li = document.createElement("li");
+      li.className = "country-row";
+      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
+      listEl.appendChild(li);
     });
 
-    pieEl.style.background = `conic-gradient(${segments.map((segment) => `${segment.color} ${segment.start}% ${segment.end}%`).join(", ")})`;
-    pieEl.setAttribute(
-      "aria-label",
-      `Gráfico em pizza com ${total} visitantes distribuídos por ${safeAllCountries.length} países.`
-    );
+    // A visualização principal é o mapa mundial; não renderizamos mais o strip legado de bandeiras.
+
 
     segments.forEach((segment) => {
       const countryName = getCountryDisplayName(segment.code);
       const li = document.createElement("li");
-      li.innerHTML = `<span class="visitor-pie-swatch" style="--pie-color:${segment.color}"></span><span>${countryName}</span><strong>${segment.value}</strong>`;
-      pieLegendEl.appendChild(li);
+      li.className = "country-row";
+      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
+      allListEl.appendChild(li);
     });
   };
 
