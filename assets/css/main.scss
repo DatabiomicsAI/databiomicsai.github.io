@@ -1808,6 +1808,14 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   display: block;
 }
 
+.visitor-map-summary {
+  margin-bottom: 0.75rem;
+}
+
+.visitor-flags-strip-hidden {
+  display: none;
+}
+
 .visitor-flags-strip {
   display: flex;
   align-items: flex-start;
