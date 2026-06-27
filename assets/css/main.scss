@@ -1894,6 +1894,69 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   border-radius: 2px;
 }
 
+.visitor-map-panel {
+  margin-top: 1rem;
+}
+
+.visitor-world-map {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 220px;
+  border: 1px solid color-mix(in srgb, var(--links) 30%, transparent);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.18), transparent 28%),
+    linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(15, 23, 42, 0.08));
+}
+
+.visitor-world-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.visitor-world-map rect {
+  fill: color-mix(in srgb, var(--bg-secondary) 82%, #60a5fa 18%);
+}
+
+.visitor-world-map path {
+  fill: color-mix(in srgb, var(--links) 24%, var(--bg-secondary));
+  stroke: color-mix(in srgb, var(--links) 36%, transparent);
+  stroke-width: 2;
+}
+
+.visitor-map-marker {
+  position: absolute;
+  width: var(--marker-size, 14px);
+  height: var(--marker-size, 14px);
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: #ef4444;
+  box-shadow: 0 0 0 5px rgba(239, 68, 68, 0.18), 0 8px 18px rgba(15, 23, 42, 0.25);
+  transform: translate(-50%, -50%);
+}
+
+.visitor-map-marker::after {
+  content: attr(data-count);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.35rem);
+  min-width: 1.35rem;
+  padding: 0.12rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.86);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.visitor-location-scroll {
+  margin-top: 0.75rem;
+}
+
 .country-flag-emoji {
   width: 24px;
   display: inline-flex;
