@@ -1805,7 +1805,11 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
 }
 
 .visitor-extended-details {
-  display: none;
+  display: block;
+}
+
+.visitor-map-summary {
+  margin-bottom: 0.75rem;
 }
 
 .visitor-flags-strip {
