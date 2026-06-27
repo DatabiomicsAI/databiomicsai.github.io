@@ -501,6 +501,13 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   color: var(--text);
 }
 
+.contact-form-feedback {
+  min-height: 1.4rem;
+  margin: 0;
+  color: var(--links);
+  font-weight: 600;
+}
+
 .checkbox {
   display: flex;
   align-items: center;

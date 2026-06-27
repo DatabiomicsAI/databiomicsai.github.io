@@ -338,23 +338,23 @@ Bioinfo/AI</a>
       <h3 data-i18n-key="contact_talk">Fale comigo</h3>
       <p><strong>Skype:</strong> mattoslmp</p>
       <p><strong data-i18n-key="contact_hours_label">Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
-      <p><strong>Email:</strong> <a href="mailto:contact@databiomics.com">contact@databiomics.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
       <div class="contact-actions">
         <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
-        <a class="button ghost" href="mailto:contact@databiomics.com?subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
+        <a class="button ghost" href="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
       </div>
       <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
     </div>
     <div class="contact-card">
       <h3>Envie sua mensagem</h3>
-      <form class="contact-form" action="https://formsubmit.co/contact@databiomics.com" method="post" id="contact-form">
+      <form class="contact-form" action="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" method="post" enctype="text/plain" id="contact-form">
         <label for="contact-full-name">
           <span>Nome completo</span>
-          <input id="contact-full-name" type="text" name="full-name" placeholder="Seu nome completo" required>
+          <input id="contact-full-name" type="text" name="nome" placeholder="Seu nome completo" required>
         </label>
         <label for="contact-email">
           <span>E-mail</span>
-          <input id="contact-email" type="email" name="contact-email" placeholder="nome@instituicao.com" required>
+          <input id="contact-email" type="email" name="email" placeholder="nome@instituicao.com" required>
         </label>
         <label for="contact-subject">
           <span>Assunto do contato</span>
@@ -410,9 +410,8 @@ Bioinfo/AI</a>
           <input type="checkbox" name="privacy_consent_contact" required>
           <span>Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.
         </label>
-        <input type="hidden" name="_subject" value="Novo contato via site - Formulário de triagem">
-        <input type="hidden" name="_captcha" value="false">
         <button class="button primary" type="submit">Enviar mensagem</button>
+        <p class="contact-form-feedback" id="contact-form-feedback" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -422,7 +421,7 @@ Bioinfo/AI</a>
   <div class="footer-content">
     <div class="footer-block">
       <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
-      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:contact@databiomics.com">contact@databiomics.com</a></p>
+      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
     </div>
     <div class="footer-block">
       <h2 data-i18n-key="visitor_title">Visitante</h2>
@@ -486,6 +485,45 @@ Bioinfo/AI</a>
     const phoneNumber = phoneParts.join("");
     const message = encodeURIComponent("Olá Leandro! Vi seu site e gostaria de mais informações sobre consultoria/cursos.");
     whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
+  }
+
+  const contactForm = document.getElementById("contact-form");
+  const contactFormFeedback = document.getElementById("contact-form-feedback");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const subjectLabel = contactSubject?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
+      const categoryLabel = contactCategory?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
+      const modalityLabel = modalitySelect && !modalitySelect.disabled && modalitySelect.value
+        ? modalitySelect.selectedOptions[0].textContent.trim()
+        : "Não se aplica";
+
+      const emailBody = [
+        `Nome: ${formData.get("nome")}`,
+        `E-mail: ${formData.get("email")}`,
+        `Assunto: ${subjectLabel}`,
+        `Categoria: ${categoryLabel}`,
+        `Modalidade: ${modalityLabel}`,
+        "",
+        "Mensagem:",
+        formData.get("message")
+      ].join("\n");
+
+      const mailtoUrl = `mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=${encodeURIComponent("Contato via site Databiomics")}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoUrl;
+
+      if (contactFormFeedback) {
+        contactFormFeedback.textContent = "Seu aplicativo de e-mail será aberto para finalizar o envio da mensagem.";
+      }
+    });
   }
 
   const visitorCountryState = { name: null };
