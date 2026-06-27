@@ -440,24 +440,6 @@ Bioinfo/AI</a>
         <div class="country-list-scroll">
           <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
         </div>
-        <div class="visitor-map-panel" aria-labelledby="visitor-map-title">
-          <h3 id="visitor-map-title">Mapa mundial de visitantes</h3>
-          <div class="visitor-world-map" id="visitor-world-map" role="img" aria-label="Mapa mundial com marcadores de visitantes">
-            <svg viewBox="0 0 1000 500" aria-hidden="true" focusable="false">
-              <rect width="1000" height="500" rx="24"></rect>
-              <path d="M150 120c55-45 140-45 195-8 37 25 20 72-31 80-38 6-42 46-18 73 32 36 5 91-55 91-84 0-153-66-164-143-6-43 18-72 73-93Z"></path>
-              <path d="M280 294c35-15 79 9 92 46 18 51-8 114-55 143-41-33-61-92-48-141 5-19 2-31 11-48Z"></path>
-              <path d="M455 110c42-29 92-35 146-21 28 7 55 8 88 1 67-15 142 16 173 70-64 12-104 35-121 70-23 47-74 61-121 37-29-15-58-14-88 3-47 26-98 10-117-38-20-50-6-94 40-122Z"></path>
-              <path d="M545 287c58-17 129 11 153 69 20 48-2 96-49 116-36-31-62-50-92-67-41-24-55-73-12-118Z"></path>
-              <path d="M770 310c52-25 119-2 149 44-32 42-91 54-143 29-35-17-38-51-6-73Z"></path>
-            </svg>
-            <div class="visitor-map-markers" id="visitor-map-markers"></div>
-          </div>
-          <p class="visitor-count" id="visitor-current-location">Localização do visitante: carregando...</p>
-          <div class="country-list-scroll visitor-location-scroll">
-            <ul id="visitor-location-list" class="visitor-country-list"></ul>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -550,7 +532,6 @@ Bioinfo/AI</a>
   [
     "#visitor-country",
     "#visitor-count",
-    "#visitor-flags-strip",
     "#visitor-country-list",
     "#visitor-country-list-all",
     "#visitor-brazil-count",
@@ -734,18 +715,16 @@ Bioinfo/AI</a>
   const renderTopCountries = () => {
     const listEl = document.getElementById("visitor-country-list");
     const allListEl = document.getElementById("visitor-country-list-all");
-    const stripEl = document.getElementById("visitor-flags-strip");
     const brazilCounterEl = document.getElementById("visitor-brazil-count");
     const allCountriesTitleEl = document.getElementById("all-countries-title");
     const distinctCountriesEl = document.getElementById("distinct-countries-count");
-    if (!listEl || !allListEl || !stripEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
+    if (!listEl || !allListEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
     const d = getLangDict();
 
     allCountriesTitleEl.textContent = d.allCountriesTitle;
 
     listEl.innerHTML = "";
     allListEl.innerHTML = "";
-    stripEl.innerHTML = "";
 
     const allCountries = Array.isArray(visitorTelemetryState.allCountries)
       ? visitorTelemetryState.allCountries
@@ -763,7 +742,6 @@ Bioinfo/AI</a>
     if (!safeAllCountries.length) {
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
-      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
       brazilCounterEl.textContent = "0";
       distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
@@ -771,7 +749,6 @@ Bioinfo/AI</a>
 
     distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
     const brazilRow = safeAllCountries.find((row) => row.code === "BR");
-    const otherCountries = safeAllCountries.filter((row) => row.code !== "BR");
     brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
 
     const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
@@ -779,43 +756,18 @@ Bioinfo/AI</a>
       const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
     });
 
-    otherCountries.slice(0, 20).forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
-      const card = document.createElement("span");
-      card.className = "country-flag-chip";
-      card.title = `${countryName}: ${value}`;
-      card.innerHTML = `
-        <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="Bandeira de ${countryName}" loading="lazy">
-        <span class="country-flag-fallback" aria-hidden="true" hidden>${countryCodeToFlagEmoji(code)}</span>
-        <strong class="country-flag-count">${value}</strong>
-      `;
-      const image = card.querySelector("img");
-      const fallback = card.querySelector(".country-flag-fallback");
-      if (image && fallback) {
-        image.addEventListener("error", () => {
-          image.hidden = true;
-          fallback.hidden = false;
-        });
-        image.addEventListener("load", () => {
-          fallback.hidden = true;
-        });
-      }
-      stripEl.appendChild(card);
-    });
+    // A visualização principal é o mapa mundial; não renderizamos mais o strip legado de bandeiras.
 
-    if (!otherCountries.length) {
-      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
-    }
 
     safeAllCountries.forEach(({ code, value }) => {
       const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
       allListEl.appendChild(li);
     });
   };
