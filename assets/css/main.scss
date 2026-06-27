@@ -266,6 +266,29 @@ footer  {
   color: #fff;
 }
 
+.transparency-note {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.transparency-note-card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid color-mix(in srgb, var(--links) 28%, transparent);
+  border-left: 5px solid var(--links);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg-secondary) 90%, var(--links) 10%);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.transparency-note-card h2 {
+  margin-top: 0;
+}
+
+.transparency-note-card p:last-child {
+  margin-bottom: 0;
+}
+
 html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key="lead_title"] {
   color: #b9f2ff; /* cor diamante no modo claro */
 }
@@ -476,6 +499,13 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   border-color: rgba(15, 23, 42, 0.15);
   background: var(--bg-secondary);
   color: var(--text);
+}
+
+.contact-form-feedback {
+  min-height: 1.4rem;
+  margin: 0;
+  color: var(--links);
+  font-weight: 600;
 }
 
 .checkbox {
@@ -1862,6 +1892,69 @@ html:not(.colorblind-mode) body[data-theme="light"] .hero-card h2[data-i18n-key=
   width: 24px;
   height: 18px;
   border-radius: 2px;
+}
+
+.visitor-map-panel {
+  margin-top: 1rem;
+}
+
+.visitor-world-map {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 220px;
+  border: 1px solid color-mix(in srgb, var(--links) 30%, transparent);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.18), transparent 28%),
+    linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(15, 23, 42, 0.08));
+}
+
+.visitor-world-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.visitor-world-map rect {
+  fill: color-mix(in srgb, var(--bg-secondary) 82%, #60a5fa 18%);
+}
+
+.visitor-world-map path {
+  fill: color-mix(in srgb, var(--links) 24%, var(--bg-secondary));
+  stroke: color-mix(in srgb, var(--links) 36%, transparent);
+  stroke-width: 2;
+}
+
+.visitor-map-marker {
+  position: absolute;
+  width: var(--marker-size, 14px);
+  height: var(--marker-size, 14px);
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: #ef4444;
+  box-shadow: 0 0 0 5px rgba(239, 68, 68, 0.18), 0 8px 18px rgba(15, 23, 42, 0.25);
+  transform: translate(-50%, -50%);
+}
+
+.visitor-map-marker::after {
+  content: attr(data-count);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.35rem);
+  min-width: 1.35rem;
+  padding: 0.12rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.86);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.visitor-location-scroll {
+  margin-top: 0.75rem;
 }
 
 .country-flag-emoji {
