@@ -338,23 +338,23 @@ Bioinfo/AI</a>
       <h3 data-i18n-key="contact_talk">Fale comigo</h3>
       <p><strong>Skype:</strong> mattoslmp</p>
       <p><strong data-i18n-key="contact_hours_label">Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
-      <p><strong>Email:</strong> <a href="mailto:contact@databiomics.com">contact@databiomics.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
       <div class="contact-actions">
         <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
-        <a class="button ghost" href="mailto:contact@databiomics.com?subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
+        <a class="button ghost" href="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
       </div>
       <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
     </div>
     <div class="contact-card">
       <h3>Envie sua mensagem</h3>
-      <form class="contact-form" action="https://formsubmit.co/contact@databiomics.com" method="post" id="contact-form">
+      <form class="contact-form" action="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" method="post" enctype="text/plain" id="contact-form">
         <label for="contact-full-name">
           <span>Nome completo</span>
-          <input id="contact-full-name" type="text" name="full-name" placeholder="Seu nome completo" required>
+          <input id="contact-full-name" type="text" name="nome" placeholder="Seu nome completo" required>
         </label>
         <label for="contact-email">
           <span>E-mail</span>
-          <input id="contact-email" type="email" name="contact-email" placeholder="nome@instituicao.com" required>
+          <input id="contact-email" type="email" name="email" placeholder="nome@instituicao.com" required>
         </label>
         <label for="contact-subject">
           <span>Assunto do contato</span>
@@ -410,34 +410,20 @@ Bioinfo/AI</a>
           <input type="checkbox" name="privacy_consent_contact" required>
           <span>Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.
         </label>
-        <input type="hidden" name="_subject" value="Novo contato via site - Formulário de triagem">
-        <input type="hidden" name="_captcha" value="false">
         <button class="button primary" type="submit">Enviar mensagem</button>
+        <p class="contact-form-feedback" id="contact-form-feedback" aria-live="polite"></p>
       </form>
     </div>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-block">
-      <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
-      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:contact@databiomics.com">contact@databiomics.com</a></p>
-    </div>
-    <div class="footer-block">
-      <h2 data-i18n-key="visitor_title">Visitante</h2>
+<section id="visitor-dashboard" class="visitor-dashboard-section" aria-labelledby="visitor-dashboard-title" style="margin:2.5rem 0;padding:1rem;border:1px solid rgba(96,165,250,.3);border-radius:22px;background:rgba(15,23,42,.08);">
+  <div class="visitor-dashboard-card">
+      <h2 id="visitor-dashboard-title" data-i18n-key="visitor_title">Visitantes no mundo</h2>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
-      <div class="visitor-quick-overview">
-        <span class="country-flag-chip country-flag-chip-brazil" title="Brasil: 0">
-          <img src="https://flagcdn.com/48x36/br.png" alt="Bandeira do Brasil" loading="lazy">
-          <strong id="visitor-brazil-count" class="country-flag-count">0</strong>
-        </span>
-      </div>
-      <p class="visitor-count">Outros países</p>
-      <div class="visitor-quick-overview">
-        <div id="visitor-flags-strip" class="visitor-flags-strip" aria-label="Bandeiras dos países visitantes"></div>
-      </div>
-      <div class="visitor-extended-details" aria-hidden="true">
+      <p class="visitor-count visitor-map-summary">Brasil: <strong id="visitor-brazil-count">0</strong></p>
+      <div id="visitor-flags-strip" class="visitor-flags-strip visitor-flags-strip-hidden" aria-hidden="true"></div>
+      <div class="visitor-extended-details" aria-hidden="false">
         <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
         <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
         <div class="country-list-scroll">
@@ -450,6 +436,14 @@ Bioinfo/AI</a>
           <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
         </div>
       </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-block">
+      <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
+      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
     </div>
   </div>
 </footer>
@@ -488,8 +482,47 @@ Bioinfo/AI</a>
     whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
   }
 
+  const contactForm = document.getElementById("contact-form");
+  const contactFormFeedback = document.getElementById("contact-form-feedback");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(contactForm);
+      const subjectLabel = contactSubject?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
+      const categoryLabel = contactCategory?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
+      const modalityLabel = modalitySelect && !modalitySelect.disabled && modalitySelect.value
+        ? modalitySelect.selectedOptions[0].textContent.trim()
+        : "Não se aplica";
+
+      const emailBody = [
+        `Nome: ${formData.get("nome")}`,
+        `E-mail: ${formData.get("email")}`,
+        `Assunto: ${subjectLabel}`,
+        `Categoria: ${categoryLabel}`,
+        `Modalidade: ${modalityLabel}`,
+        "",
+        "Mensagem:",
+        formData.get("message")
+      ].join("\n");
+
+      const mailtoUrl = `mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=${encodeURIComponent("Contato via site Databiomics")}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoUrl;
+
+      if (contactFormFeedback) {
+        contactFormFeedback.textContent = "Seu aplicativo de e-mail será aberto para finalizar o envio da mensagem.";
+      }
+    });
+  }
+
   const visitorCountryState = { name: null };
-  const visitorTelemetryState = { total: null, topCountries: [], allCountries: [] };
+  const visitorTelemetryState = { total: null, topCountries: [], allCountries: [], locations: [], currentLocation: null };
   const countNamespace = "databiomicsai-github-io";
 
   const ensureSingleElement = (selector) => {
@@ -500,12 +533,13 @@ Bioinfo/AI</a>
   };
 
   [
-    "#visitor-country",
     "#visitor-count",
-    "#visitor-flags-strip",
     "#visitor-country-list",
     "#visitor-country-list-all",
-    "#visitor-brazil-count"
+    "#visitor-brazil-count",
+    "#visitor-current-location",
+    "#visitor-location-list",
+    "#visitor-map-markers"
   ].forEach(ensureSingleElement);
 
   const visitorI18n = {
@@ -520,7 +554,10 @@ Bioinfo/AI</a>
       allCountriesTitle: "Países visitantes",
       distinctCountriesPrefix: "Países distintos: ",
       distinctCountriesLoading: "Países distintos: carregando...",
-      clockPrefix: "Hora local: "
+      clockPrefix: "Hora local: ",
+      currentLocationLoading: "Localização do visitante: carregando...",
+      currentLocationPrefix: "Localização do visitante: ",
+      noLocationData: "Sem dados por estado/cidade ainda."
     },
     en: {
       loadingCountry: "Loading visitor country...",
@@ -533,7 +570,10 @@ Bioinfo/AI</a>
       allCountriesTitle: "Visitor countries",
       distinctCountriesPrefix: "Distinct countries: ",
       distinctCountriesLoading: "Distinct countries: loading...",
-      clockPrefix: "Local time: "
+      clockPrefix: "Local time: ",
+      currentLocationLoading: "Visitor location: loading...",
+      currentLocationPrefix: "Visitor location: ",
+      noLocationData: "No state/city data yet."
     },
     es: {
       loadingCountry: "Cargando país del visitante...",
@@ -546,14 +586,11 @@ Bioinfo/AI</a>
       allCountriesTitle: "Países visitantes",
       distinctCountriesPrefix: "Países distintos: ",
       distinctCountriesLoading: "Países distintos: cargando...",
-      clockPrefix: "Hora local: "
+      clockPrefix: "Hora local: ",
+      currentLocationLoading: "Ubicación del visitante: cargando...",
+      currentLocationPrefix: "Ubicación del visitante: ",
+      noLocationData: "Aún no hay datos por estado/ciudad."
     }
-  };
-
-  const countryCodeToFlagEmoji = (code) => {
-    const normalized = String(code || "").trim().toUpperCase();
-    if (!/^[A-Z]{2}$/.test(normalized)) return "🏳️";
-    return String.fromCodePoint(...[...normalized].map((char) => 127397 + char.charCodeAt(0)));
   };
 
   const normalizeCountryCode = (code) => {
@@ -575,14 +612,7 @@ Bioinfo/AI</a>
     }
   };
 
-  const updateDistinctCountriesClock = () => {
-    const clockEl = document.getElementById("distinct-countries-clock");
-    if (!clockEl) return;
-    const d = getLangDict();
-    const now = new Date();
-    const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    clockEl.textContent = `${d.clockPrefix}${time}`;
-  };
+  const updateDistinctCountriesClock = () => {};
 
   const getLangDict = () => {
     const lang = localStorage.getItem("siteLang") || "pt";
@@ -605,16 +635,16 @@ Bioinfo/AI</a>
     const providers = [
       async () => {
         const data = await fetchJsonWithTimeout("https://ipapi.co/json/");
-        return { code: data.country_code, name: data.country_name, ip: data.ip };
+        return { code: data.country_code, name: data.country_name, region: data.region, city: data.city, latitude: data.latitude, longitude: data.longitude, ip: data.ip };
       },
       async () => {
         const data = await fetchJsonWithTimeout("https://ipwho.is/");
         if (data && data.success === false) throw new Error("ipwhois failed");
-        return { code: data.country_code, name: data.country, ip: data.ip };
+        return { code: data.country_code, name: data.country, region: data.region, city: data.city, latitude: data.latitude, longitude: data.longitude, ip: data.ip };
       },
       async () => {
-        const data = await fetchJsonWithTimeout("https://ip-api.com/json/?fields=country,countryCode,query");
-        return { code: data.countryCode, name: data.country, ip: data.query };
+        const data = await fetchJsonWithTimeout("https://ip-api.com/json/?fields=country,countryCode,regionName,city,lat,lon,query");
+        return { code: data.countryCode, name: data.country, region: data.regionName, city: data.city, latitude: data.lat, longitude: data.lon, ip: data.query };
       }
     ];
 
@@ -623,7 +653,17 @@ Bioinfo/AI</a>
         const result = await provider();
         const code = String(result.code || "").trim().toUpperCase();
         const name = String(result.name || "").trim();
-        if (code && name) return { code, name, ip: result.ip || null };
+        if (code && name) {
+          return {
+            code,
+            name,
+            region: String(result.region || "").trim(),
+            city: String(result.city || "").trim(),
+            latitude: Number(result.latitude),
+            longitude: Number(result.longitude),
+            ip: result.ip || null
+          };
+        }
       } catch (err) {
         // try next provider
       }
@@ -661,39 +701,35 @@ Bioinfo/AI</a>
     countLabel.textContent = `${d.totalPrefix}${visitorTelemetryState.total}`;
   };
 
+  const pieChartColors = ["#38bdf8", "#22c55e", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316", "#84cc16"];
+
   const renderTopCountries = () => {
     const listEl = document.getElementById("visitor-country-list");
     const allListEl = document.getElementById("visitor-country-list-all");
-    const stripEl = document.getElementById("visitor-flags-strip");
     const brazilCounterEl = document.getElementById("visitor-brazil-count");
     const allCountriesTitleEl = document.getElementById("all-countries-title");
     const distinctCountriesEl = document.getElementById("distinct-countries-count");
-    if (!listEl || !allListEl || !stripEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
+    if (!listEl || !allListEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
     const d = getLangDict();
 
     allCountriesTitleEl.textContent = d.allCountriesTitle;
 
     listEl.innerHTML = "";
     allListEl.innerHTML = "";
-    stripEl.innerHTML = "";
 
     const allCountries = Array.isArray(visitorTelemetryState.allCountries)
       ? visitorTelemetryState.allCountries
       : [];
     const safeAllCountries = allCountries
       .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0);
-    const topCountries = Array.isArray(visitorTelemetryState.topCountries)
-      ? visitorTelemetryState.topCountries
-      : [];
-    const safeTopCountries = topCountries
-      .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0);
+      .filter((row) => row.code && row.value > 0)
+      .sort((a, b) => b.value - a.value);
+
+    pieLegendEl.innerHTML = "";
 
     if (!safeAllCountries.length) {
       listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
       allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
-      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
       brazilCounterEl.textContent = "0";
       distinctCountriesEl.textContent = d.distinctCountriesLoading;
       return;
@@ -701,7 +737,6 @@ Bioinfo/AI</a>
 
     distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
     const brazilRow = safeAllCountries.find((row) => row.code === "BR");
-    const otherCountries = safeAllCountries.filter((row) => row.code !== "BR");
     brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
 
     const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
@@ -709,44 +744,128 @@ Bioinfo/AI</a>
       const countryName = getCountryDisplayName(code);
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
       listEl.appendChild(li);
     });
 
-    otherCountries.slice(0, 20).forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
-      const card = document.createElement("span");
-      card.className = "country-flag-chip";
-      card.title = `${countryName}: ${value}`;
-      card.innerHTML = `
-        <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="Bandeira de ${countryName}" loading="lazy">
-        <span class="country-flag-fallback" aria-hidden="true" hidden>${countryCodeToFlagEmoji(code)}</span>
-        <strong class="country-flag-count">${value}</strong>
-      `;
-      const image = card.querySelector("img");
-      const fallback = card.querySelector(".country-flag-fallback");
-      if (image && fallback) {
-        image.addEventListener("error", () => {
-          image.hidden = true;
-          fallback.hidden = false;
-        });
-        image.addEventListener("load", () => {
-          fallback.hidden = true;
-        });
-      }
-      stripEl.appendChild(card);
-    });
+    // A visualização principal é o mapa mundial; não renderizamos mais o strip legado de bandeiras.
 
-    if (!otherCountries.length) {
-      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
-    }
 
-    safeAllCountries.forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
+    segments.forEach((segment) => {
+      const countryName = getCountryDisplayName(segment.code);
       const li = document.createElement("li");
       li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
+      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
       allListEl.appendChild(li);
+    });
+  };
+
+  const sanitizeLocationPart = (value) => String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "nao-informado";
+
+  const getLocationKey = ({ code, region, city }) => [
+    normalizeCountryCode(code) || "XX",
+    sanitizeLocationPart(region),
+    sanitizeLocationPart(city)
+  ].join("-");
+
+  const hasValidCoordinates = (location) => Number.isFinite(Number(location?.latitude)) && Number.isFinite(Number(location?.longitude));
+
+  const countryMapCoordinates = {
+    BR: [-14.235, -51.925], US: [39.828, -98.579], CA: [56.130, -106.347], MX: [23.634, -102.553],
+    AR: [-38.416, -63.617], CL: [-35.675, -71.543], CO: [4.571, -74.297], PE: [-9.190, -75.015],
+    GB: [55.378, -3.436], IE: [53.142, -7.692], PT: [39.399, -8.224], ES: [40.464, -3.749],
+    FR: [46.228, 2.214], DE: [51.166, 10.452], IT: [41.872, 12.567], NL: [52.132, 5.291],
+    BE: [50.504, 4.469], CH: [46.818, 8.228], SE: [60.128, 18.644], NO: [60.472, 8.469],
+    DK: [56.263, 9.502], FI: [61.924, 25.748], PL: [51.919, 19.145], RU: [61.524, 105.319],
+    IN: [20.594, 78.963], CN: [35.862, 104.195], JP: [36.204, 138.253], KR: [35.908, 127.767],
+    AU: [-25.274, 133.775], NZ: [-40.901, 174.886], ZA: [-30.559, 22.938], NG: [9.082, 8.675],
+    EG: [26.821, 30.802], MA: [31.792, -7.093], KE: [-0.024, 37.906], TR: [38.964, 35.243],
+    IL: [31.047, 34.852], AE: [23.424, 53.848], SA: [23.886, 45.079], SG: [1.352, 103.820]
+  };
+
+  const projectLocationToMap = (latitude, longitude) => ({
+    left: ((Number(longitude) + 180) / 360) * 100,
+    top: ((90 - Number(latitude)) / 180) * 100
+  });
+
+  const formatLocationLabel = (location) => {
+    const city = location?.city || "Cidade não informada";
+    const region = location?.region || "Estado/região não informado";
+    const country = location?.countryName || getCountryDisplayName(location?.countryCode);
+    return `${city} · ${region} · ${country}`;
+  };
+
+  const renderVisitorMap = () => {
+    const currentLocationEl = document.getElementById("visitor-current-location");
+    const locationListEl = document.getElementById("visitor-location-list");
+    const markersEl = document.getElementById("visitor-map-markers");
+    if (!currentLocationEl || !locationListEl || !markersEl) return;
+
+    const d = getLangDict();
+    const locations = Array.isArray(visitorTelemetryState.locations)
+      ? visitorTelemetryState.locations
+          .map((row) => ({ ...row, count: Number(row?.count || 0) }))
+          .filter((row) => row.count > 0)
+          .sort((a, b) => b.count - a.count)
+      : [];
+
+    if (visitorTelemetryState.currentLocation) {
+      currentLocationEl.textContent = `${d.currentLocationPrefix}${formatLocationLabel(visitorTelemetryState.currentLocation)}`;
+    } else {
+      currentLocationEl.textContent = d.currentLocationLoading;
+    }
+
+    locationListEl.innerHTML = "";
+    markersEl.innerHTML = "";
+
+    if (!locations.length) {
+      locationListEl.innerHTML = `<li class="country-row">${d.noLocationData}</li>`;
+    }
+
+    locations.slice(0, 12).forEach((location) => {
+      const li = document.createElement("li");
+      li.className = "country-row";
+      li.innerHTML = `<span>${formatLocationLabel(location)}</span> <strong>${location.count}</strong>`;
+      locationListEl.appendChild(li);
+    });
+
+    const mappedLocations = locations.filter(hasValidCoordinates);
+    const mappedKeys = new Set(mappedLocations.map((location) => String(location.key || location.countryCode || "")));
+    const countryFallbackLocations = (visitorTelemetryState.allCountries || [])
+      .map((row) => ({ code: normalizeCountryCode(row?.code), count: Number(row?.value || 0) }))
+      .filter((row) => row.code && row.count > 0 && countryMapCoordinates[row.code] && !mappedKeys.has(row.code))
+      .map((row) => {
+        const [latitude, longitude] = countryMapCoordinates[row.code];
+        return {
+          key: row.code,
+          countryCode: row.code,
+          countryName: getCountryDisplayName(row.code),
+          city: "Visitantes",
+          region: "Total por país",
+          latitude,
+          longitude,
+          count: row.count
+        };
+      });
+
+    [...mappedLocations, ...countryFallbackLocations]
+      .sort((a, b) => Number(b.count || 0) - Number(a.count || 0))
+      .slice(0, 30)
+      .forEach((location) => {
+      const point = projectLocationToMap(location.latitude, location.longitude);
+      const marker = document.createElement("span");
+      marker.className = "visitor-map-marker";
+      marker.style.left = `${Math.max(0, Math.min(100, point.left))}%`;
+      marker.style.top = `${Math.max(0, Math.min(100, point.top))}%`;
+      marker.style.setProperty("--marker-size", `${Math.max(12, Math.min(28, 10 + Math.sqrt(location.count) * 4))}px`);
+      marker.dataset.count = String(location.count);
+      marker.title = `${formatLocationLabel(location)}: ${location.count}`;
+      markersEl.appendChild(marker);
     });
   };
 
@@ -755,14 +874,15 @@ Bioinfo/AI</a>
   const readLocalTelemetry = () => {
     try {
       const raw = localStorage.getItem(localTelemetryKey);
-      if (!raw) return { total: 0, countries: {} };
+      if (!raw) return { total: 0, countries: {}, locations: {} };
       const data = JSON.parse(raw);
       return {
         total: Number(data.total || 0),
-        countries: data.countries && typeof data.countries === "object" ? data.countries : {}
+        countries: data.countries && typeof data.countries === "object" ? data.countries : {},
+        locations: data.locations && typeof data.locations === "object" ? data.locations : {}
       };
     } catch {
-      return { total: 0, countries: {} };
+      return { total: 0, countries: {}, locations: {} };
     }
   };
 
@@ -909,8 +1029,15 @@ Bioinfo/AI</a>
     applyVisitorCountryLabel();
     applyVisitorTotalLabel();
     renderTopCountries();
+    renderVisitorMap();
 
     const localTelemetry = readLocalTelemetry();
+    const localCountryRows = normalizeCountryRows(localTelemetry.countries || {});
+    visitorTelemetryState.allCountries = localCountryRows;
+    visitorTelemetryState.topCountries = localCountryRows.slice(0, 10);
+    visitorTelemetryState.locations = Object.values(localTelemetry.locations || {});
+    renderTopCountries();
+    renderVisitorMap();
 
     try {
       const remoteTotal = await getRemoteCounter("site-visits");
@@ -927,10 +1054,23 @@ Bioinfo/AI</a>
     applyVisitorTotalLabel();
 
     try {
-      const { code, name, ip } = await getVisitorCountry();
+      const { code, name, region, city, latitude, longitude, ip } = await getVisitorCountry();
       const normalizedCode = normalizeCountryCode(code);
       if (!normalizedCode) throw new Error("Invalid visitor country code");
       visitorCountryState.name = name;
+      const visitorLocationKey = getLocationKey({ code: normalizedCode, region, city });
+      const visitorLocation = {
+        key: visitorLocationKey,
+        countryCode: normalizedCode,
+        countryName: name,
+        region: region || "Estado/região não informado",
+        city: city || "Cidade não informada",
+        latitude,
+        longitude,
+        count: Number(localTelemetry.locations?.[visitorLocationKey]?.count || 0)
+      };
+      visitorTelemetryState.currentLocation = visitorLocation;
+      renderVisitorMap();
 
       const shouldCountVisit = await registerUniqueVisitForDay(ip);
       if (shouldCountVisit) {
@@ -948,6 +1088,20 @@ Bioinfo/AI</a>
           localTelemetry.countries[normalizedCode] = remoteCountry;
           writeLocalTelemetry(localTelemetry);
         }
+
+        const previousLocation = localTelemetry.locations[visitorLocationKey] || visitorLocation;
+        localTelemetry.locations[visitorLocationKey] = {
+          ...previousLocation,
+          ...visitorLocation,
+          count: Number(previousLocation.count || 0) + 1
+        };
+        const remoteLocation = await hitRemoteCounter(`site-visits-location-${visitorLocationKey}`);
+        if (Number.isFinite(remoteLocation)) {
+          localTelemetry.locations[visitorLocationKey].count = Math.max(Number(localTelemetry.locations[visitorLocationKey].count || 0), remoteLocation);
+        }
+        visitorTelemetryState.currentLocation = localTelemetry.locations[visitorLocationKey];
+        visitorTelemetryState.locations = Object.values(localTelemetry.locations);
+        writeLocalTelemetry(localTelemetry);
       } else {
         visitorTelemetryState.total = Number.isFinite(visitorTelemetryState.total) ? visitorTelemetryState.total : localTelemetry.total;
       }
@@ -961,6 +1115,19 @@ Bioinfo/AI</a>
         localTelemetry.countries[normalizedCode] = Math.max(Number(localTelemetry.countries[normalizedCode] || 0), countryTotal);
         writeLocalTelemetry(localTelemetry);
       }
+      const remoteLocationSnapshot = await getRemoteCounter(`site-visits-location-${visitorLocationKey}`);
+      if (Number.isFinite(remoteLocationSnapshot) && remoteLocationSnapshot > 0) {
+        const previousLocation = localTelemetry.locations[visitorLocationKey] || visitorLocation;
+        localTelemetry.locations[visitorLocationKey] = {
+          ...previousLocation,
+          ...visitorLocation,
+          count: Math.max(Number(previousLocation.count || 0), remoteLocationSnapshot)
+        };
+        visitorTelemetryState.currentLocation = localTelemetry.locations[visitorLocationKey];
+        writeLocalTelemetry(localTelemetry);
+      }
+      visitorTelemetryState.locations = Object.values(localTelemetry.locations || {});
+      renderVisitorMap();
     } catch {
       visitorCountryState.name = false;
     }
@@ -985,6 +1152,7 @@ Bioinfo/AI</a>
     applyVisitorCountryLabel();
     applyVisitorTotalLabel();
     renderTopCountries();
+    renderVisitorMap();
     updateDistinctCountriesClock();
   });
 
