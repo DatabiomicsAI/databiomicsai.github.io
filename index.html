@@ -41,7 +41,7 @@ Bioinfo/AI</a>
       <img class="hero-profile-photo" src="{{ '/assets/services/foto_leandro.png' | relative_url }}" alt="Foto de Leandro de Mattos Pereira" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/services/foto_leandro.png';">
       <h2 data-i18n-key="lead_title">Desbloqueie o potencial biotecnologico with Bioinformatica e IA</h2>
       <p class="card-intro" data-i18n-key="lead_intro">Solicite orientação personalizada para seus projetos e equipes.</p>
-      <form class="lead-form" action="https://formsubmit.co/contact@databiomics.com" method="post">
+      <form class="lead-form" action="https://formsubmit.co/info@databiomics.com" method="post">
         <label>
           <span data-i18n-key="lead_full_name">Nome completo</span>
           <input type="text" name="name" data-i18n-placeholder-key="lead_name_ph" placeholder="Seu nome completo" required>
@@ -338,16 +338,23 @@ Bioinfo/AI</a>
       <h3 data-i18n-key="contact_talk">Fale comigo</h3>
       <p><strong>Skype:</strong> mattoslmp</p>
       <p><strong data-i18n-key="contact_hours_label">Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
-      <p><strong>Email:</strong> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
       <div class="contact-actions">
         <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
-        <a class="button ghost" href="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
+        <a class="button ghost" href="mailto:info@databiomics.com?subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
       </div>
       <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
     </div>
     <div class="contact-card">
       <h3>Envie sua mensagem</h3>
-      <form class="contact-form" action="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" method="post" enctype="text/plain" id="contact-form">
+      <form class="contact-form" action="https://formsubmit.co/info@databiomics.com" method="post" id="contact-form">
+        <input type="hidden" name="_subject" value="Novo contato via site Databiomics">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://databiomics.com/#contato">
+        <input type="hidden" id="contact-subject-label" name="assunto_contato_label" value="">
+        <input type="hidden" id="contact-category-label" name="categoria_interesse_label" value="">
+        <input type="hidden" id="contact-modality-label" name="modalidade_treinamento_label" value="Não se aplica">
         <label for="contact-full-name">
           <span>Nome completo</span>
           <input id="contact-full-name" type="text" name="nome" placeholder="Seu nome completo" required>
@@ -484,39 +491,30 @@ Bioinfo/AI</a>
 
   const contactForm = document.getElementById("contact-form");
   const contactFormFeedback = document.getElementById("contact-form-feedback");
+  const contactSubjectLabel = document.getElementById("contact-subject-label");
+  const contactCategoryLabel = document.getElementById("contact-category-label");
+  const contactModalityLabel = document.getElementById("contact-modality-label");
 
   if (contactForm) {
     contactForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-
       if (!contactForm.checkValidity()) {
+        event.preventDefault();
         contactForm.reportValidity();
         return;
       }
 
-      const formData = new FormData(contactForm);
       const subjectLabel = contactSubject?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
       const categoryLabel = contactCategory?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
       const modalityLabel = modalitySelect && !modalitySelect.disabled && modalitySelect.value
         ? modalitySelect.selectedOptions[0].textContent.trim()
         : "Não se aplica";
 
-      const emailBody = [
-        `Nome: ${formData.get("nome")}`,
-        `E-mail: ${formData.get("email")}`,
-        `Assunto: ${subjectLabel}`,
-        `Categoria: ${categoryLabel}`,
-        `Modalidade: ${modalityLabel}`,
-        "",
-        "Mensagem:",
-        formData.get("message")
-      ].join("\n");
-
-      const mailtoUrl = `mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=${encodeURIComponent("Contato via site Databiomics")}&body=${encodeURIComponent(emailBody)}`;
-      window.location.href = mailtoUrl;
+      if (contactSubjectLabel) contactSubjectLabel.value = subjectLabel;
+      if (contactCategoryLabel) contactCategoryLabel.value = categoryLabel;
+      if (contactModalityLabel) contactModalityLabel.value = modalityLabel;
 
       if (contactFormFeedback) {
-        contactFormFeedback.textContent = "Seu aplicativo de e-mail será aberto para finalizar o envio da mensagem.";
+        contactFormFeedback.textContent = "Enviando sua mensagem para info@databiomics.com...";
       }
     });
   }
