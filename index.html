@@ -343,7 +343,7 @@ Bioinfo/AI</a>
         <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
         <a class="button ghost" href="mailto:info@databiomics.com?subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
       </div>
-      <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
+      <p class="contact-note">Use o formulário para enviar sua mensagem diretamente para info@databiomics.com.</p>
     </div>
     <div class="contact-card">
       <h3>Envie sua mensagem</h3>
@@ -513,6 +513,8 @@ Bioinfo/AI</a>
       if (contactCategoryLabel) contactCategoryLabel.value = categoryLabel;
       if (contactModalityLabel) contactModalityLabel.value = modalityLabel;
 
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
       if (contactFormFeedback) {
         contactFormFeedback.textContent = "Enviando sua mensagem para info@databiomics.com...";
       }
