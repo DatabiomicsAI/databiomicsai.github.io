@@ -41,7 +41,7 @@ Bioinfo/AI</a>
       <img class="hero-profile-photo" src="{{ '/assets/services/foto_leandro.png' | relative_url }}" alt="Foto de Leandro de Mattos Pereira" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/services/foto_leandro.png';">
       <h2 data-i18n-key="lead_title">Desbloqueie o potencial biotecnologico with Bioinformatica e IA</h2>
       <p class="card-intro" data-i18n-key="lead_intro">Solicite orientação personalizada para seus projetos e equipes.</p>
-      <form class="lead-form" action="https://formsubmit.co/contact@databiomics.com" method="post">
+      <form class="lead-form" action="https://formsubmit.co/info@databiomics.com" method="post">
         <label>
           <span data-i18n-key="lead_full_name">Nome completo</span>
           <input type="text" name="name" data-i18n-placeholder-key="lead_name_ph" placeholder="Seu nome completo" required>
@@ -338,16 +338,23 @@ Bioinfo/AI</a>
       <h3 data-i18n-key="contact_talk">Fale comigo</h3>
       <p><strong>Skype:</strong> mattoslmp</p>
       <p><strong data-i18n-key="contact_hours_label">Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
-      <p><strong>Email:</strong> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
+      <p><strong>Email:</strong> <span>info@databiomics.com</span></p>
       <div class="contact-actions">
         <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
-        <a class="button ghost" href="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
+        <a class="button ghost" href="#contact-form">Usar formulário</a>
       </div>
-      <p class="contact-note" data-i18n-key="contact_note">Seu atendimento pode ser iniciado por WhatsApp ou e-mail. O número não é exibido na página.</p>
+      <p class="contact-note">Use o formulário para enviar sua mensagem diretamente para info@databiomics.com.</p>
     </div>
     <div class="contact-card">
       <h3>Envie sua mensagem</h3>
-      <form class="contact-form" action="mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=Contato%20via%20site%20Databiomics" method="post" enctype="text/plain" id="contact-form">
+      <form class="contact-form" action="https://formsubmit.co/info@databiomics.com" method="post" id="contact-form">
+        <input type="hidden" name="_subject" value="Novo contato via site Databiomics">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://databiomics.com/#contato">
+        <input type="hidden" id="contact-subject-label" name="assunto_contato_label" value="">
+        <input type="hidden" id="contact-category-label" name="categoria_interesse_label" value="">
+        <input type="hidden" id="contact-modality-label" name="modalidade_treinamento_label" value="Não se aplica">
         <label for="contact-full-name">
           <span>Nome completo</span>
           <input id="contact-full-name" type="text" name="nome" placeholder="Seu nome completo" required>
@@ -417,56 +424,43 @@ Bioinfo/AI</a>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-block">
-      <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
-      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
-    </div>
-    <div class="footer-block">
-      <h2 data-i18n-key="visitor_title">Visitante</h2>
+<section id="visitor-dashboard" class="visitor-dashboard-section" aria-labelledby="visitor-dashboard-title" style="margin:2.5rem 0;padding:1rem;border:1px solid rgba(96,165,250,.3);border-radius:22px;background:rgba(15,23,42,.08);">
+  <div class="visitor-dashboard-card">
+      <h2 id="visitor-dashboard-title" data-i18n-key="visitor_title">Visitantes no mundo</h2>
       <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
-      <div class="visitor-quick-overview">
-        <span class="country-flag-chip country-flag-chip-brazil" title="Brasil: 0">
-          <img src="https://flagcdn.com/48x36/br.png" alt="Bandeira do Brasil" loading="lazy">
-          <strong id="visitor-brazil-count" class="country-flag-count">0</strong>
-        </span>
-      </div>
-      <p class="visitor-count">Outros países</p>
-      <div class="visitor-quick-overview">
-        <div id="visitor-flags-strip" class="visitor-flags-strip" aria-label="Bandeiras dos países visitantes"></div>
-      </div>
-      <div class="visitor-extended-details" aria-hidden="true">
-        <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
-        <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
-        <div class="country-list-scroll">
-          <ul id="visitor-country-list" class="visitor-country-list"></ul>
-        </div>
-        <h3 id="all-countries-title">Países visitantes</h3>
-        <p id="distinct-countries-count" class="visitor-count">Países distintos: carregando...</p>
-        <p id="distinct-countries-clock" class="visitor-count">Hora local: --:--:--</p>
-        <div class="country-list-scroll">
-          <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
-        </div>
-        <div class="visitor-map-panel" aria-labelledby="visitor-map-title">
-          <h3 id="visitor-map-title">Mapa mundial de visitantes</h3>
-          <div class="visitor-world-map" id="visitor-world-map" role="img" aria-label="Mapa mundial com marcadores de visitantes">
-            <svg viewBox="0 0 1000 500" aria-hidden="true" focusable="false">
+      <div class="visitor-map-panel" aria-labelledby="visitor-map-title">
+        <h3 id="visitor-map-title">Mapa mundial de visitantes</h3>
+        <div class="visitor-world-map" id="visitor-world-map" role="img" aria-label="Mapa mundial com marcadores de visitantes" style="position:relative;overflow:hidden;width:100%;min-height:220px;border:1px solid rgba(96,165,250,.35);border-radius:18px;background:linear-gradient(135deg,rgba(14,165,233,.16),rgba(15,23,42,.08));">
+          <svg viewBox="0 0 1000 500" aria-hidden="true" focusable="false">
               <rect width="1000" height="500" rx="24"></rect>
               <path d="M150 120c55-45 140-45 195-8 37 25 20 72-31 80-38 6-42 46-18 73 32 36 5 91-55 91-84 0-153-66-164-143-6-43 18-72 73-93Z"></path>
               <path d="M280 294c35-15 79 9 92 46 18 51-8 114-55 143-41-33-61-92-48-141 5-19 2-31 11-48Z"></path>
               <path d="M455 110c42-29 92-35 146-21 28 7 55 8 88 1 67-15 142 16 173 70-64 12-104 35-121 70-23 47-74 61-121 37-29-15-58-14-88 3-47 26-98 10-117-38-20-50-6-94 40-122Z"></path>
               <path d="M545 287c58-17 129 11 153 69 20 48-2 96-49 116-36-31-62-50-92-67-41-24-55-73-12-118Z"></path>
               <path d="M770 310c52-25 119-2 149 44-32 42-91 54-143 29-35-17-38-51-6-73Z"></path>
-            </svg>
-            <div class="visitor-map-markers" id="visitor-map-markers"></div>
-          </div>
-          <p class="visitor-count" id="visitor-current-location">Localização do visitante: carregando...</p>
-          <div class="country-list-scroll visitor-location-scroll">
-            <ul id="visitor-location-list" class="visitor-country-list"></ul>
+          </svg>
+          <div class="visitor-map-markers" id="visitor-map-markers"></div>
+        </div>
+        <div class="visitor-country-chart" aria-labelledby="visitor-country-chart-title">
+          <h3 id="visitor-country-chart-title">Visitantes por país</h3>
+          <div class="visitor-pie-chart-row">
+            <div id="visitor-country-pie" class="visitor-country-pie" role="img" aria-label="Gráfico em pizza de visitantes por país" style="width:min(140px,38vw);aspect-ratio:1;border-radius:999px;background:conic-gradient(#64748b 0 100%);"></div>
+            <ul id="visitor-country-pie-legend" class="visitor-country-pie-legend"><li>Carregando contagem por país...</li></ul>
           </div>
         </div>
+        <p class="visitor-count" id="visitor-current-location">Localização do visitante: carregando...</p>
+        <div class="country-list-scroll visitor-location-scroll">
+          <ul id="visitor-location-list" class="visitor-country-list"></ul>
+        </div>
       </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-block">
+      <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
+      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <span>info@databiomics.com</span></p>
     </div>
   </div>
 </footer>
@@ -507,9 +501,12 @@ Bioinfo/AI</a>
 
   const contactForm = document.getElementById("contact-form");
   const contactFormFeedback = document.getElementById("contact-form-feedback");
+  const contactSubjectLabel = document.getElementById("contact-subject-label");
+  const contactCategoryLabel = document.getElementById("contact-category-label");
+  const contactModalityLabel = document.getElementById("contact-modality-label");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       if (!contactForm.checkValidity()) {
@@ -517,29 +514,43 @@ Bioinfo/AI</a>
         return;
       }
 
-      const formData = new FormData(contactForm);
       const subjectLabel = contactSubject?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
       const categoryLabel = contactCategory?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
       const modalityLabel = modalitySelect && !modalitySelect.disabled && modalitySelect.value
         ? modalitySelect.selectedOptions[0].textContent.trim()
         : "Não se aplica";
 
-      const emailBody = [
-        `Nome: ${formData.get("nome")}`,
-        `E-mail: ${formData.get("email")}`,
-        `Assunto: ${subjectLabel}`,
-        `Categoria: ${categoryLabel}`,
-        `Modalidade: ${modalityLabel}`,
-        "",
-        "Mensagem:",
-        formData.get("message")
-      ].join("\n");
+      if (contactSubjectLabel) contactSubjectLabel.value = subjectLabel;
+      if (contactCategoryLabel) contactCategoryLabel.value = categoryLabel;
+      if (contactModalityLabel) contactModalityLabel.value = modalityLabel;
 
-      const mailtoUrl = `mailto:mattoslmp@gmail.com?cc=info@databiomics.com&subject=${encodeURIComponent("Contato via site Databiomics")}&body=${encodeURIComponent(emailBody)}`;
-      window.location.href = mailtoUrl;
-
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      if (submitButton) submitButton.disabled = true;
       if (contactFormFeedback) {
-        contactFormFeedback.textContent = "Seu aplicativo de e-mail será aberto para finalizar o envio da mensagem.";
+        contactFormFeedback.textContent = "Enviando sua mensagem diretamente para info@databiomics.com...";
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Falha no envio pelo FormSubmit");
+
+        contactForm.reset();
+        toggleTrainingModalityField();
+        if (contactFormFeedback) {
+          contactFormFeedback.textContent = "Mensagem enviada com sucesso para info@databiomics.com.";
+        }
+      } catch (error) {
+        if (contactFormFeedback) {
+          contactFormFeedback.textContent = "Redirecionando para concluir o envio seguro do formulário...";
+        }
+        HTMLFormElement.prototype.submit.call(contactForm);
+      } finally {
+        if (submitButton) submitButton.disabled = false;
       }
     });
   }
@@ -556,12 +567,7 @@ Bioinfo/AI</a>
   };
 
   [
-    "#visitor-country",
     "#visitor-count",
-    "#visitor-flags-strip",
-    "#visitor-country-list",
-    "#visitor-country-list-all",
-    "#visitor-brazil-count",
     "#visitor-current-location",
     "#visitor-location-list",
     "#visitor-map-markers"
@@ -618,12 +624,6 @@ Bioinfo/AI</a>
     }
   };
 
-  const countryCodeToFlagEmoji = (code) => {
-    const normalized = String(code || "").trim().toUpperCase();
-    if (!/^[A-Z]{2}$/.test(normalized)) return "🏳️";
-    return String.fromCodePoint(...[...normalized].map((char) => 127397 + char.charCodeAt(0)));
-  };
-
   const normalizeCountryCode = (code) => {
     const normalized = String(code || "").trim().toUpperCase();
     return /^[A-Z]{2}$/.test(normalized) ? normalized : null;
@@ -643,14 +643,7 @@ Bioinfo/AI</a>
     }
   };
 
-  const updateDistinctCountriesClock = () => {
-    const clockEl = document.getElementById("distinct-countries-clock");
-    if (!clockEl) return;
-    const d = getLangDict();
-    const now = new Date();
-    const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
-    clockEl.textContent = `${d.clockPrefix}${time}`;
-  };
+  const updateDistinctCountriesClock = () => {};
 
   const getLangDict = () => {
     const lang = localStorage.getItem("siteLang") || "pt";
@@ -739,95 +732,59 @@ Bioinfo/AI</a>
     countLabel.textContent = `${d.totalPrefix}${visitorTelemetryState.total}`;
   };
 
+  const pieChartColors = ["#38bdf8", "#22c55e", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316", "#84cc16"];
+
   const renderTopCountries = () => {
-    const listEl = document.getElementById("visitor-country-list");
-    const allListEl = document.getElementById("visitor-country-list-all");
-    const stripEl = document.getElementById("visitor-flags-strip");
-    const brazilCounterEl = document.getElementById("visitor-brazil-count");
-    const allCountriesTitleEl = document.getElementById("all-countries-title");
-    const distinctCountriesEl = document.getElementById("distinct-countries-count");
-    if (!listEl || !allListEl || !stripEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
+    const pieEl = document.getElementById("visitor-country-pie");
+    const pieLegendEl = document.getElementById("visitor-country-pie-legend");
+    if (!pieEl || !pieLegendEl) return;
     const d = getLangDict();
-
-    allCountriesTitleEl.textContent = d.allCountriesTitle;
-
-    listEl.innerHTML = "";
-    allListEl.innerHTML = "";
-    stripEl.innerHTML = "";
 
     const allCountries = Array.isArray(visitorTelemetryState.allCountries)
       ? visitorTelemetryState.allCountries
       : [];
     const safeAllCountries = allCountries
       .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0);
-    const topCountries = Array.isArray(visitorTelemetryState.topCountries)
-      ? visitorTelemetryState.topCountries
-      : [];
-    const safeTopCountries = topCountries
-      .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0);
+      .filter((row) => row.code && row.value > 0)
+      .sort((a, b) => b.value - a.value);
+
+    pieLegendEl.innerHTML = "";
 
     if (!safeAllCountries.length) {
-      listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
-      allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
-      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
-      brazilCounterEl.textContent = "0";
-      distinctCountriesEl.textContent = d.distinctCountriesLoading;
+      pieEl.style.background = "conic-gradient(#64748b 0 100%)";
+      pieEl.setAttribute("aria-label", d.noCountryData);
+      pieLegendEl.innerHTML = `<li>${d.noCountryData}</li>`;
       return;
     }
 
-    distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
-    const brazilRow = safeAllCountries.find((row) => row.code === "BR");
-    const otherCountries = safeAllCountries.filter((row) => row.code !== "BR");
-    brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
-
-    const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
-    rowsForTop.slice(0, 10).forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
-      const li = document.createElement("li");
-      li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
-      listEl.appendChild(li);
+    const total = safeAllCountries.reduce((sum, row) => sum + row.value, 0);
+    let cursor = 0;
+    const segments = safeAllCountries.slice(0, 8).map((row, index) => {
+      const start = cursor;
+      const size = total > 0 ? (row.value / total) * 100 : 0;
+      cursor += size;
+      return {
+        ...row,
+        color: pieChartColors[index % pieChartColors.length],
+        start,
+        end: cursor,
+        percent: size
+      };
     });
 
-    otherCountries.slice(0, 20).forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
-      const card = document.createElement("span");
-      card.className = "country-flag-chip";
-      card.title = `${countryName}: ${value}`;
-      card.innerHTML = `
-        <img src="https://flagcdn.com/48x36/${code.toLowerCase()}.png" alt="Bandeira de ${countryName}" loading="lazy">
-        <span class="country-flag-fallback" aria-hidden="true" hidden>${countryCodeToFlagEmoji(code)}</span>
-        <strong class="country-flag-count">${value}</strong>
-      `;
-      const image = card.querySelector("img");
-      const fallback = card.querySelector(".country-flag-fallback");
-      if (image && fallback) {
-        image.addEventListener("error", () => {
-          image.hidden = true;
-          fallback.hidden = false;
-        });
-        image.addEventListener("load", () => {
-          fallback.hidden = true;
-        });
-      }
-      stripEl.appendChild(card);
-    });
+    pieEl.style.background = `conic-gradient(${segments.map((segment) => `${segment.color} ${segment.start}% ${segment.end}%`).join(", ")})`;
+    pieEl.setAttribute(
+      "aria-label",
+      `Gráfico em pizza com ${total} visitantes distribuídos por ${safeAllCountries.length} países.`
+    );
 
-    if (!otherCountries.length) {
-      stripEl.innerHTML = `<span class="country-flag-empty">${d.noCountryData}</span>`;
-    }
-
-    safeAllCountries.forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
+    segments.forEach((segment) => {
+      const countryName = getCountryDisplayName(segment.code);
       const li = document.createElement("li");
-      li.className = "country-row";
-      li.innerHTML = `<span class="country-flag-emoji" aria-label="Bandeira de ${countryName}">${countryCodeToFlagEmoji(code)}</span> <span>${countryName}</span> <strong>${value}</strong>`;
-      allListEl.appendChild(li);
+      li.innerHTML = `<span class="visitor-pie-swatch" style="--pie-color:${segment.color}"></span><span>${countryName}</span><strong>${segment.value}</strong>`;
+      pieLegendEl.appendChild(li);
     });
   };
-
 
   const sanitizeLocationPart = (value) => String(value || "")
     .normalize("NFD")
@@ -843,6 +800,19 @@ Bioinfo/AI</a>
   ].join("-");
 
   const hasValidCoordinates = (location) => Number.isFinite(Number(location?.latitude)) && Number.isFinite(Number(location?.longitude));
+
+  const countryMapCoordinates = {
+    BR: [-14.235, -51.925], US: [39.828, -98.579], CA: [56.130, -106.347], MX: [23.634, -102.553],
+    AR: [-38.416, -63.617], CL: [-35.675, -71.543], CO: [4.571, -74.297], PE: [-9.190, -75.015],
+    GB: [55.378, -3.436], IE: [53.142, -7.692], PT: [39.399, -8.224], ES: [40.464, -3.749],
+    FR: [46.228, 2.214], DE: [51.166, 10.452], IT: [41.872, 12.567], NL: [52.132, 5.291],
+    BE: [50.504, 4.469], CH: [46.818, 8.228], SE: [60.128, 18.644], NO: [60.472, 8.469],
+    DK: [56.263, 9.502], FI: [61.924, 25.748], PL: [51.919, 19.145], RU: [61.524, 105.319],
+    IN: [20.594, 78.963], CN: [35.862, 104.195], JP: [36.204, 138.253], KR: [35.908, 127.767],
+    AU: [-25.274, 133.775], NZ: [-40.901, 174.886], ZA: [-30.559, 22.938], NG: [9.082, 8.675],
+    EG: [26.821, 30.802], MA: [31.792, -7.093], KE: [-0.024, 37.906], TR: [38.964, 35.243],
+    IL: [31.047, 34.852], AE: [23.424, 53.848], SA: [23.886, 45.079], SG: [1.352, 103.820]
+  };
 
   const projectLocationToMap = (latitude, longitude) => ({
     left: ((Number(longitude) + 180) / 360) * 100,
@@ -881,7 +851,6 @@ Bioinfo/AI</a>
 
     if (!locations.length) {
       locationListEl.innerHTML = `<li class="country-row">${d.noLocationData}</li>`;
-      return;
     }
 
     locations.slice(0, 12).forEach((location) => {
@@ -891,7 +860,29 @@ Bioinfo/AI</a>
       locationListEl.appendChild(li);
     });
 
-    locations.filter(hasValidCoordinates).slice(0, 20).forEach((location) => {
+    const mappedLocations = locations.filter(hasValidCoordinates);
+    const mappedKeys = new Set(mappedLocations.map((location) => String(location.key || location.countryCode || "")));
+    const countryFallbackLocations = (visitorTelemetryState.allCountries || [])
+      .map((row) => ({ code: normalizeCountryCode(row?.code), count: Number(row?.value || 0) }))
+      .filter((row) => row.code && row.count > 0 && countryMapCoordinates[row.code] && !mappedKeys.has(row.code))
+      .map((row) => {
+        const [latitude, longitude] = countryMapCoordinates[row.code];
+        return {
+          key: row.code,
+          countryCode: row.code,
+          countryName: getCountryDisplayName(row.code),
+          city: "Visitantes",
+          region: "Total por país",
+          latitude,
+          longitude,
+          count: row.count
+        };
+      });
+
+    [...mappedLocations, ...countryFallbackLocations]
+      .sort((a, b) => Number(b.count || 0) - Number(a.count || 0))
+      .slice(0, 30)
+      .forEach((location) => {
       const point = projectLocationToMap(location.latitude, location.longitude);
       const marker = document.createElement("span");
       marker.className = "visitor-map-marker";
@@ -1067,7 +1058,11 @@ Bioinfo/AI</a>
     renderVisitorMap();
 
     const localTelemetry = readLocalTelemetry();
+    const localCountryRows = normalizeCountryRows(localTelemetry.countries || {});
+    visitorTelemetryState.allCountries = localCountryRows;
+    visitorTelemetryState.topCountries = localCountryRows.slice(0, 10);
     visitorTelemetryState.locations = Object.values(localTelemetry.locations || {});
+    renderTopCountries();
     renderVisitorMap();
 
     try {
