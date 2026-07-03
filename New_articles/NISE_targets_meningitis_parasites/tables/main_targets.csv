@@ -1,0 +1,3 @@
+target_id,organism,enzyme,resource_links,evidence
+NISE-001,Angiostrongylus cantonensis,putative isofunctional enzyme,"KEGG;UniProt;AlphaFoldDB",comparative enzymology candidate
+NISE-002,Taenia solium,metabolic pathway enzyme,"BRENDA;ChEMBL;PDB",host-parasite non-homology screen
