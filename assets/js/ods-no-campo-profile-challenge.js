@@ -315,15 +315,6 @@
     });
   }
 
-  async function loadFirstPassportImage(sources) {
-    const list = Array.isArray(sources) ? sources : [sources];
-    for (const src of list) {
-      const image = await loadPassportImage(src);
-      if (image) return image;
-    }
-    return null;
-  }
-
   function drawContainImage(ctx, image, x, y, w, h) {
     if (!image) return false;
     const scale = Math.min(w / image.width, h / image.height);
@@ -333,26 +324,7 @@
     return true;
   }
 
-  function drawCoverImage(ctx, image, x, y, w, h) {
-    if (!image) return false;
-    const scale = Math.max(w / image.width, h / image.height);
-    const sw = w / scale;
-    const sh = h / scale;
-    const sx = (image.width - sw) / 2;
-    const sy = (image.height - sh) / 2;
-    ctx.drawImage(image, sx, sy, sw, sh, x, y, w, h);
-    return true;
-  }
-
-  const PASSPORT_ARTWORKS = {
-    agro: ['/assets/ods-no-campo/passaportes/passaporte-inovador-agro-sustentavel.png', '/assets/ods-no-campo/passaportes/passaporte-agro.svg'],
-    agua: ['/assets/ods-no-campo/passaportes/passaporte-guardiao-agua.png', '/assets/ods-no-campo/passaportes/passaporte-agua.svg'],
-    biodiversidade: ['/assets/ods-no-campo/passaportes/passaporte-protetor-biodiversidade.png', '/assets/ods-no-campo/passaportes/passaporte-biodiversidade.svg'],
-    clima: ['/assets/ods-no-campo/passaportes/passaporte-estrategista-climatico.png', '/assets/ods-no-campo/passaportes/passaporte-clima.svg'],
-    comunidade: ['/assets/ods-no-campo/passaportes/passaporte-comunidade.png', '/assets/ods-no-campo/passaportes/passaporte-comunidade.svg']
-  };
-
-  function drawPassportArt(ctx, profileId, artworkImage) {
+  function drawPassportArt(ctx, profileId) {
     const themes = {
       agro: { a: '#062c1b', b: '#167545', c: '#d6f36d', sky: '#dff5d1', accent: '#f0c35b' },
       agua: { a: '#052a3f', b: '#087aa1', c: '#9be6ff', sky: '#d7f5ff', accent: '#5cc7df' },
@@ -384,12 +356,7 @@
 
     ctx.save();
     ctx.beginPath(); ctx.roundRect(82, 254, 916, 562, 38); ctx.clip();
-    if (artworkImage) {
-      drawCoverImage(ctx, artworkImage, 82, 254, 916, 562);
-      const fade = ctx.createLinearGradient(82, 254, 82, 816);
-      fade.addColorStop(0, 'rgba(0,0,0,0)'); fade.addColorStop(1, 'rgba(0,0,0,.18)');
-      ctx.fillStyle = fade; ctx.fillRect(82, 254, 916, 562);
-    } else if (profileId === 'agua') {
+    if (profileId === 'agua') {
       ctx.fillStyle = '#c9eef9'; ctx.fillRect(82, 254, 916, 562);
       for (let i = 0; i < 6; i += 1) {
         ctx.beginPath(); ctx.moveTo(82, 620 + i * 30);
@@ -424,11 +391,11 @@
 
   async function downloadPassport(profile, scores) {
     const profileId = getProfileIdByTitle(profile.title);
-    const [databiomicsLogo, companyLogo, artworkImage] = await Promise.all([loadPassportImage('/assets/databiomics-logo.svg'), loadPassportImage('/assets/parceiros/parceiro_wbpereira.jpeg'), loadFirstPassportImage(PASSPORT_ARTWORKS[profileId])]);
+    const [databiomicsLogo, companyLogo] = await Promise.all([loadPassportImage('/assets/databiomics-logo.svg'), loadPassportImage('/assets/parceiros/parceiro_wbpereira.jpeg')]);
     const canvas = document.createElement('canvas');
     canvas.width = 1080; canvas.height = 1920;
     const ctx = canvas.getContext('2d');
-    drawPassportArt(ctx, profileId, artworkImage);
+    drawPassportArt(ctx, profileId);
 
     ctx.textAlign = 'left'; ctx.fillStyle = '#ffffff'; ctx.font = '900 34px Arial'; ctx.fillText('ODS NO CAMPO', 86, 105);
     ctx.fillStyle = '#e9f9df'; ctx.font = '700 24px Arial'; ctx.fillText('PASSAPORTE DE AFINIDADES PARA O FUTURO SUSTENTÁVEL', 86, 148);
