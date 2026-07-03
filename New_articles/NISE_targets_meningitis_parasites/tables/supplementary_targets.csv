@@ -1,0 +1,3 @@
+table,description,file
+S1,prioritized candidates,main_targets.csv
+S2,FASTA sequences,nise_candidate_targets.fasta
