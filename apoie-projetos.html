@@ -226,8 +226,18 @@ Bioinfo/AI</a>
       <option>Colaboração técnica especializada</option>
       <option>Investimento estratégico</option>
       <option>Proposta de cooperação de longo prazo</option>
+      <option>Doação voluntária via Pix</option>
       <option>Contribuição voluntária para projeto específico</option>
     </select>
+
+    <div id="ap-pix-doacao" class="support-pix-box" data-donation-pix hidden>
+      <strong>Chave Pix para doação voluntária</strong>
+      <p>Se você deseja fazer uma doação espontânea para apoiar as iniciativas e projetos da Databiomics®, utilize a chave Pix abaixo:</p>
+      <div class="support-pix-key" aria-label="Chave Pix para doação">mattoslmp@gmail.com</div>
+      <button class="button ghost support-pix-copy" type="button" data-copy-pix="mattoslmp@gmail.com">Copiar chave Pix</button>
+      <small>Após a doação, se desejar, informe o valor, a data e a referência da transação nos campos abaixo para facilitar o registro e a organização interna.</small>
+      <input type="hidden" name="chave_pix_doacao" value="mattoslmp@gmail.com">
+    </div>
 
     <label for="ap-projeto">Projeto ou frente de interesse*</label>
     <select id="ap-projeto" name="projeto_interesse" required>
@@ -258,6 +268,34 @@ Bioinfo/AI</a>
     <button class="button primary" type="submit">Submeter proposta para análise institucional</button>
   </form>
 </section>
+
+<script>
+(() => {
+  const select = document.getElementById('ap-tipo-contato');
+  const pixBox = document.querySelector('[data-donation-pix]');
+  const copyButton = document.querySelector('[data-copy-pix]');
+  if (!select || !pixBox) return;
+
+  const donationPattern = /(doa[cç][aã]o|doacao|pix|contribui[cç][aã]o volunt[aá]ria)/i;
+  const updatePixVisibility = () => {
+    const selectedText = select.options[select.selectedIndex]?.textContent || '';
+    pixBox.hidden = !donationPattern.test(selectedText);
+  };
+
+  select.addEventListener('change', updatePixVisibility);
+  updatePixVisibility();
+
+  copyButton?.addEventListener('click', async () => {
+    const pixKey = copyButton.dataset.copyPix || '';
+    if (!pixKey) return;
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(pixKey);
+      copyButton.textContent = 'Chave Pix copiada';
+      window.setTimeout(() => { copyButton.textContent = 'Copiar chave Pix'; }, 2200);
+    }
+  });
+})();
+</script>
 
 <section class="section alt" id="projetos-andamento">
   <div class="section-heading compact">
