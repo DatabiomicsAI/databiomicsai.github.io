@@ -1,0 +1,4 @@
+EC,enzyme_name,FASTA,KEGG,BRENDA
+2.7.4.9,dTMP kinase,fasta/EC_2_7_4_9.fasta,https://www.genome.jp/entry/ec:2.7.4.9,https://www.brenda-enzymes.org/enzyme.php?ecno=2.7.4.9
+3.5.4.4,Adenosine deaminase,release package,https://www.genome.jp/entry/ec:3.5.4.4,https://www.brenda-enzymes.org/enzyme.php?ecno=3.5.4.4
+4.4.1.1,Cystathionine gamma-lyase,release package,https://www.genome.jp/entry/ec:4.4.1.1,https://www.brenda-enzymes.org/enzyme.php?ecno=4.4.1.1
