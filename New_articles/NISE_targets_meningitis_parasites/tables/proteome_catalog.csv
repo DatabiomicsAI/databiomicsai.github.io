@@ -1,0 +1,8 @@
+dataset,organism,project_or_assembly,local_fasta_file,source
+aac,Angiostrongylus cantonensis,PRJEB493 / WBPS2,angiostrongylus_cantonensis.PRJEB493.WBPS2.protein_60.fa,WormBase ParaSite
+anc,Angiostrongylus cantonensis transcriptome,PubMed 33729108,unica_more_60_cd-hit.fasta,PubMed/translated transcriptome
+ecg,Echinococcus granulosus,GCA_000469785.1,GCA_000469785.1_EGRAN001_protein_Echinococus_gran.faa_60.faa,NCBI Assembly
+ecm,Echinococcus multilocularis,GCA_000469725.2,GCA_000469725.2_ASM46972v2_protein_Echinococcus_multilocularis_60.faa,NCBI Assembly
+tas,Taenia solium,PRJNA170813 / WBPS3,taenia_solium.PRJNA170813.WBPS3.protein.fa_60.fa,WormBase ParaSite
+onv,Onchocerca volvulus,PRJEB513 / WBPS3,onchocerca_volvulus.PRJEB513.WBPS3.protein_60.fa,WormBase ParaSite
+tox,Toxocara canis,GCA_000803305.1,GCA_000803305.1_Toxocara_canis_adult_r1.0_protein_60.faa,NCBI Assembly
