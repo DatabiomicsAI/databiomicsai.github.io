@@ -3,14 +3,14 @@
     "title": "Non-homologous isofunctional enzyme candidates in neurologically relevant helminths",
     "slug": "NISE_targets_meningitis_parasites",
     "authors": "Leandro de Mattos Pereira, Carlos Graeff-Teixeira and Alessandra Loureiro Morassutti",
-    "status": "Database resource / manuscript in preparation",
-    "summary": "An AnEnPi-derived comparative enzymology resource for identifying non-homologous isofunctional enzyme candidates in neurologically relevant helminths.",
-    "tags": ["NISE", "AnEnPi", "helminths", "drug targets", "bioinformatics", "comparative genomics"],
+    "status": "Public research resource",
+    "summary": "An AnEnPi-derived comparative enzymology resource with NISE candidates, parasite-specific EC hypotheses, FASTA-linked tables and public supplementary files.",
+    "tags": ["NISE", "AnEnPi", "helminths", "bioinformatics", "comparative genomics"],
     "project_url": "/New_articles/NISE_targets_meningitis_parasites/",
     "repository_url": "https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites",
-    "article_pdf": "/New_articles/NISE_targets_meningitis_parasites/article/Non_homologous_isofunctional_enzyme_candidates_in_neurologically_relevant_helminths_ParasitesVectors.pdf",
+    "article_pdf": "/New_articles/NISE_targets_meningitis_parasites/article/README.md",
     "tables_url": "/New_articles/NISE_targets_meningitis_parasites/tables/",
     "fasta_url": "/New_articles/NISE_targets_meningitis_parasites/fasta/",
-    "updated_at": "2026-07-03"
+    "updated_at": "2026-07-04"
   }
 ]
