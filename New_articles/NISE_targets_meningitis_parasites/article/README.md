@@ -1,5 +1,15 @@
-# Article binary assets
+# Manuscript files
 
-The PDF and DOCX manuscript files are represented as Git LFS pointer placeholders in this branch so the pull request remains reviewable and does not trigger GitHub binary preview errors.
+Official article title:
 
-Before production publication, replace these pointers with the final PDF and DOCX through Git LFS or upload the final files directly to the published repository/release assets while keeping the same relative filenames used by the site.
+**Non-homologous isofunctional enzyme candidates in neurologically relevant helminths**
+
+Correct public page:
+
+https://databiomics.com/New_articles/NISE_targets_meningitis_parasites/
+
+Repository:
+
+https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites
+
+The final DOCX/PDF manuscript files are included in the downloadable release package prepared for this project. Upload the DOCX/PDF assets through Git LFS or direct GitHub upload to keep the relative links stable on this page.
