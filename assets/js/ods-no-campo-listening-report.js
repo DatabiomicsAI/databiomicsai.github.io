@@ -146,7 +146,7 @@
   function reportMarkup() {
     return `
       <div class="ods-listening-report-head">
-        <div><span class="ods-kicker">Devolutiva pública da extensão</span><h2>Relatório em tempo real da escuta</h2><p class="ods-listening-report-intro">Este painel apresenta somente resultados quantitativos e agrupados das contribuições recebidas. Ele mostra quais desafios, ODS, formatos de conteúdo e aplicações de ciência e tecnologia foram mais indicados pela comunidade.</p></div>
+        <div><span class="ods-kicker">Devolutiva pública da iniciativa</span><h2>Relatório em tempo real da escuta</h2><p class="ods-listening-report-intro">Este painel apresenta somente resultados quantitativos e agrupados das contribuições recebidas. Ele mostra quais desafios, ODS, formatos de conteúdo e aplicações de ciência e tecnologia foram mais indicados pela comunidade.</p></div>
         <div class="ods-listening-live">Atualização automática</div>
       </div>
       <div class="ods-listening-metrics">

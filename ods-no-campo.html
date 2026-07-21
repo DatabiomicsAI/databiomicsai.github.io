@@ -153,7 +153,7 @@ lang: pt-BR
         <span class="ods-time">⏱️ Aproximadamente 2 minutos</span>
         <h2 id="escuta-title">Convite à comunidade</h2>
         <p>Marque as situações que você já observou ou considera importantes em Itaperuna e no Noroeste Fluminense. Não é necessário escrever um texto.</p>
-        <ol><li>Escolha seu perfil geral.</li><li>Marque quantas opções desejar.</li><li>Envie sem informar nome, telefone ou e-mail.</li><li>Consulte depois a devolutiva agregada da ação.</li></ol>
+        <ol><li>Escolha seu perfil geral.</li><li>Marque quantas opções desejar.</li><li>Envie sem informar nome, telefone ou e-mail.</li><li>Consulte depois a devolutiva agregada da iniciativa.</li></ol>
         <p><strong>Escuta aberta até 23 de junho de 2026, às 23h59.</strong> Depois disso, a página permanecerá disponível como material educativo.</p>
       </aside>
 
@@ -259,7 +259,7 @@ lang: pt-BR
         var correct=button.dataset.answer===question.dataset.correct;
         button.classList.add(correct?'correct':'wrong');
         var feedback=question.querySelector('.ods-feedback');
-        feedback.textContent=correct?'Correto! Você entendeu o ponto principal.':'Ainda não. Tente outra opção — a resposta ajuda a entender o propósito da ação.';
+        feedback.textContent=correct?'Correto! Você entendeu o ponto principal.':'Ainda não. Tente outra opção — a resposta ajuda a entender o propósito da iniciativa.';
       });
     });
   });
@@ -297,7 +297,7 @@ lang: pt-BR
     if(thanks){
       var message=document.createElement('div');
       message.className='ods-not-box';
-      message.innerHTML='<strong>Obrigado pela participação!</strong> Sua contribuição foi encaminhada e será considerada na síntese agregada da ação.';
+      message.innerHTML='<strong>Obrigado pela participação!</strong> Sua contribuição foi encaminhada e será considerada na síntese agregada da iniciativa.';
       thanks.insertBefore(message,thanks.firstChild);
     }
   }

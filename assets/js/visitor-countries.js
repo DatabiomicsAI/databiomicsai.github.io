@@ -17,12 +17,12 @@
 
     if (!document.querySelector('script[data-ods-enhancements]')) {
       const enhancements = document.createElement('script');
-      enhancements.src = '/assets/js/ods-no-campo-enhancements.js?v=20260623-4';
+      enhancements.src = '/assets/js/ods-no-campo-enhancements.js?v=20260721-2';
       enhancements.setAttribute('data-ods-enhancements', 'true');
       enhancements.addEventListener('load', () => {
         if (document.querySelector('script[data-ods-flow-fixes]')) return;
         const flowFixes = document.createElement('script');
-        flowFixes.src = '/assets/js/ods-no-campo-flow-fixes.js?v=20260623-4';
+        flowFixes.src = '/assets/js/ods-no-campo-flow-fixes.js?v=20260721-2';
         flowFixes.setAttribute('data-ods-flow-fixes', 'true');
         document.head.appendChild(flowFixes);
       });

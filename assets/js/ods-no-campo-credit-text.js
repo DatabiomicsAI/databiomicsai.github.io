@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var text = (item.textContent || '').replace(/\s+/g, ' ').trim();
 
         if (text.indexOf('Finalidade:') === 0) {
-          var purpose = '<strong>Finalidade:</strong> compreender percepções da comunidade, avaliar o alcance e a inclusão da ação, produzir sínteses agregadas, materiais educativos e o relatório da atividade extensionista. Caso a participação alcance volume e diversidade suficientes, poderá também ser elaborada uma síntese técnica, agregada e anonimizada para eventual encaminhamento a órgãos públicos, conselhos, instituições de pesquisa, entidades representativas e outras instituições competentes, exclusivamente como subsídio informativo ao planejamento e ao possível aprimoramento de políticas públicas relacionadas aos temas identificados.';
+          var purpose = '<strong>Finalidade:</strong> compreender percepções da comunidade, avaliar o alcance e a inclusão da ação, produzir sínteses agregadas, materiais educativos e relatórios da iniciativa. Caso a participação alcance volume e diversidade suficientes, poderá também ser elaborada uma síntese técnica, agregada e anonimizada para eventual encaminhamento a órgãos públicos, conselhos, instituições de pesquisa, entidades representativas e outras instituições competentes, exclusivamente como subsídio informativo ao planejamento e ao possível aprimoramento de políticas públicas relacionadas aos temas identificados.';
           if (item.innerHTML !== purpose) item.innerHTML = purpose;
         }
 
         if (text.indexOf('Compartilhamento:') === 0) {
-          var sharing = '<strong>Compartilhamento e serviço de transmissão:</strong> as respostas individuais são transmitidas pelo serviço externo FormSubmit ao e-mail da atividade, exclusivamente para recebimento, organização e avaliação da ação. Esse serviço processa os dados necessários ao encaminhamento da mensagem, conforme sua própria <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">política de privacidade</a>. As respostas não serão vendidas, publicadas individualmente nem encaminhadas a autoridades, partidos, candidatos, empresas ou outras instituições. Eventual divulgação pública ou contribuição institucional utilizará somente resultados estatísticos agregados e anonimizados, sem nomes, contatos, comentários individualizados, dados sensíveis, microdados, respostas individuais ou combinações que permitam identificar ou reidentificar participantes.';
+          var sharing = '<strong>Compartilhamento e serviço de transmissão:</strong> as respostas individuais são transmitidas pelo serviço externo FormSubmit ao e-mail da iniciativa, exclusivamente para recebimento, organização e avaliação da iniciativa. Esse serviço processa os dados necessários ao encaminhamento da mensagem, conforme sua própria <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">política de privacidade</a>. As respostas não serão vendidas, publicadas individualmente nem encaminhadas a autoridades, partidos, candidatos, empresas ou outras instituições. Eventual divulgação pública ou contribuição institucional utilizará somente resultados estatísticos agregados e anonimizados, sem nomes, contatos, comentários individualizados, dados sensíveis, microdados, respostas individuais ou combinações que permitam identificar ou reidentificar participantes.';
           if (item.innerHTML !== sharing) item.innerHTML = sharing;
         }
       });
@@ -34,20 +34,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var consent = document.querySelector('#ods-listening-form input[name="consentimento"]');
     var consentText = consent && consent.closest('label') ? consent.closest('label').querySelector('span') : null;
     if (consentText) {
-      var consentHtml = 'Li o aviso de privacidade e <strong>consinto livremente</strong> com o envio das respostas por meio do FormSubmit e com seu tratamento para as finalidades acadêmicas, educativas e de eventual contribuição institucional descritas nesta página. Sei que posso participar sem informar nome, bairro, faixa etária ou identidade de gênero. Nenhum dado pessoal ou resposta individual será divulgado publicamente ou incluído em encaminhamentos a instituições externas.';
+      var consentHtml = 'Li o aviso de privacidade e <strong>consinto livremente</strong> com o envio das respostas por meio do FormSubmit e com seu tratamento para as finalidades educativas, participativas e de eventual contribuição institucional descritas nesta página. Sei que posso participar sem informar nome, bairro, faixa etária ou identidade de gênero. Nenhum dado pessoal ou resposta individual será divulgado publicamente ou incluído em encaminhamentos a instituições externas.';
       if (consentText.innerHTML !== consentHtml) consentText.innerHTML = consentHtml;
     }
 
     var demographicConsent = document.querySelector('#ods-demographic-consent');
     var demographicConsentText = demographicConsent && demographicConsent.closest('label') ? demographicConsent.closest('label').querySelector('span') : null;
     if (demographicConsentText) {
-      var demographicHtml = 'Se eu preencher nome, bairro, faixa etária ou identidade de gênero, autorizo o envio dessas informações pelo FormSubmit e seu uso exclusivamente para análise agregada do alcance e da inclusão desta ação, conforme o aviso de privacidade. Esses dados não serão publicados individualmente nem incluídos em encaminhamentos institucionais.';
+      var demographicHtml = 'Se eu preencher nome, bairro, faixa etária ou identidade de gênero, autorizo o envio dessas informações pelo FormSubmit e seu uso exclusivamente para análise agregada do alcance e da inclusão desta iniciativa, conforme o aviso de privacidade. Esses dados não serão publicados individualmente nem incluídos em encaminhamentos institucionais.';
       if (demographicConsentText.innerHTML !== demographicHtml) demographicConsentText.innerHTML = demographicHtml;
     }
 
     var submitNote = document.querySelector('#ods-listening-form .ods-listening-submit-note');
     if (submitNote) {
-      var submitHtml = '<strong>Transparência:</strong> o relatório público contabiliza somente categorias agregadas — perfil geral, temas marcados, ODS prioritários, formatos de conteúdo, áreas de ciência e município agrupado. As respostas detalhadas são transmitidas pelo FormSubmit apenas ao e-mail da atividade. Nome, bairro, identidade de gênero, comentários, textos livres, microdados e respostas individuais não são publicados nem incluídos em encaminhamentos a instituições externas.';
+      var submitHtml = '<strong>Transparência:</strong> o relatório público contabiliza somente categorias agregadas — perfil geral, temas marcados, ODS prioritários, formatos de conteúdo, áreas de ciência e município agrupado. As respostas detalhadas são transmitidas pelo FormSubmit apenas ao e-mail da iniciativa. Nome, bairro, identidade de gênero, comentários, textos livres, microdados e respostas individuais não são publicados nem incluídos em encaminhamentos a instituições externas.';
       if (submitNote.innerHTML !== submitHtml) submitNote.innerHTML = submitHtml;
     }
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
       notes.forEach(function (paragraph) {
         var text = (paragraph.textContent || '').replace(/\s+/g, ' ').trim();
         if (text.indexOf('Ao enviar, o serviço FormSubmit') === 0) {
-          var formSubmitHtml = 'Ao enviar, o serviço externo <strong>FormSubmit</strong> transmitirá as respostas ao e-mail da atividade. Nome, bairro, faixa etária, identidade de gênero e comentários são opcionais; telefone e e-mail do participante não são solicitados. Consulte a <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">política de privacidade do FormSubmit</a> e o aviso de privacidade desta página.';
+          var formSubmitHtml = 'Ao enviar, o serviço externo <strong>FormSubmit</strong> transmitirá as respostas ao e-mail da iniciativa. Nome, bairro, faixa etária, identidade de gênero e comentários são opcionais; telefone e e-mail do participante não são solicitados. Consulte a <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">política de privacidade do FormSubmit</a> e o aviso de privacidade desta página.';
           if (paragraph.innerHTML !== formSubmitHtml) paragraph.innerHTML = formSubmitHtml;
         }
       });

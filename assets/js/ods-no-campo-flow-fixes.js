@@ -86,9 +86,9 @@
             <div>
               <span class="ods-kicker">Agora é a sua vez de participar</span>
               <h2 id="convite-questionario-title">Ajude a identificar os temas que merecem mais informação e atenção na região</h2>
-              <p>Este questionário integra um <strong>projeto de extensão universitária</strong> da disciplina <strong>Atividades Extensionistas I — Desenvolvimento Sustentável</strong>, do curso de Licenciatura em Ciências Biológicas. A proposta da extensão é aproximar universidade e sociedade: o conhecimento apresentado na página é compartilhado com a comunidade, e as respostas da comunidade ajudam a orientar a continuidade da ação.</p>
+              <p>Este questionário integra uma <strong>atividade participativa da Databiomics®</strong> no âmbito da iniciativa ODS no Campo. O conhecimento apresentado na página é compartilhado com a comunidade, e as respostas ajudam a orientar a continuidade da iniciativa.</p>
               <p>Ao participar, você contribui para compreender quais ODS, desafios ambientais e possibilidades de ciência e inovação são percebidos como mais importantes para <strong>Itaperuna, o Noroeste Fluminense e o Estado do Rio de Janeiro</strong>.</p>
-              <p class="ods-extension-note"><strong>Finalidade da escuta:</strong> reunir percepções da comunidade para fins acadêmicos, educativos e participativos. O formulário não solicita identificação de empresa ou propriedade e não avalia situações individuais.</p>
+              <p class="ods-extension-note"><strong>Finalidade da escuta:</strong> reunir percepções da comunidade para fins educativos, participativos e de melhoria da iniciativa Databiomics®. O formulário não solicita identificação de empresa ou propriedade e não avalia situações individuais.</p>
               <a class="ods-button primary" href="#escuta">Responder à escuta inicial</a>
             </div>
             <ul class="ods-questionnaire-cta-list" aria-label="Características do questionário">
@@ -96,7 +96,7 @@
               <li>As perguntas são principalmente de marcar opções.</li>
               <li>Nome, cidade, bairro, faixa etária e identidade de gênero são opcionais.</li>
               <li>Os resultados serão analisados de forma agrupada e sem exposição individual.</li>
-              <li>As respostas poderão orientar novos conteúdos educativos e futuras ações extensionistas.</li>
+              <li>As respostas poderão orientar novos conteúdos educativos e futuras ações participativas da Databiomics®.</li>
             </ul>
           </div>`;
       }
@@ -119,13 +119,13 @@
     if (invite) {
       const heading = invite.querySelector('h2');
       const firstParagraph = invite.querySelector('p:not(.ods-time)');
-      if (heading) heading.textContent = 'Escuta inicial do projeto de extensão';
+      if (heading) heading.textContent = 'Escuta inicial da iniciativa Databiomics®';
       if (firstParagraph) {
-        firstParagraph.textContent = 'Depois de conhecer os ODS nos vídeos e textos da página, marque as situações que você considera mais importantes para Itaperuna, o Noroeste Fluminense e o Estado do Rio de Janeiro. As respostas ajudam a planejar materiais educativos, analisar prioridades percebidas e avaliar o alcance da atividade extensionista.';
+        firstParagraph.textContent = 'Depois de conhecer os ODS nos vídeos e textos da página, marque as situações que você considera mais importantes para Itaperuna, o Noroeste Fluminense e o Estado do Rio de Janeiro. As respostas ajudam a planejar materiais educativos, analisar prioridades percebidas e avaliar o alcance da iniciativa Databiomics®.';
       }
       const extra = document.createElement('p');
       extra.className = 'ods-extension-note';
-      extra.innerHTML = '<strong>Por que responder?</strong> Porque uma ação de extensão deve ouvir a comunidade, e não apenas transmitir conteúdo. Sua participação ajuda a aproximar o conhecimento acadêmico das necessidades e interesses do território.';
+      extra.innerHTML = '<strong>Por que responder?</strong> Porque uma iniciativa participativa deve ouvir a comunidade, e não apenas transmitir conteúdo. Sua participação ajuda a aproximar informação científica aplicada das necessidades e interesses do território.';
       if (!invite.querySelector('.ods-extension-note')) {
         invite.appendChild(extra);
       }
@@ -141,7 +141,7 @@
 
     if (!document.querySelector('script[data-ods-links-profile]')) {
       const script = document.createElement('script');
-      script.src = '/assets/js/ods-no-campo-links-profile.js?v=20260623-5';
+      script.src = '/assets/js/ods-no-campo-links-profile.js?v=20260721-2';
       script.setAttribute('data-ods-links-profile', 'true');
       document.head.appendChild(script);
     }
