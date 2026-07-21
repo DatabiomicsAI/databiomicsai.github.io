@@ -15,7 +15,7 @@
         <div><span class="ods-quiz-kicker">Teste rápido</span><h2 id="quiz-title">Você já entendeu a ideia principal?</h2><p>Marque uma alternativa em cada pergunta. O resultado será mostrado imediatamente após a conclusão.</p></div>
         <div class="ods-quiz-count-badge"><span id="ods-quiz-live-count">—</span> participantes</div>
       </div>
-      <form id="ods-quick-quiz" novalidate>
+      <form id="ods-quick-quiz" action="#ods-quiz-stats" method="POST" novalidate>
         ${store.QUESTIONS.map((q,i)=>`<fieldset class="ods-quiz-question"><legend>${i+1}. ${q.text}</legend><div class="ods-quiz-options">${q.options.map(([value,label])=>`<label class="ods-quiz-option"><input type="radio" name="${q.id}" value="${value}"><span>${label}</span></label>`).join('')}</div></fieldset>`).join('')}
         <fieldset class="ods-quiz-question">
           <legend>Localização para os gráficos agregados</legend>
