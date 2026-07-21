@@ -109,14 +109,14 @@
       const organizationsCard = academicGrid.querySelector('.ods-academic-card');
       if (academicProfile) {
         academicProfile.innerHTML = `
-          <span class="ods-kicker" style="color:#cdeb86">Identificação acadêmica</span>
-          <h2>Atividades Extensionistas I — Desenvolvimento Sustentável</h2>
-          <p>Esta página integra uma ação acadêmica extensionista vinculada ao Centro de Educação, Humanidades, Letras e Artes (CEHLA), aproximando conhecimento universitário, comunidade e contexto regional.</p>
-          <p><strong>Estudante:</strong> Leandro de Mattos Pereira — R.A. nº 450257-2026<br>
-          <strong>Curso atual:</strong> Licenciatura em Ciências Biológicas — 2ª graduação<br>
-          <strong>Instituição:</strong> Centro Universitário Cidade Verde — UniCV</p>
+          <span class="ods-kicker" style="color:#cdeb86">Identificação da iniciativa</span>
+          <h2>ODS no Campo — Desenvolvimento Sustentável</h2>
+          <p>Esta página integra uma iniciativa independente da Databiomics®/WBPereira, aproximando informação científica, educação socioambiental, comunidade e contexto regional.</p>
+          <p><strong>Responsável:</strong> Leandro de Mattos Pereira<br>
+          <strong>Foco:</strong> Objetivos de Desenvolvimento Sustentável aplicados a Itaperuna e ao Noroeste Fluminense<br>
+          <strong>Iniciativa:</strong> Databiomics®/WBPereira</p>
           <div class="ods-profile-credentials">
-            <p><strong>Formação e trajetória científica:</strong> Bacharel em Ciências Biológicas pela Universidade Estadual do Norte Fluminense Darcy Ribeiro (UENF), com ênfase em Biotecnologia; mestre em Biotecnologia e Biociências; doutor em Biologia Computacional e de Sistemas; pesquisador com experiência em bioinformática, genômica, microbioma, biotecnologia e inteligência artificial aplicada às ciências biológicas, além de experiências de pós-doutoramento em instituições de pesquisa no Brasil e em Portugal.</p>
+            <p><strong>Formação e trajetória científica:</strong> Biólogo com ênfase em Biotecnologia, mestre em Biotecnologia e Biociências, doutor em Biologia Computacional e de Sistemas e pesquisador com experiência em bioinformática, genômica, microbioma, biotecnologia e inteligência artificial aplicada às ciências biológicas, além de experiências de pós-doutoramento em centros de pesquisa no Brasil e em Portugal.</p>
           </div>`;
       }
       if (organizationsCard) {
@@ -127,7 +127,7 @@
             <p><strong>Databiomics®</strong><br>Laboratório de Tecnologia da WBPereira, responsável pelo desenvolvimento da página e pelo apoio à organização da informação. A Databiomics® é coordenada por Leandro de Mattos Pereira, que atua atualmente como <strong>sócio-administrador e consultor da WBPereira Comércio e Serviços</strong>.</p>
           </div>
           <p><strong>Contato:</strong> <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
-          <p>A participação das organizações nesta ação tem caráter educativo, tecnológico e extensionista.</p>`;
+          <p>A participação das organizações nesta iniciativa tem caráter educativo, tecnológico, participativo e independente.</p>`;
       }
     }
 

@@ -113,7 +113,7 @@
       demographics.setAttribute('aria-labelledby', 'ods-demographic-title');
       demographics.innerHTML = `
         <h4 id="ods-demographic-title">Informações opcionais sobre quem está participando</h4>
-        <p class="ods-block-help">Esses campos ajudam a avaliar se a ação alcançou públicos e territórios diversos. Você pode deixar todos em branco e responder apenas às perguntas temáticas. Para reduzir a coleta de dados, usamos faixa etária e identidade de gênero, sem solicitar documento, telefone ou endereço completo.</p>
+        <p class="ods-block-help">Esses campos ajudam a avaliar se a iniciativa alcançou públicos e territórios diversos. Você pode deixar todos em branco e responder apenas às perguntas temáticas. Para reduzir a coleta de dados, usamos faixa etária e identidade de gênero, sem solicitar documento, telefone ou endereço completo.</p>
         <div class="ods-mini-grid">
           <div class="ods-mini-field full">
             <label for="ods-nome">Nome ou nome social <small>(opcional)</small></label>
@@ -152,7 +152,7 @@
         <p id="ods-minor-note" class="ods-minor-note">Para proteção de crianças e adolescentes, participantes menores de 18 anos não devem informar nome, bairro ou identidade de gênero e devem participar com ciência de um responsável.</p>
         <label class="ods-consent" style="margin-top:14px">
           <input id="ods-demographic-consent" type="checkbox" name="consentimento_dados_demograficos_opcionais" value="Sim">
-          <span>Se eu preencher nome, bairro, faixa etária ou identidade de gênero, autorizo o uso dessas informações exclusivamente para análise agregada do alcance e da inclusão desta ação, conforme o aviso de privacidade abaixo.</span>
+          <span>Se eu preencher nome, bairro, faixa etária ou identidade de gênero, autorizo o uso dessas informações exclusivamente para análise agregada do alcance e da inclusão desta iniciativa, conforme o aviso de privacidade abaixo.</span>
         </label>
       `;
       localityField.insertAdjacentElement('afterend', demographics);
@@ -221,7 +221,7 @@
 
     const consent = form.querySelector('input[name="consentimento"]')?.closest('label');
     if (consent && !document.getElementById('ods-privacy-panel')) {
-      consent.querySelector('span').innerHTML = 'Li o aviso de privacidade e <strong>consinto livremente</strong> com o tratamento das respostas desta escuta para as finalidades acadêmicas e educativas descritas. Sei que posso participar sem informar nome, bairro, faixa etária ou identidade de gênero.';
+      consent.querySelector('span').innerHTML = 'Li o aviso de privacidade e <strong>consinto livremente</strong> com o tratamento das respostas desta escuta para as finalidades educativas e participativas da iniciativa Databiomics® descritas. Sei que posso participar sem informar nome, bairro, faixa etária ou identidade de gênero.';
 
       const privacy = document.createElement('details');
       privacy.id = 'ods-privacy-panel';
@@ -229,13 +229,13 @@
       privacy.open = true;
       privacy.innerHTML = `
         <summary>Aviso de privacidade e consentimento — LGPD</summary>
-        <p><strong>Responsável pelo tratamento:</strong> Leandro de Mattos Pereira, responsável pela atividade acadêmica, com apoio tecnológico da Databiomics®. Contato para assuntos de dados pessoais: <a href="mailto:contact@databiomics.com">contact@databiomics.com</a>.</p>
+        <p><strong>Responsável pelo tratamento:</strong> Leandro de Mattos Pereira, responsável pela iniciativa Databiomics® ODS no Campo. Contato para assuntos de dados pessoais: <a href="mailto:contact@databiomics.com">contact@databiomics.com</a>.</p>
         <ul>
-          <li><strong>Finalidade:</strong> compreender percepções da comunidade, avaliar alcance e inclusão, produzir sínteses agregadas, materiais educativos e o relatório da atividade extensionista.</li>
+          <li><strong>Finalidade:</strong> compreender percepções da comunidade, avaliar alcance e inclusão, produzir sínteses agregadas, materiais educativos e relatórios da iniciativa.</li>
           <li><strong>Dados tratados:</strong> respostas marcadas e, somente quando o participante desejar, nome ou nome social, cidade, bairro, faixa etária, identidade de gênero e comentário.</li>
           <li><strong>Base legal:</strong> consentimento do titular. O preenchimento é voluntário e os dados opcionais não são necessários para acessar os conteúdos da página.</li>
-          <li><strong>Compartilhamento:</strong> as respostas são encaminhadas pelo serviço FormSubmit ao e-mail da atividade. Não serão vendidas nem divulgadas individualmente. Resultados públicos serão apresentados apenas de forma agregada e anonimizada.</li>
-          <li><strong>Retenção:</strong> informações identificáveis serão mantidas somente durante a consolidação e avaliação da ação, no máximo até 23 de junho de 2027; depois serão eliminadas ou anonimizadas. Sínteses estatísticas sem identificação poderão ser preservadas.</li>
+          <li><strong>Compartilhamento:</strong> as respostas são encaminhadas pelo serviço FormSubmit ao e-mail da iniciativa. Não serão vendidas nem divulgadas individualmente. Resultados públicos serão apresentados apenas de forma agregada e anonimizada.</li>
+          <li><strong>Retenção:</strong> informações identificáveis serão mantidas somente durante a consolidação e avaliação da iniciativa, no máximo até 23 de junho de 2027; depois serão eliminadas ou anonimizadas. Sínteses estatísticas sem identificação poderão ser preservadas.</li>
           <li><strong>Direitos:</strong> você pode solicitar confirmação, acesso, correção, anonimização, eliminação ou revogação do consentimento pelo e-mail indicado. A revogação não afeta tratamentos já realizados de forma legítima.</li>
         </ul>
         <p class="ods-sensitive-note"><strong>Proteção e não discriminação:</strong> identidade de gênero é opcional e será usada somente em análise agregada de alcance e inclusão. Não informe dados de saúde, orientação sexual, religião, opinião política, documentos, endereço completo ou outras informações sensíveis no campo de comentário. Consulte também a <a href="/privacidade/" target="_blank" rel="noopener">Política de Privacidade da Databiomics®</a>.</p>`;

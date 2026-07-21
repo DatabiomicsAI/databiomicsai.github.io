@@ -36,7 +36,7 @@
       emoji: '🤝', title: 'Conector da Comunidade', label: 'Educação e parcerias',
       description: 'Você acredita que mudanças duradouras dependem de educação, cooperação e participação social. Seu perfil valoriza diálogo entre produtores, escolas, empresas, ciência e poder público.',
       ods: ['ODS 4', 'ODS 8', 'ODS 17'],
-      actions: ['Compartilhar conhecimento em linguagem simples e acessível.', 'Aproximar comunidade, instituições de ensino e setores produtivos.', 'Participar de ações coletivas e apoiar decisões baseadas em evidências.']
+      actions: ['Compartilhar conhecimento em linguagem simples e acessível.', 'Aproximar comunidade, centros de pesquisa e setores produtivos.', 'Participar de ações coletivas e apoiar decisões baseadas em evidências.']
     }
   };
 
