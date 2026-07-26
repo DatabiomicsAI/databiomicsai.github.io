@@ -5,15 +5,7 @@
     "authors": "Leandro de Mattos Pereira, Alessandra Morassutti",
     "status": "Atlas pipeline ready — validated release pending",
     "summary": "Interactive cancer data resource for Family-Aware pair and target-family rankings, publication figures, exact source data, controls, bootstrap, cross-cancer validation, independent-method benchmarking and ablation.",
-    "tags": [
-      "cancer",
-      "synthetic lethality",
-      "NISE",
-      "paralogs",
-      "multi-omics",
-      "Family-Aware",
-      "data resource"
-    ],
+    "tags": ["cancer", "synthetic lethality", "NISE", "paralogs", "multi-omics", "Family-Aware", "data resource"],
     "project_url": "/New_articles/rses-onco-family-aware/",
     "repository_url": "https://github.com/mattoslmp/SynLeth-RSES-Onco",
     "article_pdf": "",
@@ -29,22 +21,19 @@
     "title": "Non-homologous isofunctional enzyme candidates in neurologically relevant helminths",
     "slug": "NISE_targets_meningitis_parasites",
     "authors": "Leandro de Mattos Pereira, Carlos Graeff-Teixeira and Alessandra Loureiro Morassutti",
-    "status": "Public research resource",
-    "summary": "An AnEnPi-derived comparative enzymology resource with NISE candidates, parasite-specific EC hypotheses, FASTA-linked tables and public supplementary files.",
-    "tags": [
-      "NISE",
-      "AnEnPi",
-      "helminths",
-      "bioinformatics",
-      "comparative genomics"
-    ],
+    "status": "Complete public atlas — human-marker release",
+    "summary": "Complete AnEnPi-derived comparative enzymology atlas integrating parasite–human NISE analyses, species-orphan EC screening, sequence-level human and non-target counter-screening, lifecycle-aware intervention hypotheses, publication figures, editable tables, FASTA sequences, scripts, environment and validation records.",
+    "tags": ["NISE", "AnEnPi", "helminths", "comparative enzymology", "human counter-screen", "diagnostic markers", "drug-target hypotheses", "reproducible atlas"],
     "project_url": "/New_articles/NISE_targets_meningitis_parasites/",
     "repository_url": "https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites",
-    "article_pdf": "/New_articles/NISE_targets_meningitis_parasites/article/README.md",
-    "tables_url": "/New_articles/NISE_targets_meningitis_parasites/tables/",
-    "fasta_url": "/New_articles/NISE_targets_meningitis_parasites/fasta/",
-    "updated_at": "2026-07-04",
-    "resource_type": "Comparative genomics resource",
-    "featured": false
+    "article_pdf": "/New_articles/NISE_targets_meningitis_parasites/#downloads",
+    "tables_url": "/New_articles/NISE_targets_meningitis_parasites/#downloads",
+    "fasta_url": "/New_articles/NISE_targets_meningitis_parasites/#downloads",
+    "figures_url": "/New_articles/NISE_targets_meningitis_parasites/#figures",
+    "updated_at": "2026-07-26",
+    "release": "NISE-human-marker-complete-20260724",
+    "resource_type": "Comparative enzymology and diagnostic-target atlas",
+    "journal_target": "Parasitology Research",
+    "featured": true
   }
 ]
