@@ -1,39 +1,40 @@
 [
   {
-    "title": "RSES-Onco Family-Aware: a multi-omics atlas of directional cancer vulnerabilities across functional-backup families",
+    "title": "Computational oncology and multi-omics research",
     "slug": "rses-onco-family-aware",
     "authors": "Leandro de Mattos Pereira, Alessandra Morassutti",
-    "status": "Atlas pipeline ready — validated release pending",
-    "summary": "Interactive cancer data resource for Family-Aware pair and target-family rankings, publication figures, exact source data, controls, bootstrap, cross-cancer validation, independent-method benchmarking and ablation.",
-    "tags": ["cancer", "synthetic lethality", "NISE", "paralogs", "multi-omics", "Family-Aware", "data resource"],
+    "status": "Ongoing research — portfolio overview",
+    "summary": "Development of reproducible computational approaches for integrating cancer-related molecular data and supporting research prioritization. Public information is limited to broad capabilities while the study remains unpublished.",
+    "tags": [
+      "computational oncology",
+      "multi-omics",
+      "bioinformatics",
+      "machine learning",
+      "network analysis",
+      "reproducible research"
+    ],
     "project_url": "/New_articles/rses-onco-family-aware/",
-    "repository_url": "https://github.com/mattoslmp/SynLeth-RSES-Onco",
-    "article_pdf": "",
-    "tables_url": "/New_articles/rses-onco-family-aware/#downloads",
-    "figures_url": "/New_articles/rses-onco-family-aware/#figures",
     "updated_at": "2026-07-26",
-    "release": "RSES-Onco-Family-Aware-v2",
-    "resource_type": "Cancer Data Resource",
-    "journal_target": "NAR Cancer",
+    "resource_type": "Computational biology portfolio",
     "featured": true
   },
   {
-    "title": "Non-homologous isofunctional enzyme candidates in neurologically relevant helminths",
+    "title": "Comparative enzymology and pathogen bioinformatics",
     "slug": "NISE_targets_meningitis_parasites",
     "authors": "Leandro de Mattos Pereira, Carlos Graeff-Teixeira and Alessandra Loureiro Morassutti",
-    "status": "Complete public atlas — human-marker release",
-    "summary": "Complete AnEnPi-derived comparative enzymology atlas integrating parasite–human NISE analyses, species-orphan EC screening, sequence-level human and non-target counter-screening, lifecycle-aware intervention hypotheses, publication figures, editable tables, FASTA sequences, scripts, environment and validation records.",
-    "tags": ["NISE", "AnEnPi", "helminths", "comparative enzymology", "human counter-screen", "diagnostic markers", "drug-target hypotheses", "reproducible atlas"],
+    "status": "Ongoing research — portfolio overview",
+    "summary": "Application of comparative bioinformatics to enzyme annotation, protein analysis and reproducible investigation of pathogen biology. Study-specific hypotheses, organisms, candidates and results are not disclosed on this portfolio page.",
+    "tags": [
+      "comparative enzymology",
+      "pathogen bioinformatics",
+      "protein annotation",
+      "sequence analysis",
+      "structural bioinformatics",
+      "workflow automation"
+    ],
     "project_url": "/New_articles/NISE_targets_meningitis_parasites/",
-    "repository_url": "https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites",
-    "article_pdf": "/New_articles/NISE_targets_meningitis_parasites/#downloads",
-    "tables_url": "/New_articles/NISE_targets_meningitis_parasites/#downloads",
-    "fasta_url": "/New_articles/NISE_targets_meningitis_parasites/#downloads",
-    "figures_url": "/New_articles/NISE_targets_meningitis_parasites/#figures",
     "updated_at": "2026-07-26",
-    "release": "NISE-human-marker-complete-20260724",
-    "resource_type": "Comparative enzymology and diagnostic-target atlas",
-    "journal_target": "Parasitology Research",
+    "resource_type": "Bioinformatics portfolio",
     "featured": true
   }
 ]

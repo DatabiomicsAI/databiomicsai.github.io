@@ -1,41 +1,45 @@
 ---
 layout: default
-title: New_articles
+title: Research portfolio
 ---
 <link rel="stylesheet" href="{{ '/New_articles/assets/catalog.css' | relative_url }}">
 <main class="research-catalog">
   <section class="catalog-hero" aria-labelledby="catalog-title">
-    <p class="catalog-eyebrow">Databiomics scientific resources</p>
-    <h1 id="catalog-title">New_articles</h1>
+    <p class="catalog-eyebrow">Databiomics research portfolio</p>
+    <h1 id="catalog-title">Research and development portfolio</h1>
     <p>
-      Public research atlases, reproducible analyses, curated databases,
-      manuscripts and source-linked supplementary resources.
+      Selected areas of work in bioinformatics, computational biology and
+      artificial intelligence. Ongoing studies are presented only at a broad
+      portfolio level; unpublished hypotheses, datasets, results and technical
+      implementation details are intentionally withheld until formal release.
     </p>
     <div class="catalog-meta">
-      <span id="resource-count" aria-live="polite">Loading resources…</span>
+      <span id="resource-count" aria-live="polite">Loading portfolio…</span>
       <a href="{{ '/' | relative_url }}">Databiomics home</a>
     </div>
   </section>
 
-  <section class="catalog-controls" aria-label="Resource filters">
-    <label for="catalog-search">Search resources</label>
+  <section class="catalog-controls" aria-label="Portfolio filters">
+    <label for="catalog-search">Search portfolio</label>
     <input id="catalog-search" type="search"
-      placeholder="Title, author, method, organism or keyword">
-    <label for="catalog-type">Resource type</label>
+      placeholder="Field, method, skill or keyword">
+    <label for="catalog-type">Portfolio area</label>
     <select id="catalog-type">
-      <option value="">All resource types</option>
+      <option value="">All portfolio areas</option>
     </select>
   </section>
 
   <p class="catalog-notice">
-    <strong>Citation and interpretation:</strong>
-    use the citation information supplied on each project page. Ranked
-    computational hypotheses are not clinical recommendations.
+    <strong>Disclosure policy:</strong>
+    ongoing projects are described at a high level only. Detailed methods,
+    datasets, hypotheses, numerical results, figures, protocols and source code
+    will be released after the appropriate preprint, publication, intellectual
+    property review or formal public release.
   </p>
 
   <section id="article-cards" class="catalog-grid" aria-live="polite"></section>
   <noscript>
-    JavaScript is required to load the structured article catalog from
+    JavaScript is required to load the structured research portfolio from
     <code>articles.json</code>.
   </noscript>
 </main>
