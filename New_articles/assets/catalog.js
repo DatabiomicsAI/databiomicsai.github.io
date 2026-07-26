@@ -22,6 +22,26 @@
   const card = (article) => {
     const node = document.createElement('article');
     node.className = `article-card${article.featured ? ' featured' : ''}`;
+
+    const title = document.createElement('h2');
+    if (article.minimal_public_record && article.project_url) {
+      const titleLink = document.createElement('a');
+      titleLink.href = article.project_url;
+      titleLink.textContent = article.title;
+      title.append(titleLink);
+    } else {
+      title.textContent = article.title;
+    }
+
+    const authors = document.createElement('p');
+    authors.className = 'authors';
+    authors.append(document.createTextNode(article.authors || 'Not specified'));
+
+    if (article.minimal_public_record) {
+      node.append(title, authors);
+      return node;
+    }
+
     const topline = document.createElement('div');
     topline.className = 'card-topline';
     const resourceType = document.createElement('span');
@@ -32,12 +52,8 @@
     status.textContent = article.status || 'Public resource';
     topline.append(resourceType, status);
 
-    const title = document.createElement('h2');
-    title.textContent = article.title;
     const summary = document.createElement('p');
     summary.textContent = article.summary || '';
-    const authors = document.createElement('p');
-    authors.className = 'authors';
     authors.innerHTML = '<strong>Authors:</strong> ';
     authors.append(document.createTextNode(article.authors || 'Not specified'));
 
