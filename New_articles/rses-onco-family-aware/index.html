@@ -4,7 +4,7 @@ title: RSES-Onco Family-Aware Atlas
 ---
 <main class="rses-atlas-placeholder">
   <style>
-    .rses-atlas-placeholder{max-width:1180px;margin:0 auto;padding:2.5rem 1.25rem 5rem;color:#102638;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.atlas-hero{padding:clamp(2rem,5vw,4.5rem);border-radius:28px;background:radial-gradient(circle at 85% 15%,rgba(87,211,214,.36),transparent 26%),linear-gradient(135deg,#061b2a,#07475b 55%,#087c84);color:#fff;box-shadow:0 22px 60px rgba(6,45,59,.16)}.atlas-hero h1{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.05;margin:.4rem 0 1rem}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;opacity:.82}.badge{display:inline-flex;padding:.45rem .8rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(255,255,255,.13);font-weight:800}.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.2rem}.button{display:inline-flex;padding:.68rem 1rem;border-radius:999px;background:#fff;color:#063849!important;text-decoration:none!important;font-weight:800}.button.secondary{background:transparent;color:#fff!important;border:1px solid rgba(255,255,255,.5)}.section{padding:3.5rem 0;border-bottom:1px solid #d9e6ec}.section h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:.3rem 0 1.2rem}.abstract{font-size:1.08rem;line-height:1.75}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}.card{padding:1.25rem;border:1px solid #d9e6ec;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(6,45,59,.07)}.notice{padding:1.1rem 1.2rem;border-left:4px solid #087c84;border-radius:14px;background:#f4f9fb}.authors{font-size:1.08rem}.resource-url a{color:#fff}.compact-list li{margin:.45rem 0}@media(max-width:760px){.atlas-hero{border-radius:20px}}
+    .rses-atlas-placeholder{max-width:1180px;margin:0 auto;padding:2.5rem 1.25rem 5rem;color:#102638;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.atlas-hero{padding:clamp(2rem,5vw,4.5rem);border-radius:28px;background:radial-gradient(circle at 85% 15%,rgba(87,211,214,.36),transparent 26%),linear-gradient(135deg,#061b2a,#07475b 55%,#087c84);color:#fff;box-shadow:0 22px 60px rgba(6,45,59,.16)}.atlas-hero h1{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.05;margin:.4rem 0 1rem}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;opacity:.82}.badge{display:inline-flex;padding:.45rem .8rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(255,255,255,.13);font-weight:800}.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.2rem}.button{display:inline-flex;padding:.68rem 1rem;border-radius:999px;background:#fff;color:#063849!important;text-decoration:none!important;font-weight:800}.button.secondary{background:transparent;color:#fff!important;border:1px solid rgba(255,255,255,.5)}.section{padding:3.5rem 0;border-bottom:1px solid #d9e6ec;scroll-margin-top:2rem}.section h2{font-size:clamp(1.8rem,3vw,2.6rem);margin:.3rem 0 1.2rem}.abstract{font-size:1.08rem;line-height:1.75}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}.card{padding:1.25rem;border:1px solid #d9e6ec;border-radius:18px;background:#fff;box-shadow:0 10px 30px rgba(6,45,59,.07)}.notice{padding:1.1rem 1.2rem;border-left:4px solid #087c84;border-radius:14px;background:#f4f9fb}.authors{font-size:1.08rem}.resource-url a{color:#fff}.compact-list li{margin:.45rem 0}.release-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d9e6ec}.release-table th,.release-table td{padding:.75rem;text-align:left;border-bottom:1px solid #d9e6ec}.release-table th{background:#063849;color:#fff}@media(max-width:760px){.atlas-hero{border-radius:20px}}
   </style>
 
   <section class="atlas-hero">
@@ -25,7 +25,7 @@ title: RSES-Onco Family-Aware Atlas
     <p class="abstract">RSES-Onco Family-Aware is an eligibility- and coverage-aware multi-omics resource for prioritizing directional cancer vulnerabilities across non-homologous isofunctional enzymes, paralogs and alternative functional-backup families. The framework integrates tumor events, dependency, selectivity, expression compensation, functional relationships, functional microniche, validation and tractability, and family redundancy and backup architecture while distinguishing measured zero from unavailable, insufficient and non-applicable evidence. Cancer-specific regulatory, WGCNA, promoter-methylation, network, structural and pharmacological layers are linked to auditable pair- and family-level rankings. Source-backed controls, stratified bootstrap, cross-cancer validation, independent-method benchmarking and ablation are reported when estimable and otherwise remain explicitly unavailable. The interactive atlas at https://databiomics.com/New_articles/rses-onco-family-aware/ provides figures, source data, supplementary tables, validation status and reproducibility metadata for experimentally testable hypotheses.</p>
   </section>
 
-  <section class="section">
+  <section class="section" id="figures">
     <p class="eyebrow">Publication companion</p>
     <h2>Planned validated atlas contents</h2>
     <div class="grid">
@@ -36,7 +36,22 @@ title: RSES-Onco Family-Aware Atlas
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="downloads">
+    <p class="eyebrow">Release files</p>
+    <h2>Downloads and availability</h2>
+    <table class="release-table">
+      <thead><tr><th>Asset</th><th>Current state</th></tr></thead>
+      <tbody>
+        <tr><td>Figures 1–10 and exact source data</td><td>Published automatically after validated atlas generation</td></tr>
+        <tr><td>Supplementary Figures S1–S14</td><td>Included when source-backed and estimable</td></tr>
+        <tr><td>Supplementary Tables S1–S15</td><td>Published with checksums after completion gates pass</td></tr>
+        <tr><td>Searchable candidate atlas</td><td>Generated from canonical Family-Aware rankings</td></tr>
+      </tbody>
+    </table>
+    <p class="notice">No provisional numerical download is exposed by this placeholder. The validated pipeline output will replace this section and provide versioned files, source commit and SHA-256 checksums.</p>
+  </section>
+
+  <section class="section" id="status">
     <p class="eyebrow">Release safeguard</p>
     <h2>Current status</h2>
     <p class="notice">This landing page reserves the permanent resource URL and documents the intended scope. It does not publish provisional numerical findings. The analysis pipeline will replace this page only after the atlas has been generated from canonical RSES-Onco Family-Aware outputs and has passed its automated validation and completion gates.</p>
@@ -48,7 +63,7 @@ title: RSES-Onco Family-Aware Atlas
     </ul>
   </section>
 
-  <section class="section">
+  <section class="section" id="citation">
     <p class="eyebrow">Citation</p>
     <h2>How to cite</h2>
     <p>Until the final journal citation and DOI are available, cite the software repository and this permanent resource URL. The validated atlas release will provide a generated citation file and versioned source commit.</p>
