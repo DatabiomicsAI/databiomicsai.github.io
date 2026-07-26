@@ -1,36 +1,56 @@
 ---
 layout: default
-title: NISE targets meningitis parasites atlas
+title: Comparative enzymology and pathogen bioinformatics
 ---
-<main class="nise-atlas">
-<style>
-.nise-atlas{max-width:1240px;margin:auto;padding:2rem 1rem 5rem;color:#102638;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.hero{background:radial-gradient(circle at 88% 12%,rgba(98,230,219,.35),transparent 26%),linear-gradient(135deg,#061321,#12395a 58%,#007f86);color:#fff;border-radius:28px;padding:clamp(2rem,5vw,4.5rem);box-shadow:0 24px 70px rgba(6,45,59,.2)}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:800;opacity:.82}.hero h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.03;margin:.5rem 0 1rem}.hero p{max-width:920px;line-height:1.7}.badges,.actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1rem}.badge{padding:.45rem .75rem;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);font-weight:750}.button{display:inline-flex;padding:.68rem 1rem;border-radius:999px;background:#0b7285;color:#fff!important;text-decoration:none!important;font-weight:800}.button.light{background:#fff;color:#063849!important}.button.outline{background:transparent;border:1px solid rgba(255,255,255,.55)}.section{padding:3.2rem 0;border-bottom:1px solid #dbe7ef;scroll-margin-top:2rem}.section h2{font-size:clamp(1.8rem,3vw,2.65rem);margin:.3rem 0 1rem}.lead{font-size:1.08rem;line-height:1.78}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}.card{border:1px solid #dbe7ef;border-radius:18px;padding:1.15rem;background:#fff;box-shadow:0 10px 30px rgba(6,45,59,.07)}.metric strong{display:block;font-size:2rem;color:#087c84}.notice{padding:1.1rem 1.2rem;border-left:4px solid #087c84;border-radius:12px;background:#f2f8fa;line-height:1.6}.figure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1rem}.figure-card{border:1px solid #dbe7ef;border-radius:18px;padding:1rem;background:#fff}.figure-card img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f7fafb;border-radius:10px}.figure-card h3{font-size:1rem;line-height:1.35}.release-table{width:100%;border-collapse:collapse;background:#fff}.release-table th,.release-table td{padding:.72rem;border-bottom:1px solid #dbe7ef;text-align:left;vertical-align:top}.release-table th{background:#063849;color:#fff}.compact li{margin:.45rem 0}.toolbar{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}.toolbar input{flex:1;min-width:240px;padding:.7rem;border:1px solid #b9ccd6;border-radius:10px}.hidden{display:none}@media(max-width:700px){.hero{border-radius:20px}.release-table{font-size:.88rem}}
-</style>
-<section class="hero">
-<p class="eyebrow">Databiomics · public research atlas · release 2026-07-24</p>
-<h1>Non-homologous isofunctional enzyme candidates in neurologically relevant helminths</h1>
-<p class="lead">A complete, auditable companion resource for the manuscript, integrating AnEnPi-derived EC/NISE analyses, parasite–human counter-screening, diagnostic-marker hypotheses, lifecycle-aware intervention hypotheses, figures, tables, FASTA sequences, scripts, software environment and validation records.</p>
-<p><strong>Authors:</strong> Leandro de Mattos Pereira, Carlos Graeff-Teixeira and Alessandra Loureiro Morassutti.</p>
-<div class="badges"><span class="badge">NISE</span><span class="badge">helminths</span><span class="badge">comparative enzymology</span><span class="badge">human counter-screen</span><span class="badge">diagnostic hypotheses</span><span class="badge">reproducible resource</span></div>
-<div class="actions"><a class="button light" href="#findings">Key findings</a><a class="button light" href="#figures">Figures</a><a class="button light" href="#downloads">Downloads</a><a class="button outline" href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites">GitHub repository</a></div>
-</section>
-<section class="section" id="abstract"><p class="eyebrow">Study overview</p><h2>Abstract and analytical scope</h2><p class="lead">The resource evaluates enzyme activities and candidate non-homologous isofunctional or analogous enzymes across neurologically relevant helminths. EC-specific protein partitions and within-activity sequence comparisons support parasite–parasite and parasite–human analyses. Direct fold-supported parasite–human NISE comparisons cover <em>Angiostrongylus cantonensis</em>, <em>Echinococcus granulosus</em>, <em>E. multilocularis</em>, <em>Taenia solium</em>, <em>Onchocerca volvulus</em> and <em>Toxocara canis</em>. <em>A. costaricensis</em> is retained as a separate comparative layer rather than being inserted into the direct parasite–human NISE matrix.</p></section>
-<section class="section" id="findings"><p class="eyebrow">Human-inclusive marker screen</p><h2>Current release findings</h2><div class="grid"><div class="card metric"><strong>1,412</strong>strict complete EC activities in the supplied human profile</div><div class="card metric"><strong>43</strong>annotation-level species-orphan ECs across the parasite collection</div><div class="card metric"><strong>48</strong>non-redundant candidate sequences evaluated</div><div class="card metric"><strong>16</strong>retained sequences representing 15 ECs within supplied proteomes</div><div class="card metric"><strong>31</strong>sequences rejected for meaningful non-target homology</div><div class="card metric"><strong>1</strong>short <em>O. volvulus</em> sequence retained as pending</div></div><p class="notice"><strong>Interpretation safeguard:</strong> “PASS_WITHIN_PROVIDED_PROTEOMES” is not evidence of global uniqueness or a validated clinical diagnostic marker. External database-wide screening, complete functional/domain reannotation, primer/probe design and laboratory or clinical validation remain necessary.</p></section>
-<section class="section" id="figures"><p class="eyebrow">Publication figures</p><h2>Main atlas figures</h2><div class="toolbar"><input id="figureSearch" type="search" placeholder="Search figure title or topic"></div><div class="figure-grid" id="figureGrid">
-<div class="figure-card" data-key="workflow reproducible ec nise"><img src="figures/workflow.svg" alt="Reproducible EC NISE workflow"><h3>Figure 1 · Reproducible EC/NISE workflow</h3></div>
-<div class="figure-card" data-key="diagnostic intervention hypotheses"><img src="figures/Figure_2_EC_diagnostic_and_CNS_tropism_hypothesis.svg" alt="Diagnostic and intervention hypotheses"><h3>Figure 2 · Diagnostic and intervention hypotheses</h3></div>
-<div class="figure-card" data-key="shared human parasite heatmap"><h3>Figure 3 · Shared human–parasite NISE heatmap</h3><p>Versioned figure and source table are organized in the public repository release.</p></div>
-<div class="figure-card" data-key="parasite specific heatmap"><h3>Figure 4 · Parasite-specific NISE heatmap</h3><p>Versioned figure and source table are organized in the public repository release.</p></div>
-<div class="figure-card" data-key="unique complete ec dataset"><h3>Figure 5 · Unique complete ECs by dataset</h3><p>Versioned figure and source table are organized in the public repository release.</p></div>
-<div class="figure-card" data-key="functional class summary"><h3>Figure 6 · Functional-class summary</h3><p>Versioned figure and source table are organized in the public repository release.</p></div>
-<div class="figure-card" data-key="lifecycle intervention classes"><h3>Figure 7 · Lifecycle-aware intervention classes</h3><p>Versioned figure and source table are organized in the public repository release.</p></div>
-<div class="figure-card" data-key="lifecycle overview species"><h3>Figure 8 · Lifecycle overview and species panels</h3><p>Overview plus individual panels for seven parasite datasets.</p></div>
-<div class="figure-card" data-key="sequence screened orphan markers"><h3>Figure 9 · Sequence-screened orphan-EC markers</h3><p>Human-inclusive candidate filtering with retained, rejected and pending classifications.</p></div>
-</div></section>
-<section class="section" id="downloads"><p class="eyebrow">Versioned release</p><h2>Downloads and reproducibility</h2><table class="release-table"><thead><tr><th>Resource</th><th>Contents</th><th>Access</th></tr></thead><tbody><tr><td>Manuscript package</td><td>Journal and preprint DOCX/PDF versions</td><td><a href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites/tree/main/article">Open</a></td></tr><tr><td>Main tables</td><td>Tables 1–16 in editable CSV format</td><td><a href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites/tree/main/data/processed">Open</a></td></tr><tr><td>Marker-screen outputs</td><td>Species EC presence, sequence validation, best hits, retained and rejected candidates</td><td><a href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites/tree/main/data/processed">Open</a></td></tr><tr><td>FASTA sequences</td><td>All candidates, retained sequences and rejected/pending sequences</td><td><a href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites/tree/main/data/sequences">Open</a></td></tr><tr><td>Scripts and environment</td><td>Reproduction scripts, environment definition, requirements and software versions</td><td><a href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites">Open repository</a></td></tr><tr><td>Checksums and validation</td><td>Manifest, SHA-256 checksums and validation reports</td><td><a href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites">Open repository</a></td></tr></tbody></table><h3>Minimal reproduction command</h3><pre><code>conda env create -f 06_environment/environment.yml
-conda activate nise-targets-final
-bash run_all.sh</code></pre></section>
-<section class="section" id="limitations"><p class="eyebrow">Responsible interpretation</p><h2>Limitations and validation status</h2><ul class="compact"><li>The current marker screen is restricted to the supplied parasite proteomes and human dataset.</li><li>Global nr, UniProtKB and RefSeq sequence-wide confirmation remains incomplete.</li><li>Candidate ECs and proteins are computational hypotheses, not diagnostic tests or approved drug targets.</li><li>Experimental enzymology, structural validation, primer/probe design, analytical validation and clinical validation are outside the current release.</li><li>Missing evidence is retained as missing and is not converted to zero.</li></ul></section>
-<section class="section" id="citation"><p class="eyebrow">Citation</p><h2>How to cite</h2><p>Pereira, L. de M.; Graeff-Teixeira, C.; Morassutti, A. L. <em>Non-homologous isofunctional enzyme candidates in neurologically relevant helminths</em>. Manuscript and Databiomics public research resource, 2026.</p><p><a class="button" href="https://github.com/DatabiomicsAI/NISE_targets_meningitis_parasites">Repository</a> <a class="button" href="mailto:info@databiomics.com">Contact Databiomics</a></p></section>
+<main class="portfolio-page">
+  <style>
+    .portfolio-page{--ink:#102638;--muted:#526979;--line:#d9e6ec;--surface:#ffffff;--soft:#f4f9fb;max-width:1120px;margin:0 auto;padding:2.5rem 1.25rem 5rem;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.portfolio-hero{padding:clamp(2rem,5vw,4.5rem);border-radius:28px;background:radial-gradient(circle at 85% 15%,rgba(87,211,214,.3),transparent 27%),linear-gradient(135deg,#061b2a,#07475b 55%,#087c84);color:#fff;box-shadow:0 22px 60px rgba(6,45,59,.16)}.portfolio-hero h1{font-size:clamp(2.25rem,5vw,4.35rem);line-height:1.05;margin:.45rem 0 1rem}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;font-weight:800;opacity:.82}.badge{display:inline-flex;padding:.45rem .8rem;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(255,255,255,.13);font-weight:800}.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.2rem}.button{display:inline-flex;padding:.68rem 1rem;border-radius:999px;background:#fff;color:#063849!important;text-decoration:none!important;font-weight:800}.section{padding:3.25rem 0;border-bottom:1px solid var(--line);scroll-margin-top:2rem}.section h2{font-size:clamp(1.75rem,3vw,2.5rem);margin:.3rem 0 1.1rem}.lead{font-size:1.08rem;line-height:1.78;color:var(--ink)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:1rem}.card{padding:1.25rem;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:0 10px 30px rgba(6,45,59,.07)}.card p{color:var(--muted);line-height:1.65}.notice{padding:1.1rem 1.2rem;border-left:4px solid #087c84;border-radius:14px;background:var(--soft);line-height:1.7}.authors{font-size:1.05rem}@media(prefers-color-scheme:dark){.portfolio-page{--ink:#e8f3f6;--muted:#bfd0d8;--line:#34505d;--surface:#102a36;--soft:#122f3b}.card{box-shadow:none}}@media(max-width:760px){.portfolio-hero{border-radius:20px}}
+  </style>
+
+  <section class="portfolio-hero">
+    <p class="eyebrow">Databiomics · research portfolio</p>
+    <h1>Comparative enzymology and pathogen bioinformatics</h1>
+    <p class="authors"><strong>Researchers:</strong> Leandro de Mattos Pereira, Carlos Graeff-Teixeira and Alessandra Loureiro Morassutti</p>
+    <p><span class="badge">Ongoing research — limited public description</span></p>
+    <div class="actions">
+      <a class="button" href="{{ '/New_articles/' | relative_url }}">Research portfolio</a>
+    </div>
+  </section>
+
+  <section class="section" id="overview">
+    <p class="eyebrow">Portfolio overview</p>
+    <h2>Area of work</h2>
+    <p class="lead">
+      This project represents ongoing work in comparative enzymology, protein
+      bioinformatics and computational investigation of pathogen biology. The
+      portfolio records the scientific area and technical experience involved,
+      while study-specific organisms, hypotheses, candidate molecules, datasets,
+      numerical results and unpublished conclusions remain undisclosed.
+    </p>
+  </section>
+
+  <section class="section" id="skills">
+    <p class="eyebrow">Methods and skills</p>
+    <h2>Capabilities represented</h2>
+    <div class="grid">
+      <article class="card"><h3>Comparative genomics and proteomics</h3><p>Systematic comparison of genes, proteins and functional annotations across biological datasets.</p></article>
+      <article class="card"><h3>Enzyme annotation</h3><p>Functional classification, evidence organization and quality-aware interpretation of enzymatic activities.</p></article>
+      <article class="card"><h3>Sequence bioinformatics</h3><p>Homology searches, sequence filtering, multiple alignment and comparative protein analysis.</p></article>
+      <article class="card"><h3>Structural bioinformatics</h3><p>Use of structural evidence and protein representations to support comparative biological investigation.</p></article>
+      <article class="card"><h3>Workflow automation</h3><p>Reproducible pipelines, environment definition, provenance, validation and organized scientific outputs.</p></article>
+      <article class="card"><h3>Scientific visualization</h3><p>Publication-oriented workflows for figures, tables and structured computational research resources.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="disclosure">
+    <p class="eyebrow">Disclosure status</p>
+    <h2>Unpublished work</h2>
+    <p class="notice">
+      Detailed biological questions, organism-level comparisons, analytical
+      thresholds, candidate lists, figures, sequences, downloadable tables,
+      validation results, scripts and manuscript materials are intentionally not
+      exposed on this page. They may be released after intellectual property
+      assessment and the appropriate preprint, publication or formal versioned release.
+    </p>
+  </section>
 </main>
-<script>const q=document.getElementById('figureSearch');q&&q.addEventListener('input',()=>{const s=q.value.toLowerCase().trim();document.querySelectorAll('#figureGrid .figure-card').forEach(c=>c.classList.toggle('hidden',s&&!c.dataset.key.includes(s)))})</script>
