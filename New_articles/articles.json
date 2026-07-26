@@ -13,19 +13,17 @@
     "title": "Comparative enzymology and pathogen bioinformatics",
     "slug": "NISE_targets_meningitis_parasites",
     "authors": "Leandro de Mattos Pereira, Carlos Graeff-Teixeira and Alessandra Loureiro Morassutti",
-    "status": "Ongoing research — portfolio overview",
-    "summary": "Application of comparative bioinformatics to enzyme annotation, protein analysis and reproducible investigation of pathogen biology. Study-specific hypotheses, organisms, candidates and results are not disclosed on this portfolio page.",
+    "status": "Manuscript in preparation — public release pending",
+    "summary": "Comparative bioinformatics, enzyme annotation, protein analysis and reproducible workflows. Detailed study content and results will be released after preprint or journal submission.",
     "tags": [
-      "comparative enzymology",
-      "pathogen bioinformatics",
-      "protein annotation",
-      "sequence analysis",
-      "structural bioinformatics",
-      "workflow automation"
+      "comparative bioinformatics",
+      "protein analysis",
+      "enzyme annotation",
+      "reproducible workflows"
     ],
     "project_url": "/New_articles/NISE_targets_meningitis_parasites/",
     "updated_at": "2026-07-26",
-    "resource_type": "Bioinformatics portfolio",
+    "resource_type": "Research portfolio",
     "featured": true
   }
 ]
