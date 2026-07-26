@@ -1,22 +1,13 @@
 [
   {
-    "title": "Computational oncology and multi-omics research",
+    "title": "RSES-Onco Family-Aware",
     "slug": "rses-onco-family-aware",
     "authors": "Leandro de Mattos Pereira, Alessandra Morassutti",
-    "status": "Ongoing research — portfolio overview",
-    "summary": "Development of reproducible computational approaches for integrating cancer-related molecular data and supporting research prioritization. Public information is limited to broad capabilities while the study remains unpublished.",
-    "tags": [
-      "computational oncology",
-      "multi-omics",
-      "bioinformatics",
-      "machine learning",
-      "network analysis",
-      "reproducible research"
-    ],
     "project_url": "/New_articles/rses-onco-family-aware/",
     "updated_at": "2026-07-26",
-    "resource_type": "Computational biology portfolio",
-    "featured": true
+    "resource_type": "Cancer Data Resource",
+    "featured": true,
+    "minimal_public_record": true
   },
   {
     "title": "Comparative enzymology and pathogen bioinformatics",
