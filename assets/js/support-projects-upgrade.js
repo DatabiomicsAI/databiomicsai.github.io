@@ -5,6 +5,9 @@
     if (window.location.pathname.replace(/\/+$/, '') !== '/apoie-projetos') return;
 
     const PIX_KEY = 'mattoslmp@gmail.com';
+    const pageTitle = document.querySelector('.support-projects-title');
+    if (pageTitle) pageTitle.textContent = 'Apoie os projetos da Databiomics®';
+
     const supportSection = document.getElementById('necessidades-apoio');
     const supportHeading = supportSection?.querySelector('.section-heading');
     const supportCard = supportSection?.querySelector('.info-card');
@@ -105,6 +108,8 @@
 
     const projectSelect = form.querySelector('#ap-projeto');
     if (projectSelect) {
+      const projectLabel = projectSelect.previousElementSibling;
+      if (projectLabel?.tagName === 'LABEL') projectLabel.textContent = 'Projeto ou frente apoiada (opcional)';
       projectSelect.innerHTML = `
         <option selected>Apoio geral à Databiomics®</option>
         <option>MonkSeal</option>
