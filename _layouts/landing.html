@@ -119,6 +119,9 @@
 
     <div id="google_translate_element" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"></div>
     <script src="{{ '/assets/js/visitor-countries.js' | relative_url }}"></script>
+    {% if page.permalink == '/apoie-projetos/' %}
+      <script src="{{ '/assets/js/support-projects-upgrade.js' | relative_url }}?v=20260811-1"></script>
+    {% endif %}
     {% if page.permalink == '/ods-no-campo/' %}
       <script src="{{ '/assets/js/ods-no-campo-visitors.js' | relative_url }}?v=20260721-2"></script>
       <script src="{{ '/assets/js/ods-no-campo-credit-text.js' | relative_url }}?v=20260721-2"></script>
@@ -131,7 +134,7 @@
       {%- else -%}
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
       {%- endif %}
-    {%- endif %}
+    {%- endif -%}
     {%- if page.url == "/" -%}
       <div id="site-dev-ribbon" class="site-dev-ribbon" role="note" aria-label="Créditos de desenvolvimento do website" hidden>
         Website desenvolvido por Leandro de Mattos Pereira (Databiomics®).
