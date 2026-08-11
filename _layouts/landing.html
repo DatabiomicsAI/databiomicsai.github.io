@@ -48,7 +48,7 @@
           {% include toggle_theme_button.html %}
         {% endif %}
 
-        {% unless page.permalink == '/parcerias-estrategicas/' or page.permalink == '/apoie-projetos/' or page.permalink == '/ods-no-campo/' %}
+        {% unless page.permalink == '/parcerias-estrategicas/' or page.permalink == '/apoie-projetos/' or page.permalink == '/ods-no-campo/' or page.permalink == '/vaccinesavelifes/' %}
           <section class="global-support-cta" aria-label="Apoio institucional Databiomics">
             <h3>Quer colaborar estrategicamente com a Databiomics?</h3>
             <p>Seja um colaborador no desenvolvimento conjunto de projetos científicos, educacionais e de inovação aplicada, bem como na submissão colaborativa de propostas a editais de pesquisa e fomento. As propostas de colaborações são analisadas com critério técnico e consideradas quando houver alinhamento com a missão científica da Databiomics®, valores, ética, acessibilidade, inovação responsável e potencial de aplicação concreta.</p>
@@ -97,22 +97,48 @@
         outline: 2px solid #b9e85c;
         outline-offset: 3px;
       }
+      .landing-nav .nav-pill-vsl {
+        background: linear-gradient(135deg, #0B2B50, #0e7490);
+        color: #fff;
+        border: 1px solid rgba(73, 185, 232, .72);
+        box-shadow: 0 8px 22px rgba(11, 43, 80, .2);
+      }
+      .landing-nav .nav-pill-vsl:hover,
+      .landing-nav .nav-pill-vsl:focus-visible {
+        background: linear-gradient(135deg, #123d6b, #1591ad);
+        color: #fff;
+      }
+      .landing-nav .nav-pill-vsl[aria-current="page"] {
+        outline: 2px solid #49B9E8;
+        outline-offset: 3px;
+      }
     </style>
     <script>
       (() => {
-        const target = "{{ '/ods-no-campo/' | relative_url }}";
+        const odsTarget = "{{ '/ods-no-campo/' | relative_url }}";
+        const vslTarget = "{{ '/vaccinesavelifes/' | relative_url }}";
+        const normalizedPath = window.location.pathname.replace(/\/+$/, '');
         document.querySelectorAll('.landing-nav').forEach((nav) => {
-          if (nav.querySelector('[data-ods-nav]')) return;
-          const link = document.createElement('a');
-          link.href = target;
-          link.textContent = 'ODS no Campo';
-          link.className = 'nav-pill nav-pill-ods';
-          link.setAttribute('data-ods-nav', 'true');
-          link.setAttribute('aria-label', 'ODS no Campo — iniciativa Databiomics em Itaperuna e no Noroeste Fluminense');
-          if (window.location.pathname.replace(/\/+$/, '') === target.replace(/\/+$/, '')) {
-            link.setAttribute('aria-current', 'page');
+          if (!nav.querySelector('[data-ods-nav]')) {
+            const odsLink = document.createElement('a');
+            odsLink.href = odsTarget;
+            odsLink.textContent = 'ODS no Campo';
+            odsLink.className = 'nav-pill nav-pill-ods';
+            odsLink.setAttribute('data-ods-nav', 'true');
+            odsLink.setAttribute('aria-label', 'ODS no Campo — iniciativa Databiomics em Itaperuna e no Noroeste Fluminense');
+            if (normalizedPath === odsTarget.replace(/\/+$/, '')) odsLink.setAttribute('aria-current', 'page');
+            nav.appendChild(odsLink);
           }
-          nav.appendChild(link);
+          if (!nav.querySelector('[data-vsl-nav]')) {
+            const vslLink = document.createElement('a');
+            vslLink.href = vslTarget;
+            vslLink.textContent = 'VaccineSaveLives';
+            vslLink.className = 'nav-pill nav-pill-vsl';
+            vslLink.setAttribute('data-vsl-nav', 'true');
+            vslLink.setAttribute('aria-label', 'VaccineSaveLives — projeto científico e educacional independente com apoio Databiomics');
+            if (normalizedPath === vslTarget.replace(/\/+$/, '')) vslLink.setAttribute('aria-current', 'page');
+            nav.appendChild(vslLink);
+          }
         });
       })();
     </script>
