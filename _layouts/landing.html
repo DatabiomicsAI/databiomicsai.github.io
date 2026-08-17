@@ -84,6 +84,22 @@
               color: #071c30;
             }
           </style>
+
+          <script>
+            (() => {
+              const aboutGrid = document.querySelector('#sobre .db-about-grid');
+              if (!aboutGrid) return;
+              const card = Array.from(aboutGrid.querySelectorAll('.info-card')).find((item) => {
+                const title = item.querySelector('h3');
+                return title && title.textContent.trim() === 'O que fazemos';
+              });
+              if (!card) return;
+              const paragraphs = card.querySelectorAll('p');
+              if (paragraphs[0]) {
+                paragraphs[0].textContent = 'Desenvolvemos consultoria em projetos técnico-científicos, plataformas computacionais completas — da concepção e estruturação de pipelines ao processamento de dados, desenvolvimento do backend e construção de interfaces gráficas —, além de análises de dados ômicos e iniciativas de divulgação científica voltadas à transformação de dados biológicos em conhecimento.';
+              }
+            })();
+          </script>
         {% endif %}
 
         {% if site.theme_config.appearance_toggle %}
@@ -158,7 +174,7 @@
         <script async defer data-soopr-token="{{ site.soopr.publish_token }}" src="https://sdk.soopr.co/soopr.js"></script>
       {%- else -%}
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
-      {%- endif -%}
+      {%- endif %}
     {%- endif -%}
 
     {%- if page.url == "/" -%}
