@@ -69,6 +69,16 @@
               box-shadow: 0 8px 24px rgba(11, 43, 80, .08);
             }
 
+            .landing .db-service-availability {
+              margin-top: 1rem !important;
+              padding: .8rem .95rem;
+              border-left: 3px solid #6cae3e;
+              border-radius: 10px;
+              background: rgba(108, 174, 62, .08);
+              font-size: .92rem;
+              line-height: 1.55;
+            }
+
             html[data-theme="dark"] .landing .global-language-switcher,
             html[data-theme="dark"] .landing .appearance-toggle {
               border-color: rgba(73, 185, 232, .18);
@@ -82,6 +92,11 @@
             html[data-theme="dark"] .landing .global-lang-btn.is-active {
               background: #49b9e8;
               color: #071c30;
+            }
+
+            html[data-theme="dark"] .landing .db-service-availability {
+              background: rgba(108, 174, 62, .10);
+              border-left-color: #8ccf5a;
             }
           </style>
 
@@ -98,6 +113,14 @@
               if (paragraphs[0]) {
                 paragraphs[0].textContent = 'Desenvolvemos consultoria em projetos técnico-científicos, plataformas computacionais completas — da concepção e estruturação de pipelines ao processamento de dados, desenvolvimento do backend e construção de interfaces gráficas —, além de análises de dados ômicos e iniciativas de divulgação científica voltadas à transformação de dados biológicos em conhecimento.';
               }
+
+              let notice = card.querySelector('.db-service-availability');
+              if (!notice) {
+                notice = document.createElement('p');
+                notice.className = 'db-service-availability';
+                card.appendChild(notice);
+              }
+              notice.innerHTML = '<strong>Disponibilidade:</strong> o desenvolvimento de aplicações e a análise de dados externos estão temporariamente inativos. Continuamos recebendo solicitações e propostas para avaliação e retomaremos o atendimento assim que possível.';
             })();
           </script>
         {% endif %}
