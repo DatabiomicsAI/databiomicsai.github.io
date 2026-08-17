@@ -28,6 +28,10 @@
       <div class="w landing-wrapper">
         {{ content }}
 
+        {% if page.url == '/' %}
+          <link rel="stylesheet" href="{{ '/assets/css/databiomics-home.css' | relative_url }}?v=20260817-1">
+        {% endif %}
+
         {% if site.theme_config.appearance_toggle %}
           {% include toggle_theme_button.html %}
         {% endif %}
@@ -100,7 +104,7 @@
         <script async defer data-soopr-token="{{ site.soopr.publish_token }}" src="https://sdk.soopr.co/soopr.js"></script>
       {%- else -%}
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
-      {%- endif %}
+      {%- endif -%}
     {%- endif -%}
 
     {%- if page.url == "/" -%}
