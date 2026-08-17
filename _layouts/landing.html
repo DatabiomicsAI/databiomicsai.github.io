@@ -171,13 +171,13 @@
     <script>
       (() => {
         const canonicalNav = `
-          <a href="{{ '/' | relative_url }}">Início</a>
+          <a href="{{ '/' | relative_url }}#inicio">Início</a>
           <a href="{{ '/' | relative_url }}#sobre">Sobre</a>
-          <a href="{{ '/apoie-projetos/' | relative_url }}">Projetos</a>
-          <a href="{{ '/New_articles/' | relative_url }}">Pesquisa</a>
-          <a href="{{ '/articles/' | relative_url }}">Publicações</a>
-          <a href="{{ '/comunidade/' | relative_url }}">Conteúdos</a>
-          <a href="{{ '/parcerias/' | relative_url }}">Parcerias</a>
+          <a href="{{ '/' | relative_url }}#projetos">Projetos</a>
+          <a href="{{ '/' | relative_url }}#pesquisa">Pesquisa</a>
+          <a href="{{ '/' | relative_url }}#publicacoes-destaque">Publicações</a>
+          <a href="{{ '/' | relative_url }}#conteudos">Conteúdos</a>
+          <a href="{{ '/' | relative_url }}#parcerias">Parcerias</a>
           <a href="{{ '/' | relative_url }}#contato">Contato</a>`;
         document.querySelectorAll('.landing-nav').forEach((nav) => {
           nav.innerHTML = canonicalNav;
