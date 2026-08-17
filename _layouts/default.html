@@ -14,22 +14,6 @@
       })();
     </script>
 
-    <script>
-      (() => {
-        const themeWords = ['auto', 'claro', 'escuro', 'oscuro', 'dark', 'light', 'daltônico', 'daltonico', 'colorblind'];
-        const candidates = Array.from(document.querySelectorAll('div, nav, section, aside, ul, ol'));
-        candidates.forEach((el) => {
-          const controls = Array.from(el.querySelectorAll('button, a, label, span'));
-          if (!controls.length || controls.length > 20) return;
-          const textBlob = controls.map((c) => (c.textContent || '').trim().toLowerCase()).join(' | ');
-          const hits = themeWords.reduce((n, w) => n + (textBlob.includes(w) ? 1 : 0), 0);
-          if (hits >= 3 && !el.classList.contains('appearance-toggle') && !el.closest('.appearance-toggle') && !el.classList.contains('global-language-switcher') && !el.closest('.global-language-switcher')) {
-            el.remove();
-          }
-        });
-      })();
-    </script>
-
     <div class="global-language-switcher" role="group" aria-label="Language switcher">
       <button type="button" class="global-lang-btn" data-global-lang="pt">Português</button>
       <button type="button" class="global-lang-btn" data-global-lang="en">English</button>
@@ -38,26 +22,37 @@
 
     <main class="page-content" aria-label="Content">
       <div class="w">
+        <nav class="landing-nav db-default-nav" aria-label="Navegação principal">
+          <a href="{{ '/' | relative_url }}">Início</a>
+          <a href="{{ '/' | relative_url }}#sobre">Sobre</a>
+          <a href="{{ '/apoie-projetos/' | relative_url }}">Projetos</a>
+          <a href="{{ '/New_articles/' | relative_url }}">Pesquisa</a>
+          <a href="{{ '/articles/' | relative_url }}">Publicações</a>
+          <a href="{{ '/comunidade/' | relative_url }}">Conteúdos</a>
+          <a href="{{ '/parcerias/' | relative_url }}">Parcerias</a>
+          <a href="{{ '/' | relative_url }}#contato">Contato</a>
+        </nav>
+
         {{ content }}
 
         {% if site.theme_config.appearance_toggle %}
           {% include toggle_theme_button.html %}
         {% endif %}
 
-        <section class="global-support-cta" aria-label="Apoio institucional Databiomics">
-          <h3>Quer colaborar estrategicamente com a Databiomics?</h3>
-          <p>Seja um colaborador no desenvolvimento conjunto de projetos científicos, educacionais e de inovação aplicada, bem como na submissão colaborativa de propostas a editais de pesquisa e fomento. As propostas de colaborações são analisadas com critério técnico e consideradas quando houver alinhamento com a missão científica da Databiomics®, valores, ética, acessibilidade, inovação responsável e potencial de aplicação concreta.</p>
+        <section class="global-support-cta" aria-label="Parcerias e colaborações Databiomics">
+          <h3>Parcerias &amp; Colaborações</h3>
+          <p>Tem uma proposta de pesquisa, colaboração institucional, desenvolvimento conjunto ou participação em projeto? Conheça as frentes de colaboração da Databiomics® e do WBPereira Tech.</p>
           <div class="global-support-cta-actions">
-            <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}">Acessar página Apoie os projetos</a>
-            <a class="button ghost" href="{{ '/apoie-projetos/#contato-apoio' | relative_url }}">Abrir formulário institucional de apoio ou colaboração</a>
-            <a class="button ghost" href="{{ '/parcerias-estrategicas/#partners-support-title' | relative_url }}">Veja apoiadores estratégicos</a>
+            <a class="button primary" href="{{ '/parcerias/' | relative_url }}">Conheça as formas de colaboração</a>
+            <a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Projetos em desenvolvimento</a>
+            <a class="button ghost" href="{{ '/' | relative_url }}#contato">Entrar em contato</a>
           </div>
         </section>
 
         <div class="credits">
           &copy;&nbsp;2026&nbsp;Databiomics®
           <img class="credits-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®">
-          <small class="credits-note">Marca registrada no INPI (Instituto Nacional da Propriedade Industrial).</small>
+          <small class="credits-note">Vertical de Ciências da Vida do WBPereira Tech. Databiomics® é marca registrada no INPI.</small>
         </div>
       </div>
     </main>
@@ -71,7 +66,14 @@
         <script async defer data-soopr-token="{{ site.soopr.publish_token }}" src="https://sdk.soopr.co/soopr.js"></script>
       {%- else -%}
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
-      {%- endif -%}
+      {%- endif %}
     {%- endif -%}
+
+    <style>
+      .db-default-nav { display:flex; flex-wrap:wrap; gap:.45rem; justify-content:center; margin:1rem 0 1.6rem; padding:.65rem; border-radius:18px; background:rgba(5,25,48,.86); border:1px solid rgba(73,185,232,.24); }
+      .db-default-nav a { color:#fff; text-decoration:none; padding:.58rem .82rem; border-radius:999px; font-weight:700; }
+      .db-default-nav a:hover,.db-default-nav a:focus-visible { background:rgba(73,185,232,.16); }
+      @media(max-width:680px){.db-default-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.db-default-nav a{white-space:nowrap}}
+    </style>
   </body>
 </html>
