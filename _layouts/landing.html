@@ -14,22 +14,6 @@
       })();
     </script>
 
-    <script>
-      (() => {
-        const themeWords = ['auto', 'claro', 'escuro', 'oscuro', 'dark', 'light', 'daltônico', 'daltonico', 'colorblind'];
-        const candidates = Array.from(document.querySelectorAll('div, nav, section, aside, ul, ol'));
-        candidates.forEach((el) => {
-          const controls = Array.from(el.querySelectorAll('button, a, label, span'));
-          if (!controls.length || controls.length > 20) return;
-          const textBlob = controls.map((c) => (c.textContent || '').trim().toLowerCase()).join(' | ');
-          const hits = themeWords.reduce((n, w) => n + (textBlob.includes(w) ? 1 : 0), 0);
-          if (hits >= 3 && !el.classList.contains('appearance-toggle') && !el.closest('.appearance-toggle') && !el.classList.contains('global-language-switcher') && !el.closest('.global-language-switcher')) {
-            el.remove();
-          }
-        });
-      })();
-    </script>
-
     <div class="global-language-switcher" role="group" aria-label="Language switcher">
       <button type="button" class="global-lang-btn" data-global-lang="pt">Português</button>
       <button type="button" class="global-lang-btn" data-global-lang="en">English</button>
@@ -48,96 +32,56 @@
           {% include toggle_theme_button.html %}
         {% endif %}
 
-        {% unless page.permalink == '/parcerias-estrategicas/' or page.permalink == '/apoie-projetos/' or page.permalink == '/ods-no-campo/' or page.permalink == '/vaccinesavelifes/' %}
-          <section class="global-support-cta" aria-label="Apoio institucional Databiomics">
-            <h3>Quer colaborar estrategicamente com a Databiomics?</h3>
-            <p>Seja um colaborador no desenvolvimento conjunto de projetos científicos, educacionais e de inovação aplicada, bem como na submissão colaborativa de propostas a editais de pesquisa e fomento. As propostas de colaborações são analisadas com critério técnico e consideradas quando houver alinhamento com a missão científica da Databiomics®, valores, ética, acessibilidade, inovação responsável e potencial de aplicação concreta.</p>
+        {% unless page.permalink == '/parcerias/' or page.permalink == '/apoie-projetos/' or page.permalink == '/ods-no-campo/' or page.permalink == '/vaccinesavelifes/' or page.permalink == '/' %}
+          <section class="global-support-cta" aria-label="Parcerias e colaborações Databiomics">
+            <h3>Parcerias &amp; Colaborações</h3>
+            <p>Tem uma proposta de pesquisa, colaboração institucional, desenvolvimento conjunto ou participação em projeto? Conheça as frentes de colaboração da Databiomics® e do WBPereira Tech.</p>
             <div class="global-support-cta-actions">
-              <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}">Acessar página Apoie os projetos</a>
-              <a class="button ghost" href="{{ '/apoie-projetos/#contato-apoio' | relative_url }}">Abrir formulário institucional de apoio ou colaboração</a>
-              <a class="button ghost" href="{{ '/parcerias-estrategicas/#partners-support-title' | relative_url }}">Veja apoiadores estratégicos</a>
+              <a class="button primary" href="{{ '/parcerias/' | relative_url }}">Conheça as formas de colaboração</a>
+              <a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Projetos em desenvolvimento</a>
+              <a class="button ghost" href="{{ '/' | relative_url }}#contato">Entrar em contato</a>
             </div>
           </section>
         {% endunless %}
 
+        {% unless page.permalink == '/' %}
+          <div class="credits db-global-credits">
+            &copy;&nbsp;2026&nbsp;Databiomics®
+            <img class="credits-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®">
+            <small class="credits-note">Vertical de Ciências da Vida do WBPereira Tech. Databiomics® é marca registrada no INPI.</small>
+          </div>
+        {% endunless %}
       </div>
     </main>
+
+    <script>
+      (() => {
+        const canonicalNav = `
+          <a href="{{ '/' | relative_url }}">Início</a>
+          <a href="{{ '/' | relative_url }}#sobre">Sobre</a>
+          <a href="{{ '/apoie-projetos/' | relative_url }}">Projetos</a>
+          <a href="{{ '/New_articles/' | relative_url }}">Pesquisa</a>
+          <a href="{{ '/articles/' | relative_url }}">Publicações</a>
+          <a href="{{ '/comunidade/' | relative_url }}">Conteúdos</a>
+          <a href="{{ '/parcerias/' | relative_url }}">Parcerias</a>
+          <a href="{{ '/' | relative_url }}#contato">Contato</a>`;
+        document.querySelectorAll('.landing-nav').forEach((nav) => {
+          nav.innerHTML = canonicalNav;
+          nav.setAttribute('aria-label', 'Navegação principal');
+        });
+      })();
+    </script>
 
     <script>
       (() => {
         const pageUrl = encodeURIComponent(window.location.href);
         document.querySelectorAll('[data-share-network]').forEach((link) => {
           const network = link.getAttribute('data-share-network');
-          if (!network) return;
-          if (network === 'linkedin') {
-            link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
-          }
-          if (network === 'facebook') {
-            link.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-          }
-          link.setAttribute('target', '_blank');
-          link.setAttribute('rel', 'noreferrer noopener');
-        });
-      })();
-    </script>
-
-    <style>
-      .landing-nav .nav-pill-ods {
-        background: linear-gradient(135deg, #0f6b3a, #76a92d);
-        color: #fff;
-        border: 1px solid rgba(185, 232, 92, .65);
-        box-shadow: 0 8px 22px rgba(15, 107, 58, .2);
-      }
-      .landing-nav .nav-pill-ods:hover,
-      .landing-nav .nav-pill-ods:focus-visible {
-        background: linear-gradient(135deg, #0b5730, #668f27);
-        color: #fff;
-      }
-      .landing-nav .nav-pill-ods[aria-current="page"] {
-        outline: 2px solid #b9e85c;
-        outline-offset: 3px;
-      }
-      .landing-nav .nav-pill-vsl {
-        background: linear-gradient(135deg, #0B2B50, #0e7490);
-        color: #fff;
-        border: 1px solid rgba(73, 185, 232, .72);
-        box-shadow: 0 8px 22px rgba(11, 43, 80, .2);
-      }
-      .landing-nav .nav-pill-vsl:hover,
-      .landing-nav .nav-pill-vsl:focus-visible {
-        background: linear-gradient(135deg, #123d6b, #1591ad);
-        color: #fff;
-      }
-      .landing-nav .nav-pill-vsl[aria-current="page"] {
-        outline: 2px solid #49B9E8;
-        outline-offset: 3px;
-      }
-    </style>
-    <script>
-      (() => {
-        const odsTarget = "{{ '/ods-no-campo/' | relative_url }}";
-        const vslTarget = "{{ '/vaccinesavelifes/' | relative_url }}";
-        const normalizedPath = window.location.pathname.replace(/\/+$/, '');
-        document.querySelectorAll('.landing-nav').forEach((nav) => {
-          if (!nav.querySelector('[data-ods-nav]')) {
-            const odsLink = document.createElement('a');
-            odsLink.href = odsTarget;
-            odsLink.textContent = 'ODS no Campo';
-            odsLink.className = 'nav-pill nav-pill-ods';
-            odsLink.setAttribute('data-ods-nav', 'true');
-            odsLink.setAttribute('aria-label', 'ODS no Campo — iniciativa Databiomics em Itaperuna e no Noroeste Fluminense');
-            if (normalizedPath === odsTarget.replace(/\/+$/, '')) odsLink.setAttribute('aria-current', 'page');
-            nav.appendChild(odsLink);
-          }
-          if (!nav.querySelector('[data-vsl-nav]')) {
-            const vslLink = document.createElement('a');
-            vslLink.href = vslTarget;
-            vslLink.textContent = 'VaccineSaveLives';
-            vslLink.className = 'nav-pill nav-pill-vsl';
-            vslLink.setAttribute('data-vsl-nav', 'true');
-            vslLink.setAttribute('aria-label', 'VaccineSaveLives — projeto científico e educacional independente com apoio Databiomics');
-            if (normalizedPath === vslTarget.replace(/\/+$/, '')) vslLink.setAttribute('aria-current', 'page');
-            nav.appendChild(vslLink);
+          if (network === 'linkedin') link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+          if (network === 'facebook') link.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+          if (network) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noreferrer noopener');
           }
         });
       })();
@@ -158,6 +102,7 @@
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
       {%- endif %}
     {%- endif -%}
+
     {%- if page.url == "/" -%}
       <div id="site-dev-ribbon" class="site-dev-ribbon" role="note" aria-label="Créditos de desenvolvimento do website" hidden>
         Website desenvolvido por Leandro de Mattos Pereira (Databiomics®).
@@ -166,13 +111,16 @@
         (function () {
           const ribbon = document.getElementById('site-dev-ribbon');
           if (!ribbon) return;
-          const toggleRibbon = () => {
-            ribbon.hidden = window.location.hash !== '#sobre';
-          };
+          const toggleRibbon = () => { ribbon.hidden = window.location.hash !== '#sobre'; };
           toggleRibbon();
           window.addEventListener('hashchange', toggleRibbon);
         })();
       </script>
     {%- endif -%}
+
+    <style>
+      .db-global-credits { margin-top:2rem; }
+      .landing-nav { scrollbar-width:thin; }
+    </style>
   </body>
 </html>
