@@ -1,0 +1,323 @@
+/* Databiomics theme contrast guard
+   Loaded after the homepage stylesheet.
+   Dark is the default; light is a white corporate appearance.
+*/
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* =========================
+   LIGHT — corporate white
+   ========================= */
+html[data-theme="light"] body.landing {
+  background: #eef3f6 !important;
+  color: #142b3d !important;
+}
+
+html[data-theme="light"] .landing .landing-wrapper {
+  color: #142b3d !important;
+}
+
+html[data-theme="light"] .landing .landing-wrapper > .section,
+html[data-theme="light"] .landing .info-card,
+html[data-theme="light"] .landing .db-ecosystem-card,
+html[data-theme="light"] .landing .db-newsletter-form,
+html[data-theme="light"] .landing .db-contact-form,
+html[data-theme="light"] .landing .db-publication-card,
+html[data-theme="light"] .landing .db-footer {
+  color: #142b3d !important;
+}
+
+html[data-theme="light"] .landing .landing-wrapper > .section {
+  background: #ffffff !important;
+  border-color: rgba(11, 43, 80, .12) !important;
+}
+
+html[data-theme="light"] .landing .landing-wrapper > .section.alt {
+  background: linear-gradient(145deg, #f7fafc, #f5f8f2) !important;
+}
+
+html[data-theme="light"] .landing .db-hero {
+  color: #142b3d !important;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(73, 185, 232, .14), transparent 33%),
+    radial-gradient(circle at 92% 90%, rgba(108, 174, 62, .10), transparent 32%),
+    linear-gradient(135deg, #ffffff 0%, #f9fcfd 58%, #f5f9f2 100%) !important;
+}
+
+html[data-theme="light"] .landing .landing-nav {
+  background: rgba(255,255,255,.96) !important;
+  border-color: rgba(11,43,80,.13) !important;
+}
+
+html[data-theme="light"] .landing .landing-nav a,
+html[data-theme="light"] .landing .db-hero-copy h1,
+html[data-theme="light"] .landing .db-hero-lead,
+html[data-theme="light"] .landing .section-heading h2,
+html[data-theme="light"] .landing .info-card h3,
+html[data-theme="light"] .landing .db-publication-card h3,
+html[data-theme="light"] .landing .db-ecosystem-levels strong,
+html[data-theme="light"] .landing .db-brand-row strong,
+html[data-theme="light"] .landing .db-footer strong,
+html[data-theme="light"] .landing .db-footer a,
+html[data-theme="light"] .landing h1,
+html[data-theme="light"] .landing h2,
+html[data-theme="light"] .landing h3,
+html[data-theme="light"] .landing h4,
+html[data-theme="light"] .landing label,
+html[data-theme="light"] .landing legend {
+  color: #0b2b50 !important;
+}
+
+html[data-theme="light"] .landing p,
+html[data-theme="light"] .landing li,
+html[data-theme="light"] .landing small,
+html[data-theme="light"] .landing .db-hero-copy > p,
+html[data-theme="light"] .landing .db-hero-meta,
+html[data-theme="light"] .landing .db-ecosystem-levels span,
+html[data-theme="light"] .landing .info-card p,
+html[data-theme="light"] .landing .section-heading p,
+html[data-theme="light"] .landing .db-parent-company p,
+html[data-theme="light"] .landing .db-lead-copy p,
+html[data-theme="light"] .landing .db-footer p,
+html[data-theme="light"] .landing .db-footer small {
+  color: #536b7b !important;
+}
+
+html[data-theme="light"] .landing a:not(.button):not(.landing-nav a) {
+  color: #155f8f !important;
+}
+
+html[data-theme="light"] .landing a:not(.button):not(.landing-nav a):hover {
+  color: #376f3d !important;
+}
+
+html[data-theme="light"] .landing .info-card,
+html[data-theme="light"] .landing .db-ecosystem-card,
+html[data-theme="light"] .landing .db-newsletter-form,
+html[data-theme="light"] .landing .db-contact-form,
+html[data-theme="light"] .landing .db-publication-card {
+  background: #ffffff !important;
+  border-color: rgba(11,43,80,.11) !important;
+}
+
+html[data-theme="light"] .landing .db-ecosystem-levels div {
+  background: #f8fbfc !important;
+  border-color: rgba(11,43,80,.09) !important;
+}
+
+html[data-theme="light"] .landing .db-brand-row strong {
+  background: linear-gradient(145deg, #f8fbfc, #eff7fa) !important;
+}
+
+html[data-theme="light"] .landing .button.ghost {
+  color: #0b2b50 !important;
+  background: #ffffff !important;
+  border-color: rgba(11,43,80,.22) !important;
+}
+
+html[data-theme="light"] .landing .button.primary {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .landing input,
+html[data-theme="light"] .landing select,
+html[data-theme="light"] .landing textarea {
+  background: #ffffff !important;
+  color: #142b3d !important;
+  border-color: rgba(11,43,80,.18) !important;
+  caret-color: #142b3d !important;
+}
+
+html[data-theme="light"] .landing input::placeholder,
+html[data-theme="light"] .landing textarea::placeholder {
+  color: #718493 !important;
+  opacity: 1;
+}
+
+html[data-theme="light"] .landing select option {
+  background: #ffffff !important;
+  color: #142b3d !important;
+}
+
+/* =========================
+   DARK — default appearance
+   ========================= */
+html[data-theme="dark"] body.landing {
+  background: #041421 !important;
+  color: #eef7fb !important;
+}
+
+html[data-theme="dark"] .landing .landing-wrapper {
+  color: #eef7fb !important;
+}
+
+html[data-theme="dark"] .landing .landing-wrapper > .section {
+  background: #071c30 !important;
+  color: #eef7fb !important;
+  border-color: rgba(73,185,232,.14) !important;
+}
+
+html[data-theme="dark"] .landing .landing-wrapper > .section.alt {
+  background: linear-gradient(145deg, #08223a, #0b3034) !important;
+}
+
+html[data-theme="dark"] .landing .db-hero {
+  color: #f5fbfe !important;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(73,185,232,.15), transparent 33%),
+    radial-gradient(circle at 92% 90%, rgba(108,174,62,.10), transparent 32%),
+    linear-gradient(135deg, #061827 0%, #08243b 60%, #0a2c31 100%) !important;
+}
+
+html[data-theme="dark"] .landing .landing-nav {
+  background: rgba(5,22,37,.96) !important;
+  border-color: rgba(73,185,232,.20) !important;
+}
+
+html[data-theme="dark"] .landing .landing-nav a,
+html[data-theme="dark"] .landing .db-hero-copy h1,
+html[data-theme="dark"] .landing .db-hero-lead,
+html[data-theme="dark"] .landing .section-heading h2,
+html[data-theme="dark"] .landing .info-card h3,
+html[data-theme="dark"] .landing .db-publication-card h3,
+html[data-theme="dark"] .landing .db-ecosystem-levels strong,
+html[data-theme="dark"] .landing .db-brand-row strong,
+html[data-theme="dark"] .landing .db-footer strong,
+html[data-theme="dark"] .landing .db-footer a,
+html[data-theme="dark"] .landing h1,
+html[data-theme="dark"] .landing h2,
+html[data-theme="dark"] .landing h3,
+html[data-theme="dark"] .landing h4,
+html[data-theme="dark"] .landing label,
+html[data-theme="dark"] .landing legend {
+  color: #f2f8fb !important;
+}
+
+html[data-theme="dark"] .landing p,
+html[data-theme="dark"] .landing li,
+html[data-theme="dark"] .landing small,
+html[data-theme="dark"] .landing .db-hero-copy > p,
+html[data-theme="dark"] .landing .db-hero-meta,
+html[data-theme="dark"] .landing .db-ecosystem-levels span,
+html[data-theme="dark"] .landing .info-card p,
+html[data-theme="dark"] .landing .section-heading p,
+html[data-theme="dark"] .landing .db-parent-company p,
+html[data-theme="dark"] .landing .db-lead-copy p,
+html[data-theme="dark"] .landing .db-footer p,
+html[data-theme="dark"] .landing .db-footer small {
+  color: #c4d2dc !important;
+}
+
+html[data-theme="dark"] .landing a:not(.button):not(.landing-nav a) {
+  color: #78c9ee !important;
+}
+
+html[data-theme="dark"] .landing a:not(.button):not(.landing-nav a):hover {
+  color: #a7d981 !important;
+}
+
+html[data-theme="dark"] .landing .info-card,
+html[data-theme="dark"] .landing .db-ecosystem-card,
+html[data-theme="dark"] .landing .db-newsletter-form,
+html[data-theme="dark"] .landing .db-contact-form,
+html[data-theme="dark"] .landing .db-publication-card {
+  background: #0a263f !important;
+  color: #eef7fb !important;
+  border-color: rgba(73,185,232,.18) !important;
+}
+
+html[data-theme="dark"] .landing .db-ecosystem-levels div {
+  background: #0c2c47 !important;
+  border-color: rgba(73,185,232,.14) !important;
+}
+
+html[data-theme="dark"] .landing .db-brand-row strong {
+  background: linear-gradient(145deg, #0b2b46, #0b3441) !important;
+  border-color: rgba(73,185,232,.22) !important;
+}
+
+html[data-theme="dark"] .landing .button.ghost {
+  color: #f1f8fb !important;
+  background: #0b2b46 !important;
+  border-color: rgba(151,199,224,.28) !important;
+}
+
+html[data-theme="dark"] .landing .button.ghost:hover,
+html[data-theme="dark"] .landing .button.ghost:focus-visible {
+  background: #103653 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .landing .button.primary {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #155f8f, #0b4a72) !important;
+  border-color: #2d86b7 !important;
+}
+
+html[data-theme="dark"] .landing input,
+html[data-theme="dark"] .landing select,
+html[data-theme="dark"] .landing textarea {
+  background: #061827 !important;
+  color: #f3f8fb !important;
+  border-color: rgba(73,185,232,.24) !important;
+  caret-color: #ffffff !important;
+}
+
+html[data-theme="dark"] .landing input::placeholder,
+html[data-theme="dark"] .landing textarea::placeholder {
+  color: #9eb1bf !important;
+  opacity: 1;
+}
+
+html[data-theme="dark"] .landing select option {
+  background: #071c30 !important;
+  color: #f3f8fb !important;
+}
+
+html[data-theme="dark"] .landing .db-footer {
+  background: #061827 !important;
+  color: #eef7fb !important;
+}
+
+/* Brand accents remain visible in both modes. */
+html[data-theme="light"] .landing .db-kicker,
+html[data-theme="light"] .landing .db-section-kicker {
+  color: #376f3d !important;
+}
+
+html[data-theme="dark"] .landing .db-kicker,
+html[data-theme="dark"] .landing .db-section-kicker {
+  color: #9bd271 !important;
+}
+
+html[data-theme="light"] .landing .db-tag {
+  color: #155f8f !important;
+}
+
+html[data-theme="dark"] .landing .db-tag {
+  color: #82cdef !important;
+  background: rgba(73,185,232,.10) !important;
+}
+
+/* Keep brand logos on a neutral white plate when needed for legibility. */
+html[data-theme="dark"] .landing .db-brand-row img,
+html[data-theme="dark"] .landing .db-parent-company > img,
+html[data-theme="dark"] .landing .db-wb-mini {
+  background: #ffffff !important;
+}
+
+/* Accessibility: visible keyboard focus in both themes. */
+.landing a:focus-visible,
+.landing button:focus-visible,
+.landing input:focus-visible,
+.landing select:focus-visible,
+.landing textarea:focus-visible {
+  outline: 3px solid #49b9e8 !important;
+  outline-offset: 2px !important;
+}
