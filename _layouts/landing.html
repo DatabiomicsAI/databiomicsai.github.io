@@ -29,7 +29,60 @@
         {{ content }}
 
         {% if page.url == '/' %}
-          <link rel="stylesheet" href="{{ '/assets/css/databiomics-home.css' | relative_url }}?v=20260817-1">
+          <link rel="stylesheet" href="{{ '/assets/css/databiomics-home.css' | relative_url }}?v=20260817-2">
+          <style>
+            .landing .db-hero p,
+            .landing .landing-wrapper > .section p,
+            .landing .db-footer p { text-align: left !important; }
+
+            .landing .global-language-switcher {
+              position: static;
+              display: flex;
+              width: fit-content;
+              margin: .75rem auto .2rem;
+              padding: .28rem;
+              gap: .18rem;
+              border: 1px solid rgba(11, 43, 80, .12);
+              border-radius: 12px;
+              background: rgba(255, 255, 255, .88);
+              box-shadow: 0 8px 24px rgba(11, 43, 80, .07);
+              backdrop-filter: blur(14px);
+            }
+
+            .landing .global-lang-btn {
+              padding: .42rem .62rem;
+              border-radius: 8px;
+              color: #0b2b50;
+              font-size: .78rem;
+              font-weight: 750;
+            }
+
+            .landing .global-lang-btn.is-active {
+              background: #0b2b50;
+              color: #fff;
+            }
+
+            .landing .appearance-toggle {
+              border-color: rgba(11, 43, 80, .14);
+              background: rgba(255, 255, 255, .90);
+              box-shadow: 0 8px 24px rgba(11, 43, 80, .08);
+            }
+
+            html[data-theme="dark"] .landing .global-language-switcher,
+            html[data-theme="dark"] .landing .appearance-toggle {
+              border-color: rgba(73, 185, 232, .18);
+              background: rgba(7, 28, 48, .92);
+            }
+
+            html[data-theme="dark"] .landing .global-lang-btn {
+              color: #eef7fb;
+            }
+
+            html[data-theme="dark"] .landing .global-lang-btn.is-active {
+              background: #49b9e8;
+              color: #071c30;
+            }
+          </style>
         {% endif %}
 
         {% if site.theme_config.appearance_toggle %}
