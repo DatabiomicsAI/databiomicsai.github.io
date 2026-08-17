@@ -71,12 +71,23 @@
 
             .landing .db-service-availability {
               margin-top: 1rem !important;
-              padding: .8rem .95rem;
-              border-left: 3px solid #6cae3e;
-              border-radius: 10px;
+              padding: .95rem 1rem;
+              border: 1px solid rgba(108, 174, 62, .28);
+              border-left: 4px solid #6cae3e;
+              border-radius: 12px;
               background: rgba(108, 174, 62, .08);
               font-size: .92rem;
-              line-height: 1.55;
+              line-height: 1.58;
+            }
+
+            .landing .db-service-availability strong {
+              display: block;
+              margin-bottom: .28rem;
+            }
+
+            html[data-theme="light"] .landing .db-service-availability,
+            html[data-theme="light"] .landing .db-service-availability strong {
+              color: #142b3d !important;
             }
 
             html[data-theme="dark"] .landing .global-language-switcher,
@@ -95,8 +106,14 @@
             }
 
             html[data-theme="dark"] .landing .db-service-availability {
+              color: #edf7f0 !important;
               background: rgba(108, 174, 62, .10);
+              border-color: rgba(140, 207, 90, .30);
               border-left-color: #8ccf5a;
+            }
+
+            html[data-theme="dark"] .landing .db-service-availability strong {
+              color: #f4fbf6 !important;
             }
           </style>
 
@@ -120,7 +137,7 @@
                 notice.className = 'db-service-availability';
                 card.appendChild(notice);
               }
-              notice.innerHTML = '<strong>Disponibilidade:</strong> o desenvolvimento de aplicações e a análise de dados externos estão temporariamente inativos. Continuamos recebendo solicitações e propostas para avaliação e retomaremos o atendimento assim que possível.';
+              notice.innerHTML = '<strong>Transparência sobre disponibilidade</strong>Leandro de Mattos Pereira mantém contrato temporário de pós-doutorado com o Instituto Tecnológico Vale (ITV), instituição de ciência, tecnologia e inovação mantida pela Vale, até fevereiro de 2027. Em razão de compromissos e condições contratuais desse vínculo, o desenvolvimento de aplicações e a análise de dados externos estão temporariamente inativos. Solicitações e propostas podem ser recebidas e avaliadas para planejamento e futura execução, conforme disponibilidade.';
             })();
           </script>
         {% endif %}
@@ -198,7 +215,7 @@
       {%- else -%}
         <script async defer src="https://sdk.soopr.co/soopr.js"></script>
       {%- endif %}
-    {%- endif -%}
+    {%- endif %}
 
     {%- if page.url == "/" -%}
       <div id="site-dev-ribbon" class="site-dev-ribbon" role="note" aria-label="Créditos de desenvolvimento do website" hidden>
