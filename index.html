@@ -1,1177 +1,384 @@
 ---
 layout: landing
+title: Databiomics | Ciências da Vida, Bioinformática e IA
 ---
 
-<nav class="landing-nav">
-  <a href="#sobre" data-i18n-key="nav_about">Sobre</a>
-  <a href="{{ '/articles' | relative_url }}" data-i18n-key="nav_news">Exemplos de
-Aplicabilidade</a>
-  <a href="{{ '/New_articles/' | relative_url }}">New_articles</a>
-  <a href="{{ '/servicos/' | relative_url }}" data-i18n-key="nav_services">Serviços (temp. inativado*) e<br>Aplicações</a>
-  <a class="nav-pill nav-pill-support" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="nav_support_projects">Apoie os projetos</a>
-  <a class="nav-pill nav-pill-partnerships" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="nav_partnerships">Apoio empresarial</a>
-  <a href="{{ '/parcerias/' | relative_url }}" data-i18n-key="nav_partnerships_new">Parcerias<br>Colaborações</a>
-  <a href="{{ '/videos/' | relative_url }}" data-i18n-key="nav_videos">Vídeos</a>
-  <a href="{{ '/chatbot/' | relative_url }}" target="_blank" rel="noopener noreferrer">Chat IA</a>
-  <a href="{{ '/catalogo/' | relative_url }}" data-i18n-key="nav_catalog">Catálogo de Produtos</a>
-  <a href="#contato" data-i18n-key="nav_contact">Contato</a>
-  <a href="{{ '/comunidade/' | relative_url }}" data-i18n-key="nav_community">Notícias
-Bioinfo/AI</a>
+<nav class="landing-nav" aria-label="Navegação principal">
+  <a href="#inicio">Início</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#pesquisa">Pesquisa</a>
+  <a href="{{ '/articles/' | relative_url }}">Publicações</a>
+  <a href="#conteudos">Conteúdos</a>
+  <a href="#parcerias">Parcerias</a>
+  <a href="#contato">Contato</a>
 </nav>
 
-
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <p class="hero-eyebrow" data-i18n-key="hero_eyebrow">Dê o primeiro passo rumo a um futuro de inovação e excelência</p>
-      <img class="hero-brand-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Logo Databiomics®" loading="eager">
-      <h1 id="hero-title">Leandro de Mattos Pereira</h1>
-      <p class="hero-subtitle" data-i18n-key="hero_subtitle">Bioinformática, IA aplicada à ciência de dados ômicos e consultoria em análises avançadas.</p>
+<section id="inicio" class="hero db-hero" aria-labelledby="hero-title">
+  <div class="db-hero-grid">
+    <div class="db-hero-copy">
+      <p class="db-kicker">CIÊNCIAS DA VIDA • BIOINFORMÁTICA • INTELIGÊNCIA ARTIFICIAL</p>
+      <img class="db-hero-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®" loading="eager">
+      <h1 id="hero-title">Transformando dados biológicos em conhecimento.</h1>
+      <p class="db-hero-lead">Bioinformática, Genômica, Microbioma, Biotecnologia e Inteligência Artificial aplicadas às Ciências da Vida.</p>
+      <p>A <strong>Databiomics®</strong> é a vertical de Ciências da Vida do <strong>WBPereira Tech</strong>, departamento de tecnologia e inovação da WBPereira Comércio e Serviços. Desenvolvemos projetos, plataformas, recursos científicos e iniciativas que conectam biologia, dados e inteligência artificial.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#contato" data-i18n-key="hero_cta_schedule">Agendar conversa</a>
-        <a class="button ghost" href="http://lattes.cnpq.br/0378658543221383" target="_blank" rel="noreferrer" data-i18n-key="hero_cta_cv">Ver CV Lattes</a>
-        <a class="button ghost" href="{{ '/chatbot/' | relative_url }}" target="_blank" rel="noopener noreferrer">Abrir Chat IA</a>
+        <a class="button primary" href="#projetos">Conheça nossos projetos</a>
+        <a class="button ghost" href="#pesquisa">Explore nossa pesquisa</a>
       </div>
-      <ul class="hero-highlights">
-        <li data-i18n-key="hero_highlight_1">Genômica, transcriptômica, proteômica e metagenômica</li>
-        <li data-i18n-key="hero_highlight_2">Machine learning, NLP, deep learning e pipelines reprodutíveis</li>
-        <li data-i18n-key="hero_highlight_3">Treinamentos, consultorias e projetos de P&amp;D</li>
-      </ul>
+      <p class="db-hero-meta">Pesquisa • Desenvolvimento • Ciência • Tecnologia • Inovação</p>
     </div>
-    <div class="hero-card">
-      <img class="hero-profile-photo" src="{{ '/assets/services/foto_leandro.png' | relative_url }}" alt="Foto de Leandro de Mattos Pereira" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/services/foto_leandro.png';">
-      <h2 data-i18n-key="lead_title">Desbloqueie o potencial biotecnologico with Bioinformatica e IA</h2>
-      <p class="card-intro" data-i18n-key="lead_intro">Solicite orientação personalizada para seus projetos e equipes.</p>
-      <form class="lead-form" action="https://formsubmit.co/info@databiomics.com" method="POST">
-        <label>
-          <span data-i18n-key="lead_full_name">Nome completo</span>
-          <input type="text" name="name" data-i18n-placeholder-key="lead_name_ph" placeholder="Seu nome completo" required>
-        </label>
-        <label>
-          <span data-i18n-key="lead_phone">Telefone</span>
-          <input type="tel" name="phone" data-i18n-placeholder-key="lead_phone_ph" placeholder="Seu telefone / WhatsApp">
-        </label>
-        <label>
-          <span data-i18n-key="lead_email">E-mail</span>
-          <input type="email" name="email" data-i18n-placeholder-key="lead_email_ph" placeholder="seuemail@dominio.com" required>
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="terms" required>
-          <span data-i18n-key="lead_terms">Concordo com os Termos e Condições</span>
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="privacy_consent_lead" required>
-          <span data-i18n-key="privacy_consent">Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener" data-i18n-key="privacy_policy">Política de Privacidade</a>.
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="whatsapp">
-          <span data-i18n-key="lead_updates">Receber atualizações por WhatsApp</span>
-        </label>
-        <input type="hidden" name="_subject" value="Novo contato via site - Lead Form">
-        <input type="hidden" name="_captcha" value="false">
-        <button class="button primary" type="submit" data-i18n-key="lead_submit">Quero orientação especializada</button>
-      </form>
-      <p class="card-footnote" data-i18n-key="lead_footnote">Você receberá retorno em até 24 horas.</p>
-    </div>
+
+    <aside class="db-ecosystem-card" aria-label="Ecossistema WBPereira, WBPereira Tech e Databiomics">
+      <div class="db-brand-row">
+        <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="WBPereira Comércio e Serviços" loading="eager">
+        <span aria-hidden="true">→</span>
+        <strong>WBPereira Tech</strong>
+        <span aria-hidden="true">→</span>
+        <img src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®" loading="eager">
+      </div>
+      <div class="db-ecosystem-levels">
+        <div><strong>WBPereira</strong><span>Comércio • Serviços • Experiência</span></div>
+        <div><strong>WBPereira Tech</strong><span>Tecnologia • IA • Dados • Software • Inovação</span></div>
+        <div><strong>Databiomics</strong><span>Ciências da Vida • Bioinformática • Biotecnologia</span></div>
+      </div>
+      <a class="button ghost" href="https://wbpereira.com.br" target="_blank" rel="noopener noreferrer">Conheça a WBPereira</a>
+    </aside>
   </div>
 </section>
 
-<section class="section transparency-note" aria-labelledby="transparency-note-title">
-  <div class="transparency-note-card">
-    <h2 id="transparency-note-title">Nota de transparência</h2>
-    <p>A Databiomics é uma iniciativa técnico-científica independente criada por Leandro de Mattos Pereira, voltada ao avanço da bioinformática e sua aplicações em microbioma, genômica aplicada e inteligência artificial em ciências biológicas.</p>
-    <p>Os conteúdos desta página têm caráter informativo, científico e de portfólio profissional.</p>
-  </div>
-</section>
-
-<section class="section new-articles-home" aria-labelledby="new-articles-title">
+<section id="sobre" class="section">
   <div class="section-heading">
-    <h2 id="new-articles-title">New_articles</h2>
-    <p>Scientific articles, curated databases and reproducible research resources published by Databiomics.</p>
+    <p class="db-section-kicker">SOBRE</p>
+    <h2>Onde Ciências da Vida encontram Tecnologia</h2>
+    <p>A Databiomics integra Bioinformática, Biologia Computacional, Ciência de Dados e Inteligência Artificial para investigar desafios complexos das Ciências da Vida.</p>
+  </div>
+  <div class="two-column db-about-grid">
+    <div class="info-card">
+      <h3>O que fazemos</h3>
+      <p>Desenvolvemos projetos técnico-científicos, plataformas computacionais, recursos de pesquisa e iniciativas de divulgação voltados à transformação de dados biológicos em conhecimento.</p>
+      <p>Nosso trabalho conecta pesquisa, desenvolvimento computacional e inovação em diferentes contextos das Ciências da Vida.</p>
+    </div>
+    <div class="info-card">
+      <h3>Como nos organizamos</h3>
+      <p><strong>WBPereira</strong> é a empresa principal. O <strong>WBPereira Tech</strong> concentra tecnologia e inovação. A <strong>Databiomics</strong> é a vertical especializada nas aplicações voltadas às Ciências da Vida.</p>
+      <p>Essa estrutura permite conectar experiência empresarial, desenvolvimento tecnológico e pesquisa científica mantendo objetivos e públicos claramente definidos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="areas">
+  <div class="section-heading">
+    <p class="db-section-kicker">ÁREAS</p>
+    <h2>Nossas áreas de atuação científica</h2>
+    <p>Competências e linhas de desenvolvimento que orientam nossos projetos e iniciativas.</p>
+  </div>
+  <div class="card-grid db-area-grid">
+    <article class="info-card"><span class="db-icon">⌬</span><h3>Bioinformática</h3><p>Métodos computacionais para organização, análise e interpretação de dados biológicos.</p></article>
+    <article class="info-card"><span class="db-icon">DNA</span><h3>Genômica &amp; Ômicas</h3><p>Genômica, metagenômica, transcriptômica, proteômica e integração de diferentes camadas de informação biológica.</p></article>
+    <article class="info-card"><span class="db-icon">µ</span><h3>Microbioma</h3><p>Exploração computacional da diversidade e da estrutura de comunidades microbianas em diferentes sistemas.</p></article>
+    <article class="info-card"><span class="db-icon">⚗</span><h3>Biotecnologia Computacional</h3><p>Exploração de genes, proteínas, enzimas, vias metabólicas, clusters biossintéticos e biomoléculas de interesse.</p></article>
+    <article class="info-card"><span class="db-icon">AI</span><h3>IA aplicada às Ciências da Vida</h3><p>Machine Learning, Deep Learning, NLP e modelos de representação aplicados à investigação de dados biológicos.</p></article>
+  </div>
+</section>
+
+<section id="projetos" class="section">
+  <div class="section-heading">
+    <p class="db-section-kicker">PROJETOS</p>
+    <h2>Projetos e plataformas em desenvolvimento</h2>
+    <p>Conheça algumas das iniciativas que conectam ciência, dados, software e inteligência artificial.</p>
+  </div>
+  <div class="card-grid db-project-grid">
+    <article class="info-card db-project-card">
+      <img class="db-project-logo" src="{{ '/assets/monkseal-logo.svg' | relative_url }}" alt="MonkSeal" loading="lazy">
+      <h3>MonkSeal</h3><p>Agente de IA em desenvolvimento para pesquisa bibliográfica, organização da informação científica e apoio à exploração da literatura.</p>
+      <span class="db-tag">IA • PESQUISA</span>
+      <a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Conheça o projeto</a>
+    </article>
+    <article class="info-card db-project-card">
+      <img class="db-project-logo" src="{{ '/assets/vaccinesavelifes-logo.svg' | relative_url }}" alt="VaccineSaveLives | VacinasSalvamVidas" loading="lazy">
+      <h3>VaccineSaveLives</h3><p>Plataforma independente de divulgação científica que organiza dados e evidências sobre vacinação em visualizações e conteúdos acessíveis.</p>
+      <span class="db-tag">DIVULGAÇÃO CIENTÍFICA • SAÚDE PÚBLICA</span>
+      <a class="button ghost" href="{{ '/vaccinesavelifes/' | relative_url }}">Conheça a plataforma</a>
+    </article>
+    <article class="info-card db-project-card"><div class="db-project-symbol">AI</div><h3>BioCatalyticAI</h3><p>Plataforma em desenvolvimento voltada ao apoio à anotação funcional de enzimas e à exploração computacional de seu potencial biotecnológico.</p><span class="db-tag">BIOINFORMÁTICA • BIOTECNOLOGIA</span><a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Saiba mais</a></article>
+    <article class="info-card db-project-card"><div class="db-project-symbol">P</div><h3>ProteinDesign – Databiomics®</h3><p>Iniciativa computacional para apoiar estudos de exploração e desenho de proteínas e enzimas.</p><span class="db-tag">PROTEÍNAS • IA</span><a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Saiba mais</a></article>
+    <article class="info-card db-project-card"><div class="db-project-symbol">AG</div><h3>DataAgrobiomics</h3><p>Dados biológicos, bioinformática e inteligência artificial aplicados a questões de pesquisa relacionadas ao agro e à biodiversidade.</p><span class="db-tag">AGRO • CIÊNCIAS DA VIDA</span><a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Saiba mais</a></article>
+    <article class="info-card db-project-card"><div class="db-project-symbol">DX</div><h3>ParasiteDx-AI</h3><p>Sistema conversacional em desenvolvimento voltado ao apoio informacional em Parasitologia Médica e organização de conhecimento científico.</p><span class="db-tag">PARASITOLOGIA • IA</span><a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Saiba mais</a></article>
+    <article class="info-card db-project-card"><div class="db-project-symbol">ODS</div><h3>ODS no Campo</h3><p>Iniciativa de ciência, dados e divulgação voltada à conexão entre sustentabilidade, território, biodiversidade e desenvolvimento.</p><span class="db-tag">AGRO • SUSTENTABILIDADE</span><a class="button ghost" href="{{ '/ods-no-campo/' | relative_url }}">Conheça o projeto</a></article>
+    <article class="info-card db-project-card"><div class="db-project-symbol">BGC</div><h3>TerpenoScanner</h3><p>Participação em iniciativa colaborativa de pesquisa para explorar o potencial químico e biotecnológico de terpenos de cianobactérias com apoio de IA.</p><span class="db-tag">PRODUTOS NATURAIS • IA</span><a class="button ghost" href="{{ '/apoie-projetos/' | relative_url }}">Saiba mais</a></article>
+  </div>
+  <div class="db-center-action"><a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}">Ver todos os projetos</a></div>
+</section>
+
+<section class="section alt" id="publicacoes-destaque">
+  <div class="section-heading">
+    <p class="db-section-kicker">PUBLICAÇÕES</p>
+    <h2>Publicações científicas selecionadas</h2>
+    <p>Uma seleção de trabalhos publicados em bioinformática, genômica, microbioma, biotecnologia, parasitologia e saúde.</p>
+  </div>
+  <div class="db-publication-grid">
+    <a class="db-publication-card" href="{{ '/articles/' | relative_url }}">
+      <img src="{{ '/assets/articles/faalpred-2026.svg' | relative_url }}" alt="Figura do artigo FAALPred" loading="lazy">
+      <div><span>Protein Science • 2026</span><h3>Diversity of FAAL enzymes and prediction of their substrate specificity using FAALPred</h3></div>
+    </a>
+    <a class="db-publication-card" href="{{ '/articles/' | relative_url }}">
+      <img src="{{ '/assets/articles/coral_microbiome_heat_stress_illustration.svg' | relative_url }}" alt="Figura do artigo sobre microbioma de corais e estresse térmico" loading="lazy">
+      <div><span>Science Advances • 2021</span><h3>Coral microbiome manipulation elicits metabolic and genetic restructuring to mitigate heat stress</h3></div>
+    </a>
+    <a class="db-publication-card" href="{{ '/articles/' | relative_url }}">
+      <img src="{{ '/assets/articles/sarscov2-2021.svg' | relative_url }}" alt="Figura do artigo sobre mutações de SARS-CoV-2 no Brasil" loading="lazy">
+      <div><span>Scientific Reports • 2021</span><h3>SARS-CoV-2 mutations in Brazil: from genomics to putative clinical conditions</h3></div>
+    </a>
+    <a class="db-publication-card" href="{{ '/articles/' | relative_url }}">
+      <img src="{{ '/assets/articles/angiostrongylus-worms-2021.svg' | relative_url }}" alt="Figura do artigo sobre transcriptoma de Angiostrongylus cantonensis" loading="lazy">
+      <div><span>Parasitology • 2021</span><h3>De novo transcriptome reveals blood coagulation/antithrombin factors and infection mechanisms</h3></div>
+    </a>
+    <a class="db-publication-card" href="{{ '/articles/' | relative_url }}">
+      <img src="{{ '/assets/articles/bothrops-2020.svg' | relative_url }}" alt="Figura do artigo sobre transcriptoma de Bothrops jararaca" loading="lazy">
+      <div><span>JVATiTD • 2020</span><h3>In depth transcriptome unravels the biotechnological potential of the Bothrops jararaca venom gland</h3></div>
+    </a>
+    <a class="db-publication-card" href="{{ '/articles/' | relative_url }}">
+      <img src="{{ '/assets/articles/methane_production.png' | relative_url }}" alt="Figura do artigo sobre produção de biogás e comunidades microbianas" loading="lazy">
+      <div><span>Renewable Energy • 2018</span><h3>Biogas from slaughterhouse wastewater anaerobic digestion and associated microbial communities</h3></div>
+    </a>
+  </div>
+  <div class="db-center-action"><a class="button primary" href="{{ '/articles/' | relative_url }}">Ver publicações e imagens</a></div>
+</section>
+
+<section id="pesquisa" class="section">
+  <div class="section-heading">
+    <p class="db-section-kicker">PESQUISA &amp; DESENVOLVIMENTO</p>
+    <h2>Pesquisa, recursos e reprodutibilidade</h2>
+    <p>Organizamos publicações, projetos em desenvolvimento e recursos científicos de forma estruturada e rastreável.</p>
   </div>
   <div class="card-grid">
-    <article class="info-card">
-      <h3>New Articles and Research Resources</h3>
-      <p>Access Databiomics research pages with manuscripts, tables, FASTA files, supplementary datasets and citation guidance.</p>
-      <a class="button primary" href="{{ '/New_articles/' | relative_url }}">Open New_articles</a>
-    </article>
+    <article class="info-card"><h3>Publicações científicas</h3><p>Trabalhos publicados em Bioinformática, Genômica, Microbioma, Transcriptômica, Biotecnologia, Parasitologia, Saúde e Inteligência Artificial.</p><a class="button ghost" href="{{ '/articles/' | relative_url }}">Explorar publicações</a></article>
+    <article class="info-card"><h3>Portfólio de P&amp;D</h3><p>Linhas de pesquisa e trabalhos em desenvolvimento apresentados em nível compatível com a proteção de resultados, hipóteses e futuras publicações.</p><a class="button ghost" href="{{ '/New_articles/' | relative_url }}">Explorar portfólio</a></article>
+    <article class="info-card"><h3>Recursos científicos</h3><p>Datasets, tabelas, sequências, arquivos suplementares, código e outros recursos disponibilizados quando apropriado.</p><a class="button ghost" href="{{ '/New_articles/' | relative_url }}">Explorar recursos</a></article>
   </div>
 </section>
 
-<section class="section stats">
+<section class="section alt" id="experiencia">
   <div class="section-heading">
-    <h2 data-i18n-key="stats_title">Impacto e diferenciais</h2>
-    <p data-i18n-key="stats_subtitle">Foco em inovação, resultados aplicados, eficiência de análise, colaboração e capacitação de equipes multidisciplinares.</p>
+    <p class="db-section-kicker">EXPERIÊNCIA</p>
+    <h2>Experiência que sustenta nossos projetos</h2>
   </div>
   <div class="stats-grid">
-    <div class="stat-card">
-      <h3>+15 anos</h3>
-      <p>de experiência combinada em bioinformática e análise de dados ômicos.</p>
-    </div>
-    <div class="stat-card">
-      <h3 data-i18n-key="stats_card2_title">Projetos internacionais</h3>
-      <p data-i18n-key="stats_card2_text">colaborações com universidades, centros de pesquisa e empresas.</p>
-    </div>
-    <div class="stat-card">
-      <h3 data-i18n-key="stats_card3_title">IA aplicada</h3>
-      <p data-i18n-key="stats_card3_text">modelos preditivos e NLP para acelerar descoberta científica.</p>
-    </div>
-    <div class="stat-card">
-      <h3 data-i18n-key="stats_card4_title">Treinamentos customizados</h3>
-      <p data-i18n-key="stats_card4_text">do básico ao avançado, com foco em prática e reprodutibilidade.</p>
-    </div>
+    <div class="stat-card"><h3>+15 anos</h3><p>de experiência em Bioinformática, Biologia Computacional e análise de dados biológicos.</p></div>
+    <div class="stat-card"><h3>Projetos nacionais e internacionais</h3><p>Participação em iniciativas científicas desenvolvidas no Brasil e no exterior.</p></div>
+    <div class="stat-card"><h3>Pesquisa publicada</h3><p>Produção científica em Genômica, Microbioma, Transcriptômica, Biotecnologia e áreas relacionadas.</p></div>
+    <div class="stat-card"><h3>IA aplicada à Biologia</h3><p>Desenvolvimento e aplicação de modelos computacionais voltados à descoberta científica.</p></div>
+    <div class="stat-card"><h3>Desenvolvimento computacional</h3><p>Pipelines, plataformas, aplicações e ferramentas voltadas à pesquisa e organização de dados.</p></div>
   </div>
 </section>
 
-<section class="section follow-cta" aria-label="Siga a Databiomics® nas redes sociais">
-  <p class="follow-cta-text">Siga a Databiomics® e apoie uma iniciativa brasileira 🇧🇷 voltada à ciência, à inovação e à biotecnologia.</p>
-  <div class="follow-cta-actions" role="group" aria-label="Redes sociais oficiais da Databiomics®">
-    <a class="button ghost social-follow-link" href="https://www.linkedin.com/company/databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Siga a Databiomics® no LinkedIn">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.94 8.5H3.56V19h3.38zm.22-3.5a1.96 1.96 0 1 0-3.92 0 1.96 1.96 0 0 0 3.92 0M20.5 13.2c0-3.26-1.74-4.78-4.06-4.78a3.5 3.5 0 0 0-3.2 1.76V8.5H9.86V19h3.38v-5.2c0-1.38.26-2.72 1.98-2.72 1.7 0 1.72 1.6 1.72 2.8V19h3.38z"/></svg>
-      <span>LinkedIn</span>
-    </a>
-    <a class="button ghost social-follow-link" href="https://www.instagram.com/databiomics_ai" target="_blank" rel="noreferrer noopener" aria-label="Siga a Databiomics® no Instagram">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3m0 1.8A2.95 2.95 0 0 0 4.8 7.75v8.5a2.95 2.95 0 0 0 2.95 2.95h8.5a2.95 2.95 0 0 0 2.95-2.95v-8.5a2.95 2.95 0 0 0-2.95-2.95zm8.96 1.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1M12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6m0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4"/></svg>
-      <span>Instagram</span>
-    </a>
-    <a class="button ghost social-follow-link" href="https://www.facebook.com/Databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Siga a Databiomics® no Facebook">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.2 21v-7.2h2.4l.36-2.8H13.2V9.2c0-.8.22-1.34 1.36-1.34H16V5.35A19 19 0 0 0 13.88 5c-2.1 0-3.53 1.28-3.53 3.64v2.04H8v2.8h2.35V21z"/></svg>
-      <span>Facebook</span>
-    </a>
-  </div>
-  <div class="social-qr-grid" aria-label="QR Codes oficiais Databiomics®">
-    <a class="social-qr-card" href="https://www.linkedin.com/company/databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Abrir LinkedIn da Databiomics®">
-      <img src="{{ '/assets/qrcode/linkdin-qr-code.png' | relative_url }}" alt="QR Code do LinkedIn da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/linkdin-qr-code.png';">
-      <span>LinkedIn</span>
-    </a>
-    <a class="social-qr-card" href="https://www.instagram.com/databiomics_ai" target="_blank" rel="noreferrer noopener" aria-label="Abrir Instagram da Databiomics®">
-      <img src="{{ '/assets/qrcode/instagram-qr-code.png' | relative_url }}" alt="QR Code do Instagram da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/instagram-qr-code.png';">
-      <span>Instagram</span>
-    </a>
-    <a class="social-qr-card" href="https://www.facebook.com/Databiomics/" target="_blank" rel="noreferrer noopener" aria-label="Abrir Facebook da Databiomics®">
-      <img src="{{ '/assets/qrcode/facebook-qr-code.png' | relative_url }}" alt="QR Code do Facebook da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/facebook-qr-code.png';">
-      <span>Facebook</span>
-    </a>
-    <a class="social-qr-card" href="{{ '/' | relative_url }}" aria-label="Abrir website da Databiomics®">
-      <img src="{{ '/assets/qrcode/website-qr-code.png' | relative_url }}" alt="QR Code do website da Databiomics®" loading="lazy" onerror="this.onerror=null;this.src='https://raw.githubusercontent.com/DatabiomicsAI/databiomicsai.github.io/main/assets/qrcode/website-qr-code.png';">
-      <span>Website</span>
-    </a>
-  </div>
-</section>
-
-<section id="sobre" class="section about-panel">
+<section class="section" id="lideranca">
   <div class="section-heading">
-    <h2 data-i18n-key="about_title">Sobre</h2>
-    <p data-i18n-key="about_subtitle">Pesquisador e consultor com trajetória em bioinformática, biologia computacional e ciência de dados aplicada à saúde, biodiversidade e biotecnologia.</p>
+    <p class="db-section-kicker">LIDERANÇA CIENTÍFICA</p>
+    <h2>Leandro de Mattos Pereira</h2>
   </div>
-  <div class="two-column">
+  <div class="db-leadership">
+    <img src="{{ '/leandro_mattos_pereira.png' | relative_url }}" alt="Leandro de Mattos Pereira" loading="lazy">
     <div>
-      <h3 data-i18n-key="about_exp_title">Experiência</h3>
-      <p>Experiência em projetos nacionais e internacionais de bioinformática e biologia computacional, com atuação em genômica comparativa, filogenômica, metagenômica, microbiomas/metabarcoding  (incluindo câncer em humanos) e análise de dados ômicos, aliadas ao uso de inteligência artificial para descoberta de enzimas, anotação funcional e predição de especificidade de substratos.</p>
-      <p>Desenvolvimento de pipelines reprodutíveis para análise de genomas, metagenomas, transcriptomas, microbiomas e outros dados ômicos.</p>
-      <p>Modelagem preditiva, aprendizagem supervisionada e não supervisionada, além de NLP aplicado às ciências da vida.</p>
-      <p>Desenvolvimento de aplicações e soluções computacionais com Python, R, SQL/PostgreSQL, Flask, Streamlit, Galaxy e ferramentas de automação científica.</p>
-    </div>
-    <div class="profile-card">
-      <img src="{{ '/leandro_mattos_pereira.png' | relative_url }}" alt="Leandro de Mattos Pereira">
-      <h3>Leandro de Mattos Pereira</h3>
-      <p data-i18n-key="about_profile_p1">Leandro de Mattos Pereira é pesquisador, biólogo (CRBio-2 143240), doutor em Biologia Computacional e de Sistemas pela Fiocruz (RJ), mestre em Biociências e Biotecnologia pela UENF e graduado em Ciências Biológicas pela UENF, com ênfase em Biotecnologia. Realizou ainda seis pós-doutorados no Brasil (PUCRS, HCPA, UFRJ, Fiocruz, ITV) na área de Bioinformática, foi colaborador voluntário do IPR (Instituto do Petróleo e Recursos Naturais, PUCRS), e foi Investigador Júnior em Bioinformática no CIIMAR (Portugal), projeto BlueBio4Future (https://bb4f.ciimar.up.pt/) financiado pela União Européia; Atua de forma estratégica em bioinformática, ciência de dados ômicos e inteligência artificial aplicada à biotecnologia, desenvolvendo soluções analíticas e computacionais para transformar dados biológicos complexos em conhecimento aplicável à pesquisa, inovação e desenvolvimento.</p>
-      <p data-i18n-key="about_profile_p2">Integra bioinformática e IA com foco em resultados práticos para saúde, biotecnologia, sustentabilidade e tomada de decisão baseada em dados.</p>
-      <div class="profile-social-actions" role="group" aria-label="Redes sociais">
-        <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noreferrer" data-i18n-key="about_linkedin_btn">LinkedIn</a>
-        <a class="button ghost" href="https://github.com/mattoslmp" target="_blank" rel="noreferrer noopener">GitHub</a>
-        <a class="button ghost social-follow-link" href="https://www.instagram.com/databiomics_ai" target="_blank" rel="noreferrer noopener" aria-label="Instagram Databiomics @databiomics_ai">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3m0 1.8A2.95 2.95 0 0 0 4.8 7.75v8.5a2.95 2.95 0 0 0 2.95 2.95h8.5a2.95 2.95 0 0 0 2.95-2.95v-8.5a2.95 2.95 0 0 0-2.95-2.95zm8.96 1.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1M12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6m0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4"/></svg>
-          <span>Instagram</span>
-        </a>
+      <p class="db-role">Biólogo • Bioinformática • Biologia Computacional • Inteligência Artificial</p>
+      <p>Leandro de Mattos Pereira é Biólogo, doutor em Biologia Computacional e de Sistemas pela Fiocruz, mestre em Biociências e Biotecnologia pela UENF e graduado em Ciências Biológicas pela UENF.</p>
+      <p>Sua trajetória inclui pesquisa em Bioinformática, Genômica, Microbioma, Biologia Computacional e Inteligência Artificial aplicada às Ciências da Vida, com participação em projetos desenvolvidos em diferentes instituições no Brasil e em Portugal.</p>
+      <div class="hero-actions">
+        <a class="button ghost" href="http://lattes.cnpq.br/0378658543221383" target="_blank" rel="noopener noreferrer">CV Lattes</a>
+        <a class="button ghost" href="{{ '/articles/' | relative_url }}">Publicações</a>
+        <a class="button ghost" href="https://www.linkedin.com/in/leandrodemattos/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section testimonials">
+<section class="section alt" id="aplicacoes">
   <div class="section-heading">
-    <h2 data-i18n-key="help_title">Como posso ajudar sua organização?</h2>
-    <p data-i18n-key="help_subtitle">Transformo dados complexos em decisões claras, com entregas estruturadas e comunicação objetiva.</p>
+    <p class="db-section-kicker">APLICAÇÕES</p>
+    <h2>Da pesquisa à aplicação</h2>
+    <p>Áreas em que nossas competências científicas e computacionais podem orientar pesquisa, desenvolvimento e colaboração.</p>
   </div>
-  <div class="card-grid" aria-label="Áreas de atuação em serviços e aplicações">
-    <article class="info-card">
-      <h3>Diagnóstico de dados</h3>
-      <p>Organização de dados, processos e fluxos analíticos para aumentar eficiência, consistência e qualidade nas análises.</p>
-    </article>
-    <article class="info-card">
-      <h3>Pipelines reprodutíveis</h3>
-      <p>Desenvolvimento de pipelines customizados robustos e padronizados com o estado da arte da literatura para análise de dados ômicos com foco em descoberta, inovação, aplicabilidade, rastreabilidade e escalabilidadade.</p>
-    </article>
-    <article class="info-card">
-      <h3>Bioinformática e IA aplicada à biologia</h3>
-      <p>Aplicação de modelos computacionais para interpretação biológica, predição funcional de genes, enzimas e análise e predição da especificidade do(s) substratos.</p>
-    </article>
-    <article class="info-card">
-      <h3>Descoberta molecular</h3>
-      <p>Mineração computacional de genes, enzimas, vias metabólicas, proteínas e biomoléculas de interesse biotecnológico.</p>
-    </article>
-    <article class="info-card">
-      <h3>Relatórios estratégicos</h3>
-      <p>Conversão de resultados técnicos em relatórios, dashboards e materiais interpretativos voltados à tomada de decisão.</p>
-    </article>
-    <article class="info-card">
-      <h3>Capacitação especializada</h3>
-      <p>Treinamentos práticos e personalizados em bioinformática, IA e análise de dados ômicos para equipes e instituições.</p>
-    </article>
-    <article class="info-card">
-      <h3>IA, Bioinformática e Ômicas para Soluções em Saúde</h3>
-      <p>Aplicações em saúde com integração de IA, bioinformática e dados ômicos para apoiar diagnóstico molecular, medicina personalizada e decisões clínicas baseadas em dados.</p>
-    </article>
-  </div>
-  <div class="help-services-cta" aria-label="Atalhos para serviços e aplicações">
-    <p>Explore com mais detalhes <strong>Serviços</strong> e <strong>Aplicações</strong>.</p>
-    <div class="help-services-cta-actions">
-      <a class="button primary" href="{{ '/servicos/' | relative_url }}">Serviços</a>
-      <a class="button ghost" href="{{ '/servicos/#applications-title' | relative_url }}">Aplicações</a>
-    </div>
+  <div class="card-grid db-app-grid">
+    <article class="info-card"><h3>Saúde</h3><p>Bioinformática, dados ômicos, genômica, microbioma e inteligência artificial aplicada à pesquisa biomédica.</p></article>
+    <article class="info-card"><h3>Biotecnologia</h3><p>Prospecção computacional de enzimas, proteínas, biomoléculas, vias metabólicas e alvos de interesse.</p></article>
+    <article class="info-card"><h3>Agro</h3><p>Microbioma, genômica, biodiversidade e exploração de dados biológicos relacionados à produção e sustentabilidade.</p></article>
+    <article class="info-card"><h3>Meio Ambiente</h3><p>Metagenômica, biodiversidade, comunidades biológicas e recursos genéticos em contextos ambientais.</p></article>
+    <article class="info-card"><h3>Pesquisa científica</h3><p>Pipelines, integração de dados, desenvolvimento de recursos e ferramentas computacionais para investigação científica.</p></article>
+    <article class="info-card"><h3>Indústria &amp; P&amp;D</h3><p>Exploração computacional de dados biológicos com potencial para apoiar novas linhas de pesquisa e inovação.</p></article>
   </div>
 </section>
 
-<section id="programas" class="section alt">
+<section id="parcerias" class="section">
   <div class="section-heading">
-    <h2 data-i18n-key="programs_title">Programas em Destaque</h2>
-    <p data-i18n-key="programs_subtitle">Projetos estruturados para acelerar resultados e inovação científica.</p>
+    <p class="db-section-kicker">PARCERIAS &amp; COLABORAÇÕES</p>
+    <h2>Ciência e inovação avançam por meio de colaboração</h2>
+    <p>Estamos abertos a colaborações científicas, acadêmicas, institucionais e tecnológicas relacionadas ao desenvolvimento conjunto de projetos, plataformas, pesquisas e propostas de inovação.</p>
   </div>
   <div class="card-grid">
-    <article class="info-card">
-      <h3>Programa Genômica &amp; IA</h3>
-      <p>Pipeline completo de dados até insights, com acompanhamento técnico especializado.</p>
-    </article>
-    <article class="info-card">
-      <h3>Treinamentos personalizados em Bioinformática</h3>
-      <p>Com abordagem teórica e prática, aplicados a análises de metabarcoding de DNA ambiental (eDNA) e análises filogenéticas para empresas e grupos de pesquisa, oferecidos em formato remoto ou presencial.</p>
-    </article>
-    <article class="info-card">
-      <h3>Capacitação de Equipes</h3>
-      <p>Treinamentos hands-on com foco em ferramentas modernas e boas práticas.</p>
-    </article>
-    <article class="info-card">
-      <h3>Consultoria Estratégica</h3>
-      <p>Diagnóstico de necessidades, desenho de experimentos e planejamento de projetos.</p>
-    </article>
+    <article class="info-card"><h3>Colaboração científica</h3><p>Universidades, pesquisadores, laboratórios e grupos de pesquisa.</p></article>
+    <article class="info-card"><h3>Desenvolvimento conjunto</h3><p>Instituições e organizações interessadas em co-desenvolver projetos e plataformas.</p></article>
+    <article class="info-card"><h3>Projetos e editais</h3><p>Construção colaborativa de propostas de pesquisa, desenvolvimento, inovação e financiamento.</p></article>
+    <article class="info-card"><h3>Validação experimental</h3><p>Articulação com instituições e laboratórios tecnicamente habilitados quando projetos computacionais demandarem validação experimental.</p></article>
+    <article class="info-card"><h3>Infraestrutura e dados</h3><p>Colaborações envolvendo capacidade computacional, conjuntos de dados e infraestrutura científica.</p></article>
+  </div>
+  <div class="db-center-action"><a class="button primary" href="{{ '/parcerias/' | relative_url }}">Propor uma colaboração</a></div>
+</section>
+
+<section class="section alt" id="ecossistema-wbpereira">
+  <div class="db-parent-company">
+    <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="WBPereira Comércio e Serviços" loading="lazy">
+    <div>
+      <p class="db-section-kicker">NOSSO ECOSSISTEMA</p>
+      <h2>WBPereira Comércio e Serviços</h2>
+      <p>A Databiomics integra o <strong>WBPereira Tech</strong>, departamento de tecnologia e inovação da WBPereira Comércio e Serviços.</p>
+      <p>Com atuação desde 1986, a WBPereira reúne experiência no atendimento ao setor produtivo e mantém sua atividade comercial em máquinas, peças, equipamentos e serviços. O WBPereira Tech amplia esse ecossistema com tecnologia, dados, software, inteligência artificial e inovação.</p>
+      <a class="button ghost" href="https://wbpereira.com.br" target="_blank" rel="noopener noreferrer">Acessar wbpereira.com.br</a>
+    </div>
   </div>
 </section>
 
-<section class="section support-projects-highlight" id="apoie-destaque">
-  <div class="section-heading compact">
-    <h2 data-i18n-key="support_projects_title">Apoie os projetos da Databiomics®</h2>
-    <p data-i18n-key="support_projects_summary">Veja missão, valores, transparência, projetos em andamento, além de formulário para colaborar e apoiar a Databiomics®.</p>
-  </div>
-  <div class="card-grid compact">
-    <article class="info-card">
-      <p data-i18n-key="support_projects_intro">Veja a página dedicada e acompanhe as oportunidades de apoiar as iniciativas da Databiomics®.</p>
-      <a class="button primary" href="{{ '/apoie-projetos/' | relative_url }}" data-i18n-key="support_projects_btn">Abrir página Apoie os projetos</a>
-    </article>
-  </div>
-</section>
-
-
-<section class="section partnerships-highlight" id="parcerias-destaque">
-  <div class="section-heading compact">
-    <h2 data-i18n-key="partnerships_title">Apoio empresarial</h2>
-  </div>
-  <div class="card-grid compact">
-    <article class="info-card partnership-item">
-      <p data-i18n-key="partnerships_home_summary">Conheça parceiros institucionais e iniciativas editoriais que fortalecem o ecossistema Databiomics®.</p>
-      <a class="button primary" href="{{ '/parcerias-estrategicas/' | relative_url }}" data-i18n-key="partnerships_home_btn">Abrir Parcerias Estratégicas</a>
-    </article>
-  </div>
-</section>
-
-<section class="section explore-more" id="explore-more">
-  <div class="section-heading compact">
-    <h2>Explore More</h2>
-    <p>Explore mais sobre o autor: </p>
-  </div>
-  <div class="quick-links-grid" aria-label="Links secundários">
-    <a class="quick-link" href="{{ '/videos/' | relative_url }}">Videos</a>
-    <a class="quick-link" href="{{ '/planocursos/' | relative_url }}">Planejamento de Cursos</a>
-    <a class="quick-link" href="#programas">Programs</a>
-    <a class="quick-link" href="{{ '/depoimentos/' | relative_url }}">Testimonials</a>
-    <a class="quick-link" href="{{ '/cv-others/' | relative_url }}">CV / Others</a>
-  </div>
-</section>
-
-<section class="section social-share" aria-label="Compartilhar página principal">
-  <div class="section-heading compact">
-    <h2>Compartilhe esta página</h2>
-    <p>Divulgue o conteúdo da Databiomics® no LinkedIn, Instagram e Facebook.</p>
-  </div>
-  <div class="social-share-actions" role="group" aria-label="Ações de compartilhamento">
-    <a class="button ghost" href="https://www.linkedin.com/sharing/share-offsite/?url=" data-share-network="linkedin" data-share-title="Databiomics® - Página principal">LinkedIn</a>
-    <a class="button ghost" href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">Instagram</a>
-    <a class="button ghost" href="https://www.facebook.com/sharer/sharer.php?u=" data-share-network="facebook" data-share-title="Databiomics® - Página principal">Facebook</a>
-  </div>
-</section>
-
-<section class="section supporters-highlight" id="apoiadores-databiomics">
-  <div class="section-heading compact">
-    <h2>Apoiadores da Databiomics®</h2>
-    <p>Conheça quem fortalece o ecossistema Databiomics® e apoia iniciativas científicas, educacionais e de inovação aplicada.</p>
-  </div>
-  <div class="card-grid compact supporters-inline-grid">
-    <article class="info-card supporter-inline-card">
-      <img src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="Logo da WBPereira" loading="lazy">
-      <p><strong>WBPereira</strong> · Desde 1986, servindo homem do campo.</p>
-      <div class="supporter-social-row" role="group" aria-label="Redes sociais da WBPereira">
-        <a class="button primary social-follow-link" href="https://www.youtube.com/@wbpereira" target="_blank" rel="noreferrer noopener" aria-label="YouTube da WBPereira">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 12s0-3.2-.4-4.7c-.2-.8-.8-1.4-1.6-1.6C19.5 5.3 12 5.3 12 5.3s-7.5 0-9 .4c-.8.2-1.4.8-1.6 1.6C1 8.8 1 12 1 12s0 3.2.4 4.7c.2.8.8 1.4 1.6 1.6 1.5.4 9 .4 9 .4s7.5 0 9-.4c.8-.2 1.4-.8 1.6-1.6.4-1.5.4-4.7.4-4.7M10 15.5v-7l6 3.5z"/></svg>
-          <span>YouTube</span>
-        </a>
-        <a class="button ghost social-follow-link" href="https://www.instagram.com/wbmaquinasagricolas/" target="_blank" rel="noreferrer noopener" aria-label="Instagram da WBPereira">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.75 3h8.5A4.75 4.75 0 0 1 21 7.75v8.5A4.75 4.75 0 0 1 16.25 21h-8.5A4.75 4.75 0 0 1 3 16.25v-8.5A4.75 4.75 0 0 1 7.75 3m0 1.8A2.95 2.95 0 0 0 4.8 7.75v8.5a2.95 2.95 0 0 0 2.95 2.95h8.5a2.95 2.95 0 0 0 2.95-2.95v-8.5a2.95 2.95 0 0 0-2.95-2.95zm8.96 1.35a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1M12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6m0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4"/></svg>
-          <span>Instagram</span>
-        </a>
-        <a class="button ghost social-follow-link" href="https://www.facebook.com/WBPEREIRAMAQUINASAGRICOLAS" target="_blank" rel="noreferrer noopener" aria-label="Facebook da WBPereira">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.6-1.6h1.7V4.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2V11H8v3h2.3v8z"/></svg>
-          <span>Facebook</span>
-        </a>
-        <a class="button ghost social-follow-link" href="https://www.linkedin.com/in/wbpereira-com%C3%A9rcio-e-servi%C3%A7os-2203113b9/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn da WBPereira">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.1 8.7A1.9 1.9 0 1 1 6 5a1.9 1.9 0 0 1 .1 3.7M4.4 10h3.3v10H4.4zm5.1 0h3.1v1.4h.1c.4-.8 1.5-1.7 3.2-1.7 3.4 0 4 2.2 4 5.2V20h-3.3v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4V20H9.5z"/></svg>
-          <span>LinkedIn</span>
-        </a>
-      </div>
-      <a class="button ghost" href="{{ '/parcerias-estrategicas/' | relative_url }}">Ver parceiros e apoiadores</a>
-    </article>
-  </div>
-</section>
-
-<section id="contato" class="section contact">
+<section id="conteudos" class="section">
   <div class="section-heading">
-    <h2>Envie sua mensagem</h2>
-    <p>Preencha o formulário abaixo para entrar em contato sobre serviços, propostas, colaborações, cursos, treinamentos ou consultorias.</p>
+    <p class="db-section-kicker">CONTEÚDOS &amp; CONHECIMENTO</p>
+    <h2>Ciência e tecnologia para acompanhar, aprender e aplicar</h2>
   </div>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <h3 data-i18n-key="contact_talk">Fale comigo</h3>
-      <p><strong>Skype:</strong> mattoslmp</p>
-      <p><strong data-i18n-key="contact_hours_label">Horário:</strong> 8AM - 6PM (BRT) · Leandro de Mattos Pereira</p>
-      <p><strong>Email:</strong> <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
-      <div class="contact-actions">
-        <a class="button primary" id="whatsapp-contact-link" href="#" target="_blank" rel="noreferrer" data-i18n-key="contact_whatsapp">Enviar mensagem no WhatsApp</a>
-        <a class="button ghost" href="mailto:info@databiomics.com?subject=Contato%20via%20site%20Databiomics" data-i18n-key="contact_email_btn">Enviar e-mail</a>
-      </div>
-      <p class="contact-note">Use o formulário para enviar sua mensagem diretamente para info@databiomics.com.</p>
-    </div>
-    <div class="contact-card">
-      <h3>Envie sua mensagem</h3>
-      <form class="contact-form" action="https://formsubmit.co/info@databiomics.com" method="POST" id="contact-form">
-        <input type="hidden" name="_subject" value="Novo contato via site Databiomics">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://databiomics.com/#contato">
-        <input type="hidden" id="contact-subject-label" name="assunto_contato_label" value="">
-        <input type="hidden" id="contact-category-label" name="categoria_interesse_label" value="">
-        <input type="hidden" id="contact-modality-label" name="modalidade_treinamento_label" value="Não se aplica">
-        <label for="contact-full-name">
-          <span>Nome completo</span>
-          <input id="contact-full-name" type="text" name="nome" placeholder="Seu nome completo" required>
-        </label>
-        <label for="contact-email">
-          <span>E-mail</span>
-          <input id="contact-email" type="email" name="email" placeholder="nome@instituicao.com" required>
-        </label>
-        <label for="contact-subject">
-          <span>Assunto do contato</span>
-          <select id="contact-subject" name="assunto_contato" required>
-            <option value="" selected disabled>Selecione o assunto</option>
-            <option value="colaboracao_cientifica">Colaboração científica</option>
-            <option value="solicitacao_proposta">Solicitação de proposta</option>
-            <option value="contratacao_servicos">Contratação de serviços</option>
-            <option value="cursos_palestras_workshops">Cursos, palestras ou workshops</option>
-            <option value="mentoria_orientacao">Mentoria / orientação</option>
-            <option value="treinamento_equipes_assunto">Treinamento de equipes</option>
-            <option value="outro_assunto">Outro assunto</option>
-          </select>
-        </label>
-        <label for="contact-category">
-          <span>Categoria do interesse</span>
-          <select id="contact-category" name="categoria_interesse" required>
-            <option value="" selected disabled>Selecione a categoria</option>
-            <option value="enzimas_bioinformatica_ia">Priorização de enzimas com Bioinformática e IA</option>
-            <option value="analises_genomicas">Análises genômicas</option>
-            <option value="montagem_genomas">Montagem de genomas</option>
-            <option value="anotacao_funcional_genomas">Anotação funcional de genomas</option>
-            <option value="transcriptomica">Transcriptômica</option>
-            <option value="metabarcoding">Metabarcoding</option>
-            <option value="metagenomica">Metagenômica</option>
-            <option value="machine_learning_redes_neurais">Machine learning e redes neurais</option>
-            <option value="desenvolvimento_solucoes">Desenvolvimento de soluções</option>
-            <option value="consultoria_estrategica">Consultoria estratégica</option>
-            <option value="treinamento_equipes">Treinamento de equipes</option>
-            <option value="outro_interesse">Outro</option>
-          </select>
-        </label>
-        <div id="contact-modality-wrapper" style="display: none;">
-          <label for="contact-modality">
-            <span>Modalidade do treinamento ou curso</span>
-            <select id="contact-modality" name="modalidade_treinamento" disabled>
-              <option value="" selected disabled>Selecione a modalidade</option>
-              <option value="online_ao_vivo">Online ao vivo</option>
-              <option value="gravado">Gravado</option>
-              <option value="presencial_empresa">Presencial na empresa</option>
-              <option value="presencial_instituicao_ensino">Presencial em instituição de ensino</option>
-              <option value="workshop_personalizado">Workshop personalizado</option>
-              <option value="palestra">Palestra</option>
-              <option value="a_definir">A definir</option>
-            </select>
-          </label>
-        </div>
-        <label for="contact-message">
-          <span>Mensagem</span>
-          <textarea id="contact-message" name="message" rows="5" placeholder="Como posso ajudar?" required></textarea>
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="privacy_consent_contact" required>
-          <span>Li e concordo com o tratamento dos meus dados pessoais conforme a</span> <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.
-        </label>
-        <button class="button primary" type="submit">Enviar mensagem</button>
-        <p class="contact-form-feedback" id="contact-form-feedback" aria-live="polite"></p>
-      </form>
-    </div>
+  <div class="card-grid">
+    <article class="info-card"><h3>Artigos &amp; Insights</h3><p>Conteúdos sobre ciência, Bioinformática, Inteligência Artificial e Biotecnologia.</p><a class="button ghost" href="{{ '/comunidade/' | relative_url }}">Explorar conteúdos</a></article>
+    <article class="info-card"><h3>Vídeos</h3><p>Conteúdos científicos, tecnológicos e educacionais em formato visual.</p><a class="button ghost" href="{{ '/videos/' | relative_url }}">Ver vídeos</a></article>
+    <article class="info-card"><h3>Notícias Bioinfo/AI</h3><p>Atualizações e conteúdos selecionados sobre Bioinformática e Inteligência Artificial aplicada.</p><a class="button ghost" href="{{ '/comunidade/' | relative_url }}">Acompanhar</a></article>
+    <article class="info-card"><span class="db-coming">EM BREVE</span><h3>Formação</h3><p>Cursos, materiais e experiências educacionais em Bioinformática, Inteligência Artificial, Ciência de Dados e desenvolvimento de tecnologias científicas.</p><a class="button ghost" href="#acompanhe">Acompanhar lançamentos</a></article>
   </div>
 </section>
 
-<section id="visitor-dashboard" class="visitor-dashboard-section" aria-labelledby="visitor-dashboard-title" style="margin:2.5rem 0;padding:1rem;border:1px solid rgba(96,165,250,.3);border-radius:22px;background:rgba(15,23,42,.08);">
-  <div class="visitor-dashboard-card">
-      <h2 id="visitor-dashboard-title" data-i18n-key="visitor_title">Visitantes no mundo</h2>
-      <p id="visitor-count" class="visitor-count">Total de visitas: carregando...</p>
-      <p class="visitor-count visitor-map-summary">Brasil: <strong id="visitor-brazil-count">0</strong></p>
-      <div id="visitor-flags-strip" class="visitor-flags-strip visitor-flags-strip-hidden" aria-hidden="true"></div>
-      <div class="visitor-extended-details" aria-hidden="false">
-        <p id="visitor-country" data-i18n-country-loading="true">Carregando país do visitante...</p>
-        <h3 id="top-countries-title" data-i18n-key="top_countries_title">Principais países visitantes</h3>
-        <div class="country-list-scroll">
-          <ul id="visitor-country-list" class="visitor-country-list"></ul>
-        </div>
-        <h3 id="all-countries-title">Países visitantes</h3>
-        <p id="distinct-countries-count" class="visitor-count">Países distintos: carregando...</p>
-        <p id="distinct-countries-clock" class="visitor-count">Hora local: --:--:--</p>
-        <div class="country-list-scroll">
-          <ul id="visitor-country-list-all" class="visitor-country-list"></ul>
-        </div>
-      </div>
+<section id="acompanhe" class="section alt db-lead-section">
+  <div class="db-lead-copy">
+    <p class="db-section-kicker">ACOMPANHE</p>
+    <h2>Acompanhe o que estamos construindo</h2>
+    <p>Receba novidades sobre projetos, plataformas, pesquisa, conteúdos e futuros materiais educacionais da Databiomics e do WBPereira Tech.</p>
+  </div>
+  <form class="db-newsletter-form" action="https://formsubmit.co/info@databiomics.com" method="POST">
+    <input type="hidden" name="_subject" value="Nova inscrição - novidades Databiomics / WBPereira Tech">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://databiomics.com/#acompanhe">
+    <label>Nome<input type="text" name="nome" placeholder="Seu nome" required></label>
+    <label>E-mail<input type="email" name="email" placeholder="seuemail@dominio.com" required></label>
+    <label class="db-consent"><input type="checkbox" name="consentimento" required> Quero receber novidades sobre ciência, tecnologia, projetos e conteúdos e concordo com a <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.</label>
+    <button class="button primary" type="submit">Quero acompanhar</button>
+  </form>
+</section>
+
+<section class="section" id="redes">
+  <div class="section-heading">
+    <p class="db-section-kicker">COMUNIDADE</p>
+    <h2>Siga nossas páginas</h2>
+    <p>Projetos, conteúdos e inovação em um ecossistema com áreas de atuação complementares.</p>
+  </div>
+  <div class="db-social-grid">
+    <article class="info-card"><h3>WBPereira Tech</h3><p>Tecnologia, IA, dados, software e inovação.</p><a class="button ghost" href="https://www.instagram.com/wbpereiratech/" target="_blank" rel="noopener noreferrer">Instagram @wbpereiratech</a><a class="button ghost" href="https://www.linkedin.com/company/databiomics-wbpereira/" target="_blank" rel="noopener noreferrer">LinkedIn</a></article>
+    <article class="info-card"><img class="db-mini-logo" src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics" loading="lazy"><h3>Databiomics</h3><p>Ciências da Vida, Bioinformática e Biotecnologia.</p><a class="button ghost" href="https://www.facebook.com/Databiomics/" target="_blank" rel="noopener noreferrer">Facebook</a></article>
+    <article class="info-card"><img class="db-mini-logo db-wb-mini" src="{{ '/assets/parceiros/parceiro_wbpereira.jpeg' | relative_url }}" alt="WBPereira" loading="lazy"><h3>WBPereira</h3><p>Máquinas, peças, equipamentos, manutenção, comércio e serviços.</p><a class="button ghost" href="https://www.instagram.com/wbpereirabr/" target="_blank" rel="noopener noreferrer">Instagram @wbpereirabr</a><a class="button ghost" href="https://wbpereira.com.br" target="_blank" rel="noopener noreferrer">Loja e site</a></article>
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-block">
-      <h2 data-i18n-key="footer_booking">Contato para agendamento de serviços</h2>
-      <p><span data-i18n-key="footer_booking_text">Agende pelo E-mail:</span> <a href="mailto:mattoslmp@gmail.com">mattoslmp@gmail.com</a>, <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
+<section id="contato" class="section alt">
+  <div class="section-heading">
+    <p class="db-section-kicker">CONTATO</p>
+    <h2>Entre em contato</h2>
+    <p>Para propostas de colaboração, parcerias institucionais, projetos científicos, pesquisa, conteúdos ou informações sobre a Databiomics, envie uma mensagem.</p>
+  </div>
+  <div class="db-contact-grid">
+    <div class="info-card">
+      <h3>Databiomics®</h3>
+      <p><strong>E-mail:</strong> <a href="mailto:info@databiomics.com">info@databiomics.com</a></p>
+      <p><strong>WBPereira Tech:</strong> departamento de tecnologia e inovação da WBPereira Comércio e Serviços.</p>
+      <p><strong>Databiomics:</strong> vertical de Ciências da Vida do WBPereira Tech.</p>
     </div>
+    <form class="db-contact-form" action="https://formsubmit.co/info@databiomics.com" method="POST">
+      <input type="hidden" name="_subject" value="Novo contato institucional - Databiomics">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://databiomics.com/#contato">
+      <label>Nome<input type="text" name="nome" required></label>
+      <label>Instituição / organização<input type="text" name="instituicao"></label>
+      <label>E-mail<input type="email" name="email" required></label>
+      <label>Assunto<select name="assunto" required><option value="" selected disabled>Selecione</option><option>Colaboração científica</option><option>Parceria institucional</option><option>Projeto em desenvolvimento</option><option>Pesquisa</option><option>Conteúdos e formação</option><option>Imprensa / divulgação</option><option>Outro</option></select></label>
+      <label>Mensagem<textarea name="mensagem" rows="6" required></textarea></label>
+      <label class="db-consent"><input type="checkbox" name="consentimento_contato" required> Li e concordo com o tratamento dos meus dados conforme a <a href="{{ '/privacidade/' | relative_url }}" target="_blank" rel="noopener">Política de Privacidade</a>.</label>
+      <button class="button primary" type="submit">Enviar mensagem</button>
+    </form>
+  </div>
+</section>
+
+<footer class="db-footer">
+  <img src="{{ '/assets/databiomics-logo.svg' | relative_url }}" alt="Databiomics®" loading="lazy">
+  <div>
+    <strong>Databiomics® — Transformando dados biológicos em conhecimento.</strong>
+    <p>Vertical de Ciências da Vida do WBPereira Tech.</p>
+    <p>WBPereira Tech — departamento de tecnologia e inovação da WBPereira Comércio e Serviços.</p>
+    <p><a href="{{ '/#sobre' | relative_url }}">Sobre</a> · <a href="{{ '/apoie-projetos/' | relative_url }}">Projetos</a> · <a href="{{ '/articles/' | relative_url }}">Publicações</a> · <a href="{{ '/New_articles/' | relative_url }}">Pesquisa</a> · <a href="{{ '/parcerias/' | relative_url }}">Parcerias</a> · <a href="{{ '/privacidade/' | relative_url }}">Privacidade</a></p>
+    <small>© 2026 Databiomics®. Todos os direitos reservados. Databiomics® — marca registrada no INPI.</small>
   </div>
 </footer>
 
-<script>
-  const contactSubject = document.getElementById("contact-subject");
-  const contactCategory = document.getElementById("contact-category");
-  const modalityWrapper = document.getElementById("contact-modality-wrapper");
-  const modalitySelect = document.getElementById("contact-modality");
-
-  const toggleTrainingModalityField = () => {
-    if (!contactSubject || !contactCategory || !modalityWrapper || !modalitySelect) return;
-
-    const shouldShow = ["cursos_palestras_workshops", "treinamento_equipes_assunto"].includes(contactSubject.value) || contactCategory.value === "treinamento_equipes";
-
-    modalityWrapper.style.display = shouldShow ? "block" : "none";
-    modalitySelect.disabled = !shouldShow;
-    modalitySelect.required = shouldShow;
-
-    if (!shouldShow) {
-      modalitySelect.value = "";
-    }
-  };
-
-  if (contactSubject && contactCategory) {
-    contactSubject.addEventListener("change", toggleTrainingModalityField);
-    contactCategory.addEventListener("change", toggleTrainingModalityField);
-    toggleTrainingModalityField();
-  }
-
-  const whatsappButton = document.getElementById("whatsapp-contact-link");
-  if (whatsappButton) {
-    const phoneParts = ["55", "22", "99796", "8983"];
-    const phoneNumber = phoneParts.join("");
-    const message = encodeURIComponent("Olá Leandro! Vi seu site e gostaria de mais informações sobre consultoria/cursos.");
-    whatsappButton.href = `https://wa.me/${phoneNumber}?text=${message}`;
-  }
-
-  const contactForm = document.getElementById("contact-form");
-  const contactFormFeedback = document.getElementById("contact-form-feedback");
-  const contactSubjectLabel = document.getElementById("contact-subject-label");
-  const contactCategoryLabel = document.getElementById("contact-category-label");
-  const contactModalityLabel = document.getElementById("contact-modality-label");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
-      if (!contactForm.checkValidity()) {
-        event.preventDefault();
-        contactForm.reportValidity();
-        return;
-      }
-
-      const subjectLabel = contactSubject?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
-      const categoryLabel = contactCategory?.selectedOptions?.[0]?.textContent?.trim() || "Não informado";
-      const modalityLabel = modalitySelect && !modalitySelect.disabled && modalitySelect.value
-        ? modalitySelect.selectedOptions[0].textContent.trim()
-        : "Não se aplica";
-
-      if (contactSubjectLabel) contactSubjectLabel.value = subjectLabel;
-      if (contactCategoryLabel) contactCategoryLabel.value = categoryLabel;
-      if (contactModalityLabel) contactModalityLabel.value = modalityLabel;
-
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      if (submitButton) submitButton.disabled = true;
-      if (contactFormFeedback) {
-        contactFormFeedback.textContent = "Enviando sua mensagem para info@databiomics.com...";
-      }
-    });
-  }
-
-  const visitorCountryState = { name: null };
-  const visitorTelemetryState = { total: null, topCountries: [], allCountries: [], locations: [], currentLocation: null };
-  const countNamespace = "databiomicsai-github-io";
-
-  const ensureSingleElement = (selector) => {
-    const nodes = Array.from(document.querySelectorAll(selector));
-    nodes.forEach((node, index) => {
-      if (index > 0) node.remove();
-    });
-  };
-
-  [
-    "#visitor-count",
-    "#visitor-country-list",
-    "#visitor-country-list-all",
-    "#visitor-brazil-count",
-    "#visitor-current-location",
-    "#visitor-location-list",
-    "#visitor-map-markers"
-  ].forEach(ensureSingleElement);
-
-  const visitorI18n = {
-    pt: {
-      loadingCountry: "Carregando país do visitante...",
-      countryPrefix: "País do visitante: ",
-      countryError: "Não foi possível identificar o país do visitante.",
-      totalPrefix: "Total de visitas: ",
-      totalLoading: "Total de visitas: carregando...",
-      totalUnavailable: "Total de visitas: indisponível no momento.",
-      noCountryData: "Sem dados por país ainda.",
-      allCountriesTitle: "Países visitantes",
-      distinctCountriesPrefix: "Países distintos: ",
-      distinctCountriesLoading: "Países distintos: carregando...",
-      clockPrefix: "Hora local: ",
-      currentLocationLoading: "Localização do visitante: carregando...",
-      currentLocationPrefix: "Localização do visitante: ",
-      noLocationData: "Sem dados por estado/cidade ainda."
-    },
-    en: {
-      loadingCountry: "Loading visitor country...",
-      countryPrefix: "Visitor country: ",
-      countryError: "Could not identify visitor country.",
-      totalPrefix: "Total visits: ",
-      totalLoading: "Total visits: loading...",
-      totalUnavailable: "Total visits: unavailable at the moment.",
-      noCountryData: "No country data yet.",
-      allCountriesTitle: "Visitor countries",
-      distinctCountriesPrefix: "Distinct countries: ",
-      distinctCountriesLoading: "Distinct countries: loading...",
-      clockPrefix: "Local time: ",
-      currentLocationLoading: "Visitor location: loading...",
-      currentLocationPrefix: "Visitor location: ",
-      noLocationData: "No state/city data yet."
-    },
-    es: {
-      loadingCountry: "Cargando país del visitante...",
-      countryPrefix: "País del visitante: ",
-      countryError: "No fue posible identificar el país del visitante.",
-      totalPrefix: "Total de visitas: ",
-      totalLoading: "Total de visitas: cargando...",
-      totalUnavailable: "Total de visitas: no disponible en este momento.",
-      noCountryData: "Aún no hay datos por país.",
-      allCountriesTitle: "Países visitantes",
-      distinctCountriesPrefix: "Países distintos: ",
-      distinctCountriesLoading: "Países distintos: cargando...",
-      clockPrefix: "Hora local: ",
-      currentLocationLoading: "Ubicación del visitante: cargando...",
-      currentLocationPrefix: "Ubicación del visitante: ",
-      noLocationData: "Aún no hay datos por estado/ciudad."
-    }
-  };
-
-  const normalizeCountryCode = (code) => {
-    const normalized = String(code || "").trim().toUpperCase();
-    return /^[A-Z]{2}$/.test(normalized) ? normalized : null;
-  };
-
-  const getCountryDisplayName = (code) => {
-    const normalized = String(code || "").trim().toUpperCase();
-    if (!/^[A-Z]{2}$/.test(normalized)) return normalized || "--";
-    const lang = localStorage.getItem("siteLang") || "pt";
-    const localeMap = { pt: "pt-BR", en: "en", es: "es" };
-    const locale = localeMap[lang] || "pt-BR";
-    try {
-      const displayNames = new Intl.DisplayNames([locale], { type: "region" });
-      return displayNames.of(normalized) || normalized;
-    } catch (err) {
-      return normalized;
-    }
-  };
-
-  const updateDistinctCountriesClock = () => {};
-
-  const getLangDict = () => {
-    const lang = localStorage.getItem("siteLang") || "pt";
-    return visitorI18n[lang] || visitorI18n.pt;
-  };
-
-  const fetchJsonWithTimeout = async (url, timeoutMs = 7000) => {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
-    try {
-      const res = await fetch(url, { signal: controller.signal, cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return await res.json();
-    } finally {
-      clearTimeout(timer);
-    }
-  };
-
-  const getVisitorCountry = async () => {
-    const providers = [
-      async () => {
-        const data = await fetchJsonWithTimeout("https://ipapi.co/json/");
-        return { code: data.country_code, name: data.country_name, region: data.region, city: data.city, latitude: data.latitude, longitude: data.longitude, ip: data.ip };
-      },
-      async () => {
-        const data = await fetchJsonWithTimeout("https://ipwho.is/");
-        if (data && data.success === false) throw new Error("ipwhois failed");
-        return { code: data.country_code, name: data.country, region: data.region, city: data.city, latitude: data.latitude, longitude: data.longitude, ip: data.ip };
-      },
-      async () => {
-        const data = await fetchJsonWithTimeout("https://ip-api.com/json/?fields=country,countryCode,regionName,city,lat,lon,query");
-        return { code: data.countryCode, name: data.country, region: data.regionName, city: data.city, latitude: data.lat, longitude: data.lon, ip: data.query };
-      }
-    ];
-
-    for (const provider of providers) {
-      try {
-        const result = await provider();
-        const code = String(result.code || "").trim().toUpperCase();
-        const name = String(result.name || "").trim();
-        if (code && name) {
-          return {
-            code,
-            name,
-            region: String(result.region || "").trim(),
-            city: String(result.city || "").trim(),
-            latitude: Number(result.latitude),
-            longitude: Number(result.longitude),
-            ip: result.ip || null
-          };
-        }
-      } catch (err) {
-        // try next provider
-      }
-    }
-    throw new Error("Unable to resolve visitor country");
-  };
-
-  const applyVisitorCountryLabel = () => {
-    const countryLabel = document.getElementById("visitor-country");
-    if (!countryLabel) return;
-    const d = getLangDict();
-    if (visitorCountryState.name === null) {
-      countryLabel.textContent = d.loadingCountry;
-      return;
-    }
-    if (visitorCountryState.name === false) {
-      countryLabel.textContent = d.countryError;
-      return;
-    }
-    countryLabel.textContent = `${d.countryPrefix}${visitorCountryState.name}`;
-  };
-
-  const applyVisitorTotalLabel = () => {
-    const countLabel = document.getElementById("visitor-count");
-    if (!countLabel) return;
-    const d = getLangDict();
-    if (visitorTelemetryState.total === null) {
-      countLabel.textContent = d.totalLoading;
-      return;
-    }
-    if (visitorTelemetryState.total === false) {
-      countLabel.textContent = d.totalUnavailable;
-      return;
-    }
-    countLabel.textContent = `${d.totalPrefix}${visitorTelemetryState.total}`;
-  };
-
-  const pieChartColors = ["#38bdf8", "#22c55e", "#f59e0b", "#ef4444", "#a855f7", "#14b8a6", "#f97316", "#84cc16"];
-
-  const renderTopCountries = () => {
-    const listEl = document.getElementById("visitor-country-list");
-    const allListEl = document.getElementById("visitor-country-list-all");
-    const brazilCounterEl = document.getElementById("visitor-brazil-count");
-    const allCountriesTitleEl = document.getElementById("all-countries-title");
-    const distinctCountriesEl = document.getElementById("distinct-countries-count");
-    if (!listEl || !allListEl || !allCountriesTitleEl || !distinctCountriesEl || !brazilCounterEl) return;
-    const d = getLangDict();
-
-    allCountriesTitleEl.textContent = d.allCountriesTitle;
-
-    listEl.innerHTML = "";
-    allListEl.innerHTML = "";
-
-    const allCountries = Array.isArray(visitorTelemetryState.allCountries)
-      ? visitorTelemetryState.allCountries
-      : [];
-    const safeAllCountries = allCountries
-      .map((row) => ({ code: normalizeCountryCode(row?.code), value: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.value > 0)
-      .sort((a, b) => b.value - a.value);
-
-    pieLegendEl.innerHTML = "";
-
-    if (!safeAllCountries.length) {
-      listEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
-      allListEl.innerHTML = `<li class="country-row">${d.noCountryData}</li>`;
-      brazilCounterEl.textContent = "0";
-      distinctCountriesEl.textContent = d.distinctCountriesLoading;
-      return;
-    }
-
-    distinctCountriesEl.textContent = `${d.distinctCountriesPrefix}${safeAllCountries.length}`;
-    const brazilRow = safeAllCountries.find((row) => row.code === "BR");
-    brazilCounterEl.textContent = `${Number(brazilRow?.value || 0)}`;
-
-    const rowsForTop = safeTopCountries.length ? safeTopCountries : safeAllCountries;
-    rowsForTop.slice(0, 10).forEach(({ code, value }) => {
-      const countryName = getCountryDisplayName(code);
-      const li = document.createElement("li");
-      li.className = "country-row";
-      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
-      listEl.appendChild(li);
-    });
-
-    // A visualização principal é o mapa mundial; não renderizamos mais o strip legado de bandeiras.
-
-
-    segments.forEach((segment) => {
-      const countryName = getCountryDisplayName(segment.code);
-      const li = document.createElement("li");
-      li.className = "country-row";
-      li.innerHTML = `<span>${countryName}</span> <strong>${value}</strong>`;
-      allListEl.appendChild(li);
-    });
-  };
-
-  const sanitizeLocationPart = (value) => String(value || "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "") || "nao-informado";
-
-  const getLocationKey = ({ code, region, city }) => [
-    normalizeCountryCode(code) || "XX",
-    sanitizeLocationPart(region),
-    sanitizeLocationPart(city)
-  ].join("-");
-
-  const hasValidCoordinates = (location) => Number.isFinite(Number(location?.latitude)) && Number.isFinite(Number(location?.longitude));
-
-  const countryMapCoordinates = {
-    BR: [-14.235, -51.925], US: [39.828, -98.579], CA: [56.130, -106.347], MX: [23.634, -102.553],
-    AR: [-38.416, -63.617], CL: [-35.675, -71.543], CO: [4.571, -74.297], PE: [-9.190, -75.015],
-    GB: [55.378, -3.436], IE: [53.142, -7.692], PT: [39.399, -8.224], ES: [40.464, -3.749],
-    FR: [46.228, 2.214], DE: [51.166, 10.452], IT: [41.872, 12.567], NL: [52.132, 5.291],
-    BE: [50.504, 4.469], CH: [46.818, 8.228], SE: [60.128, 18.644], NO: [60.472, 8.469],
-    DK: [56.263, 9.502], FI: [61.924, 25.748], PL: [51.919, 19.145], RU: [61.524, 105.319],
-    IN: [20.594, 78.963], CN: [35.862, 104.195], JP: [36.204, 138.253], KR: [35.908, 127.767],
-    AU: [-25.274, 133.775], NZ: [-40.901, 174.886], ZA: [-30.559, 22.938], NG: [9.082, 8.675],
-    EG: [26.821, 30.802], MA: [31.792, -7.093], KE: [-0.024, 37.906], TR: [38.964, 35.243],
-    IL: [31.047, 34.852], AE: [23.424, 53.848], SA: [23.886, 45.079], SG: [1.352, 103.820]
-  };
-
-  const projectLocationToMap = (latitude, longitude) => ({
-    left: ((Number(longitude) + 180) / 360) * 100,
-    top: ((90 - Number(latitude)) / 180) * 100
-  });
-
-  const formatLocationLabel = (location) => {
-    const city = location?.city || "Cidade não informada";
-    const region = location?.region || "Estado/região não informado";
-    const country = location?.countryName || getCountryDisplayName(location?.countryCode);
-    return `${city} · ${region} · ${country}`;
-  };
-
-  const renderVisitorMap = () => {
-    const currentLocationEl = document.getElementById("visitor-current-location");
-    const locationListEl = document.getElementById("visitor-location-list");
-    const markersEl = document.getElementById("visitor-map-markers");
-    if (!currentLocationEl || !locationListEl || !markersEl) return;
-
-    const d = getLangDict();
-    const locations = Array.isArray(visitorTelemetryState.locations)
-      ? visitorTelemetryState.locations
-          .map((row) => ({ ...row, count: Number(row?.count || 0) }))
-          .filter((row) => row.count > 0)
-          .sort((a, b) => b.count - a.count)
-      : [];
-
-    if (visitorTelemetryState.currentLocation) {
-      currentLocationEl.textContent = `${d.currentLocationPrefix}${formatLocationLabel(visitorTelemetryState.currentLocation)}`;
-    } else {
-      currentLocationEl.textContent = d.currentLocationLoading;
-    }
-
-    locationListEl.innerHTML = "";
-    markersEl.innerHTML = "";
-
-    if (!locations.length) {
-      locationListEl.innerHTML = `<li class="country-row">${d.noLocationData}</li>`;
-    }
-
-    locations.slice(0, 12).forEach((location) => {
-      const li = document.createElement("li");
-      li.className = "country-row";
-      li.innerHTML = `<span>${formatLocationLabel(location)}</span> <strong>${location.count}</strong>`;
-      locationListEl.appendChild(li);
-    });
-
-    const mappedLocations = locations.filter(hasValidCoordinates);
-    const mappedKeys = new Set(mappedLocations.map((location) => String(location.key || location.countryCode || "")));
-    const countryFallbackLocations = (visitorTelemetryState.allCountries || [])
-      .map((row) => ({ code: normalizeCountryCode(row?.code), count: Number(row?.value || 0) }))
-      .filter((row) => row.code && row.count > 0 && countryMapCoordinates[row.code] && !mappedKeys.has(row.code))
-      .map((row) => {
-        const [latitude, longitude] = countryMapCoordinates[row.code];
-        return {
-          key: row.code,
-          countryCode: row.code,
-          countryName: getCountryDisplayName(row.code),
-          city: "Visitantes",
-          region: "Total por país",
-          latitude,
-          longitude,
-          count: row.count
-        };
-      });
-
-    [...mappedLocations, ...countryFallbackLocations]
-      .sort((a, b) => Number(b.count || 0) - Number(a.count || 0))
-      .slice(0, 30)
-      .forEach((location) => {
-      const point = projectLocationToMap(location.latitude, location.longitude);
-      const marker = document.createElement("span");
-      marker.className = "visitor-map-marker";
-      marker.style.left = `${Math.max(0, Math.min(100, point.left))}%`;
-      marker.style.top = `${Math.max(0, Math.min(100, point.top))}%`;
-      marker.style.setProperty("--marker-size", `${Math.max(12, Math.min(28, 10 + Math.sqrt(location.count) * 4))}px`);
-      marker.dataset.count = String(location.count);
-      marker.title = `${formatLocationLabel(location)}: ${location.count}`;
-      markersEl.appendChild(marker);
-    });
-  };
-
-  const localTelemetryKey = "databiomicsVisitorTelemetryV1";
-
-  const readLocalTelemetry = () => {
-    try {
-      const raw = localStorage.getItem(localTelemetryKey);
-      if (!raw) return { total: 0, countries: {}, locations: {} };
-      const data = JSON.parse(raw);
-      return {
-        total: Number(data.total || 0),
-        countries: data.countries && typeof data.countries === "object" ? data.countries : {},
-        locations: data.locations && typeof data.locations === "object" ? data.locations : {}
-      };
-    } catch {
-      return { total: 0, countries: {}, locations: {} };
-    }
-  };
-
-  const writeLocalTelemetry = (data) => {
-    try {
-      localStorage.setItem(localTelemetryKey, JSON.stringify(data));
-    } catch {
-      // ignore storage quota / private mode errors
-    }
-  };
-
-  const hitRemoteCounter = async (key) => {
-    const endpoints = [
-      `https://api.countapi.xyz/hit/${countNamespace}/${key}`,
-      `https://countapi.xyz/hit/${countNamespace}/${key}`
-    ];
-
-    for (const endpoint of endpoints) {
-      try {
-        const data = await fetchJsonWithTimeout(endpoint);
-        const value = Number(data.value);
-        if (Number.isFinite(value)) return value;
-      } catch {
-        // try next endpoint
-      }
-    }
-    return null;
-  };
-
-  const getRemoteCounter = async (key) => {
-    const endpoints = [
-      `https://api.countapi.xyz/get/${countNamespace}/${key}`,
-      `https://countapi.xyz/get/${countNamespace}/${key}`
-    ];
-
-    for (const endpoint of endpoints) {
-      try {
-        const data = await fetchJsonWithTimeout(endpoint);
-        const value = Number(data.value);
-        if (Number.isFinite(value)) return value;
-      } catch {
-        // try next endpoint
-      }
-    }
-    return null;
-  };
-
-  const normalizeCountryRows = (countries = {}) => {
-    const totalsByCountry = new Map();
-
-    Object.entries(countries).forEach(([code, value]) => {
-      const normalizedCode = String(code || "").trim().toUpperCase();
-      const normalizedValue = Number(value || 0);
-      if (!/^[A-Z]{2}$/.test(normalizedCode) || normalizedValue <= 0) return;
-      totalsByCountry.set(normalizedCode, (totalsByCountry.get(normalizedCode) || 0) + normalizedValue);
-    });
-
-    return Array.from(totalsByCountry.entries())
-      .map(([code, value]) => ({ code, value }))
-      .sort((a, b) => b.value - a.value);
-  };
-
-
-  const mapWithConcurrency = async (items, concurrency, mapper) => {
-    const values = new Array(items.length);
-    let index = 0;
-
-    const worker = async () => {
-      while (index < items.length) {
-        const currentIndex = index;
-        index += 1;
-        values[currentIndex] = await mapper(items[currentIndex], currentIndex);
-      }
-    };
-
-    const workers = Array.from({ length: Math.max(1, Math.min(concurrency, items.length)) }, () => worker());
-    await Promise.all(workers);
-    return values;
-  };
-
-  const allIsoCountryCodes = ["AF","AX","AL","DZ","AS","AD","AO","AI","AQ","AG","AR","AM","AW","AU","AT","AZ","BS","BH","BD","BB","BY","BE","BZ","BJ","BM","BT","BO","BQ","BA","BW","BV","BR","IO","BN","BG","BF","BI","CV","KH","CM","CA","KY","CF","TD","CL","CN","CX","CC","CO","KM","CG","CD","CK","CR","CI","HR","CU","CW","CY","CZ","DK","DJ","DM","DO","EC","EG","SV","GQ","ER","EE","SZ","ET","FK","FO","FJ","FI","FR","GF","PF","TF","GA","GM","GE","DE","GH","GI","GR","GL","GD","GP","GU","GT","GG","GN","GW","GY","HT","HM","VA","HN","HK","HU","IS","IN","ID","IR","IQ","IE","IM","IL","IT","JM","JP","JE","JO","KZ","KE","KI","KP","KR","KW","KG","LA","LV","LB","LS","LR","LY","LI","LT","LU","MO","MG","MW","MY","MV","ML","MT","MH","MQ","MR","MU","YT","MX","FM","MD","MC","MN","ME","MS","MA","MZ","MM","NA","NR","NP","NL","NC","NZ","NI","NE","NG","NU","NF","MK","MP","NO","OM","PK","PW","PS","PA","PG","PY","PE","PH","PN","PL","PT","PR","QA","RE","RO","RU","RW","BL","SH","KN","LC","MF","PM","VC","WS","SM","ST","SA","SN","RS","SC","SL","SG","SX","SK","SI","SB","SO","ZA","GS","SS","ES","LK","SD","SR","SJ","SE","CH","SY","TW","TJ","TZ","TH","TL","TG","TK","TO","TT","TN","TR","TM","TC","TV","UG","UA","AE","GB","US","UM","UY","UZ","VU","VE","VN","VG","VI","WF","EH","YE","ZM","ZW"];
-
-  const loadTopCountries = async (fallbackCountries = null) => {
-    const rows = await mapWithConcurrency(allIsoCountryCodes, 24, async (code) => {
-      const [upperValue, lowerValue] = await Promise.all([
-        getRemoteCounter(`site-visits-country-${code}`),
-        getRemoteCounter(`site-visits-country-${code.toLowerCase()}`)
-      ]);
-      return { code, value: Number(Math.max(Number(upperValue || 0), Number(lowerValue || 0))) };
-    });
-
-    const remoteRows = rows.filter((r) => r.value > 0);
-    const countries = fallbackCountries || {};
-    const mergedRows = normalizeCountryRows({
-      ...countries,
-      ...Object.fromEntries(remoteRows.map((row) => [row.code, row.value]))
-    });
-
-    visitorTelemetryState.allCountries = mergedRows;
-    visitorTelemetryState.topCountries = mergedRows.slice(0, 10);
-    renderTopCountries();
-  };
-
-  const getTodayKey = () => {
-    const now = new Date();
-    const yyyy = now.getFullYear();
-    const mm = String(now.getMonth() + 1).padStart(2, "0");
-    const dd = String(now.getDate()).padStart(2, "0");
-    return `${yyyy}-${mm}-${dd}`;
-  };
-
-  const hashText = async (value) => {
-    if (!value || !window.crypto?.subtle) return null;
-    const bytes = new TextEncoder().encode(value);
-    const digest = await window.crypto.subtle.digest("SHA-256", bytes);
-    const hex = Array.from(new Uint8Array(digest)).map((b) => b.toString(16).padStart(2, "0")).join("");
-    return hex.slice(0, 16);
-  };
-
-  const registerUniqueVisitForDay = async (ipValue) => {
-    const dayKey = getTodayKey();
-    const localDailyKey = `site-visit-registered-${dayKey}`;
-
-    if (!ipValue) {
-      const alreadyRegistered = localStorage.getItem(localDailyKey) === "1";
-      if (alreadyRegistered) return false;
-      localStorage.setItem(localDailyKey, "1");
-      return true;
-    }
-
-    const ipHash = await hashText(ipValue);
-    if (!ipHash) {
-      const alreadyRegistered = localStorage.getItem(localDailyKey) === "1";
-      if (alreadyRegistered) return false;
-      localStorage.setItem(localDailyKey, "1");
-      return true;
-    }
-
-    const uniqueCounter = await hitRemoteCounter(`site-unique-visit-${dayKey}-${ipHash}`);
-    return uniqueCounter === 1;
-  };
-
-  const registerVisitor = async () => {
-    applyVisitorCountryLabel();
-    applyVisitorTotalLabel();
-    renderTopCountries();
-    renderVisitorMap();
-
-    const localTelemetry = readLocalTelemetry();
-    const localCountryRows = normalizeCountryRows(localTelemetry.countries || {});
-    visitorTelemetryState.allCountries = localCountryRows;
-    visitorTelemetryState.topCountries = localCountryRows.slice(0, 10);
-    visitorTelemetryState.locations = Object.values(localTelemetry.locations || {});
-    renderTopCountries();
-    renderVisitorMap();
-
-    try {
-      const remoteTotal = await getRemoteCounter("site-visits");
-      if (Number.isFinite(remoteTotal)) {
-        visitorTelemetryState.total = remoteTotal;
-        localTelemetry.total = Math.max(localTelemetry.total, remoteTotal);
-        writeLocalTelemetry(localTelemetry);
-      } else {
-        visitorTelemetryState.total = localTelemetry.total;
-      }
-    } catch {
-      visitorTelemetryState.total = localTelemetry.total;
-    }
-    applyVisitorTotalLabel();
-
-    try {
-      const { code, name, region, city, latitude, longitude, ip } = await getVisitorCountry();
-      const normalizedCode = normalizeCountryCode(code);
-      if (!normalizedCode) throw new Error("Invalid visitor country code");
-      visitorCountryState.name = name;
-      const visitorLocationKey = getLocationKey({ code: normalizedCode, region, city });
-      const visitorLocation = {
-        key: visitorLocationKey,
-        countryCode: normalizedCode,
-        countryName: name,
-        region: region || "Estado/região não informado",
-        city: city || "Cidade não informada",
-        latitude,
-        longitude,
-        count: Number(localTelemetry.locations?.[visitorLocationKey]?.count || 0)
-      };
-      visitorTelemetryState.currentLocation = visitorLocation;
-      renderVisitorMap();
-
-      const shouldCountVisit = await registerUniqueVisitForDay(ip);
-      if (shouldCountVisit) {
-        localTelemetry.total += 1;
-        writeLocalTelemetry(localTelemetry);
-
-        const remoteTotal = await hitRemoteCounter("site-visits");
-        visitorTelemetryState.total = Number.isFinite(remoteTotal) ? remoteTotal : localTelemetry.total;
-
-        localTelemetry.countries[normalizedCode] = Number(localTelemetry.countries[normalizedCode] || 0) + 1;
-        writeLocalTelemetry(localTelemetry);
-
-        const remoteCountry = await hitRemoteCounter(`site-visits-country-${normalizedCode}`);
-        if (Number.isFinite(remoteCountry)) {
-          localTelemetry.countries[normalizedCode] = remoteCountry;
-          writeLocalTelemetry(localTelemetry);
-        }
-
-        const previousLocation = localTelemetry.locations[visitorLocationKey] || visitorLocation;
-        localTelemetry.locations[visitorLocationKey] = {
-          ...previousLocation,
-          ...visitorLocation,
-          count: Number(previousLocation.count || 0) + 1
-        };
-        const remoteLocation = await hitRemoteCounter(`site-visits-location-${visitorLocationKey}`);
-        if (Number.isFinite(remoteLocation)) {
-          localTelemetry.locations[visitorLocationKey].count = Math.max(Number(localTelemetry.locations[visitorLocationKey].count || 0), remoteLocation);
-        }
-        visitorTelemetryState.currentLocation = localTelemetry.locations[visitorLocationKey];
-        visitorTelemetryState.locations = Object.values(localTelemetry.locations);
-        writeLocalTelemetry(localTelemetry);
-      } else {
-        visitorTelemetryState.total = Number.isFinite(visitorTelemetryState.total) ? visitorTelemetryState.total : localTelemetry.total;
-      }
-
-      const remoteCountrySnapshot = await Promise.all([
-        getRemoteCounter(`site-visits-country-${normalizedCode}`),
-        getRemoteCounter(`site-visits-country-${normalizedCode.toLowerCase()}`)
-      ]);
-      const countryTotal = Number(Math.max(Number(remoteCountrySnapshot[0] || 0), Number(remoteCountrySnapshot[1] || 0)));
-      if (Number.isFinite(countryTotal) && countryTotal > 0) {
-        localTelemetry.countries[normalizedCode] = Math.max(Number(localTelemetry.countries[normalizedCode] || 0), countryTotal);
-        writeLocalTelemetry(localTelemetry);
-      }
-      const remoteLocationSnapshot = await getRemoteCounter(`site-visits-location-${visitorLocationKey}`);
-      if (Number.isFinite(remoteLocationSnapshot) && remoteLocationSnapshot > 0) {
-        const previousLocation = localTelemetry.locations[visitorLocationKey] || visitorLocation;
-        localTelemetry.locations[visitorLocationKey] = {
-          ...previousLocation,
-          ...visitorLocation,
-          count: Math.max(Number(previousLocation.count || 0), remoteLocationSnapshot)
-        };
-        visitorTelemetryState.currentLocation = localTelemetry.locations[visitorLocationKey];
-        writeLocalTelemetry(localTelemetry);
-      }
-      visitorTelemetryState.locations = Object.values(localTelemetry.locations || {});
-      renderVisitorMap();
-    } catch {
-      visitorCountryState.name = false;
-    }
-
-    applyVisitorCountryLabel();
-    applyVisitorTotalLabel();
-
-    try {
-      await loadTopCountries(localTelemetry.countries);
-    } catch {
-      const fallbackRows = Object.entries(localTelemetry.countries)
-        .map(([code, value]) => ({ code: String(code || "").toUpperCase(), value: Number(value || 0) }))
-        .filter((r) => r.code && r.value > 0)
-        .sort((a, b) => b.value - a.value);
-      visitorTelemetryState.allCountries = fallbackRows;
-      visitorTelemetryState.topCountries = fallbackRows.slice(0, 10);
-      renderTopCountries();
-    }
-  };
-
-  document.addEventListener("site-language-changed", () => {
-    applyVisitorCountryLabel();
-    applyVisitorTotalLabel();
-    renderTopCountries();
-    renderVisitorMap();
-    updateDistinctCountriesClock();
-  });
-
-  updateDistinctCountriesClock();
-  setInterval(updateDistinctCountriesClock, 1000);
-
-  registerVisitor();
-</script>
+<style>
+  :root { --db-blue:#0b2b50; --db-cyan:#49b9e8; --db-green:#6cae3e; --db-green-dark:#2f6f35; --db-soft:#eef6f9; }
+  .landing-wrapper { max-width: 1240px; }
+  .landing-nav { position:sticky; top:.5rem; z-index:30; display:flex; flex-wrap:wrap; gap:.45rem; justify-content:center; padding:.65rem; margin:.5rem 0 1.25rem; border-radius:18px; backdrop-filter:blur(14px); background:rgba(5,25,48,.86); border:1px solid rgba(73,185,232,.24); }
+  .landing-nav a { text-decoration:none; padding:.58rem .82rem; border-radius:999px; font-weight:700; color:#fff; }
+  .landing-nav a:hover,.landing-nav a:focus-visible { background:rgba(73,185,232,.16); }
+  .db-hero { padding:clamp(2rem,6vw,5rem) 0; }
+  .db-hero-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr); gap:2rem; align-items:center; }
+  .db-hero-copy h1 { font-size:clamp(2.25rem,5.2vw,4.9rem); line-height:1.02; margin:.45rem 0 1rem; max-width:900px; }
+  .db-hero-logo { width:min(440px,86%); max-height:130px; object-fit:contain; object-position:left center; }
+  .db-hero-lead { font-size:clamp(1.08rem,2vw,1.4rem); font-weight:700; }
+  .db-kicker,.db-section-kicker { color:var(--db-green); font-size:.8rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+  .db-hero-meta { margin-top:1.4rem; font-size:.9rem; font-weight:800; letter-spacing:.06em; opacity:.85; }
+  .db-ecosystem-card { padding:1.35rem; border-radius:24px; background:linear-gradient(145deg,rgba(11,43,80,.94),rgba(4,24,45,.92)); border:1px solid rgba(73,185,232,.34); box-shadow:0 20px 55px rgba(0,0,0,.2); }
+  .db-brand-row { display:flex; gap:.8rem; align-items:center; justify-content:center; flex-wrap:wrap; margin-bottom:1.1rem; }
+  .db-brand-row img { width:110px; max-height:70px; object-fit:contain; border-radius:10px; background:#fff; padding:.25rem; }
+  .db-brand-row strong { color:#fff; font-size:1.05rem; }
+  .db-ecosystem-levels { display:grid; gap:.7rem; margin:1rem 0 1.2rem; }
+  .db-ecosystem-levels div { padding:.8rem 1rem; border-left:3px solid var(--db-green); background:rgba(255,255,255,.05); border-radius:0 12px 12px 0; }
+  .db-ecosystem-levels strong,.db-ecosystem-levels span { display:block; color:#fff; }
+  .db-ecosystem-levels span { opacity:.78; font-size:.9rem; margin-top:.18rem; }
+  .db-about-grid { align-items:stretch; }
+  .db-area-grid { grid-template-columns:repeat(5,minmax(0,1fr)); }
+  .db-icon,.db-project-symbol { width:52px; height:52px; display:grid; place-items:center; border-radius:50%; color:#fff; background:linear-gradient(135deg,var(--db-blue),var(--db-green-dark)); font-weight:900; margin-bottom:.85rem; }
+  .db-project-grid { grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .db-project-card { display:flex; flex-direction:column; align-items:flex-start; }
+  .db-project-card .button { margin-top:auto; }
+  .db-project-logo { height:62px; max-width:190px; object-fit:contain; object-position:left center; margin-bottom:.8rem; }
+  .db-tag { display:inline-block; margin:.4rem 0 1rem; padding:.32rem .58rem; border-radius:999px; background:rgba(73,185,232,.10); border:1px solid rgba(73,185,232,.28); color:var(--db-cyan); font-size:.72rem; font-weight:900; letter-spacing:.04em; }
+  .db-center-action { display:flex; justify-content:center; margin-top:1.5rem; }
+  .db-publication-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+  .db-publication-card { display:block; overflow:hidden; border-radius:18px; text-decoration:none; border:1px solid rgba(73,185,232,.22); background:rgba(255,255,255,.03); transition:transform .18s ease,border-color .18s ease; }
+  .db-publication-card:hover { transform:translateY(-4px); border-color:var(--db-green); }
+  .db-publication-card img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; background:#fff; }
+  .db-publication-card div { padding:1rem; }
+  .db-publication-card span { color:var(--db-green); font-weight:800; font-size:.8rem; }
+  .db-publication-card h3 { margin:.45rem 0 0; font-size:1rem; line-height:1.35; color:inherit; }
+  .db-leadership { display:grid; grid-template-columns:240px 1fr; gap:2rem; align-items:center; }
+  .db-leadership>img { width:100%; max-width:240px; border-radius:24px; border:1px solid rgba(73,185,232,.25); }
+  .db-role { font-weight:800; color:var(--db-green); }
+  .db-parent-company { display:grid; grid-template-columns:minmax(220px,340px) 1fr; gap:2rem; align-items:center; }
+  .db-parent-company>img { width:100%; max-height:240px; object-fit:contain; border-radius:18px; background:#fff; padding:.5rem; }
+  .db-coming { display:inline-block; padding:.25rem .58rem; border-radius:999px; color:#fff; background:var(--db-green-dark); font-size:.72rem; font-weight:900; }
+  .db-lead-section { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
+  .db-newsletter-form,.db-contact-form { display:grid; gap:.9rem; }
+  .db-newsletter-form label,.db-contact-form label { display:grid; gap:.35rem; font-weight:700; }
+  .db-newsletter-form input,.db-contact-form input,.db-contact-form select,.db-contact-form textarea { width:100%; padding:.8rem .9rem; border-radius:10px; border:1px solid rgba(73,185,232,.3); background:rgba(255,255,255,.04); color:inherit; box-sizing:border-box; }
+  .db-contact-form option { color:#111; }
+  .db-consent { display:flex!important; grid-template-columns:auto 1fr!important; align-items:flex-start; gap:.65rem!important; font-size:.88rem; font-weight:500!important; }
+  .db-consent input { width:auto!important; margin-top:.2rem; }
+  .db-social-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+  .db-social-grid .info-card { display:flex; flex-direction:column; gap:.5rem; }
+  .db-mini-logo { height:54px; max-width:180px; object-fit:contain; object-position:left center; }
+  .db-wb-mini { background:#fff; border-radius:8px; padding:.2rem; }
+  .db-contact-grid { display:grid; grid-template-columns:minmax(260px,.7fr) minmax(0,1.3fr); gap:1.2rem; align-items:start; }
+  .db-footer { display:grid; grid-template-columns:180px 1fr; gap:1.4rem; align-items:center; margin:2rem 0 1rem; padding:1.5rem; border-top:1px solid rgba(73,185,232,.2); }
+  .db-footer img { width:100%; max-height:80px; object-fit:contain; object-position:left center; }
+  .db-footer p { margin:.35rem 0; }
+  .db-footer a { text-decoration:none; }
+  @media (max-width:980px) { .db-hero-grid,.db-lead-section,.db-parent-company,.db-contact-grid { grid-template-columns:1fr; } .db-area-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .db-project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .db-publication-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media (max-width:680px) { .landing-nav { position:static; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; } .landing-nav a { white-space:nowrap; } .db-area-grid,.db-project-grid,.db-publication-grid,.db-social-grid,.db-leadership,.db-footer { grid-template-columns:1fr; } .db-leadership>img { max-width:180px; } .db-brand-row { justify-content:flex-start; } }
+</style>
