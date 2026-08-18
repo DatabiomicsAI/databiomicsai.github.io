@@ -21,6 +21,7 @@ twitter:
 remote_theme: abhinavs/moonwalk
 
 theme_config:
+  # Default appearance for new visitors. User-selected light/dark preferences remain available.
   appearance: "dark"
   appearance_toggle: true
   back_home_text: "home.."
